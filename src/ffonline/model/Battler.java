@@ -202,7 +202,7 @@ public abstract class Battler {
 		return damage;
 	}
 
-	protected void setDamage(int damage) throws IllegalArgumentException{
+	public void setDamage(int damage) throws IllegalArgumentException{
 		if(damage < 0 || damage > 255)
 			throw new IllegalArgumentException("DAMAGE must be in range 0..255; got"+ damage +".");
 		this.damage = damage;
@@ -212,7 +212,7 @@ public abstract class Battler {
 		return absorb;
 	}
 
-	protected void setAbsorb(int absorb) throws IllegalArgumentException{
+	public void setAbsorb(int absorb) throws IllegalArgumentException{
 		if(absorb < 0 || absorb > 255)
 			throw new IllegalArgumentException("ABSORB must be in range 0..255; got"+ absorb +".");
 		this.absorb = absorb;
@@ -248,7 +248,7 @@ public abstract class Battler {
 		return magicAbsorb;
 	}
 
-	protected void setMagicAbsorb(int magicAbsorb) throws IllegalArgumentException{
+	public void setMagicAbsorb(int magicAbsorb) throws IllegalArgumentException{
 		if(magicAbsorb < 0 || magicAbsorb > 255)
 			throw new IllegalArgumentException("MagABSORB must be in range 0..255; got"+ magicAbsorb +".");
 		this.magicAbsorb = magicAbsorb;
