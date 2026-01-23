@@ -48,9 +48,6 @@ public abstract class Battler {
 
 	private int hitMultiplier = 1; // Affects number of hit per turn
 
-    /**
-     *
-     */
     public Battler(){
 		statuses = EnumSet.noneOf(StatusAilment.class);
 	}
