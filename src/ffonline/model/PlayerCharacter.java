@@ -49,86 +49,50 @@ public class PlayerCharacter extends Battler {
     	return (1+getHitChance()/32) * getHitMultiplier();
     }
 
-    /**
-     * @return the level
-     */
     public int getLevel() {
         return level;
     }
 
-    /**
-     * @param level the level to set
-     */
     public void setLevel(int level) {
         this.level = level;
     }
 
-    /**
-     * @return the exp
-     */
     public int getExp() {
         return exp;
     }
 
-    /**
-     * @param exp the exp to set
-     */
     public void setExp(int exp) {
         this.exp = exp;
     }
 
-    /**
-     * @return the strength
-     */
     public int getStrength() {
         return strength;
     }
 
-    /**
-     * @param strength the strength to set
-     */
     public void setStrength(int strength) {
         this.strength = strength;
     }
 
-    /**
-     * @return the agility
-     */
     public int getAgility() {
         return agility;
     }
 
-    /**
-     * @param agility the agility to set
-     */
     public void setAgility(int agility) {
         this.agility = agility;
     }
 
-    /**
-     * @return the intelligence
-     */
     public int getIntelligence() {
         return intelligence;
     }
 
-    /**
-     * @param intelligence the intelligence to set
-     */
     public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
     }
 
-    /**
-     * @return the vitality
-     */
     public int getVitality() {
         return vitality;
     }
 
-    /**
-     * @param vitality the vitality to set
-     */
     public void setVitality(int vitality) {
         this.vitality = vitality;
     }
