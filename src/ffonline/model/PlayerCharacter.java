@@ -35,6 +35,8 @@ public class PlayerCharacter extends Battler {
     private int agility;
     private int intelligence;
     private int vitality;
+    
+    private CharacterJob job;
 
     @Override
     public boolean rollCrit(){ return true; }
@@ -95,5 +97,13 @@ public class PlayerCharacter extends Battler {
 
     public void setVitality(int vitality) {
         this.vitality = vitality;
+    }
+
+    public CharacterJob getJob() {
+        return job;
+    }
+    
+    public void setJob(CharacterJob job){
+        this.job = job;
     }
 }
