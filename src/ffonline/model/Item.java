@@ -46,7 +46,7 @@ public class Item {
 
     public void setShopId(int shopId) throws IllegalArgumentException{
 	if(shopId < 0 || shopId > 255)
-            throw new IllegalArgumentException("HIT% must be in range 0..255; got"+ shopId +".");
+            throw new IllegalArgumentException("Shop ID must be in range 0..255; got"+ shopId +".");
         this.shopId = shopId;
     }
 
@@ -56,7 +56,7 @@ public class Item {
 
     public void setPrice(int price) throws IllegalArgumentException{
         if(price < 0 || price > 65535)
-            throw new IllegalArgumentException("HIT% must be in range 0..65535; got"+ price +".");
+            throw new IllegalArgumentException("Item price must be in range 0..65535; got"+ price +".");
         this.price = price;
     }
 }
