@@ -55,8 +55,8 @@ public class Item {
     }
 
     public void setPrice(int price) throws IllegalArgumentException{
-        if(shopId < 0 || shopId > 65535)
-            throw new IllegalArgumentException("HIT% must be in range 0..65535; got"+ shopId +".");
+        if(price < 0 || price > 65535)
+            throw new IllegalArgumentException("HIT% must be in range 0..65535; got"+ price +".");
         this.price = price;
     }
 }
