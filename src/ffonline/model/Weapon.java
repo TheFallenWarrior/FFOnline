@@ -54,10 +54,10 @@ public class Weapon extends Item {
     }
 
     public EnumSet<Element> getAttackElements() {
-        return attackElements;
+        return attackElements.clone();
     }
 
     public EnumSet<EnemyType> getEnemyTypes() {
-        return enemyTypes;
+        return enemyTypes.clone();
     }
 }

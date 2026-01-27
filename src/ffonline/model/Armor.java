@@ -44,7 +44,7 @@ public class Armor extends Item {
     }
 
     public EnumSet<Element> getElementalResistances() {
-        return elementalResistances;
+        return elementalResistances.clone();
     }
 
     public int getSpellId() {
