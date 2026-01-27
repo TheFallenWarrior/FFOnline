@@ -23,17 +23,62 @@
  */
 package ffonline.model;
 
+import java.io.File;
 import java.util.EnumSet;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.*;
+import tools.jackson.databind.exc.JsonNodeException;
 
 /**
  *
  * @author user
  */
 public class Armor extends Item {
-    private int weight;
-    private int absorb;
-    private EnumSet<Element> elementalResistances;
-    private int spellId;
+    private static final String JSON_PATH = "json/armor.json";
+    
+    private final int weight;
+    private final int absorb;
+    private final EnumSet<Element> elementalResistances;
+    private final int spellId;
+
+    public Armor(JsonNode node){
+        if(node == null)throw new NullPointerException(
+            "Attribute JsonNode node is null."
+        );
+
+        try{
+            super.setName(require(node, "name").asString());
+            weight = require(node, "weight").asInt();
+            absorb = require(node, "absorb").asInt();
+            spellId = require(node, "spellId").asInt();
+
+            elementalResistances = EnumSet.noneOf(Element.class);
+            for(JsonNode i : require(node, "elementalResistances")){
+                elementalResistances.add(Element.valueOf(i.asString()));
+            }
+        } catch(JsonNodeException e){
+            throw new RuntimeException(
+                "Failed to get armor attributes from JSON." +
+                " ("+e.getMessage()+")"
+            );
+        }
+    }
+
+    public static Armor createFromId(int jsonId){
+        try{
+            JsonNode jsonRoot = MAPPER.readTree(new File(JSON_PATH));
+
+            if(jsonId < 0 || jsonId >= jsonRoot.size()){
+                throw new IllegalArgumentException("Index out of bounds: "+jsonId);
+            }
+            return new Armor(jsonRoot.get(jsonId));
+        } catch(JacksonException e){
+            throw new RuntimeException(
+                "Failed to read from "+JSON_PATH+"." +
+                " ("+e.getMessage()+")"
+            );
+        }
+    }
     
     public int getWeight() {
         return weight;

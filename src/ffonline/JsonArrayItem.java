@@ -21,44 +21,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package ffonline.model;
+package ffonline;
 
-import ffonline.JsonArrayItem;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
 
 /**
- *
  * @author thefa
+ * A base class for objects created from an entry in JSON array.
  */
-public class Item extends JsonArrayItem{
-    private String name;
-    private int shopId; // Number that indentifies the item in shops
-    private int price;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getShopId() {
-        return shopId;
-    }
-
-    public void setShopId(int shopId) throws IllegalArgumentException{
-	if(shopId < 0 || shopId > 255)
-            throw new IllegalArgumentException("Shop ID must be in range 0..255; got"+ shopId +".");
-        this.shopId = shopId;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) throws IllegalArgumentException{
-        if(price < 0 || price > 65535)
-            throw new IllegalArgumentException("Item price must be in range 0..65535; got"+ price +".");
-        this.price = price;
-    }
+public class JsonArrayItem {
+    protected static final ObjectMapper MAPPER = new ObjectMapper();
+    
+    /**
+     * Ensures that a required JSON field exists and is not null
+     * @param node the JSON object that contains the field
+     * @param field the name of the field
+     * @return the field's value
+     */
+    protected static JsonNode require(JsonNode node, String field){
+        JsonNode value = node.get(field);
+        if(value == null || value.isNull()){
+            throw new IllegalStateException("Missing field: " + field);
+        }
+        return value;
+    }   
 }

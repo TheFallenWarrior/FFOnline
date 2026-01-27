@@ -1,0 +1,317 @@
+[
+    {
+        "name": "Cloth",
+        "weight": 2,
+        "absorb": 1,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Wooden Armor",
+        "weight": 8,
+        "absorb": 4,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Chain Armor",
+        "weight": 15,
+        "absorb": 15,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Iron Armor",
+        "weight": 23,
+        "absorb": 24,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Steel Armor",
+        "weight": 33,
+        "absorb": 34,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Silver Armor",
+        "weight": 8,
+        "absorb": 18,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Flame Armor",
+        "weight": 10,
+        "absorb": 34,
+        "elementalResistances": [
+            "ICE"
+        ],
+        "spellId": 0
+    },
+    {
+        "name": "Ice Armor",
+        "weight": 10,
+        "absorb": 34,
+        "elementalResistances": [
+            "FIRE"
+        ],
+        "spellId": 0
+    },
+    {
+        "name": "Opal Armor",
+        "weight": 10,
+        "absorb": 42,
+        "elementalResistances": [
+            "LIGHTNING"
+        ],
+        "spellId": 0
+    },
+    {
+        "name": "Dragon Armor",
+        "weight": 10,
+        "absorb": 42,
+        "elementalResistances": [
+            "FIRE",
+            "ICE",
+            "LIGHTNING"
+        ],
+        "spellId": 0
+    },
+    {
+        "name": "Copper Bracelet",
+        "weight": 1,
+        "absorb": 4,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Silver Bracelet",
+        "weight": 1,
+        "absorb": 15,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Gold Bracelet",
+        "weight": 1,
+        "absorb": 24,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Opal Bracelet",
+        "weight": 1,
+        "absorb": 34,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "White Shirt",
+        "weight": 2,
+        "absorb": 24,
+        "elementalResistances": [
+            "DEATH",
+            "FIRE"
+        ],
+        "spellId": 44
+    },
+    {
+        "name": "Black Shirt",
+        "weight": 2,
+        "absorb": 24,
+        "elementalResistances": [
+            "TIME",
+            "ICE"
+        ],
+        "spellId": 32
+    },
+    {
+        "name": "Wooden Shield",
+        "weight": 0,
+        "absorb": 2,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Iron Shield",
+        "weight": 0,
+        "absorb": 4,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Silver Shield",
+        "weight": 0,
+        "absorb": 8,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Flame Shield",
+        "weight": 0,
+        "absorb": 12,
+        "elementalResistances": [
+            "ICE"
+        ],
+        "spellId": 0
+    },
+    {
+        "name": "Ice Shield",
+        "weight": 0,
+        "absorb": 12,
+        "elementalResistances": [
+            "FIRE"
+        ],
+        "spellId": 0
+    },
+    {
+        "name": "Opal Shield",
+        "weight": 0,
+        "absorb": 16,
+        "elementalResistances": [
+            "LIGHTNING"
+        ],
+        "spellId": 0
+    },
+    {
+        "name": "Aegis Shield",
+        "weight": 0,
+        "absorb": 16,
+        "elementalResistances": [
+            "POISON"
+        ],
+        "spellId": 0
+    },
+    {
+        "name": "Buckler",
+        "weight": 0,
+        "absorb": 2,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "ProCape",
+        "weight": 2,
+        "absorb": 8,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Cap",
+        "weight": 1,
+        "absorb": 1,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Wooden Helmet",
+        "weight": 3,
+        "absorb": 3,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Iron Helmet",
+        "weight": 5,
+        "absorb": 5,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Silver Helmet",
+        "weight": 3,
+        "absorb": 6,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Opal Helmet",
+        "weight": 3,
+        "absorb": 8,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Heal Helmet",
+        "weight": 3,
+        "absorb": 6,
+        "elementalResistances": [],
+        "spellId": 20
+    },
+    {
+        "name": "Ribbon",
+        "weight": 1,
+        "absorb": 1,
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "TIME",
+            "DEATH",
+            "FIRE",
+            "ICE",
+            "LIGHTNING",
+            "EARTH"
+        ],
+        "spellId": 0
+    },
+    {
+        "name": "Gloves",
+        "weight": 1,
+        "absorb": 1,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Copper Gauntlet",
+        "weight": 3,
+        "absorb": 2,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Iron Gauntlet",
+        "weight": 5,
+        "absorb": 4,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Silver Gauntlet",
+        "weight": 3,
+        "absorb": 6,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "Zeus Gauntlet",
+        "weight": 3,
+        "absorb": 6,
+        "elementalResistances": [],
+        "spellId": 23
+    },
+    {
+        "name": "Power Gauntlet",
+        "weight": 3,
+        "absorb": 6,
+        "elementalResistances": [],
+        "spellId": 55
+    },
+    {
+        "name": "Opal gauntlet ",
+        "weight": 3,
+        "absorb": 8,
+        "elementalResistances": [],
+        "spellId": 0
+    },
+    {
+        "name": "ProRing",
+        "weight": 1,
+        "absorb": 8,
+        "elementalResistances": [
+            "DEATH"
+        ],
+        "spellId": 0
+    }
+]
