@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2026 user.
+ * Copyright 2026 TheFallenWarrior.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ import tools.jackson.databind.exc.JsonNodeException;
 
 /**
  *
- * @author user
+ * @author thefa
  */
 public class Armor extends Item {
     private static final String JSON_PATH = "json/armor.json";
