@@ -37,7 +37,7 @@ import java.util.concurrent.Executors;
  * @author thefa
  */
 public class Main {
-    private static final int PORT = 12345;
+    private static final int PORT = 4080;
     private static final int MAX_CLIENTS = 20;
 
     /**
