@@ -1,6 +1,8 @@
 [
     {
         "name": "Cloth",
+        "shopid": 68,
+        "price": 10,
         "weight": 2,
         "absorb": 1,
         "elementalResistances": [],
@@ -8,6 +10,8 @@
     },
     {
         "name": "Wooden Armor",
+        "shopid": 69,
+        "price": 50,
         "weight": 8,
         "absorb": 4,
         "elementalResistances": [],
@@ -15,6 +19,8 @@
     },
     {
         "name": "Chain Armor",
+        "shopid": 70,
+        "price": 80,
         "weight": 15,
         "absorb": 15,
         "elementalResistances": [],
@@ -22,6 +28,8 @@
     },
     {
         "name": "Iron Armor",
+        "shopid": 71,
+        "price": 800,
         "weight": 23,
         "absorb": 24,
         "elementalResistances": [],
@@ -29,6 +37,8 @@
     },
     {
         "name": "Steel Armor",
+        "shopid": 72,
+        "price": 45000,
         "weight": 33,
         "absorb": 34,
         "elementalResistances": [],
@@ -36,6 +46,8 @@
     },
     {
         "name": "Silver Armor",
+        "shopid": 73,
+        "price": 7500,
         "weight": 8,
         "absorb": 18,
         "elementalResistances": [],
@@ -43,6 +55,8 @@
     },
     {
         "name": "Flame Armor",
+        "shopid": 74,
+        "price": 30000,
         "weight": 10,
         "absorb": 34,
         "elementalResistances": [
@@ -52,6 +66,8 @@
     },
     {
         "name": "Ice Armor",
+        "shopid": 75,
+        "price": 30000,
         "weight": 10,
         "absorb": 34,
         "elementalResistances": [
@@ -61,6 +77,8 @@
     },
     {
         "name": "Opal Armor",
+        "shopid": 76,
+        "price": 60000,
         "weight": 10,
         "absorb": 42,
         "elementalResistances": [
@@ -70,6 +88,8 @@
     },
     {
         "name": "Dragon Armor",
+        "shopid": 77,
+        "price": 60000,
         "weight": 10,
         "absorb": 42,
         "elementalResistances": [
@@ -81,6 +101,8 @@
     },
     {
         "name": "Copper Bracelet",
+        "shopid": 78,
+        "price": 1000,
         "weight": 1,
         "absorb": 4,
         "elementalResistances": [],
@@ -88,6 +110,8 @@
     },
     {
         "name": "Silver Bracelet",
+        "shopid": 79,
+        "price": 5000,
         "weight": 1,
         "absorb": 15,
         "elementalResistances": [],
@@ -95,6 +119,8 @@
     },
     {
         "name": "Gold Bracelet",
+        "shopid": 80,
+        "price": 50000,
         "weight": 1,
         "absorb": 24,
         "elementalResistances": [],
@@ -102,6 +128,8 @@
     },
     {
         "name": "Opal Bracelet",
+        "shopid": 81,
+        "price": 65000,
         "weight": 1,
         "absorb": 34,
         "elementalResistances": [],
@@ -109,6 +137,8 @@
     },
     {
         "name": "White Shirt",
+        "shopid": 82,
+        "price": 2,
         "weight": 2,
         "absorb": 24,
         "elementalResistances": [
@@ -119,6 +149,8 @@
     },
     {
         "name": "Black Shirt",
+        "shopid": 83,
+        "price": 2,
         "weight": 2,
         "absorb": 24,
         "elementalResistances": [
@@ -129,6 +161,8 @@
     },
     {
         "name": "Wooden Shield",
+        "shopid": 84,
+        "price": 15,
         "weight": 0,
         "absorb": 2,
         "elementalResistances": [],
@@ -136,6 +170,8 @@
     },
     {
         "name": "Iron Shield",
+        "shopid": 85,
+        "price": 100,
         "weight": 0,
         "absorb": 4,
         "elementalResistances": [],
@@ -143,6 +179,8 @@
     },
     {
         "name": "Silver Shield",
+        "shopid": 86,
+        "price": 2500,
         "weight": 0,
         "absorb": 8,
         "elementalResistances": [],
@@ -150,6 +188,8 @@
     },
     {
         "name": "Flame Shield",
+        "shopid": 87,
+        "price": 10000,
         "weight": 0,
         "absorb": 12,
         "elementalResistances": [
@@ -159,6 +199,8 @@
     },
     {
         "name": "Ice Shield",
+        "shopid": 88,
+        "price": 10000,
         "weight": 0,
         "absorb": 12,
         "elementalResistances": [
@@ -168,6 +210,8 @@
     },
     {
         "name": "Opal Shield",
+        "shopid": 89,
+        "price": 15000,
         "weight": 0,
         "absorb": 16,
         "elementalResistances": [
@@ -177,6 +221,8 @@
     },
     {
         "name": "Aegis Shield",
+        "shopid": 90,
+        "price": 40000,
         "weight": 0,
         "absorb": 16,
         "elementalResistances": [
@@ -186,6 +232,8 @@
     },
     {
         "name": "Buckler",
+        "shopid": 91,
+        "price": 2500,
         "weight": 0,
         "absorb": 2,
         "elementalResistances": [],
@@ -193,6 +241,8 @@
     },
     {
         "name": "ProCape",
+        "shopid": 92,
+        "price": 20000,
         "weight": 2,
         "absorb": 8,
         "elementalResistances": [],
@@ -200,6 +250,8 @@
     },
     {
         "name": "Cap",
+        "shopid": 93,
+        "price": 80,
         "weight": 1,
         "absorb": 1,
         "elementalResistances": [],
@@ -207,6 +259,8 @@
     },
     {
         "name": "Wooden Helmet",
+        "shopid": 94,
+        "price": 100,
         "weight": 3,
         "absorb": 3,
         "elementalResistances": [],
@@ -214,6 +268,8 @@
     },
     {
         "name": "Iron Helmet",
+        "shopid": 95,
+        "price": 450,
         "weight": 5,
         "absorb": 5,
         "elementalResistances": [],
@@ -221,6 +277,8 @@
     },
     {
         "name": "Silver Helmet",
+        "shopid": 96,
+        "price": 2500,
         "weight": 3,
         "absorb": 6,
         "elementalResistances": [],
@@ -228,6 +286,8 @@
     },
     {
         "name": "Opal Helmet",
+        "shopid": 97,
+        "price": 10000,
         "weight": 3,
         "absorb": 8,
         "elementalResistances": [],
@@ -235,6 +295,8 @@
     },
     {
         "name": "Heal Helmet",
+        "shopid": 98,
+        "price": 20000,
         "weight": 3,
         "absorb": 6,
         "elementalResistances": [],
@@ -242,6 +304,8 @@
     },
     {
         "name": "Ribbon",
+        "shopid": 99,
+        "price": 2,
         "weight": 1,
         "absorb": 1,
         "elementalResistances": [
@@ -258,6 +322,8 @@
     },
     {
         "name": "Gloves",
+        "shopid": 100,
+        "price": 60,
         "weight": 1,
         "absorb": 1,
         "elementalResistances": [],
@@ -265,6 +331,8 @@
     },
     {
         "name": "Copper Gauntlet",
+        "shopid": 101,
+        "price": 200,
         "weight": 3,
         "absorb": 2,
         "elementalResistances": [],
@@ -272,6 +340,8 @@
     },
     {
         "name": "Iron Gauntlet",
+        "shopid": 102,
+        "price": 750,
         "weight": 5,
         "absorb": 4,
         "elementalResistances": [],
@@ -279,6 +349,8 @@
     },
     {
         "name": "Silver Gauntlet",
+        "shopid": 103,
+        "price": 2500,
         "weight": 3,
         "absorb": 6,
         "elementalResistances": [],
@@ -286,6 +358,8 @@
     },
     {
         "name": "Zeus Gauntlet",
+        "shopid": 104,
+        "price": 15000,
         "weight": 3,
         "absorb": 6,
         "elementalResistances": [],
@@ -293,6 +367,8 @@
     },
     {
         "name": "Power Gauntlet",
+        "shopid": 105,
+        "price": 10000,
         "weight": 3,
         "absorb": 6,
         "elementalResistances": [],
@@ -300,6 +376,8 @@
     },
     {
         "name": "Opal gauntlet ",
+        "shopid": 106,
+        "price": 20000,
         "weight": 3,
         "absorb": 8,
         "elementalResistances": [],
@@ -307,6 +385,8 @@
     },
     {
         "name": "ProRing",
+        "shopid": 107,
+        "price": 20000,
         "weight": 1,
         "absorb": 8,
         "elementalResistances": [
