@@ -29,7 +29,7 @@ package ffonline.model;
  */
 public class Item {
     private String name;
-    private int shopId;
+    private int shopId; // Number that indentifies the item in shops
     private int price;
 
     public String getName() {
