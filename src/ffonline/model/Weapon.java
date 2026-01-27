@@ -31,6 +31,7 @@ import java.util.EnumSet;
  */
 public class Weapon extends Item {
     private int hitChance;
+    private int critChance; // Weapon index number, 1-based
     private int damage;
     private int spellId;
     private EnumSet<Element> attackElements;
@@ -43,6 +44,10 @@ public class Weapon extends Item {
     
     public int getHitChance() {
         return hitChance;
+    }
+    
+    public int getCritChance() {
+        return critChance;
     }
 
     public int getDamage() {
