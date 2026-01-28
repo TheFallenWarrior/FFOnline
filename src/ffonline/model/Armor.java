@@ -45,11 +45,9 @@ public class Armor extends Item {
         if(node == null)throw new NullPointerException(
             "Attribute JsonNode node is null."
         );
-
+        
+        super(node);
         try{
-            super.setName(require(node, "name").asString());
-            super.setShopId(require(node, "shopId").asInt());
-            super.setPrice(require(node, "price").asInt());
             weight = require(node, "weight").asInt();
             absorb = require(node, "absorb").asInt();
             spellId = require(node, "spellId").asInt();

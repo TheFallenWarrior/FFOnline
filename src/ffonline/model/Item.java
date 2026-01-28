@@ -24,16 +24,57 @@
 package ffonline.model;
 
 import ffonline.JsonArrayItem;
+import java.io.File;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.exc.JsonNodeException;
 
 /**
  *
  * @author thefa
  */
 public class Item extends JsonArrayItem{
+    private static final String JSON_PATH = "json/item.json";
+    
     private String name;
     private int shopId; // Number that indentifies the item in shops
     private int price;
 
+    public Item(){}
+    
+    public Item(JsonNode node){
+        if(node == null)throw new NullPointerException(
+            "Attribute JsonNode node is null."
+        );
+        
+        try{
+            name = require(node, "name").asString();
+            shopId = require(node, "shopId").asInt();
+            price = require(node, "price").asInt();
+        } catch(JsonNodeException e){
+            throw new RuntimeException(
+                "Failed to get armor attributes from JSON." +
+                " ("+e.getMessage()+")"
+            );
+        }
+    }
+    
+    public static Item createFromId(int jsonId){
+        try{
+            JsonNode jsonRoot = MAPPER.readTree(new File(JSON_PATH));
+            
+            if(jsonId < 0 || jsonId >= jsonRoot.size()){
+                throw new IllegalArgumentException("Index out of bounds: "+jsonId);
+            }
+            return new Item(jsonRoot.get(jsonId));
+        } catch(JacksonException e){
+            throw new RuntimeException(
+                "Failed to read from "+JSON_PATH+"." +
+                " ("+e.getMessage()+")"
+            );
+        }
+    }
+    
     public String getName() {
         return name;
     }
