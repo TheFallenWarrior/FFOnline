@@ -38,7 +38,7 @@ public class Item extends JsonArrayItem{
         return name;
     }
 
-    public void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
@@ -46,7 +46,7 @@ public class Item extends JsonArrayItem{
         return shopId;
     }
 
-    public void setShopId(int shopId) throws IllegalArgumentException{
+    protected void setShopId(int shopId) throws IllegalArgumentException{
 	if(shopId < 0 || shopId > 255)
             throw new IllegalArgumentException("Shop ID must be in range 0..255; got"+ shopId +".");
         this.shopId = shopId;
@@ -56,7 +56,7 @@ public class Item extends JsonArrayItem{
         return price;
     }
 
-    public void setPrice(int price) throws IllegalArgumentException{
+    protected void setPrice(int price) throws IllegalArgumentException{
         if(price < 0 || price > 65535)
             throw new IllegalArgumentException("Item price must be in range 0..65535; got"+ price +".");
         this.price = price;
