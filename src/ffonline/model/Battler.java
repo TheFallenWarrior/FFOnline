@@ -138,7 +138,7 @@ public abstract class Battler {
 
     /*
      * Getters and setters
-         */
+     */
 
     public String getName(){
         return name;
