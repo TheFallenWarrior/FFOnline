@@ -1,0 +1,117 @@
+[
+    {
+        "name": "LUTE",
+        "shopId": 1,
+        "price": 0
+    },
+    {
+        "name": "CROWN",
+        "shopId": 2,
+        "price": 0
+    },
+    {
+        "name": "CRYSTAL",
+        "shopId": 3,
+        "price": 0
+    },
+    {
+        "name": "HERB",
+        "shopId": 4,
+        "price": 0
+    },
+    {
+        "name": "KEY",
+        "shopId": 5,
+        "price": 0
+    },
+    {
+        "name": "TNT",
+        "shopId": 6,
+        "price": 0
+    },
+    {
+        "name": "ADAMANT",
+        "shopId": 7,
+        "price": 0
+    },
+    {
+        "name": "SLAB",
+        "shopId": 8,
+        "price": 0
+    },
+    {
+        "name": "RUBY",
+        "shopId": 9,
+        "price": 0
+    },
+    {
+        "name": "ROD",
+        "shopId": 10,
+        "price": 0
+    },
+    {
+        "name": "FLOATER",
+        "shopId": 11,
+        "price": 0
+    },
+    {
+        "name": "CHIME",
+        "shopId": 12,
+        "price": 0
+    },
+    {
+        "name": "TAIL",
+        "shopId": 13,
+        "price": 0
+    },
+    {
+        "name": "CUBE",
+        "shopId": 14,
+        "price": 0
+    },
+    {
+        "name": "BOTTLE",
+        "shopId": 15,
+        "price": 50000
+    },
+    {
+        "name": "OXYALE",
+        "shopId": 16,
+        "price": 0
+    },
+    {
+        "name": "CANOE",
+        "shopId": 17,
+        "price": 0
+    },
+    {
+        "name": "TENT",
+        "shopId": 22,
+        "price": 75
+    },
+    {
+        "name": "CABIN",
+        "shopId": 23,
+        "price": 250
+    },
+    {
+        "name": "HOUSE",
+        "shopId": 24,
+        "price": 3000
+    },
+    {
+        "name": "HEAL",
+        "shopId": 25,
+        "price": 60
+    },
+    {
+        "name": "PURE",
+        "shopId": 26,
+        "price": 75
+    },
+    {
+        "name": "SOFT",
+        "shopId": 27,
+        "price": 800
+    }
+]
