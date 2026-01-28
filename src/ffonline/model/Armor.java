@@ -48,6 +48,8 @@ public class Armor extends Item {
 
         try{
             super.setName(require(node, "name").asString());
+            super.setShopId(require(node, "shopId").asInt());
+            super.setPrice(require(node, "price").asInt());
             weight = require(node, "weight").asInt();
             absorb = require(node, "absorb").asInt();
             spellId = require(node, "spellId").asInt();
