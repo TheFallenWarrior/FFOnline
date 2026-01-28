@@ -1,7 +1,7 @@
 [
     {
         "name": "Cloth",
-        "shopid": 68,
+        "shopId": 68,
         "price": 10,
         "weight": 2,
         "absorb": 1,
@@ -10,7 +10,7 @@
     },
     {
         "name": "Wooden Armor",
-        "shopid": 69,
+        "shopId": 69,
         "price": 50,
         "weight": 8,
         "absorb": 4,
@@ -19,7 +19,7 @@
     },
     {
         "name": "Chain Armor",
-        "shopid": 70,
+        "shopId": 70,
         "price": 80,
         "weight": 15,
         "absorb": 15,
@@ -28,7 +28,7 @@
     },
     {
         "name": "Iron Armor",
-        "shopid": 71,
+        "shopId": 71,
         "price": 800,
         "weight": 23,
         "absorb": 24,
@@ -37,7 +37,7 @@
     },
     {
         "name": "Steel Armor",
-        "shopid": 72,
+        "shopId": 72,
         "price": 45000,
         "weight": 33,
         "absorb": 34,
@@ -46,7 +46,7 @@
     },
     {
         "name": "Silver Armor",
-        "shopid": 73,
+        "shopId": 73,
         "price": 7500,
         "weight": 8,
         "absorb": 18,
@@ -55,7 +55,7 @@
     },
     {
         "name": "Flame Armor",
-        "shopid": 74,
+        "shopId": 74,
         "price": 30000,
         "weight": 10,
         "absorb": 34,
@@ -66,7 +66,7 @@
     },
     {
         "name": "Ice Armor",
-        "shopid": 75,
+        "shopId": 75,
         "price": 30000,
         "weight": 10,
         "absorb": 34,
@@ -77,7 +77,7 @@
     },
     {
         "name": "Opal Armor",
-        "shopid": 76,
+        "shopId": 76,
         "price": 60000,
         "weight": 10,
         "absorb": 42,
@@ -88,7 +88,7 @@
     },
     {
         "name": "Dragon Armor",
-        "shopid": 77,
+        "shopId": 77,
         "price": 60000,
         "weight": 10,
         "absorb": 42,
@@ -101,7 +101,7 @@
     },
     {
         "name": "Copper Bracelet",
-        "shopid": 78,
+        "shopId": 78,
         "price": 1000,
         "weight": 1,
         "absorb": 4,
@@ -110,7 +110,7 @@
     },
     {
         "name": "Silver Bracelet",
-        "shopid": 79,
+        "shopId": 79,
         "price": 5000,
         "weight": 1,
         "absorb": 15,
@@ -119,7 +119,7 @@
     },
     {
         "name": "Gold Bracelet",
-        "shopid": 80,
+        "shopId": 80,
         "price": 50000,
         "weight": 1,
         "absorb": 24,
@@ -128,7 +128,7 @@
     },
     {
         "name": "Opal Bracelet",
-        "shopid": 81,
+        "shopId": 81,
         "price": 65000,
         "weight": 1,
         "absorb": 34,
@@ -137,7 +137,7 @@
     },
     {
         "name": "White Shirt",
-        "shopid": 82,
+        "shopId": 82,
         "price": 2,
         "weight": 2,
         "absorb": 24,
@@ -149,7 +149,7 @@
     },
     {
         "name": "Black Shirt",
-        "shopid": 83,
+        "shopId": 83,
         "price": 2,
         "weight": 2,
         "absorb": 24,
@@ -161,7 +161,7 @@
     },
     {
         "name": "Wooden Shield",
-        "shopid": 84,
+        "shopId": 84,
         "price": 15,
         "weight": 0,
         "absorb": 2,
@@ -170,7 +170,7 @@
     },
     {
         "name": "Iron Shield",
-        "shopid": 85,
+        "shopId": 85,
         "price": 100,
         "weight": 0,
         "absorb": 4,
@@ -179,7 +179,7 @@
     },
     {
         "name": "Silver Shield",
-        "shopid": 86,
+        "shopId": 86,
         "price": 2500,
         "weight": 0,
         "absorb": 8,
@@ -188,7 +188,7 @@
     },
     {
         "name": "Flame Shield",
-        "shopid": 87,
+        "shopId": 87,
         "price": 10000,
         "weight": 0,
         "absorb": 12,
@@ -199,7 +199,7 @@
     },
     {
         "name": "Ice Shield",
-        "shopid": 88,
+        "shopId": 88,
         "price": 10000,
         "weight": 0,
         "absorb": 12,
@@ -210,7 +210,7 @@
     },
     {
         "name": "Opal Shield",
-        "shopid": 89,
+        "shopId": 89,
         "price": 15000,
         "weight": 0,
         "absorb": 16,
@@ -221,7 +221,7 @@
     },
     {
         "name": "Aegis Shield",
-        "shopid": 90,
+        "shopId": 90,
         "price": 40000,
         "weight": 0,
         "absorb": 16,
@@ -232,7 +232,7 @@
     },
     {
         "name": "Buckler",
-        "shopid": 91,
+        "shopId": 91,
         "price": 2500,
         "weight": 0,
         "absorb": 2,
@@ -241,7 +241,7 @@
     },
     {
         "name": "ProCape",
-        "shopid": 92,
+        "shopId": 92,
         "price": 20000,
         "weight": 2,
         "absorb": 8,
@@ -250,7 +250,7 @@
     },
     {
         "name": "Cap",
-        "shopid": 93,
+        "shopId": 93,
         "price": 80,
         "weight": 1,
         "absorb": 1,
@@ -259,7 +259,7 @@
     },
     {
         "name": "Wooden Helmet",
-        "shopid": 94,
+        "shopId": 94,
         "price": 100,
         "weight": 3,
         "absorb": 3,
@@ -268,7 +268,7 @@
     },
     {
         "name": "Iron Helmet",
-        "shopid": 95,
+        "shopId": 95,
         "price": 450,
         "weight": 5,
         "absorb": 5,
@@ -277,7 +277,7 @@
     },
     {
         "name": "Silver Helmet",
-        "shopid": 96,
+        "shopId": 96,
         "price": 2500,
         "weight": 3,
         "absorb": 6,
@@ -286,7 +286,7 @@
     },
     {
         "name": "Opal Helmet",
-        "shopid": 97,
+        "shopId": 97,
         "price": 10000,
         "weight": 3,
         "absorb": 8,
@@ -295,7 +295,7 @@
     },
     {
         "name": "Heal Helmet",
-        "shopid": 98,
+        "shopId": 98,
         "price": 20000,
         "weight": 3,
         "absorb": 6,
@@ -304,7 +304,7 @@
     },
     {
         "name": "Ribbon",
-        "shopid": 99,
+        "shopId": 99,
         "price": 2,
         "weight": 1,
         "absorb": 1,
@@ -322,7 +322,7 @@
     },
     {
         "name": "Gloves",
-        "shopid": 100,
+        "shopId": 100,
         "price": 60,
         "weight": 1,
         "absorb": 1,
@@ -331,7 +331,7 @@
     },
     {
         "name": "Copper Gauntlet",
-        "shopid": 101,
+        "shopId": 101,
         "price": 200,
         "weight": 3,
         "absorb": 2,
@@ -340,7 +340,7 @@
     },
     {
         "name": "Iron Gauntlet",
-        "shopid": 102,
+        "shopId": 102,
         "price": 750,
         "weight": 5,
         "absorb": 4,
@@ -349,7 +349,7 @@
     },
     {
         "name": "Silver Gauntlet",
-        "shopid": 103,
+        "shopId": 103,
         "price": 2500,
         "weight": 3,
         "absorb": 6,
@@ -358,7 +358,7 @@
     },
     {
         "name": "Zeus Gauntlet",
-        "shopid": 104,
+        "shopId": 104,
         "price": 15000,
         "weight": 3,
         "absorb": 6,
@@ -367,7 +367,7 @@
     },
     {
         "name": "Power Gauntlet",
-        "shopid": 105,
+        "shopId": 105,
         "price": 10000,
         "weight": 3,
         "absorb": 6,
@@ -376,7 +376,7 @@
     },
     {
         "name": "Opal gauntlet ",
-        "shopid": 106,
+        "shopId": 106,
         "price": 20000,
         "weight": 3,
         "absorb": 8,
@@ -385,7 +385,7 @@
     },
     {
         "name": "ProRing",
-        "shopid": 107,
+        "shopId": 107,
         "price": 20000,
         "weight": 1,
         "absorb": 8,
