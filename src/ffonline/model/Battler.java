@@ -79,7 +79,6 @@ public abstract class Battler {
      * Battle methods
      */
 
-    // TODO: Elemental effects on attacks
     public AttackResult attack(Battler target){
         int totalDamage = 0, successfulHits = 0;
         boolean isCritical = false;
@@ -100,6 +99,8 @@ public abstract class Battler {
             if((hitRoll > finalHitChance && hitRoll != 0) || hitRoll == 200) continue; // Attack missed
 
             // Calculate damage
+            // Due to a bug in the original game, elements and enemy types have no
+            // effect in damage output. 
             int baseDamage = damage + (int)(Math.random()*damage);
             if(rollCrit()){
                 baseDamage *= 2;
