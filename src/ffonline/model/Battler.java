@@ -30,224 +30,224 @@ import java.util.EnumSet;
  * @author thefa
  */
 public abstract class Battler {
-	private String name;
-	private EnumSet<StatusAilment> statuses;
-	private EnumSet<Element> attackElements;
-	private EnumSet<Element> elementalResistances;
-	private EnumSet<Element> elementalWeaknesses;
+    private String name;
+    private EnumSet<StatusAilment> statuses;
+    private EnumSet<Element> attackElements;
+    private EnumSet<Element> elementalResistances;
+    private EnumSet<Element> elementalWeaknesses;
 
-	/*
-	 * Battle stats
-	 */
-	private int hp;
-	private int damage; // Attack
-	private int absorb; // Defense
-	private int evadeChance; // Evasion
-	private int hitChance;   // Accuracy
-	private int magicAbsorb;
+    /*
+     * Battle stats
+     */
+    private int hp;
+    private int damage; // Attack
+    private int absorb; // Defense
+    private int evadeChance; // Evasion
+    private int hitChance;   // Accuracy
+    private int magicAbsorb;
 
-	private int hitMultiplier = 1; // Affects number of hit per turn
+    private int hitMultiplier = 1; // Affects number of hit per turn
 
     public Battler(){
-		statuses = EnumSet.noneOf(StatusAilment.class);
-	}
+        statuses = EnumSet.noneOf(StatusAilment.class);
+    }
 
-	/*
-	 * Status ailment management
-	 */
+    /*
+     * Status ailment management
+     */
 
-	public boolean hasStatus(StatusAilment status){
-		return statuses.contains(status);
-	}
+    public boolean hasStatus(StatusAilment status){
+        return statuses.contains(status);
+    }
 
-	public void addStatus(StatusAilment status){
-		if(
-			(status == StatusAilment.POISONED && this instanceof Enemy) ||
-			(status == StatusAilment.CONFUSED && this instanceof PlayerCharacter) ||
-			hasStatus(StatusAilment.DEAD) || hasStatus(StatusAilment.PETRIFIED)
-		) return;
-		if(status == StatusAilment.DEAD) hp = 0;
-		statuses.add(status);
-	}
+    public void addStatus(StatusAilment status){
+        if(
+            (status == StatusAilment.POISONED && this instanceof Enemy) ||
+            (status == StatusAilment.CONFUSED && this instanceof PlayerCharacter) ||
+            hasStatus(StatusAilment.DEAD) || hasStatus(StatusAilment.PETRIFIED)
+        ) return;
+        if(status == StatusAilment.DEAD) hp = 0;
+        statuses.add(status);
+    }
 
-	public void removeStatus(StatusAilment status){
-		if(status == StatusAilment.DEAD) hp = 1;
-		statuses.remove(status);
-	}
+    public void removeStatus(StatusAilment status){
+        if(status == StatusAilment.DEAD) hp = 1;
+        statuses.remove(status);
+    }
 
-	/*
-	 * Battle methods
-	 */
+    /*
+     * Battle methods
+     */
 
-	// TODO: Elemental effects on attacks
-	public AttackResult attack(Battler target){
-		int totalDamage = 0, successfulHits = 0;
-		boolean isCritical = false;
+    // TODO: Elemental effects on attacks
+    public AttackResult attack(Battler target){
+        int totalDamage = 0, successfulHits = 0;
+        boolean isCritical = false;
 
-		for(int i=0;i<getHitsPerTurn();i++){
-			// Calculate hit/miss
-			int baseHitChance = 168;
-			if(hasStatus(StatusAilment.BLIND))        baseHitChance -= 40;
-			if(target.hasStatus(StatusAilment.BLIND)) baseHitChance += 40;
+        for(int i=0;i<getHitsPerTurn();i++){
+            // Calculate hit/miss
+            int baseHitChance = 168;
+            if(hasStatus(StatusAilment.BLIND))        baseHitChance -= 40;
+            if(target.hasStatus(StatusAilment.BLIND)) baseHitChance += 40;
 
-			int finalHitChance;
-			if(target.hasStatus(StatusAilment.ASLEEP) || target.hasStatus(StatusAilment.PARALYZED))
-				finalHitChance = baseHitChance;
-			else finalHitChance = Math.min(baseHitChance + hitChance, 255) - target.getEvadeChance();
+            int finalHitChance;
+            if(target.hasStatus(StatusAilment.ASLEEP) || target.hasStatus(StatusAilment.PARALYZED))
+                finalHitChance = baseHitChance;
+            else finalHitChance = Math.min(baseHitChance + hitChance, 255) - target.getEvadeChance();
 
-			// A hit roll of 200 is an automatic miss; 0 is an automatic hit
-			int hitRoll = (int)(Math.random()*201);
-			if((hitRoll > finalHitChance && hitRoll != 0) || hitRoll == 200) continue; // Attack missed
+            // A hit roll of 200 is an automatic miss; 0 is an automatic hit
+            int hitRoll = (int)(Math.random()*201);
+            if((hitRoll > finalHitChance && hitRoll != 0) || hitRoll == 200) continue; // Attack missed
 
-			// Calculate damage
-			int baseDamage = damage + (int)(Math.random()*damage);
-			if(rollCrit()){
-				baseDamage *= 2;
-				isCritical = true;
-			}
-			if(target.hasStatus(StatusAilment.ASLEEP) || target.hasStatus(StatusAilment.PARALYZED))
-				baseDamage = (baseDamage*5) / 4;
+            // Calculate damage
+            int baseDamage = damage + (int)(Math.random()*damage);
+            if(rollCrit()){
+                baseDamage *= 2;
+                isCritical = true;
+            }
+            if(target.hasStatus(StatusAilment.ASLEEP) || target.hasStatus(StatusAilment.PARALYZED))
+                baseDamage = (baseDamage*5) / 4;
 
-			int attackDamage = Math.max(baseDamage - target.absorb, 1);
+            int attackDamage = Math.max(baseDamage - target.absorb, 1);
 
-			totalDamage += attackDamage;
-			successfulHits++;
+            totalDamage += attackDamage;
+            successfulHits++;
 
-			target.offsetHp(-attackDamage);
-		}
-		
-		return new AttackResult(totalDamage, successfulHits, isCritical);
-	}
+            target.offsetHp(-attackDamage);
+        }
+        
+        return new AttackResult(totalDamage, successfulHits, isCritical);
+    }
 
-	public abstract boolean rollCrit();
+    public abstract boolean rollCrit();
 
-	/**
-	 * Removes temporary battle effects; on enemies, it immediately kills them.
-	 */
-	public abstract void battleEnd();
+    /**
+     * Removes temporary battle effects; on enemies, it immediately kills them.
+     */
+    public abstract void battleEnd();
 
 
-	public void increaseHitMultiplier(){
-		hitMultiplier++;
-	}
+    public void increaseHitMultiplier(){
+        hitMultiplier++;
+    }
 
-	public void decreaseHitMultiplier(){
-		hitMultiplier = Math.max(hitMultiplier-1, 0);
-	}
+    public void decreaseHitMultiplier(){
+        hitMultiplier = Math.max(hitMultiplier-1, 0);
+    }
 
-	/*
-	 * Getters and setters
+    /*
+     * Getters and setters
          */
 
-	public String getName(){
-		return name;
-	}
+    public String getName(){
+        return name;
+    }
 
-	public void setName(String name){
-		this.name = name;
-	}
+    public void setName(String name){
+        this.name = name;
+    }
 
-	public EnumSet<StatusAilment> getStatuses(){
-		return statuses.clone();
-	}
+    public EnumSet<StatusAilment> getStatuses(){
+        return statuses.clone();
+    }
 
-	public void setAttackElements(EnumSet<Element> attackElements){
-		this.attackElements = attackElements;
-	}
+    public void setAttackElements(EnumSet<Element> attackElements){
+        this.attackElements = attackElements;
+    }
 
-	public EnumSet<Element> getAttackElements(){
-		return attackElements.clone();
-	}
+    public EnumSet<Element> getAttackElements(){
+        return attackElements.clone();
+    }
 
-	public void setElementalResistances(EnumSet<Element> elementalResistances){
-		this.elementalResistances = elementalResistances;
-	}
+    public void setElementalResistances(EnumSet<Element> elementalResistances){
+        this.elementalResistances = elementalResistances;
+    }
 
-	public EnumSet<Element> getElementalResistances(){
-		return elementalResistances.clone();
-	}
+    public EnumSet<Element> getElementalResistances(){
+        return elementalResistances.clone();
+    }
 
-	public void setElementalWeaknesses(EnumSet<Element> elementalWeaknesses){
-		this.elementalWeaknesses = elementalWeaknesses;
-	}
+    public void setElementalWeaknesses(EnumSet<Element> elementalWeaknesses){
+        this.elementalWeaknesses = elementalWeaknesses;
+    }
 
-	public EnumSet<Element> getElementalWeaknesses(){
-		return elementalWeaknesses.clone();
-	}
+    public EnumSet<Element> getElementalWeaknesses(){
+        return elementalWeaknesses.clone();
+    }
 
-	public int getHp(){
-		return hp;
-	}
+    public int getHp(){
+        return hp;
+    }
 
-	public void setHp(int hp){
-		if(
-			hasStatus(StatusAilment.DEAD) ||
-			hasStatus(StatusAilment.PETRIFIED)
-		) return;
-		if(hp <= 0){
-			addStatus(StatusAilment.DEAD);
-			return;
-		}
-		this.hp = hp;
-	}
+    public void setHp(int hp){
+        if(
+            hasStatus(StatusAilment.DEAD) ||
+            hasStatus(StatusAilment.PETRIFIED)
+        ) return;
+        if(hp <= 0){
+            addStatus(StatusAilment.DEAD);
+            return;
+        }
+        this.hp = hp;
+    }
 
-	public void offsetHp(int offset){
-		setHp(hp + offset);
-	}
+    public void offsetHp(int offset){
+        setHp(hp + offset);
+    }
 
-	public int getDamage(){
-		return damage;
-	}
+    public int getDamage(){
+        return damage;
+    }
 
-	public void setDamage(int damage) throws IllegalArgumentException{
-		if(damage < 0 || damage > 255)
-			throw new IllegalArgumentException("DAMAGE must be in range 0..255; got"+ damage +".");
-		this.damage = damage;
-	}
+    public void setDamage(int damage) throws IllegalArgumentException{
+        if(damage < 0 || damage > 255)
+            throw new IllegalArgumentException("DAMAGE must be in range 0..255; got"+ damage +".");
+        this.damage = damage;
+    }
 
-	public int getAbsorb(){
-		return absorb;
-	}
+    public int getAbsorb(){
+        return absorb;
+    }
 
-	public void setAbsorb(int absorb) throws IllegalArgumentException{
-		if(absorb < 0 || absorb > 255)
-			throw new IllegalArgumentException("ABSORB must be in range 0..255; got"+ absorb +".");
-		this.absorb = absorb;
-	}
+    public void setAbsorb(int absorb) throws IllegalArgumentException{
+        if(absorb < 0 || absorb > 255)
+            throw new IllegalArgumentException("ABSORB must be in range 0..255; got"+ absorb +".");
+        this.absorb = absorb;
+    }
 
-	public int getEvadeChance(){
-		return evadeChance;
-	}
+    public int getEvadeChance(){
+        return evadeChance;
+    }
 
-	public void setEvadeChance(int evadeChance) throws IllegalArgumentException{
-		if(evadeChance < 0 || evadeChance > 255)
-			throw new IllegalArgumentException("EVADE% must be in range 0..255; got"+ evadeChance +".");
-		this.evadeChance = evadeChance;
-	}
+    public void setEvadeChance(int evadeChance) throws IllegalArgumentException{
+        if(evadeChance < 0 || evadeChance > 255)
+            throw new IllegalArgumentException("EVADE% must be in range 0..255; got"+ evadeChance +".");
+        this.evadeChance = evadeChance;
+    }
 
-	public int getHitChance(){
-		return hitChance;
-	}
+    public int getHitChance(){
+        return hitChance;
+    }
 
-	public void setHitChance(int hitChance) throws IllegalArgumentException{
-		if(hitChance < 0 || hitChance > 255)
-			throw new IllegalArgumentException("HIT% must be in range 0..255; got"+ hitChance +".");
-		this.hitChance = hitChance;
-	}
+    public void setHitChance(int hitChance) throws IllegalArgumentException{
+        if(hitChance < 0 || hitChance > 255)
+            throw new IllegalArgumentException("HIT% must be in range 0..255; got"+ hitChance +".");
+        this.hitChance = hitChance;
+    }
 
-	public int getHitMultiplier(){
-		return hitMultiplier;
-	}
+    public int getHitMultiplier(){
+        return hitMultiplier;
+    }
 
-	public abstract int getHitsPerTurn();
-	
-	public int getMagicAbsorb(){
-		return magicAbsorb;
-	}
+    public abstract int getHitsPerTurn();
+    
+    public int getMagicAbsorb(){
+        return magicAbsorb;
+    }
 
-	public void setMagicAbsorb(int magicAbsorb) throws IllegalArgumentException{
-		if(magicAbsorb < 0 || magicAbsorb > 255)
-			throw new IllegalArgumentException("MagABSORB must be in range 0..255; got"+ magicAbsorb +".");
-		this.magicAbsorb = magicAbsorb;
-	}
+    public void setMagicAbsorb(int magicAbsorb) throws IllegalArgumentException{
+        if(magicAbsorb < 0 || magicAbsorb > 255)
+            throw new IllegalArgumentException("MagABSORB must be in range 0..255; got"+ magicAbsorb +".");
+        this.magicAbsorb = magicAbsorb;
+    }
 }

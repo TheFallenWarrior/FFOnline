@@ -44,11 +44,11 @@ public class PlayerCharacter extends Battler {
     @Override
     public void battleEnd(){
 
-	}
+    }
 
     @Override
     public int getHitsPerTurn(){
-    	return (1+getHitChance()/32) * getHitMultiplier();
+        return (1+getHitChance()/32) * getHitMultiplier();
     }
 
     public int getLevel() {

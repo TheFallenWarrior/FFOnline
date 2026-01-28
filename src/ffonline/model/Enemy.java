@@ -33,7 +33,7 @@ public class Enemy extends Battler{
 
     @Override
     public void battleEnd(){
-    	setHp(0);
+        setHp(0);
     }
 
     @Override
