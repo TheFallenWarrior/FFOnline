@@ -1,0 +1,482 @@
+[
+    {
+        "name": "Wooden Nunchucks",
+        "shopid": 28,
+        "price": 0,
+        "hitChance": 0,
+        "critChance": 1,
+        "damage": 12,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Small Knife",
+        "shopid": 29,
+        "price": 0,
+        "hitChance": 10,
+        "critChance": 2,
+        "damage": 5,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Wooden Staff",
+        "shopid": 30,
+        "price": 0,
+        "hitChance": 0,
+        "critChance": 3,
+        "damage": 6,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Rapier",
+        "shopid": 31,
+        "price": 0,
+        "hitChance": 5,
+        "critChance": 4,
+        "damage": 9,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Iron Hammer",
+        "shopid": 32,
+        "price": 0,
+        "hitChance": 0,
+        "critChance": 5,
+        "damage": 9,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Short Sword",
+        "shopid": 33,
+        "price": 0,
+        "hitChance": 10,
+        "critChance": 6,
+        "damage": 15,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Hand Axe",
+        "shopid": 34,
+        "price": 0,
+        "hitChance": 5,
+        "critChance": 7,
+        "damage": 16,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Scimtar",
+        "shopid": 35,
+        "price": 0,
+        "hitChance": 10,
+        "critChance": 8,
+        "damage": 10,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Iron Nunchucks",
+        "shopid": 36,
+        "price": 0,
+        "hitChance": 0,
+        "critChance": 9,
+        "damage": 16,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Large Knife",
+        "shopid": 37,
+        "price": 0,
+        "hitChance": 10,
+        "critChance": 10,
+        "damage": 7,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Iron Staff",
+        "shopid": 38,
+        "price": 0,
+        "hitChance": 0,
+        "critChance": 11,
+        "damage": 14,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Sabre",
+        "shopid": 39,
+        "price": 0,
+        "hitChance": 5,
+        "critChance": 12,
+        "damage": 13,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Long Sword",
+        "shopid": 40,
+        "price": 0,
+        "hitChance": 10,
+        "critChance": 13,
+        "damage": 20,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Great Axe",
+        "shopid": 41,
+        "price": 0,
+        "hitChance": 5,
+        "critChance": 14,
+        "damage": 22,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Falchion",
+        "shopid": 42,
+        "price": 0,
+        "hitChance": 10,
+        "critChance": 15,
+        "damage": 15,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Silver Knife",
+        "shopid": 43,
+        "price": 0,
+        "hitChance": 15,
+        "critChance": 16,
+        "damage": 10,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Silver Sword",
+        "shopid": 44,
+        "price": 0,
+        "hitChance": 15,
+        "critChance": 17,
+        "damage": 23,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Silver Hammer",
+        "shopid": 45,
+        "price": 0,
+        "hitChance": 5,
+        "critChance": 18,
+        "damage": 12,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Silver Axe",
+        "shopid": 46,
+        "price": 0,
+        "hitChance": 10,
+        "critChance": 19,
+        "damage": 25,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Flame Sword",
+        "shopid": 47,
+        "price": 0,
+        "hitChance": 20,
+        "critChance": 20,
+        "damage": 26,
+        "spellId": 0,
+        "attackElements": [
+            "FIRE"
+        ],
+        "enemyTypes": [
+            "UNDEAD",
+            "REGENERATIVE"
+        ]
+    },
+    {
+        "name": "Ice Sword",
+        "shopid": 48,
+        "price": 0,
+        "hitChance": 25,
+        "critChance": 21,
+        "damage": 29,
+        "spellId": 0,
+        "attackElements": [
+            "ICE"
+        ],
+        "enemyTypes": []
+    },
+    {
+        "name": "Dragon Sword",
+        "shopid": 49,
+        "price": 0,
+        "hitChance": 15,
+        "critChance": 22,
+        "damage": 19,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": [
+            "DRAGON"
+        ]
+    },
+    {
+        "name": "Giant Sword",
+        "shopid": 50,
+        "price": 0,
+        "hitChance": 20,
+        "critChance": 23,
+        "damage": 21,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": [
+            "GIANT"
+        ]
+    },
+    {
+        "name": "Sun Sword",
+        "shopid": 51,
+        "price": 0,
+        "hitChance": 30,
+        "critChance": 24,
+        "damage": 32,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": [
+            "UNDEAD"
+        ]
+    },
+    {
+        "name": "Coral Sword",
+        "shopid": 52,
+        "price": 0,
+        "hitChance": 15,
+        "critChance": 25,
+        "damage": 19,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": [
+            "AQUATIC"
+        ]
+    },
+    {
+        "name": "Were Sword",
+        "shopid": 53,
+        "price": 0,
+        "hitChance": 15,
+        "critChance": 26,
+        "damage": 18,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": [
+            "WERE"
+        ]
+    },
+    {
+        "name": "Rune Sword",
+        "shopid": 54,
+        "price": 0,
+        "hitChance": 15,
+        "critChance": 27,
+        "damage": 18,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": [
+            "MAGICAL",
+            "MAGE"
+        ]
+    },
+    {
+        "name": "Power Staff",
+        "shopid": 55,
+        "price": 0,
+        "hitChance": 0,
+        "critChance": 28,
+        "damage": 12,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Light Axe",
+        "shopid": 56,
+        "price": 0,
+        "hitChance": 15,
+        "critChance": 29,
+        "damage": 28,
+        "spellId": 18,
+        "attackElements": [],
+        "enemyTypes": [
+            "UNDEAD"
+        ]
+    },
+    {
+        "name": "Heal Staff",
+        "shopid": 57,
+        "price": 0,
+        "hitChance": 0,
+        "critChance": 30,
+        "damage": 6,
+        "spellId": 20,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Mage Staff",
+        "shopid": 58,
+        "price": 0,
+        "hitChance": 10,
+        "critChance": 31,
+        "damage": 12,
+        "spellId": 21,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Defense",
+        "shopid": 59,
+        "price": 0,
+        "hitChance": 35,
+        "critChance": 32,
+        "damage": 30,
+        "spellId": 4,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Wizard Staff",
+        "shopid": 60,
+        "price": 0,
+        "hitChance": 15,
+        "critChance": 33,
+        "damage": 15,
+        "spellId": 31,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Vorpal",
+        "shopid": 61,
+        "price": 0,
+        "hitChance": 25,
+        "critChance": 34,
+        "damage": 24,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "CatClaw",
+        "shopid": 62,
+        "price": 0,
+        "hitChance": 35,
+        "critChance": 35,
+        "damage": 22,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Thor's Hammer",
+        "shopid": 63,
+        "price": 0,
+        "hitChance": 15,
+        "critChance": 36,
+        "damage": 18,
+        "spellId": 23,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Bane Sword",
+        "shopid": 64,
+        "price": 0,
+        "hitChance": 20,
+        "critChance": 37,
+        "damage": 22,
+        "spellId": 38,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "Katana",
+        "shopid": 65,
+        "price": 0,
+        "hitChance": 35,
+        "critChance": 38,
+        "damage": 33,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    },
+    {
+        "name": "XCalbur",
+        "shopid": 66,
+        "price": 0,
+        "hitChance": 35,
+        "critChance": 39,
+        "damage": 45,
+        "spellId": 0,
+        "attackElements": [
+            "STATUS",
+            "POISON",
+            "TIME",
+            "DEATH",
+            "FIRE",
+            "ICE",
+            "LIGHTNING",
+            "EARTH"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "DRAGON",
+            "GIANT",
+            "UNDEAD",
+            "WERE",
+            "AQUATIC",
+            "MAGE",
+            "REGENERATIVE"
+        ]
+    },
+    {
+        "name": "Masmune",
+        "shopid": 67,
+        "price": 0,
+        "hitChance": 50,
+        "critChance": 40,
+        "damage": 56,
+        "spellId": 0,
+        "attackElements": [],
+        "enemyTypes": []
+    }
+]
