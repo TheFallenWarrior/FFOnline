@@ -23,7 +23,7 @@
  */
 package ffonline.model;
 
-import ffonline.JsonArrayItem;
+import ffonline.JsonHelper;
 import java.io.File;
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.JsonNode;
@@ -33,7 +33,7 @@ import tools.jackson.databind.exc.JsonNodeException;
  *
  * @author thefa
  */
-public class Item extends JsonArrayItem{
+public class Item{
     private static final String JSON_PATH = "json/item.json";
     
     private String name;
@@ -48,9 +48,9 @@ public class Item extends JsonArrayItem{
         );
         
         try{
-            name = require(node, "name").asString();
-            shopId = require(node, "shopId").asInt();
-            price = require(node, "price").asInt();
+            name = JsonHelper.require(node, "name").asString();
+            shopId = JsonHelper.require(node, "shopId").asInt();
+            price = JsonHelper.require(node, "price").asInt();
         } catch(JsonNodeException e){
             throw new RuntimeException(
                 "Failed to get armor attributes from JSON." +
@@ -61,7 +61,7 @@ public class Item extends JsonArrayItem{
     
     public static Item createFromId(int jsonId){
         try{
-            JsonNode jsonRoot = MAPPER.readTree(new File(JSON_PATH));
+            JsonNode jsonRoot = JsonHelper.MAPPER.readTree(new File(JSON_PATH));
             
             if(jsonId < 0 || jsonId >= jsonRoot.size()){
                 throw new IllegalArgumentException("Index out of bounds: "+jsonId);

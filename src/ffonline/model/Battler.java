@@ -161,7 +161,7 @@ public abstract class Battler {
     }
 
     public void setElementalResistances(EnumSet<Element> elementalResistances){
-        this.elementalResistances = elementalResistances;
+        this.elementalResistances = EnumSet.copyOf(elementalResistances);
     }
 
     public EnumSet<Element> getElementalResistances(){
@@ -169,7 +169,7 @@ public abstract class Battler {
     }
 
     public void setElementalWeaknesses(EnumSet<Element> elementalWeaknesses){
-        this.elementalWeaknesses = elementalWeaknesses;
+        this.elementalWeaknesses = EnumSet.copyOf(elementalWeaknesses);
     }
 
     public EnumSet<Element> getElementalWeaknesses(){

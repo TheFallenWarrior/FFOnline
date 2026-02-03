@@ -23,6 +23,7 @@
  */
 package ffonline.model;
 
+import ffonline.JsonHelper;
 import java.io.File;
 import java.util.EnumSet;
 import tools.jackson.core.JacksonException;
@@ -48,12 +49,12 @@ public class Armor extends Item {
         
         super(node);
         try{
-            weight = require(node, "weight").asInt();
-            absorb = require(node, "absorb").asInt();
-            spellId = require(node, "spellId").asInt();
+            weight = JsonHelper.require(node, "weight").asInt();
+            absorb = JsonHelper.require(node, "absorb").asInt();
+            spellId = JsonHelper.require(node, "spellId").asInt();
 
             elementalResistances = EnumSet.noneOf(Element.class);
-            for(JsonNode i : require(node, "elementalResistances")){
+            for(JsonNode i : JsonHelper.require(node, "elementalResistances")){
                 elementalResistances.add(Element.valueOf(i.asString()));
             }
         } catch(JsonNodeException e){
@@ -66,7 +67,7 @@ public class Armor extends Item {
 
     public static Armor createFromId(int jsonId){
         try{
-            JsonNode jsonRoot = MAPPER.readTree(new File(JSON_PATH));
+            JsonNode jsonRoot = JsonHelper.MAPPER.readTree(new File(JSON_PATH));
 
             if(jsonId < 0 || jsonId >= jsonRoot.size()){
                 throw new IllegalArgumentException("Index out of bounds: "+jsonId);

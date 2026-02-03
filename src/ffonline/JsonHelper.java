@@ -28,10 +28,9 @@ import tools.jackson.databind.ObjectMapper;
 
 /**
  * @author thefa
- * A base class for objects created from an entry in JSON array.
  */
-public class JsonArrayItem {
-    protected static final ObjectMapper MAPPER = new ObjectMapper();
+public class JsonHelper {
+    public static final ObjectMapper MAPPER = new ObjectMapper();
     
     /**
      * Ensures that a required JSON field exists and is not null
@@ -39,7 +38,7 @@ public class JsonArrayItem {
      * @param field the name of the field
      * @return the field's value
      */
-    protected static JsonNode require(JsonNode node, String field){
+    public static JsonNode require(JsonNode node, String field){
         JsonNode value = node.get(field);
         if(value == null || value.isNull()){
             throw new IllegalStateException("Missing field: " + field);
