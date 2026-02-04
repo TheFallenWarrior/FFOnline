@@ -36,9 +36,9 @@ import tools.jackson.databind.ObjectMapper;
 /**
  * @author thefa
  */
-public class JsonHelper {
+public class JsonLoader {
     public static final ObjectMapper MAPPER = new ObjectMapper();
-    private static final Logger LOGGER = Logger.getLogger(JsonHelper.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(JsonLoader.class.getName());
     
     private static JsonNode armorJsonRoot = null;
     
