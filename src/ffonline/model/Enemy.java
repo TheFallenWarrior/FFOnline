@@ -42,5 +42,5 @@ public class Enemy extends Battler{
     }
 
     @Override
-    public int getHitsPerTurn(){ return 1; }
+    public int getBaseHitsPerTurn(){ return 1; }
 }

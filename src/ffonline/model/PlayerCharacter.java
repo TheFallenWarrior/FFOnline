@@ -52,8 +52,8 @@ public class PlayerCharacter extends Battler {
     }
 
     @Override
-    public int getHitsPerTurn(){
-        return (1+getHitChance()/32) * getHitMultiplier();
+    public int getBaseHitsPerTurn(){
+        return 1+(getHitChance()/32);
     }
 
     public int getLevel() {

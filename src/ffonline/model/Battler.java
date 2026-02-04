@@ -145,6 +145,12 @@ public abstract class Battler {
         hitMultiplier = Math.max(hitMultiplier-1, 0);
     }
 
+    public abstract int getBaseHitsPerTurn();
+    
+    public int getHitsPerTurn(){
+        return getBaseHitsPerTurn()*hitMultiplier;
+    }
+    
     /*
      * Getters and setters
      */
@@ -248,8 +254,6 @@ public abstract class Battler {
     public int getHitMultiplier(){
         return hitMultiplier;
     }
-
-    public abstract int getHitsPerTurn();
     
     public int getMagicAbsorb(){
         return magicAbsorb;
