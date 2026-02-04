@@ -23,19 +23,18 @@
  */
 package ffonline.model;
 
-import ffonline.JsonHelper;
-import java.io.File;
 import java.util.EnumSet;
-import tools.jackson.core.JacksonException;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import tools.jackson.databind.*;
-import tools.jackson.databind.exc.JsonNodeException;
 
 /**
  *
  * @author thefa
  */
 public class Armor extends Item {
-    private static final String JSON_PATH = "json/armor.json";
+    private static final Logger LOGGER = Logger.getLogger(Armor.class.getName());
+    public static final String JSON_PATH = "json/armor.json";
     
     private final int weight;
     private final int absorb;
@@ -43,41 +42,21 @@ public class Armor extends Item {
     private final int spellId;
 
     public Armor(JsonNode node){
-        if(node == null)throw new NullPointerException(
-            "Attribute JsonNode node is null."
-        );
-        
         super(node);
-        try{
-            weight = JsonHelper.require(node, "weight").asInt();
-            absorb = JsonHelper.require(node, "absorb").asInt();
-            spellId = JsonHelper.require(node, "spellId").asInt();
-
-            elementalResistances = EnumSet.noneOf(Element.class);
-            for(JsonNode i : JsonHelper.require(node, "elementalResistances")){
-                elementalResistances.add(Element.valueOf(i.asString()));
+        this.weight = node.path("weight").asInt(0); 
+        this.absorb = node.path("absorb").asInt(0);
+        this.spellId = node.path("spellId").asInt(0);
+        
+        this.elementalResistances = EnumSet.noneOf(Element.class);
+        JsonNode resistances = node.path("elementalResistances");
+        if (resistances.isArray()) {
+            for (JsonNode i : resistances) {
+                try {
+                    elementalResistances.add(Element.valueOf(i.asString("Nothing")));
+                } catch (IllegalArgumentException e) {
+                    LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", i.asString());
+                }
             }
-        } catch(JsonNodeException e){
-            throw new RuntimeException(
-                "Failed to get armor attributes from JSON." +
-                " ("+e.getMessage()+")"
-            );
-        }
-    }
-
-    public static Armor createFromId(int jsonId){
-        try{
-            JsonNode jsonRoot = JsonHelper.MAPPER.readTree(new File(JSON_PATH));
-
-            if(jsonId < 0 || jsonId >= jsonRoot.size()){
-                throw new IllegalArgumentException("Index out of bounds: "+jsonId);
-            }
-            return new Armor(jsonRoot.get(jsonId));
-        } catch(JacksonException e){
-            throw new RuntimeException(
-                "Failed to read from "+JSON_PATH+"." +
-                " ("+e.getMessage()+")"
-            );
         }
     }
     

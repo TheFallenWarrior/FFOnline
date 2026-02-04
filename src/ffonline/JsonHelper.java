@@ -23,6 +23,13 @@
  */
 package ffonline;
 
+import ffonline.model.Armor;
+import static ffonline.model.Armor.JSON_PATH;
+import java.io.File;
+import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import tools.jackson.core.JacksonException;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 
@@ -31,6 +38,9 @@ import tools.jackson.databind.ObjectMapper;
  */
 public class JsonHelper {
     public static final ObjectMapper MAPPER = new ObjectMapper();
+    private static final Logger LOGGER = Logger.getLogger(JsonHelper.class.getName());
+    
+    private static JsonNode armorJsonRoot = null;
     
     /**
      * Ensures that a required JSON field exists and is not null
@@ -44,5 +54,27 @@ public class JsonHelper {
             throw new IllegalStateException("Missing field: " + field);
         }
         return value;
-    }   
+    }
+    
+    public static void init() throws JacksonException{
+        if(armorJsonRoot == null){
+            armorJsonRoot = MAPPER.readTree(new File(Armor.JSON_PATH));
+        }
+    }
+    
+    public static Optional<Armor> getArmor(int jsonId){
+        try{
+            JsonNode armorNode = armorJsonRoot.get(jsonId);
+
+            if (armorNode == null || armorNode.isNull()) {
+                LOGGER.log(Level.SEVERE, "Armor ID {0} not found in {1}", new Object[]{jsonId, JSON_PATH});
+                return Optional.empty();
+            }
+
+            return Optional.of(new Armor(armorNode));
+        } catch(JacksonException e){
+            LOGGER.log(Level.SEVERE, "Critical error loading armor data", e);
+            return Optional.empty();
+        }
+    }
 }
