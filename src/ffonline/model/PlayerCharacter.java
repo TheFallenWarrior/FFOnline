@@ -39,6 +39,11 @@ public class PlayerCharacter extends Battler {
     private CharacterJob job;
 
     @Override
+    public boolean canReceiveStatus(StatusAilment status){
+        return (status != StatusAilment.CONFUSED && super.canReceiveStatus(status));
+    }
+    
+    @Override
     public boolean rollCrit(){ return true; }
 
     @Override

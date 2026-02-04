@@ -29,6 +29,11 @@ package ffonline.model;
  */
 public class Enemy extends Battler{
     @Override
+    public boolean canReceiveStatus(StatusAilment status){
+        return (status != StatusAilment.CONFUSED && super.canReceiveStatus(status));
+    }
+
+    @Override
     public boolean rollCrit(){ return false; }
 
     @Override

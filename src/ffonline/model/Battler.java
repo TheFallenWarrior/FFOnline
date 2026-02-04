@@ -69,12 +69,12 @@ public abstract class Battler {
         return statuses.contains(status);
     }
 
+    public boolean canReceiveStatus(StatusAilment status){
+        return (!hasStatus(StatusAilment.DEAD) && !hasStatus(StatusAilment.PETRIFIED));
+    }
+
     public void addStatus(StatusAilment status){
-        if(
-            (status == StatusAilment.POISONED && this instanceof Enemy) ||
-            (status == StatusAilment.CONFUSED && this instanceof PlayerCharacter) ||
-            hasStatus(StatusAilment.DEAD) || hasStatus(StatusAilment.PETRIFIED)
-        ) return;
+        if(!canReceiveStatus(status)) return;
         if(status == StatusAilment.DEAD) hp = 0;
         statuses.add(status);
     }
