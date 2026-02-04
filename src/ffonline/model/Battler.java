@@ -215,40 +215,32 @@ public abstract class Battler {
         return damage;
     }
 
-    public void setDamage(int damage) throws IllegalArgumentException{
-        if(damage < 0 || damage > 255)
-            throw new IllegalArgumentException("DAMAGE must be in range 0..255; got"+ damage +".");
-        this.damage = damage;
+    public void setDamage(int damage){
+        this.damage = damage&0xff;
     }
 
     public int getAbsorb(){
         return absorb;
     }
 
-    public void setAbsorb(int absorb) throws IllegalArgumentException{
-        if(absorb < 0 || absorb > 255)
-            throw new IllegalArgumentException("ABSORB must be in range 0..255; got"+ absorb +".");
-        this.absorb = absorb;
+    public void setAbsorb(int absorb){
+        this.absorb = absorb&0xff;
     }
 
     public int getEvadeChance(){
         return evadeChance;
     }
 
-    public void setEvadeChance(int evadeChance) throws IllegalArgumentException{
-        if(evadeChance < 0 || evadeChance > 255)
-            throw new IllegalArgumentException("EVADE% must be in range 0..255; got"+ evadeChance +".");
-        this.evadeChance = evadeChance;
+    public void setEvadeChance(int evadeChance){
+        this.evadeChance = evadeChance&0xff;
     }
 
     public int getHitChance(){
         return hitChance;
     }
 
-    public void setHitChance(int hitChance) throws IllegalArgumentException{
-        if(hitChance < 0 || hitChance > 255)
-            throw new IllegalArgumentException("HIT% must be in range 0..255; got"+ hitChance +".");
-        this.hitChance = hitChance;
+    public void setHitChance(int hitChance){
+        this.hitChance = hitChance&0xff;
     }
 
     public int getHitMultiplier(){
@@ -259,9 +251,7 @@ public abstract class Battler {
         return magicAbsorb;
     }
 
-    public void setMagicAbsorb(int magicAbsorb) throws IllegalArgumentException{
-        if(magicAbsorb < 0 || magicAbsorb > 255)
-            throw new IllegalArgumentException("MagABSORB must be in range 0..255; got"+ magicAbsorb +".");
-        this.magicAbsorb = magicAbsorb;
+    public void setMagicAbsorb(int magicAbsorb){
+        this.magicAbsorb = magicAbsorb&0xff;
     }
 }
