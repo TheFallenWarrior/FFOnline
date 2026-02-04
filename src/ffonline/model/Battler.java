@@ -24,6 +24,7 @@
 package ffonline.model;
 
 import java.util.EnumSet;
+import java.util.Random;
 
 /**
  *
@@ -35,6 +36,8 @@ public abstract class Battler {
     private EnumSet<Element> attackElements;
     private EnumSet<Element> elementalResistances;
     private EnumSet<Element> elementalWeaknesses;
+    
+    protected Random rng;
 
     /*
      * Battle stats
@@ -50,6 +53,12 @@ public abstract class Battler {
 
     public Battler(){
         statuses = EnumSet.noneOf(StatusAilment.class);
+        rng = new Random();
+    }
+    
+    public Battler(long rngSeed){
+        statuses = EnumSet.noneOf(StatusAilment.class);
+        rng = new Random(rngSeed);
     }
 
     /*
@@ -95,13 +104,13 @@ public abstract class Battler {
             else finalHitChance = Math.min(baseHitChance + hitChance, 255) - target.getEvadeChance();
 
             // A hit roll of 200 is an automatic miss; 0 is an automatic hit
-            int hitRoll = (int)(Math.random()*201);
+            int hitRoll = rng.nextInt(0, 201);
             if((hitRoll > finalHitChance && hitRoll != 0) || hitRoll == 200) continue; // Attack missed
 
             // Calculate damage
             // Due to a bug in the original game, elements and enemy types have no
             // effect in damage output. 
-            int baseDamage = damage + (int)(Math.random()*damage);
+            int baseDamage = damage + rng.nextInt(0, 1+damage);
             if(rollCrit()){
                 baseDamage *= 2;
                 isCritical = true;
