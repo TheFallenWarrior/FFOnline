@@ -59,22 +59,6 @@ public class Item{
         }
     }
     
-    public static Item createFromId(int jsonId){
-        try{
-            JsonNode jsonRoot = JsonLoader.MAPPER.readTree(new File(JSON_PATH));
-            
-            if(jsonId < 0 || jsonId >= jsonRoot.size()){
-                throw new IllegalArgumentException("Index out of bounds: "+jsonId);
-            }
-            return new Item(jsonRoot.get(jsonId));
-        } catch(JacksonException e){
-            throw new RuntimeException(
-                "Failed to read from "+JSON_PATH+"." +
-                " ("+e.getMessage()+")"
-            );
-        }
-    }
-    
     public String getName() {
         return name;
     }
