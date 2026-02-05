@@ -23,11 +23,7 @@
  */
 package ffonline.model;
 
-import ffonline.JsonLoader;
-import java.io.File;
-import tools.jackson.core.JacksonException;
 import tools.jackson.databind.JsonNode;
-import tools.jackson.databind.exc.JsonNodeException;
 
 /**
  *
