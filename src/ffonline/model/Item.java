@@ -43,20 +43,9 @@ public class Item{
     public Item(){}
     
     public Item(JsonNode node){
-        if(node == null)throw new NullPointerException(
-            "Attribute JsonNode node is null."
-        );
-        
-        try{
-            name = JsonLoader.require(node, "name").asString();
-            shopId = JsonLoader.require(node, "shopId").asInt();
-            price = JsonLoader.require(node, "price").asInt();
-        } catch(JsonNodeException e){
-            throw new RuntimeException(
-                "Failed to get armor attributes from JSON." +
-                " ("+e.getMessage()+")"
-            );
-        }
+        this.name = node.path("name").asString("Nothing");
+        this.shopId = node.path("shopId").asInt(0);
+        this.price = node.path("price").asInt(0);
     }
     
     public String getName() {
