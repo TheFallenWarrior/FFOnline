@@ -34,7 +34,7 @@ import tools.jackson.databind.exc.JsonNodeException;
  * @author thefa
  */
 public class Item{
-    private static final String JSON_PATH = "json/item.json";
+    public static final String JSON_PATH = "json/item.json";
     
     private String name;
     private int shopId; // Number that indentifies the item in shops

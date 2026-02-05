@@ -24,7 +24,7 @@
 package ffonline;
 
 import ffonline.model.Armor;
-import static ffonline.model.Armor.JSON_PATH;
+import ffonline.model.Item;
 import java.io.File;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -41,6 +41,7 @@ public class JsonLoader {
     private static final Logger LOGGER = Logger.getLogger(JsonLoader.class.getName());
     
     private static JsonNode armorJsonRoot = null;
+    private static JsonNode itemJsonRoot = null;
     
     /**
      * Ensures that a required JSON field exists and is not null
@@ -58,6 +59,7 @@ public class JsonLoader {
     
     public static void init() throws JacksonException{
         armorJsonRoot = MAPPER.readTree(new File(Armor.JSON_PATH));
+        itemJsonRoot = MAPPER.readTree(new File(Item.JSON_PATH));
     }
     
     public static Optional<Armor> getArmor(int jsonId){
@@ -65,13 +67,29 @@ public class JsonLoader {
             JsonNode armorNode = armorJsonRoot.get(jsonId);
 
             if (armorNode == null || armorNode.isNull()) {
-                LOGGER.log(Level.SEVERE, "Armor ID {0} not found in {1}", new Object[]{jsonId, JSON_PATH});
+                LOGGER.log(Level.SEVERE, "Armor ID {0} not found in {1}", new Object[]{jsonId, Armor.JSON_PATH});
                 return Optional.empty();
             }
 
             return Optional.of(new Armor(armorNode));
         } catch(JacksonException e){
             LOGGER.log(Level.SEVERE, "Critical error loading armor data", e);
+            return Optional.empty();
+        }
+    }
+    
+    public static Optional<Item> getItem(int jsonId){
+        try{
+            JsonNode itemNode = itemJsonRoot.get(jsonId);
+            
+            if(itemNode == null || itemNode.isNull()){
+                LOGGER.log(Level.SEVERE, "Item ID {0} not found in {1}", new Object[]{jsonId, Item.JSON_PATH});
+                return Optional.empty();
+            }
+            
+            return Optional.of(new Item(itemNode));
+        } catch(JacksonException e){
+            LOGGER.log(Level.SEVERE, "Critical error loading item data", e);
             return Optional.empty();
         }
     }
