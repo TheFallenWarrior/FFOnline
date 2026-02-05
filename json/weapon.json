@@ -154,7 +154,7 @@
         "enemyTypes": []
     },
     {
-        "name": "Falchion",
+        "name": "Falchon",
         "shopid": 42,
         "price": 0,
         "hitChance": 10,
@@ -407,7 +407,7 @@
         "enemyTypes": []
     },
     {
-        "name": "Thor's Hammer",
+        "name": "Thor Hammer",
         "shopid": 63,
         "price": 0,
         "hitChance": 15,
@@ -440,7 +440,7 @@
         "enemyTypes": []
     },
     {
-        "name": "XCalbur",
+        "name": "XCalber",
         "shopid": 66,
         "price": 0,
         "hitChance": 35,
