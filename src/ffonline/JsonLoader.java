@@ -43,20 +43,6 @@ public class JsonLoader {
     private static JsonNode armorJsonRoot = null;
     private static JsonNode itemJsonRoot = null;
     
-    /**
-     * Ensures that a required JSON field exists and is not null
-     * @param node the JSON object that contains the field
-     * @param field the name of the field
-     * @return the field's value
-     */
-    public static JsonNode require(JsonNode node, String field){
-        JsonNode value = node.get(field);
-        if(value == null || value.isNull()){
-            throw new IllegalStateException("Missing field: " + field);
-        }
-        return value;
-    }
-    
     public static void init() throws JacksonException{
         armorJsonRoot = MAPPER.readTree(new File(Armor.JSON_PATH));
         itemJsonRoot = MAPPER.readTree(new File(Item.JSON_PATH));
