@@ -57,9 +57,7 @@ public class JsonLoader {
     }
     
     public static void init() throws JacksonException{
-        if(armorJsonRoot == null){
-            armorJsonRoot = MAPPER.readTree(new File(Armor.JSON_PATH));
-        }
+        armorJsonRoot = MAPPER.readTree(new File(Armor.JSON_PATH));
     }
     
     public static Optional<Armor> getArmor(int jsonId){
