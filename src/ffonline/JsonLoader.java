@@ -25,6 +25,7 @@ package ffonline;
 
 import ffonline.model.Armor;
 import ffonline.model.Item;
+import ffonline.model.Weapon;
 import java.io.File;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -42,10 +43,12 @@ public class JsonLoader {
     
     private static JsonNode armorJsonRoot = null;
     private static JsonNode itemJsonRoot = null;
+    private static JsonNode weaponJsonRoot = null;
     
     public static void init() throws JacksonException{
         armorJsonRoot = MAPPER.readTree(new File(Armor.JSON_PATH));
         itemJsonRoot = MAPPER.readTree(new File(Item.JSON_PATH));
+        weaponJsonRoot = MAPPER.readTree(new File(Weapon.JSON_PATH));
     }
     
     public static Optional<Armor> getArmor(int jsonId){
@@ -76,6 +79,22 @@ public class JsonLoader {
             return Optional.of(new Item(itemNode));
         } catch(JacksonException e){
             LOGGER.log(Level.SEVERE, "Critical error loading item data", e);
+            return Optional.empty();
+        }
+    }
+    
+    public static Optional<Weapon> getWeapon(int jsonId){
+        try{
+            JsonNode weaponNode = weaponJsonRoot.get(jsonId);
+            
+            if(weaponNode == null || weaponNode.isNull()){
+                LOGGER.log(Level.SEVERE, "Weapon ID {0} not found in {1}", new Object[]{jsonId, Weapon.JSON_PATH});
+                return Optional.empty();
+            }
+            
+            return Optional.of(new Weapon(weaponNode));
+        } catch(JacksonException e){
+            LOGGER.log(Level.SEVERE, "Critical error loading weapon data", e);
             return Optional.empty();
         }
     }
