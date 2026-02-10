@@ -46,7 +46,7 @@ public class Weapon extends Item {
     public Weapon(JsonNode node){
         super(node);
         this.hitChance = node.path("hitChance").asInt(0);
-        this.hitChance = node.path("critChance").asInt(0);
+        this.critChance = node.path("critChance").asInt(0);
         this.damage = node.path("damage").asInt(0);
         this.spellId = node.path("spellId").asInt(0);
         
