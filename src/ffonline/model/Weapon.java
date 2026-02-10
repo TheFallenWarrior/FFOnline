@@ -24,22 +24,55 @@
 package ffonline.model;
 
 import java.util.EnumSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import tools.jackson.databind.JsonNode;
 
 /**
  *
  * @author thefa
  */
 public class Weapon extends Item {
+    private static final Logger LOGGER = Logger.getLogger(Weapon.class.getName());
+    public static final String JSON_PATH = "json/weapon.json";
+    
     private int hitChance;
     private int critChance; // Weapon index number, 1-based
     private int damage;
     private int spellId;
     private EnumSet<Element> attackElements;
     private EnumSet<EnemyType> enemyTypes; // The enemy types the weapon is strong against
-
-    public Weapon(){
-        attackElements = EnumSet.noneOf(Element.class);
-        enemyTypes = EnumSet.noneOf(EnemyType.class);
+    
+    public Weapon(JsonNode node){
+        super(node);
+        this.hitChance = node.path("hitChance").asInt(0);
+        this.hitChance = node.path("critChance").asInt(0);
+        this.damage = node.path("damage").asInt(0);
+        this.spellId = node.path("spellId").asInt(0);
+        
+        this.attackElements = EnumSet.noneOf(Element.class);
+        JsonNode attackElem = node.path("attackElements");
+        if(attackElem.isArray()){
+            for(JsonNode i : attackElem){
+                try{
+                    attackElements.add(Element.valueOf(i.asString("Nothing")));
+                } catch(IllegalArgumentException e){
+                    LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", i.asString());
+                }
+            }
+        }
+        
+        this.enemyTypes = EnumSet.noneOf(EnemyType.class);
+         JsonNode enTypes = node.path("enemyTypes");
+        if(attackElem.isArray()){
+            for(JsonNode i : enTypes){
+                try{
+                    enemyTypes.add(EnemyType.valueOf(i.asString("Nothing")));
+                } catch(IllegalArgumentException e){
+                    LOGGER.log(Level.WARNING, "Unknown enemy type found in JSON: {0}", i.asString());
+                }
+            }
+        }
     }
     
     public int getHitChance() {
