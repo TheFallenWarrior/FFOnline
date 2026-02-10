@@ -36,12 +36,12 @@ public class Weapon extends Item {
     private static final Logger LOGGER = Logger.getLogger(Weapon.class.getName());
     public static final String JSON_PATH = "json/weapon.json";
     
-    private int hitChance;
-    private int critChance; // Weapon index number, 1-based
-    private int damage;
-    private int spellId;
-    private EnumSet<Element> attackElements;
-    private EnumSet<EnemyType> enemyTypes; // The enemy types the weapon is strong against
+    private final int hitChance;
+    private final int critChance; // Weapon index number, 1-based
+    private final int damage;
+    private final int spellId;
+    private final EnumSet<Element> attackElements;
+    private final EnumSet<EnemyType> enemyTypes; // The enemy types the weapon is strong against
     
     public Weapon(JsonNode node){
         super(node);
