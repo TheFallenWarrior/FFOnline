@@ -8,7 +8,11 @@
         "damage": 12,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "NINJA",
+            "BLACK_BELT"
+        ]
     },
     {
         "name": "Small Knife",
@@ -19,7 +23,13 @@
         "damage": 5,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "RED_MAGE",
+            "BLACK_MAGE"
+        ]
     },
     {
         "name": "Wooden Staff",
@@ -30,7 +40,15 @@
         "damage": 6,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "BLACK_BELT",
+            "RED_MAGE",
+            "WHITE_MAGE",
+            "BLACK_MAGE"
+        ]
     },
     {
         "name": "Rapier",
@@ -41,7 +59,12 @@
         "damage": 9,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "RED_MAGE"
+        ]
     },
     {
         "name": "Iron Hammer",
@@ -52,7 +75,12 @@
         "damage": 9,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "WHITE_MAGE"
+        ]
     },
     {
         "name": "Short Sword",
@@ -63,7 +91,12 @@
         "damage": 15,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "RED_MAGE"
+        ]
     },
     {
         "name": "Hand Axe",
@@ -74,7 +107,11 @@
         "damage": 16,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA"
+        ]
     },
     {
         "name": "Scimtar",
@@ -85,7 +122,12 @@
         "damage": 10,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "RED_MAGE"
+        ]
     },
     {
         "name": "Iron Nunchucks",
@@ -96,7 +138,11 @@
         "damage": 16,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "NINJA",
+            "BLACK_BELT"
+        ]
     },
     {
         "name": "Large Knife",
@@ -107,7 +153,13 @@
         "damage": 7,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "RED_MAGE",
+            "BLACK_MAGE"
+        ]
     },
     {
         "name": "Iron Staff",
@@ -118,7 +170,12 @@
         "damage": 14,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "BLACK_BELT"
+        ]
     },
     {
         "name": "Sabre",
@@ -129,7 +186,12 @@
         "damage": 13,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "RED_MAGE"
+        ]
     },
     {
         "name": "Long Sword",
@@ -140,7 +202,12 @@
         "damage": 20,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "RED_MAGE"
+        ]
     },
     {
         "name": "Great Axe",
@@ -151,7 +218,11 @@
         "damage": 22,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA"
+        ]
     },
     {
         "name": "Falchon",
@@ -162,7 +233,12 @@
         "damage": 15,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "RED_MAGE"
+        ]
     },
     {
         "name": "Silver Knife",
@@ -173,7 +249,13 @@
         "damage": 10,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "RED_MAGE",
+            "BLACK_MAGE"
+        ]
     },
     {
         "name": "Silver Sword",
@@ -184,7 +266,12 @@
         "damage": 23,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "RED_MAGE"
+        ]
     },
     {
         "name": "Silver Hammer",
@@ -195,7 +282,12 @@
         "damage": 12,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "WHITE_MAGE"
+        ]
     },
     {
         "name": "Silver Axe",
@@ -206,7 +298,11 @@
         "damage": 25,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA"
+        ]
     },
     {
         "name": "Flame Sword",
@@ -222,6 +318,11 @@
         "enemyTypes": [
             "UNDEAD",
             "REGENERATIVE"
+        ],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "RED_MAGE"
         ]
     },
     {
@@ -235,7 +336,12 @@
         "attackElements": [
             "ICE"
         ],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "RED_MAGE"
+        ]
     },
     {
         "name": "Dragon Sword",
@@ -248,6 +354,11 @@
         "attackElements": [],
         "enemyTypes": [
             "DRAGON"
+        ],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "RED_MAGE"
         ]
     },
     {
@@ -261,6 +372,11 @@
         "attackElements": [],
         "enemyTypes": [
             "GIANT"
+        ],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "RED_MAGE"
         ]
     },
     {
@@ -274,6 +390,11 @@
         "attackElements": [],
         "enemyTypes": [
             "UNDEAD"
+        ],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "RED_MAGE"
         ]
     },
     {
@@ -287,6 +408,11 @@
         "attackElements": [],
         "enemyTypes": [
             "AQUATIC"
+        ],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "RED_MAGE"
         ]
     },
     {
@@ -300,6 +426,11 @@
         "attackElements": [],
         "enemyTypes": [
             "WERE"
+        ],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "RED_MAGE"
         ]
     },
     {
@@ -314,6 +445,11 @@
         "enemyTypes": [
             "MAGICAL",
             "MAGE"
+        ],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "RED_MAGE"
         ]
     },
     {
@@ -325,7 +461,14 @@
         "damage": 12,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "NINJA",
+            "BLACK_BELT",
+            "WHITE_MAGE",
+            "BLACK_MAGE"
+        ]
     },
     {
         "name": "Light Axe",
@@ -338,6 +481,10 @@
         "attackElements": [],
         "enemyTypes": [
             "UNDEAD"
+        ],
+        "equippable": [
+            "FIGHTER",
+            "NINJA"
         ]
     },
     {
@@ -349,7 +496,11 @@
         "damage": 6,
         "spellId": 20,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "NINJA",
+            "WHITE_MAGE"
+        ]
     },
     {
         "name": "Mage Staff",
@@ -360,7 +511,11 @@
         "damage": 12,
         "spellId": 21,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "NINJA",
+            "BLACK_MAGE"
+        ]
     },
     {
         "name": "Defense",
@@ -371,7 +526,12 @@
         "damage": 30,
         "spellId": 4,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "Wizard Staff",
@@ -382,7 +542,10 @@
         "damage": 15,
         "spellId": 31,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "BLACK_WIZARD"
+        ]
     },
     {
         "name": "Vorpal",
@@ -393,7 +556,12 @@
         "damage": 24,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "CatClaw",
@@ -404,7 +572,13 @@
         "damage": 22,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD",
+            "BLACK_WIZARD"
+        ]
     },
     {
         "name": "Thor Hammer",
@@ -415,7 +589,12 @@
         "damage": 18,
         "spellId": 23,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "KNIGHT",
+            "NINJA",
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "Bane Sword",
@@ -426,7 +605,12 @@
         "damage": 22,
         "spellId": 38,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "Katana",
@@ -437,7 +621,10 @@
         "damage": 33,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "NINJA"
+        ]
     },
     {
         "name": "XCalber",
@@ -466,6 +653,9 @@
             "AQUATIC",
             "MAGE",
             "REGENERATIVE"
+        ],
+        "equippable": [
+            "KNIGHT"
         ]
     },
     {
@@ -477,6 +667,14 @@
         "damage": 56,
         "spellId": 0,
         "attackElements": [],
-        "enemyTypes": []
+        "enemyTypes": [],
+        "equippable": [
+            "FIGHTER",
+            "THIEF",
+            "BLACK_BELT",
+            "RED_MAGE",
+            "WHITE_MAGE",
+            "BLACK_MAGE"
+        ]
     }
 ]
