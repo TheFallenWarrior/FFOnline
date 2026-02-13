@@ -53,6 +53,9 @@ public abstract class Battler {
 
     public Battler(){
         statuses = EnumSet.noneOf(StatusAilment.class);
+        attackElements = EnumSet.noneOf(Element.class);
+        elementalResistances = EnumSet.noneOf(Element.class);
+        elementalWeaknesses = EnumSet.noneOf(Element.class);
         rng = new Random();
     }
     
