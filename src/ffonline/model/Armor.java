@@ -40,6 +40,7 @@ public class Armor extends Item {
     private final int absorb;
     private final EnumSet<Element> elementalResistances;
     private final int spellId;
+    private final EnumSet<CharacterJob> equippable;
 
     public Armor(JsonNode node){
         super(node);
@@ -55,6 +56,18 @@ public class Armor extends Item {
                     elementalResistances.add(Element.valueOf(i.asString("Nothing")));
                 } catch (IllegalArgumentException e) {
                     LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", i.asString());
+                }
+            }
+        }
+        
+        this.equippable = EnumSet.noneOf(CharacterJob.class);
+        JsonNode equip = node.path("equippable");
+        if(equip.isArray()){
+            for(JsonNode i : equip){
+                try{
+                    this.equippable.add(CharacterJob.valueOf(i.asString("")));
+                } catch(IllegalArgumentException e){
+                    LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", i.asString());
                 }
             }
         }
@@ -74,5 +87,9 @@ public class Armor extends Item {
 
     public int getSpellId() {
         return spellId;
+    }
+    
+    public EnumSet<CharacterJob> getEquippable(){
+        return equippable.clone();
     }
 }

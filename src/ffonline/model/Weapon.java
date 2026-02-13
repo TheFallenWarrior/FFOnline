@@ -42,6 +42,8 @@ public class Weapon extends Item {
     private final int spellId;
     private final EnumSet<Element> attackElements;
     private final EnumSet<EnemyType> enemyTypes; // The enemy types the weapon is strong against
+    private final EnumSet<CharacterJob> equippable;
+
     
     public Weapon(JsonNode node){
         super(node);
@@ -73,6 +75,18 @@ public class Weapon extends Item {
                 }
             }
         }
+        
+        this.equippable = EnumSet.noneOf(CharacterJob.class);
+        JsonNode equip = node.path("equippable");
+        if(equip.isArray()){
+            for(JsonNode i : equip){
+                try{
+                    this.equippable.add(CharacterJob.valueOf(i.asString("")));
+                } catch(IllegalArgumentException e){
+                    LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", i.asString());
+                }
+            }
+        }
     }
     
     public int getHitChance() {
@@ -97,5 +111,9 @@ public class Weapon extends Item {
 
     public EnumSet<EnemyType> getEnemyTypes() {
         return enemyTypes.clone();
+    }
+    
+    public EnumSet<CharacterJob> getEquippable(){
+        return equippable.clone();
     }
 }
