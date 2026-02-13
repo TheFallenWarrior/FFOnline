@@ -32,12 +32,10 @@ import tools.jackson.databind.JsonNode;
 public class Item{
     public static final String JSON_PATH = "json/item.json";
     
-    private String name;
-    private int shopId; // Number that indentifies the item in shops
-    private int price;
+    private final String name;
+    private final int shopId; // Number that indentifies the item in shops
+    private final int price;
 
-    public Item(){}
-    
     public Item(JsonNode node){
         this.name = node.path("name").asString("Non-coercible value");
         this.shopId = node.path("shopId").asInt(0);
@@ -48,27 +46,11 @@ public class Item{
         return name;
     }
 
-    protected void setName(String name) {
-        this.name = name;
-    }
-
     public int getShopId() {
         return shopId;
     }
 
-    protected void setShopId(int shopId) throws IllegalArgumentException{
-	if(shopId < 0 || shopId > 255)
-            throw new IllegalArgumentException("Shop ID must be in range 0..255; got"+ shopId +".");
-        this.shopId = shopId;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    protected void setPrice(int price) throws IllegalArgumentException{
-        if(price < 0 || price > 65535)
-            throw new IllegalArgumentException("Item price must be in range 0..65535; got"+ price +".");
-        this.price = price;
     }
 }
