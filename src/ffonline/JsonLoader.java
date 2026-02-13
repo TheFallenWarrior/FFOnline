@@ -28,6 +28,7 @@ import ffonline.model.Item;
 import ffonline.model.Weapon;
 import java.io.File;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import tools.jackson.core.JacksonException;
@@ -51,51 +52,59 @@ public class JsonLoader {
         weaponJsonRoot = MAPPER.readTree(new File(Weapon.JSON_PATH));
     }
     
-    public static Optional<Armor> getArmor(int jsonId){
+    private static <T> Optional<T> get(
+        JsonNode root,
+        int jsonId,
+        String jsonPath,
+        Function<JsonNode, T> constructor,
+        String typeName
+    ){
         try{
-            JsonNode armorNode = armorJsonRoot.get(jsonId);
-
-            if (armorNode == null || armorNode.isNull()) {
-                LOGGER.log(Level.SEVERE, "Armor ID {0} not found in {1}", new Object[]{jsonId, Armor.JSON_PATH});
+            JsonNode node = root.get(jsonId);
+            
+            if(node == null || node.isNull()){
+                LOGGER.log(
+                    Level.SEVERE,
+                    "{0} ID {1} not found in {2}",
+                    new Object[]{typeName, jsonId, jsonPath}
+                );
                 return Optional.empty();
             }
-
-            return Optional.of(new Armor(armorNode));
+            
+            return Optional.of(constructor.apply(node));
         } catch(JacksonException e){
-            LOGGER.log(Level.SEVERE, "Critical error loading armor data", e);
+            LOGGER.log(Level.SEVERE, "Critical error loading "+typeName+" data", e);
             return Optional.empty();
         }
+    }
+    
+    public static Optional<Armor> getArmor(int jsonId){
+        return get(
+            armorJsonRoot,
+            jsonId,
+            Armor.JSON_PATH,
+            Armor::new,
+            "Armor"
+        );
     }
     
     public static Optional<Item> getItem(int jsonId){
-        try{
-            JsonNode itemNode = itemJsonRoot.get(jsonId);
-            
-            if(itemNode == null || itemNode.isNull()){
-                LOGGER.log(Level.SEVERE, "Item ID {0} not found in {1}", new Object[]{jsonId, Item.JSON_PATH});
-                return Optional.empty();
-            }
-            
-            return Optional.of(new Item(itemNode));
-        } catch(JacksonException e){
-            LOGGER.log(Level.SEVERE, "Critical error loading item data", e);
-            return Optional.empty();
-        }
+        return get(
+            itemJsonRoot,
+            jsonId,
+            Item.JSON_PATH,
+            Item::new,
+            "Item"
+        );
     }
     
     public static Optional<Weapon> getWeapon(int jsonId){
-        try{
-            JsonNode weaponNode = weaponJsonRoot.get(jsonId);
-            
-            if(weaponNode == null || weaponNode.isNull()){
-                LOGGER.log(Level.SEVERE, "Weapon ID {0} not found in {1}", new Object[]{jsonId, Weapon.JSON_PATH});
-                return Optional.empty();
-            }
-            
-            return Optional.of(new Weapon(weaponNode));
-        } catch(JacksonException e){
-            LOGGER.log(Level.SEVERE, "Critical error loading weapon data", e);
-            return Optional.empty();
-        }
+        return get(
+            weaponJsonRoot,
+            jsonId,
+            Weapon.JSON_PATH,
+            Weapon::new,
+            "Weapon"
+        );
     }
 }
