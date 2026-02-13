@@ -39,7 +39,7 @@ public class Item{
     public Item(){}
     
     public Item(JsonNode node){
-        this.name = node.path("name").asString("Nothing");
+        this.name = node.path("name").asString("Non-coercible value");
         this.shopId = node.path("shopId").asInt(0);
         this.price = node.path("price").asInt(0);
     }

@@ -53,7 +53,7 @@ public class Armor extends Item {
         if (resistances.isArray()) {
             for (JsonNode i : resistances) {
                 try {
-                    elementalResistances.add(Element.valueOf(i.asString("Nothing")));
+                    elementalResistances.add(Element.valueOf(i.asString("Non-coercible value")));
                 } catch (IllegalArgumentException e) {
                     LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", i.asString());
                 }
@@ -65,7 +65,7 @@ public class Armor extends Item {
         if(equip.isArray()){
             for(JsonNode i : equip){
                 try{
-                    this.equippable.add(CharacterJob.valueOf(i.asString("")));
+                    this.equippable.add(CharacterJob.valueOf(i.asString("Non-coercible value")));
                 } catch(IllegalArgumentException e){
                     LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", i.asString());
                 }

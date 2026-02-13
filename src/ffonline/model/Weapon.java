@@ -57,7 +57,7 @@ public class Weapon extends Item {
         if(attackElem.isArray()){
             for(JsonNode i : attackElem){
                 try{
-                    attackElements.add(Element.valueOf(i.asString("Nothing")));
+                    attackElements.add(Element.valueOf(i.asString("Non-coercible value")));
                 } catch(IllegalArgumentException e){
                     LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", i.asString());
                 }
@@ -69,7 +69,7 @@ public class Weapon extends Item {
         if(attackElem.isArray()){
             for(JsonNode i : enTypes){
                 try{
-                    enemyTypes.add(EnemyType.valueOf(i.asString("Nothing")));
+                    enemyTypes.add(EnemyType.valueOf(i.asString("Non-coercible value")));
                 } catch(IllegalArgumentException e){
                     LOGGER.log(Level.WARNING, "Unknown enemy type found in JSON: {0}", i.asString());
                 }
@@ -81,7 +81,7 @@ public class Weapon extends Item {
         if(equip.isArray()){
             for(JsonNode i : equip){
                 try{
-                    this.equippable.add(CharacterJob.valueOf(i.asString("")));
+                    this.equippable.add(CharacterJob.valueOf(i.asString("Non-coercible value")));
                 } catch(IllegalArgumentException e){
                     LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", i.asString());
                 }
