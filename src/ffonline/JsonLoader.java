@@ -59,6 +59,9 @@ public class JsonLoader {
         Function<JsonNode, T> constructor,
         String typeName
     ){
+        if(root == null)
+            throw new IllegalStateException("JsonLoader not initialized");
+        
         try{
             JsonNode node = root.get(jsonId);
             
