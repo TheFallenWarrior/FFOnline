@@ -114,14 +114,15 @@ public abstract class Battler {
             // Due to a bug in the original game, elements and enemy types have no
             // effect in damage output. 
             int baseDamage = damage + rng.nextInt(0, 1+damage);
-            if(rollCrit()){
-                baseDamage *= 2;
-                isCritical = true;
-            }
             if(target.hasStatus(StatusAilment.ASLEEP) || target.hasStatus(StatusAilment.PARALYZED))
                 baseDamage = (baseDamage*5) / 4;
 
             int attackDamage = Math.max(baseDamage - target.absorb, 1);
+            
+            if(rollCrit()){
+                attackDamage += baseDamage;
+                isCritical = true;
+            }
 
             totalDamage += attackDamage;
             successfulHits++;
