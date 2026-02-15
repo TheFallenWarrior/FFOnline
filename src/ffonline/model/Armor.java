@@ -24,6 +24,7 @@
 package ffonline.model;
 
 import java.util.EnumSet;
+import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 import tools.jackson.databind.*;
@@ -52,10 +53,15 @@ public class Armor extends Item {
         JsonNode resistances = node.path("elementalResistances");
         if (resistances.isArray()) {
             for (JsonNode i : resistances) {
-                try {
-                    elementalResistances.add(Element.valueOf(i.asString("Non-coercible value")));
-                } catch (IllegalArgumentException e) {
-                    LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", i.asString());
+                Optional<String> optValue = i.asStringOpt();
+                if(optValue.isEmpty()){
+                    LOGGER.log(Level.WARNING, "Non-string element found in JSON");
+                } else{
+                    try {
+                        elementalResistances.add(Element.valueOf(optValue.get()));
+                    } catch (IllegalArgumentException e) {
+                        LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", optValue.get());
+                    }
                 }
             }
         }
@@ -64,10 +70,15 @@ public class Armor extends Item {
         JsonNode equip = node.path("equippable");
         if(equip.isArray()){
             for(JsonNode i : equip){
-                try{
-                    this.equippable.add(CharacterJob.valueOf(i.asString("Non-coercible value")));
-                } catch(IllegalArgumentException e){
-                    LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", i.asString());
+                Optional<String> optValue = i.asStringOpt();
+                if(optValue.isEmpty()){
+                    LOGGER.log(Level.WARNING, "Non-string job found in JSON");
+                } else{
+                    try{
+                        this.equippable.add(CharacterJob.valueOf(optValue.get()));
+                    } catch(IllegalArgumentException e){
+                        LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", optValue.get());
+                    }
                 }
             }
         }
