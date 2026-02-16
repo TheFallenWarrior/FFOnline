@@ -41,6 +41,7 @@ public class Armor extends Item {
     private final int absorb;
     private final EnumSet<Element> elementalResistances;
     private final int spellId;
+    private final ArmorType type;
     private final EnumSet<CharacterJob> equippable;
 
     public Armor(JsonNode node){
@@ -48,6 +49,16 @@ public class Armor extends Item {
         this.weight = node.path("weight").asInt(0); 
         this.absorb = node.path("absorb").asInt(0);
         this.spellId = node.path("spellId").asInt(0);
+        
+        Optional<String> optType = node.path("type").asStringOpt();
+        ArmorType resolvedType = ArmorType.BODY;
+        try{
+            resolvedType = ArmorType.valueOf(optType.orElse("Non-coercible value"));
+        } catch(IllegalArgumentException e){
+            LOGGER.log(Level.WARNING, "Unknown armor type found in JSON: {0}", optType.orElse("Non-coercible value"));
+        } finally{
+            this.type = resolvedType;
+        }
         
         this.elementalResistances = EnumSet.noneOf(Element.class);
         JsonNode resistances = node.path("elementalResistances");
@@ -102,6 +113,10 @@ public class Armor extends Item {
 
     public int getSpellId() {
         return spellId;
+    }
+    
+    public ArmorType getType(){
+        return type;
     }
     
     public EnumSet<CharacterJob> getEquippable(){
