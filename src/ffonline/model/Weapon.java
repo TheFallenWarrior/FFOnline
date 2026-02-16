@@ -44,16 +44,40 @@ public class Weapon extends Item {
     private final EnumSet<Element> attackElements;
     private final EnumSet<EnemyType> enemyTypes; // The enemy types the weapon is strong against
     private final EnumSet<CharacterJob> equippable;
-
     
-    public Weapon(JsonNode node){
-        super(node);
-        this.hitChance = node.path("hitChance").asInt(0);
-        this.critChance = node.path("critChance").asInt(0);
-        this.damage = node.path("damage").asInt(0);
-        this.spellId = node.path("spellId").asInt(0);
+    public Weapon(
+        String name,
+        int shopId,
+        int price,
+        int hitChance,
+        int critChance,
+        int damage,
+        int spellId,
+        EnumSet<Element> attackElements,
+        EnumSet<EnemyType> enemyTypes,
+        EnumSet<CharacterJob> equippable
+    ){
+        super(name, shopId, price);
+        this.hitChance = hitChance;
+        this.critChance = critChance;
+        this.damage = damage;
+        this.spellId = spellId;
+        this.attackElements = attackElements.clone();
+        this.enemyTypes = enemyTypes.clone();
+        this.equippable = equippable.clone();
+    }
+    
+    public static Weapon buildFromJson(JsonNode node){
+        String name = node.path("name").asString("Non-coercible value");
+        int shopId = node.path("shopId").asInt(0);
+        int price = node.path("price").asInt(0);
         
-        this.attackElements = EnumSet.noneOf(Element.class);
+        int hitChance = node.path("hitChance").asInt(0);
+        int critChance = node.path("critChance").asInt(0);
+        int damage = node.path("damage").asInt(0);
+        int spellId = node.path("spellId").asInt(0);
+        
+        EnumSet<Element> attackElements = EnumSet.noneOf(Element.class);
         JsonNode attackElemNode = node.path("attackElements");
         if(attackElemNode.isArray()){
             for(JsonNode i : attackElemNode){
@@ -70,7 +94,7 @@ public class Weapon extends Item {
             }
         }
         
-        this.enemyTypes = EnumSet.noneOf(EnemyType.class);
+        EnumSet<EnemyType> enemyTypes = EnumSet.noneOf(EnemyType.class);
          JsonNode enemyTypesNode = node.path("enemyTypes");
         if(enemyTypesNode.isArray()){
             for(JsonNode i : enemyTypesNode){
@@ -87,7 +111,7 @@ public class Weapon extends Item {
             }
         }
         
-        this.equippable = EnumSet.noneOf(CharacterJob.class);
+        EnumSet<CharacterJob> equippable = EnumSet.noneOf(CharacterJob.class);
         JsonNode equippableNode = node.path("equippable");
         if(equippableNode.isArray()){
             for(JsonNode i : equippableNode){
@@ -96,13 +120,26 @@ public class Weapon extends Item {
                     LOGGER.log(Level.WARNING, "Non-string job found in JSON");
                 } else{
                     try{
-                        this.equippable.add(CharacterJob.valueOf(optValue.get()));
+                        equippable.add(CharacterJob.valueOf(optValue.get()));
                     } catch(IllegalArgumentException e){
                         LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", optValue.get());
                     }
                 }
             }
         }
+        
+        return new Weapon(
+            name,
+            shopId,
+            price,
+            hitChance,
+            critChance,
+            damage,
+            spellId,
+            attackElements,
+            enemyTypes,
+            equippable
+        );
     }
     
     public boolean isEquippable(CharacterJob job){

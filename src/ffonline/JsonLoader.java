@@ -106,7 +106,7 @@ public class JsonLoader {
             weaponJsonRoot,
             jsonId,
             Weapon.JSON_PATH,
-            Weapon::new,
+            Weapon::buildFromJson,
             "Weapon"
         );
     }
