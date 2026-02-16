@@ -48,6 +48,14 @@ public class Item{
         this.price = node.path("price").asInt(0);
     }
     
+    public static Item buildFromJson(JsonNode node){
+        String name = node.path("name").asString("Non-coercible value");
+        int shopId = node.path("shopId").asInt(0);
+        int price = node.path("price").asInt(0);
+        
+        return new Item(name, shopId, price);
+    }
+    
     public String getName() {
         return name;
     }

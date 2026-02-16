@@ -96,7 +96,7 @@ public class JsonLoader {
             itemJsonRoot,
             jsonId,
             Item.JSON_PATH,
-            Item::new,
+            Item::buildFromJson,
             "Item"
         );
     }
