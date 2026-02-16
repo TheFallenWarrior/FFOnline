@@ -105,6 +105,10 @@ public class Weapon extends Item {
         }
     }
     
+    public boolean isEquippable(CharacterJob job){
+        return equippable.contains(job);
+    }
+    
     public int getHitChance() {
         return hitChance;
     }

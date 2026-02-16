@@ -84,6 +84,10 @@ public class Armor extends Item {
         }
     }
     
+    public boolean isEquippable(CharacterJob job){
+        return equippable.contains(job);
+    }
+    
     public int getWeight() {
         return weight;
     }
