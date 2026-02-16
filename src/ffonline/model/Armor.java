@@ -33,7 +33,7 @@ import tools.jackson.databind.*;
  *
  * @author thefa
  */
-public class Armor extends Item {
+public class Armor extends Item{
     private static final Logger LOGGER = Logger.getLogger(Armor.class.getName());
     public static final String JSON_PATH = "json/armor.json";
     
@@ -44,11 +44,34 @@ public class Armor extends Item {
     private final ArmorType type;
     private final EnumSet<CharacterJob> equippable;
 
-    public Armor(JsonNode node){
-        super(node);
-        this.weight = node.path("weight").asInt(0); 
-        this.absorb = node.path("absorb").asInt(0);
-        this.spellId = node.path("spellId").asInt(0);
+    public Armor(
+            String name,
+            int shopId,
+            int price,
+            int weight,
+            int absorb,
+            EnumSet<Element> elementalResistances,
+            int spellId,
+            ArmorType type,
+            EnumSet<CharacterJob> equippable
+    ){
+        super(name, shopId, price);
+        this.weight = weight;
+        this.absorb = absorb;
+        this.elementalResistances = elementalResistances.clone();
+        this.spellId = spellId;
+        this.type = type;
+        this.equippable = equippable.clone();
+    }
+    
+    public static Armor buildFromJson(JsonNode node){
+        String name = node.path("name").asString("Non-coercible value");
+        int shopId = node.path("shopId").asInt(0);
+        int price = node.path("price").asInt(0);
+        
+        int weight = node.path("weight").asInt(0); 
+        int absorb = node.path("absorb").asInt(0);
+        int spellId = node.path("spellId").asInt(0);
         
         Optional<String> optType = node.path("type").asStringOpt();
         ArmorType resolvedType = ArmorType.BODY;
@@ -56,11 +79,9 @@ public class Armor extends Item {
             resolvedType = ArmorType.valueOf(optType.orElse("Non-coercible value"));
         } catch(IllegalArgumentException e){
             LOGGER.log(Level.WARNING, "Unknown armor type found in JSON: {0}", optType.orElse("Non-coercible value"));
-        } finally{
-            this.type = resolvedType;
         }
         
-        this.elementalResistances = EnumSet.noneOf(Element.class);
+        EnumSet<Element> elementalResistances = EnumSet.noneOf(Element.class);
         JsonNode elemResistNode = node.path("elementalResistances");
         if (elemResistNode.isArray()) {
             for (JsonNode i : elemResistNode) {
@@ -77,7 +98,7 @@ public class Armor extends Item {
             }
         }
         
-        this.equippable = EnumSet.noneOf(CharacterJob.class);
+        EnumSet<CharacterJob> equippable = EnumSet.noneOf(CharacterJob.class);
         JsonNode equippableNode = node.path("equippable");
         if(equippableNode.isArray()){
             for(JsonNode i : equippableNode){
@@ -86,13 +107,25 @@ public class Armor extends Item {
                     LOGGER.log(Level.WARNING, "Non-string job found in JSON");
                 } else{
                     try{
-                        this.equippable.add(CharacterJob.valueOf(optValue.get()));
+                        equippable.add(CharacterJob.valueOf(optValue.get()));
                     } catch(IllegalArgumentException e){
                         LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", optValue.get());
                     }
                 }
             }
         }
+        
+        return new Armor(
+            name,
+            shopId,
+            price,
+            weight,
+            absorb,
+            elementalResistances,
+            spellId,
+            resolvedType,
+            equippable
+        );
     }
     
     public boolean isEquippable(CharacterJob job){

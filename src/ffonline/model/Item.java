@@ -36,6 +36,12 @@ public class Item{
     private final int shopId; // Number that indentifies the item in shops
     private final int price;
 
+    public Item(String name, int shopId, int price){
+        this.name = name;
+        this.shopId = shopId;
+        this.price = price;
+    }
+    
     public Item(JsonNode node){
         this.name = node.path("name").asString("Non-coercible value");
         this.shopId = node.path("shopId").asInt(0);

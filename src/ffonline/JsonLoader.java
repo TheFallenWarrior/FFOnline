@@ -86,7 +86,7 @@ public class JsonLoader {
             armorJsonRoot,
             jsonId,
             Armor.JSON_PATH,
-            Armor::new,
+            Armor::buildFromJson,
             "Armor"
         );
     }
