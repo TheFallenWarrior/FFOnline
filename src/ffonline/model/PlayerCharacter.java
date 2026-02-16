@@ -23,11 +23,17 @@
  */
 package ffonline.model;
 
+import ffonline.JsonLoader;
+import java.util.ArrayList;
+import java.util.Optional;
+
 /**
  *
  * @author thefa
  */
 public class PlayerCharacter extends Battler {
+    private static final int MAX_INVENTORY = 4;
+    
     private int level;
     private int exp;
     
@@ -37,6 +43,10 @@ public class PlayerCharacter extends Battler {
     private int vitality;
     
     private CharacterJob job;
+    
+    private final ArrayList<Armor> armorInventory = new ArrayList<>();
+    private final ArrayList<Weapon> weaponInventory = new ArrayList<>();
+    private Weapon equippedWeapon;
 
     @Override
     public boolean canReceiveStatus(StatusAilment status){
@@ -55,6 +65,60 @@ public class PlayerCharacter extends Battler {
     public int getBaseHitsPerTurn(){
         return 1+(getHitChance()/32);
     }
+    
+    public boolean receiveWeapon(int weaponIndex){
+        if(weaponInventory.size() >= MAX_INVENTORY)
+            return false;
+
+        Optional<Weapon> opt = JsonLoader.getWeapon(weaponIndex);
+        if(opt.isEmpty()) return false;
+        else{
+            weaponInventory.add(opt.get());
+            return true;
+        }
+    }
+    
+    public boolean receiveWeapon(Weapon weapon){
+        if(weapon == null || weaponInventory.size() >= MAX_INVENTORY)
+            return false;
+        weaponInventory.add(weapon);
+        return true;
+    }
+    
+    public Optional<Weapon> dropWeapon(int inventoryIndex){
+        if(
+            weaponInventory.isEmpty() ||
+            inventoryIndex < 0 ||
+            inventoryIndex > weaponInventory.size()
+        ) return Optional.empty();
+        
+        if(weaponInventory.get(inventoryIndex) == equippedWeapon)
+            unequipWeapon();
+        
+        return Optional.of(weaponInventory.remove(inventoryIndex));
+    }
+    
+    public boolean equipWeapon(int inventoryIndex){
+        if(
+            weaponInventory.isEmpty() ||
+            inventoryIndex < 0 ||
+            inventoryIndex > weaponInventory.size()
+        ) return false;
+        
+        if(weaponInventory.get(inventoryIndex).isEquippable(job)){
+            equippedWeapon = weaponInventory.get(inventoryIndex);
+            updateStats();
+            return true;
+        }
+        return false;
+    }
+    
+    public void unequipWeapon(){
+        equippedWeapon = null;
+        updateStats();
+    }
+    
+    public void updateStats(){}
 
     public int getLevel() {
         return level;
