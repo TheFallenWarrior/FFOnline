@@ -10,8 +10,9 @@
         "attackElements": [],
         "enemyTypes": [],
         "equippable": [
+            "BLACK_BELT",
             "NINJA",
-            "BLACK_BELT"
+            "MASTER"
         ]
     },
     {
@@ -28,7 +29,11 @@
             "FIGHTER",
             "THIEF",
             "RED_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -47,7 +52,12 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -63,7 +73,10 @@
         "equippable": [
             "FIGHTER",
             "THIEF",
-            "RED_MAGE"
+            "RED_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
         ]
     },
     {
@@ -78,8 +91,10 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
+            "WHITE_MAGE",
+            "KNIGHT",
             "NINJA",
-            "WHITE_MAGE"
+            "WHITE_WIZARD"
         ]
     },
     {
@@ -94,8 +109,10 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
+            "RED_MAGE",
+            "KNIGHT",
             "NINJA",
-            "RED_MAGE"
+            "RED_WIZARD"
         ]
     },
     {
@@ -110,6 +127,7 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -126,7 +144,10 @@
         "equippable": [
             "FIGHTER",
             "THIEF",
-            "RED_MAGE"
+            "RED_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
         ]
     },
     {
@@ -140,8 +161,9 @@
         "attackElements": [],
         "enemyTypes": [],
         "equippable": [
+            "BLACK_BELT",
             "NINJA",
-            "BLACK_BELT"
+            "MASTER"
         ]
     },
     {
@@ -158,7 +180,11 @@
             "FIGHTER",
             "THIEF",
             "RED_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -173,8 +199,10 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
+            "BLACK_BELT",
+            "KNIGHT",
             "NINJA",
-            "BLACK_BELT"
+            "MASTER"
         ]
     },
     {
@@ -190,7 +218,10 @@
         "equippable": [
             "FIGHTER",
             "THIEF",
-            "RED_MAGE"
+            "RED_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
         ]
     },
     {
@@ -205,8 +236,10 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
+            "RED_MAGE",
+            "KNIGHT",
             "NINJA",
-            "RED_MAGE"
+            "RED_WIZARD"
         ]
     },
     {
@@ -221,6 +254,7 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -237,7 +271,10 @@
         "equippable": [
             "FIGHTER",
             "THIEF",
-            "RED_MAGE"
+            "RED_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
         ]
     },
     {
@@ -254,7 +291,11 @@
             "FIGHTER",
             "THIEF",
             "RED_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -269,8 +310,10 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
+            "RED_MAGE",
+            "KNIGHT",
             "NINJA",
-            "RED_MAGE"
+            "RED_WIZARD"
         ]
     },
     {
@@ -285,8 +328,10 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
+            "WHITE_MAGE",
+            "KNIGHT",
             "NINJA",
-            "WHITE_MAGE"
+            "WHITE_WIZARD"
         ]
     },
     {
@@ -301,6 +346,7 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -321,8 +367,10 @@
         ],
         "equippable": [
             "FIGHTER",
+            "RED_MAGE",
+            "KNIGHT",
             "NINJA",
-            "RED_MAGE"
+            "RED_WIZARD"
         ]
     },
     {
@@ -339,8 +387,10 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
+            "RED_MAGE",
+            "KNIGHT",
             "NINJA",
-            "RED_MAGE"
+            "RED_WIZARD"
         ]
     },
     {
@@ -358,7 +408,10 @@
         "equippable": [
             "FIGHTER",
             "THIEF",
-            "RED_MAGE"
+            "RED_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
         ]
     },
     {
@@ -375,8 +428,10 @@
         ],
         "equippable": [
             "FIGHTER",
+            "RED_MAGE",
+            "KNIGHT",
             "NINJA",
-            "RED_MAGE"
+            "RED_WIZARD"
         ]
     },
     {
@@ -393,8 +448,10 @@
         ],
         "equippable": [
             "FIGHTER",
+            "RED_MAGE",
+            "KNIGHT",
             "NINJA",
-            "RED_MAGE"
+            "RED_WIZARD"
         ]
     },
     {
@@ -412,7 +469,10 @@
         "equippable": [
             "FIGHTER",
             "THIEF",
-            "RED_MAGE"
+            "RED_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
         ]
     },
     {
@@ -429,8 +489,10 @@
         ],
         "equippable": [
             "FIGHTER",
+            "RED_MAGE",
+            "KNIGHT",
             "NINJA",
-            "RED_MAGE"
+            "RED_WIZARD"
         ]
     },
     {
@@ -449,7 +511,10 @@
         "equippable": [
             "FIGHTER",
             "THIEF",
-            "RED_MAGE"
+            "RED_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
         ]
     },
     {
@@ -464,10 +529,14 @@
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
-            "NINJA",
             "BLACK_BELT",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -484,6 +553,7 @@
         ],
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -498,8 +568,9 @@
         "attackElements": [],
         "enemyTypes": [],
         "equippable": [
+            "WHITE_MAGE",
             "NINJA",
-            "WHITE_MAGE"
+            "WHITE_WIZARD"
         ]
     },
     {
@@ -513,8 +584,9 @@
         "attackElements": [],
         "enemyTypes": [],
         "equippable": [
+            "BLACK_MAGE",
             "NINJA",
-            "BLACK_MAGE"
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -674,7 +746,13 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     }
 ]

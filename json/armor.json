@@ -14,7 +14,13 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -30,7 +36,11 @@
             "FIGHTER",
             "THIEF",
             "BLACK_BELT",
-            "RED_MAGE"
+            "RED_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD"
         ]
     },
     {
@@ -44,8 +54,10 @@
         "type": "BODY",
         "equippable": [
             "FIGHTER",
+            "RED_MAGE",
+            "KNIGHT",
             "NINJA",
-            "RED_MAGE"
+            "RED_WIZARD"
         ]
     },
     {
@@ -59,6 +71,7 @@
         "type": "BODY",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -72,7 +85,8 @@
         "spellId": 0,
         "type": "BODY",
         "equippable": [
-            "FIGHTER"
+            "FIGHTER",
+            "KNIGHT"
         ]
     },
     {
@@ -86,8 +100,10 @@
         "type": "BODY",
         "equippable": [
             "FIGHTER",
+            "RED_MAGE",
+            "KNIGHT",
             "NINJA",
-            "RED_MAGE"
+            "RED_WIZARD"
         ]
     },
     {
@@ -103,6 +119,7 @@
         "type": "BODY",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -119,6 +136,7 @@
         "type": "BODY",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -169,7 +187,13 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -187,7 +211,13 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -205,7 +235,13 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -223,7 +259,13 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -269,6 +311,7 @@
         "type": "SHIELD",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -283,6 +326,7 @@
         "type": "SHIELD",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -297,6 +341,7 @@
         "type": "SHIELD",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -313,6 +358,7 @@
         "type": "SHIELD",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -329,6 +375,7 @@
         "type": "SHIELD",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -374,7 +421,10 @@
         "equippable": [
             "FIGHTER",
             "THIEF",
-            "RED_MAGE"
+            "RED_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD"
         ]
     },
     {
@@ -391,7 +441,12 @@
             "THIEF",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -409,7 +464,13 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -423,6 +484,7 @@
         "type": "HELMET",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -437,6 +499,7 @@
         "type": "HELMET",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -451,6 +514,7 @@
         "type": "HELMET",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -505,7 +569,13 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -523,7 +593,13 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -537,6 +613,7 @@
         "type": "GLOVES",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -551,6 +628,7 @@
         "type": "GLOVES",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA"
         ]
     },
@@ -565,6 +643,7 @@
         "type": "GLOVES",
         "equippable": [
             "FIGHTER",
+            "KNIGHT",
             "NINJA",
             "RED_WIZARD"
         ]
@@ -595,8 +674,9 @@
         "type": "GLOVES",
         "equippable": [
             "FIGHTER",
-            "NINJA",
-            "RED_WIZARD"
+            "KNIGHT",
+            "RED_WIZARD",
+            "NINJA"
         ]
     },
     {
@@ -629,7 +709,13 @@
             "BLACK_BELT",
             "RED_MAGE",
             "WHITE_MAGE",
-            "BLACK_MAGE"
+            "BLACK_MAGE",
+            "KNIGHT",
+            "NINJA",
+            "MASTER",
+            "RED_WIZARD",
+            "WHITE_WIZARD",
+            "BLACK_WIZARD"
         ]
     }
 ]
