@@ -42,12 +42,6 @@ public class Item{
         this.price = price;
     }
     
-    public Item(JsonNode node){
-        this.name = node.path("name").asString("Non-coercible value");
-        this.shopId = node.path("shopId").asInt(0);
-        this.price = node.path("price").asInt(0);
-    }
-    
     public static Item buildFromJson(JsonNode node){
         String name = node.path("name").asString("Non-coercible value");
         int shopId = node.path("shopId").asInt(0);
