@@ -54,9 +54,9 @@ public class Weapon extends Item {
         this.spellId = node.path("spellId").asInt(0);
         
         this.attackElements = EnumSet.noneOf(Element.class);
-        JsonNode attackElem = node.path("attackElements");
-        if(attackElem.isArray()){
-            for(JsonNode i : attackElem){
+        JsonNode attackElemNode = node.path("attackElements");
+        if(attackElemNode.isArray()){
+            for(JsonNode i : attackElemNode){
                 Optional<String> optValue = i.asStringOpt();
                 if(optValue.isEmpty()){
                     LOGGER.log(Level.WARNING, "Non-string element found in JSON");
@@ -71,9 +71,9 @@ public class Weapon extends Item {
         }
         
         this.enemyTypes = EnumSet.noneOf(EnemyType.class);
-         JsonNode enTypes = node.path("enemyTypes");
-        if(attackElem.isArray()){
-            for(JsonNode i : enTypes){
+         JsonNode enemyTypesNode = node.path("enemyTypes");
+        if(enemyTypesNode.isArray()){
+            for(JsonNode i : enemyTypesNode){
                 Optional<String> optValue = i.asStringOpt();
                 if(optValue.isEmpty()){
                     LOGGER.log(Level.WARNING, "Non-string enemy type found in JSON");
@@ -88,9 +88,9 @@ public class Weapon extends Item {
         }
         
         this.equippable = EnumSet.noneOf(CharacterJob.class);
-        JsonNode equip = node.path("equippable");
-        if(equip.isArray()){
-            for(JsonNode i : equip){
+        JsonNode equippableNode = node.path("equippable");
+        if(equippableNode.isArray()){
+            for(JsonNode i : equippableNode){
                 Optional<String> optValue = i.asStringOpt();
                 if(optValue.isEmpty()){
                     LOGGER.log(Level.WARNING, "Non-string job found in JSON");

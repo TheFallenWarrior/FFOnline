@@ -61,9 +61,9 @@ public class Armor extends Item {
         }
         
         this.elementalResistances = EnumSet.noneOf(Element.class);
-        JsonNode resistances = node.path("elementalResistances");
-        if (resistances.isArray()) {
-            for (JsonNode i : resistances) {
+        JsonNode elemResistNode = node.path("elementalResistances");
+        if (elemResistNode.isArray()) {
+            for (JsonNode i : elemResistNode) {
                 Optional<String> optValue = i.asStringOpt();
                 if(optValue.isEmpty()){
                     LOGGER.log(Level.WARNING, "Non-string element found in JSON");
@@ -78,9 +78,9 @@ public class Armor extends Item {
         }
         
         this.equippable = EnumSet.noneOf(CharacterJob.class);
-        JsonNode equip = node.path("equippable");
-        if(equip.isArray()){
-            for(JsonNode i : equip){
+        JsonNode equippableNode = node.path("equippable");
+        if(equippableNode.isArray()){
+            for(JsonNode i : equippableNode){
                 Optional<String> optValue = i.asStringOpt();
                 if(optValue.isEmpty()){
                     LOGGER.log(Level.WARNING, "Non-string job found in JSON");
