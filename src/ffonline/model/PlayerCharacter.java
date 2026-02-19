@@ -89,8 +89,10 @@ public class PlayerCharacter extends Battler {
         
         Armor toDrop = armorInventory.get(inventoryIndex);
         
-        if(equippedArmor.get(toDrop.getType()) == toDrop)
+        if(equippedArmor.get(toDrop.getType()) == toDrop){
             equippedArmor.remove(toDrop.getType());
+            updateStats();
+        }
         
         return Optional.of(armorInventory.remove(inventoryIndex));
     }
