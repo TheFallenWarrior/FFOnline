@@ -139,7 +139,6 @@ public class PlayerCharacter extends Battler {
     
     public Optional<Weapon> dropWeapon(int inventoryIndex){
         if(
-            weaponInventory.isEmpty() ||
             inventoryIndex < 0 ||
             inventoryIndex >= weaponInventory.size()
         ) return Optional.empty();
@@ -152,7 +151,6 @@ public class PlayerCharacter extends Battler {
     
     public boolean equipWeapon(int inventoryIndex){
         if(
-            weaponInventory.isEmpty() ||
             inventoryIndex < 0 ||
             inventoryIndex >= weaponInventory.size()
         ) return false;
