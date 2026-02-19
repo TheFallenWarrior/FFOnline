@@ -25,6 +25,7 @@ package ffonline.model;
 
 import ffonline.JsonLoader;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.Optional;
 
 /**
@@ -45,6 +46,8 @@ public class PlayerCharacter extends Battler {
     private CharacterJob job;
     
     private final ArrayList<Armor> armorInventory = new ArrayList<>();
+    private final EnumMap<ArmorType, Armor> equippedArmor = new EnumMap<>(ArmorType.class);
+
     private final ArrayList<Weapon> weaponInventory = new ArrayList<>();
     private Weapon equippedWeapon;
 
@@ -64,6 +67,62 @@ public class PlayerCharacter extends Battler {
     @Override
     public int getBaseHitsPerTurn(){
         return 1+(getHitChance()/32);
+    }
+    
+    public boolean receiveArmor(int armorIndex){
+        Optional<Armor> opt = JsonLoader.getArmor(armorIndex);
+        return opt.map(this::receiveArmor).orElse(false);
+    }
+    
+    public boolean receiveArmor(Armor armor){
+        if(armor == null || armorInventory.size() >= MAX_INVENTORY)
+            return false;
+        armorInventory.add(armor);
+        return true;
+    }
+    
+    public Optional<Armor> dropArmor(int inventoryIndex){
+        if(
+            inventoryIndex < 0 ||
+            inventoryIndex >= armorInventory.size()
+        ) return Optional.empty();
+        
+        Armor toDrop = armorInventory.get(inventoryIndex);
+        
+        if(equippedArmor.get(toDrop.getType()) == toDrop)
+            equippedArmor.remove(toDrop.getType());
+        
+        return Optional.of(armorInventory.remove(inventoryIndex));
+    }
+    
+    public boolean equipArmor(int inventoryIndex){
+        if(
+            inventoryIndex < 0 ||
+            inventoryIndex >= armorInventory.size()
+        ) return false;
+        
+        Armor toEquip = armorInventory.get(inventoryIndex);
+        
+        if(toEquip.isEquippable(job)){
+            equippedArmor.put(toEquip.getType(), toEquip);
+            updateStats();
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean unequipArmor(int inventoryIndex){
+        if(
+            inventoryIndex < 0 ||
+            inventoryIndex >= armorInventory.size()
+        ) return false;
+        
+        Armor toUnequip = armorInventory.get(inventoryIndex);
+        
+        if(equippedArmor.get(toUnequip.getType()) != toUnequip) return false;
+        equippedArmor.remove(toUnequip.getType());
+        updateStats();
+        return true;
     }
     
     public boolean receiveWeapon(int weaponIndex){
