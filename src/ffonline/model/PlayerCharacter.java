@@ -126,15 +126,8 @@ public class PlayerCharacter extends Battler {
     }
     
     public boolean receiveWeapon(int weaponIndex){
-        if(weaponInventory.size() >= MAX_INVENTORY)
-            return false;
-
         Optional<Weapon> opt = JsonLoader.getWeapon(weaponIndex);
-        if(opt.isEmpty()) return false;
-        else{
-            weaponInventory.add(opt.get());
-            return true;
-        }
+        return opt.map(this::receiveWeapon).orElse(false);
     }
     
     public boolean receiveWeapon(Weapon weapon){
