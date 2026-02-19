@@ -141,7 +141,7 @@ public class PlayerCharacter extends Battler {
         if(
             weaponInventory.isEmpty() ||
             inventoryIndex < 0 ||
-            inventoryIndex > weaponInventory.size()
+            inventoryIndex >= weaponInventory.size()
         ) return Optional.empty();
         
         if(weaponInventory.get(inventoryIndex) == equippedWeapon)
@@ -154,7 +154,7 @@ public class PlayerCharacter extends Battler {
         if(
             weaponInventory.isEmpty() ||
             inventoryIndex < 0 ||
-            inventoryIndex > weaponInventory.size()
+            inventoryIndex >= weaponInventory.size()
         ) return false;
         
         if(weaponInventory.get(inventoryIndex).isEquippable(job)){
