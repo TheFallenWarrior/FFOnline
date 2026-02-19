@@ -38,8 +38,8 @@ public class Item{
 
     public Item(String name, int shopId, int price){
         this.name = name;
-        this.shopId = shopId;
-        this.price = price;
+        this.shopId = shopId&0xff;
+        this.price = price&0xffff;
     }
     
     public static Item buildFromJson(JsonNode node){

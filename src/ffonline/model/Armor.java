@@ -56,10 +56,10 @@ public class Armor extends Item{
             EnumSet<CharacterJob> equippable
     ){
         super(name, shopId, price);
-        this.weight = weight;
-        this.absorb = absorb;
+        this.weight = weight&0xff;
+        this.absorb = absorb&0xff;
         this.elementalResistances = elementalResistances.clone();
-        this.spellId = spellId;
+        this.spellId = spellId&0xff;
         this.type = type;
         this.equippable = equippable.clone();
     }

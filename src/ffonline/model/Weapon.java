@@ -58,10 +58,10 @@ public class Weapon extends Item {
         EnumSet<CharacterJob> equippable
     ){
         super(name, shopId, price);
-        this.hitChance = hitChance;
-        this.critChance = critChance;
-        this.damage = damage;
-        this.spellId = spellId;
+        this.hitChance = hitChance&0xff;
+        this.critChance = critChance&0xff;
+        this.damage = damage&0xff;
+        this.spellId = spellId&0xff;
         this.attackElements = attackElements.clone();
         this.enemyTypes = enemyTypes.clone();
         this.equippable = equippable.clone();
