@@ -57,9 +57,11 @@ public class PlayerCharacter extends Battler {
     }
     
     @Override
+    // TODO: Implement method logic
     public boolean rollCrit(){ return true; }
 
     @Override
+    // TODO: Implement method logic
     public void battleEnd(){
 
     }
@@ -170,6 +172,7 @@ public class PlayerCharacter extends Battler {
         updateStats();
     }
     
+    // TODO: Implement method logic
     public void updateStats(){}
 
     public int getLevel() {

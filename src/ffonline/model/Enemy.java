@@ -34,6 +34,7 @@ public class Enemy extends Battler{
     }
 
     @Override
+    // TODO: Implement method logic
     public boolean rollCrit(){ return false; }
 
     @Override
