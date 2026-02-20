@@ -42,7 +42,7 @@ public abstract class Battler {
     /*
      * Battle stats
      */
-    private int hp;
+    private int hp, maxHp;
     private int damage; // Attack
     private int absorb; // Defense
     private int evadeChance; // Evasion
@@ -197,6 +197,15 @@ public abstract class Battler {
     public EnumSet<Element> getElementalWeaknesses(){
         return elementalWeaknesses.clone();
     }
+    
+    public int getMaxHp(){
+        return maxHp;
+    }
+
+    public void setMaxHp(int maxHp){
+        this.maxHp = maxHp&0xffff;
+        setHp(hp);
+    }
 
     public int getHp(){
         return hp;
@@ -211,7 +220,7 @@ public abstract class Battler {
             addStatus(StatusAilment.DEAD);
             return;
         }
-        this.hp = hp;
+        this.hp = Math.min(hp&0xff, maxHp);
     }
 
     public void offsetHp(int offset){
