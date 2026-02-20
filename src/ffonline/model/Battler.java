@@ -220,7 +220,7 @@ public abstract class Battler {
             addStatus(StatusAilment.DEAD);
             return;
         }
-        this.hp = Math.min(hp&0xff, maxHp);
+        this.hp = Math.min(hp&0xffff, maxHp);
     }
 
     public void offsetHp(int offset){
