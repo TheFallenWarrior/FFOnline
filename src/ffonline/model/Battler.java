@@ -32,7 +32,7 @@ import java.util.Random;
  */
 public abstract class Battler {
     private String name;
-    private EnumSet<StatusAilment> statuses;
+    private final EnumSet<StatusAilment> statuses;
     private EnumSet<Element> attackElements;
     private EnumSet<Element> elementalResistances;
     private EnumSet<Element> elementalWeaknesses;
