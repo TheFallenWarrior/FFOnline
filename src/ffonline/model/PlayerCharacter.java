@@ -51,7 +51,7 @@ public class PlayerCharacter extends Battler {
     private CharacterJob job;
     
     private final ArrayList<Armor> armorInventory = new ArrayList<>();
-    private final EnumMap<ArmorType, Armor> equippedArmor = new EnumMap<>(ArmorType.class);
+    private final EnumMap<ArmorType, Armor> equippedArmors = new EnumMap<>(ArmorType.class);
 
     private final ArrayList<Weapon> weaponInventory = new ArrayList<>();
     private Weapon equippedWeapon;
@@ -96,8 +96,8 @@ public class PlayerCharacter extends Battler {
         
         Armor toDrop = armorInventory.get(inventoryIndex);
         
-        if(equippedArmor.get(toDrop.getType()) == toDrop){
-            equippedArmor.remove(toDrop.getType());
+        if(equippedArmors.get(toDrop.getType()) == toDrop){
+            equippedArmors.remove(toDrop.getType());
             updateStats();
         }
         
@@ -113,7 +113,7 @@ public class PlayerCharacter extends Battler {
         Armor toEquip = armorInventory.get(inventoryIndex);
         
         if(toEquip.isEquippable(job)){
-            equippedArmor.put(toEquip.getType(), toEquip);
+            equippedArmors.put(toEquip.getType(), toEquip);
             updateStats();
             return true;
         }
@@ -128,8 +128,8 @@ public class PlayerCharacter extends Battler {
         
         Armor toUnequip = armorInventory.get(inventoryIndex);
         
-        if(equippedArmor.get(toUnequip.getType()) != toUnequip) return false;
-        equippedArmor.remove(toUnequip.getType());
+        if(equippedArmors.get(toUnequip.getType()) != toUnequip) return false;
+        equippedArmors.remove(toUnequip.getType());
         updateStats();
         return true;
     }
@@ -200,7 +200,7 @@ public class PlayerCharacter extends Battler {
         int totalAbsorb = 0;
         int totalWeight= 0;
         EnumSet<Element> totalResistances = EnumSet.noneOf(Element.class);
-        for(Armor i : equippedArmor.values()){
+        for(Armor i : equippedArmors.values()){
             if(i == null) continue;
             totalAbsorb += i.getAbsorb();
             totalWeight += i.getWeight();
