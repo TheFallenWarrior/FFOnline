@@ -177,7 +177,6 @@ public class PlayerCharacter extends Battler {
         updateStats();
     }
     
-    // TODO: Implement method logic
     public void updateStats(){
         updateStats(false);
     }
