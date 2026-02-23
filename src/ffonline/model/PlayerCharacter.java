@@ -181,7 +181,7 @@ public class PlayerCharacter extends Battler {
         updateStats(false);
     }
 
-    public void updateStats(boolean blackBeltBug){
+    public void updateStats(boolean blackBeltBugEnable){
         // Weapon stats
         if(equippedWeapon != null){
             setDamage(strength/2 + equippedWeapon.getDamage());
@@ -221,8 +221,8 @@ public class PlayerCharacter extends Battler {
                         
             // INTENTIONAL: The original Black Belt level-up bug is replicated
             if(
-                !blackBeltBug && totalAbsorb == 0 ||
-                blackBeltBug && equippedWeapon == null
+                !blackBeltBugEnable && totalAbsorb == 0 ||
+                blackBeltBugEnable && equippedWeapon == null
             ) setAbsorb(level);
         }
     }
