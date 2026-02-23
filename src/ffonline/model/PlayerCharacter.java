@@ -26,6 +26,7 @@ package ffonline.model;
 import ffonline.JsonLoader;
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.EnumSet;
 import java.util.Optional;
 
 /**
@@ -42,6 +43,10 @@ public class PlayerCharacter extends Battler {
     private int agility;
     private int intelligence;
     private int vitality;
+    
+    private int critChance;
+    private int baseHitChance;
+    private int baseHitsPerTurn;
     
     private CharacterJob job;
     
@@ -68,7 +73,7 @@ public class PlayerCharacter extends Battler {
 
     @Override
     public int getBaseHitsPerTurn(){
-        return 1+(getHitChance()/32);
+        return baseHitsPerTurn;
     }
     
     public boolean receiveArmor(int armorIndex){
@@ -173,7 +178,55 @@ public class PlayerCharacter extends Battler {
     }
     
     // TODO: Implement method logic
-    public void updateStats(){}
+    public void updateStats(){
+        updateStats(false);
+    }
+
+    public void updateStats(boolean blackBeltBug){
+        // Weapon stats
+        if(equippedWeapon != null){
+            setDamage(strength/2 + equippedWeapon.getDamage());
+            setHitChance(baseHitChance + equippedWeapon.getHitChance());
+            critChance = equippedWeapon.getCritChance();
+        } else{
+            setDamage(strength/2);
+            setHitChance(baseHitChance);
+            critChance = 0;
+        }
+        
+        baseHitsPerTurn = (1+(getHitChance()/32));
+        
+        // Armor stats
+        int totalAbsorb = 0;
+        int totalWeight= 0;
+        EnumSet<Element> totalResistances = EnumSet.noneOf(Element.class);
+        for(Armor i : equippedArmor.values()){
+            if(i == null) continue;
+            totalAbsorb += i.getAbsorb();
+            totalWeight += i.getWeight();
+            totalResistances.addAll(i.getElementalResistances());
+        }
+        setAbsorb(totalAbsorb);
+        setEvadeChance(48 + agility - totalWeight);
+        setElementalResistances(totalResistances);
+        
+        // Black Belt-specific behavior
+        if(job == CharacterJob.BLACK_BELT || job == CharacterJob.MASTER){
+            if(equippedWeapon == null){
+                setDamage(level*2);
+                critChance = level*2;
+                baseHitsPerTurn *= 2;
+            } else{
+                setDamage(1 + getDamage());
+            }
+                        
+            // INTENTIONAL: The original Black Belt level-up bug is replicated
+            if(
+                !blackBeltBug && totalAbsorb == 0 ||
+                blackBeltBug && equippedWeapon == null
+            ) setAbsorb(level);
+        }
+    }
 
     public int getLevel() {
         return level;
@@ -229,5 +282,21 @@ public class PlayerCharacter extends Battler {
     
     public void setJob(CharacterJob job){
         this.job = job;
+    }
+
+    public int getBaseHitChance() {
+        return baseHitChance;
+    }
+
+    public void setBaseHitChance(int baseHitChance) {
+        this.baseHitChance = baseHitChance;
+    }
+
+    public int getCritChance() {
+        return critChance;
+    }
+
+    public void setCritChance(int critChance) {
+        this.critChance = critChance;
     }
 }
