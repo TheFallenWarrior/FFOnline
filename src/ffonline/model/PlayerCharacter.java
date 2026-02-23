@@ -233,7 +233,7 @@ public class PlayerCharacter extends Battler {
     }
 
     public void setLevel(int level) {
-        this.level = level;
+        this.level = level&0xff;
     }
 
     public int getExp() {
@@ -249,7 +249,7 @@ public class PlayerCharacter extends Battler {
     }
 
     public void setStrength(int strength) {
-        this.strength = strength;
+        this.strength = strength&0xff;
     }
 
     public int getAgility() {
@@ -257,7 +257,7 @@ public class PlayerCharacter extends Battler {
     }
 
     public void setAgility(int agility) {
-        this.agility = agility;
+        this.agility = agility&0xff;
     }
 
     public int getIntelligence() {
@@ -265,7 +265,7 @@ public class PlayerCharacter extends Battler {
     }
 
     public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
+        this.intelligence = intelligence&0xff;
     }
 
     public int getVitality() {
@@ -273,7 +273,7 @@ public class PlayerCharacter extends Battler {
     }
 
     public void setVitality(int vitality) {
-        this.vitality = vitality;
+        this.vitality = vitality&0xff;
     }
 
     public CharacterJob getJob() {
@@ -289,7 +289,7 @@ public class PlayerCharacter extends Battler {
     }
 
     public void setBaseHitChance(int baseHitChance) {
-        this.baseHitChance = baseHitChance;
+        this.baseHitChance = baseHitChance&0xff;
     }
 
     public int getCritChance() {
@@ -297,6 +297,6 @@ public class PlayerCharacter extends Battler {
     }
 
     public void setCritChance(int critChance) {
-        this.critChance = critChance;
+        this.critChance = critChance&0xff;
     }
 }
