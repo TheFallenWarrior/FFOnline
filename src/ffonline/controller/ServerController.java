@@ -29,6 +29,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Level;
@@ -45,6 +47,8 @@ public class ServerController {
     private final int port;
     private final ExecutorService threadPool;
     
+    private final Set<ClientHandler> clients = ConcurrentHashMap.newKeySet();
+    
     public ServerController(int port, boolean isQuiet){
         this.port = port;
         this.threadPool = Executors.newFixedThreadPool(MAX_CLIENTS);
@@ -58,7 +62,9 @@ public class ServerController {
                 Socket clientSocket = serverSocket.accept();
                 LOGGER.log(Level.INFO, "Client connected: {0}.", clientSocket.getRemoteSocketAddress());
                 
-                threadPool.execute(new ClientHandler(clientSocket));
+                ClientHandler client = new ClientHandler(clientSocket);
+                clients.add(client);
+                threadPool.execute(client);
             }
         } catch(IOException e){
             LOGGER.log(Level.SEVERE, "Server error: {0}.", e.getMessage());
@@ -67,8 +73,9 @@ public class ServerController {
         }
     }
     
-    private static class ClientHandler implements Runnable {
+    private class ClientHandler implements Runnable {
         private final Socket clientSocket;
+        private PrintWriter out;
 
         ClientHandler(Socket socket) {
             this.clientSocket = socket;
@@ -79,17 +86,13 @@ public class ServerController {
             try (
                 BufferedReader in = new BufferedReader(
                         new InputStreamReader(clientSocket.getInputStream()));
-                PrintWriter out = new PrintWriter(
-                        clientSocket.getOutputStream(), true)
             ) {
+                out = new PrintWriter(
+                    clientSocket.getOutputStream(), true
+                );
                 String message;
                 while ((message = in.readLine()) != null) {
-                    /*System.out.println(
-                        "Received from " + clientSocket.getRemoteSocketAddress() + ": " + message
-                    );*/
-
-                    // Echo back to the same client
-                    out.println(message);
+                    broadcast(message);
                 }
             } catch (IOException e) {
                 System.err.println(
@@ -97,11 +100,22 @@ public class ServerController {
                 );
                 LOGGER.log(Level.WARNING, "Connection error with {0}.", clientSocket.getRemoteSocketAddress());
             } finally {
-                try {
-                    clientSocket.close();
-                } catch (IOException ignored) {}
-                LOGGER.log(Level.INFO, "Client disconnected: {0}.", clientSocket.getRemoteSocketAddress());
+                cleanup();
             }
+        }
+        
+        private void broadcast(String message){
+            for(ClientHandler client : clients){
+                if(client != this) client.out.println(message);
+            }
+        }
+        
+        private void cleanup(){
+            clients.remove(this);
+            try{
+                clientSocket.close();
+            } catch(IOException ignored){}
+            LOGGER.log(Level.INFO, "Client disconnected: {0}.", clientSocket.getRemoteSocketAddress());
         }
     }
 }
