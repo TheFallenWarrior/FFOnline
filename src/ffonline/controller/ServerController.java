@@ -56,7 +56,7 @@ public class ServerController {
     
     public void listen(){
         try(ServerSocket serverSocket = new ServerSocket(port)){
-            LOGGER.log(Level.INFO, "Starter FFOnline server in port {0}.", port);
+            LOGGER.log(Level.INFO, "Started FFOnline server in port {0}.", port);
             while(true){
                 Socket clientSocket = serverSocket.accept();
                 LOGGER.log(Level.INFO, "Client connected: {0}.", clientSocket.getRemoteSocketAddress());
