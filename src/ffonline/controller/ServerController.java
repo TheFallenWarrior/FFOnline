@@ -43,7 +43,7 @@ public class ServerController {
     private static final Logger LOGGER = Logger.getLogger(ServerController.class.getName());
     
     private final int port;
-    ExecutorService threadPool;
+    private final ExecutorService threadPool;
     
     public ServerController(int port, boolean isQuiet){
         this.port = port;
