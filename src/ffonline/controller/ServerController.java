@@ -122,6 +122,8 @@ public class ServerController {
                     }
                 }
                 
+                case "" -> {}
+                
                 default -> out.println("Unknown command: \""+splitCommand[0]+"\"");
             }
         }
