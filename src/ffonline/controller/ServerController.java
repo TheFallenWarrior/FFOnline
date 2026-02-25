@@ -103,9 +103,6 @@ public class ServerController {
                     runGameCommand(command);
                 }
             } catch (IOException e) {
-                System.err.println(
-                    "Connection error with " + clientSocket.getRemoteSocketAddress()
-                );
                 LOGGER.log(Level.WARNING, "Connection error with {0}.", clientSocket.getRemoteSocketAddress());
             } finally {
                 cleanup();
