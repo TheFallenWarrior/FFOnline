@@ -35,6 +35,6 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ServerController controller = new ServerController(PORT, true);
+        ServerController controller = new ServerController(PORT, false);
         controller.listen();
     }}
