@@ -23,12 +23,7 @@
  */
 package ffonline;
 
-import ffonline.controller.ClientHandler;
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import ffonline.controller.ServerController;
 
 /**
  *
@@ -36,26 +31,10 @@ import java.util.concurrent.Executors;
  */
 public class Main {
     private static final int PORT = 4080;
-    private static final int MAX_CLIENTS = 20;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ExecutorService threadPool = Executors.newFixedThreadPool(MAX_CLIENTS);
-
-        System.out.println("TCP Echo Server started on port " + PORT);
-        
-        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            while (true) {
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("Client connected: " + clientSocket.getRemoteSocketAddress());
-
-                threadPool.execute(new ClientHandler(clientSocket));
-            }
-        } catch (IOException e) {
-            System.err.println("Server error: " + e.getMessage());
-        } finally {
-            threadPool.shutdown();
-        }
-    }
-}
+        ServerController controller = new ServerController(PORT, true);
+        controller.listen();
+    }}
