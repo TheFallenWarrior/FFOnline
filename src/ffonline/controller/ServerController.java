@@ -38,7 +38,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author user
+ * @author thefa
  */
 public class ServerController {
     private static final Logger LOGGER = Logger.getLogger(ServerController.class.getName());
