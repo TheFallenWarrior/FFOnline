@@ -77,7 +77,7 @@ public class Main {
             \t-c<clients>\tDefine the maximum number of concurrent clients (Default: 50)
             \t-h\t\tShow this message and exit
             \t-p<port>\tDefine the port to run on (Default: 4080)
-            \t-q\t\tQuiet; only errors are logged
+            \t-q\t\tQuiet; only log errors
         """);
         System.exit(status);
     }
