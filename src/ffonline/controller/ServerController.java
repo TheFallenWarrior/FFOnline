@@ -41,7 +41,6 @@ import java.util.logging.Logger;
  * @author user
  */
 public class ServerController {
-    private static final int MAX_CLIENTS = 20;
     private static final Logger LOGGER = Logger.getLogger(ServerController.class.getName());
     
     private final int port;
@@ -49,9 +48,9 @@ public class ServerController {
     
     private final Set<ClientHandler> clients = ConcurrentHashMap.newKeySet();
     
-    public ServerController(int port, boolean isQuiet){
+    public ServerController(int port, int maxClients, boolean isQuiet){
         this.port = port;
-        this.threadPool = Executors.newFixedThreadPool(MAX_CLIENTS);
+        this.threadPool = Executors.newFixedThreadPool(maxClients);
         if(isQuiet) LOGGER.setLevel(Level.SEVERE);
     }
     
