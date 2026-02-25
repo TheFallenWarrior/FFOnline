@@ -99,9 +99,9 @@ public class ServerController {
                 
                 out.println("Welcome, "+username+"!");
                 
-                String message;
-                while ((message = in.readLine()) != null) {
-                    broadcast(username+" says \""+message+"\"");
+                String command;
+                while ((command = in.readLine()) != null) {
+                    runGameCommand(command);
                 }
             } catch (IOException e) {
                 System.err.println(
@@ -110,6 +110,23 @@ public class ServerController {
                 LOGGER.log(Level.WARNING, "Connection error with {0}.", clientSocket.getRemoteSocketAddress());
             } finally {
                 cleanup();
+            }
+        }
+        
+        private void runGameCommand(String command){
+            String[] splitCommand = command.split(" ", 2);
+            switch (splitCommand[0]) {
+                case "ooc" -> broadcast(username+" says \""+splitCommand[1]+"\"");
+                
+                case "who" -> {
+                    out.println("Logged in users:");
+                    for(ClientHandler client : clients){
+                        if(client == this) out.println(" "+client.username+" (you)");
+                        else out.println(" "+client.username);
+                    }
+                }
+                
+                default -> out.println("Unknown command: \""+splitCommand[0]+"\"");
             }
         }
         
