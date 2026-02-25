@@ -76,6 +76,7 @@ public class ServerController {
     private class ClientHandler implements Runnable {
         private final Socket clientSocket;
         private PrintWriter out;
+        private String username;
 
         ClientHandler(Socket socket) {
             this.clientSocket = socket;
@@ -90,9 +91,17 @@ public class ServerController {
                 out = new PrintWriter(
                     clientSocket.getOutputStream(), true
                 );
+                
+                out.println("Enter your username:");
+                username = in.readLine();
+                
+                if(username == null || username.trim().isEmpty()) username = "Guest";
+                
+                out.println("Welcome, "+username+"!");
+                
                 String message;
                 while ((message = in.readLine()) != null) {
-                    broadcast(message);
+                    broadcast(username+" says \""+message+"\"");
                 }
             } catch (IOException e) {
                 System.err.println(
