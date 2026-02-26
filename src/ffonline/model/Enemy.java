@@ -34,14 +34,15 @@ public class Enemy extends Battler{
     }
 
     @Override
-    // TODO: Implement method logic
-    public boolean rollCrit(){ return false; }
-
-    @Override
     public void battleEnd(){
         setHp(0);
     }
-
+    
+    @Override
+    public int getCritChance() {
+        return 0;
+    }
+    
     @Override
     public int getBaseHitsPerTurn(){ return 1; }
 }

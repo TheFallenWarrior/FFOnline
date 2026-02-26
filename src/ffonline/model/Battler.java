@@ -122,7 +122,7 @@ public abstract class Battler {
 
             int attackDamage = Math.max(baseDamage - target.absorb, 1);
             
-            if(rollCrit()){
+            if(hitRoll <= getCritChance()){
                 attackDamage += baseDamage;
                 isCritical = true;
             }
@@ -135,8 +135,8 @@ public abstract class Battler {
         
         return new AttackResult(totalDamage, successfulHits, isCritical);
     }
-
-    public abstract boolean rollCrit();
+    
+    public abstract int getCritChance();
 
     /**
      * Removes temporary battle effects; on enemies, it immediately kills them.

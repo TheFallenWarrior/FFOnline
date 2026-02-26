@@ -60,10 +60,6 @@ public class PlayerCharacter extends Battler {
     public boolean canReceiveStatus(StatusAilment status){
         return (status != StatusAilment.CONFUSED && super.canReceiveStatus(status));
     }
-    
-    @Override
-    // TODO: Implement method logic
-    public boolean rollCrit(){ return true; }
 
     @Override
     // TODO: Implement method logic
@@ -291,6 +287,7 @@ public class PlayerCharacter extends Battler {
         this.baseHitChance = baseHitChance&0xff;
     }
 
+    @Override
     public int getCritChance() {
         return critChance;
     }
