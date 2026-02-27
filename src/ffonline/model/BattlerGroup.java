@@ -25,6 +25,8 @@ package ffonline.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -54,8 +56,8 @@ public class BattlerGroup<T extends Battler> {
         return Optional.of(members.get(index));
     }
     
-    public ArrayList<T> getMembers(){
-        return (ArrayList<T>)members.clone();
+    public List<T> getMembers(){
+        return Collections.unmodifiableList(members);
     }
     
     public int getSize(){
