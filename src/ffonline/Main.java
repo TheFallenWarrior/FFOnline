@@ -72,7 +72,7 @@ public class Main {
     }
 
     private static void printUsageAndExit(int status){
-        System.err.print("""
+        System.out.print("""
             Usage: FFOnline <options>
             Options:
             \t-c<clients>\tDefine the maximum number of concurrent clients (Default: 50)
