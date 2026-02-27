@@ -72,12 +72,12 @@ public class BattlerGroup<T extends Battler> {
         return alive;
     }
     
-    public ArrayList<T> getAliveMembers(){
-        ArrayList<T> alive = new ArrayList<>();
+    public List<T> getAliveMembers(){
+        List<T> alive = new ArrayList<>();
         for(var member : members){
             if(!member.hasStatus(StatusAilment.DEAD))
                 alive.add(member);
         }
-        return alive;
+        return Collections.unmodifiableList(alive);
     }
 }
