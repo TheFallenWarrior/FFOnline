@@ -67,7 +67,7 @@ public class BattlerGroup<T extends Battler> {
     public int getAliveSize(){
         int alive = 0;
         for(var member : members){
-            if(member.hasStatus(StatusAilment.DEAD)) alive++;
+            if(!member.hasStatus(StatusAilment.DEAD)) alive++;
         }
         return alive;
     }
@@ -75,7 +75,7 @@ public class BattlerGroup<T extends Battler> {
     public ArrayList<T> getAliveMembers(){
         ArrayList<T> alive = new ArrayList<>();
         for(var member : members){
-            if(member.hasStatus(StatusAilment.DEAD))
+            if(!member.hasStatus(StatusAilment.DEAD))
                 alive.add(member);
         }
         return alive;
