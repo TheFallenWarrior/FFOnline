@@ -29,7 +29,33 @@ The game is still in development and as of now, it's not yet functional.
 
 ## How to Build
 
-No idea :(
+FFOnline is a Netbeans Ant project.
+
+### Requirements
+
+ - JDK 25
+ - Apache Ant
+
+ ### Build from command line
+
+```bash
+ant clean jar
+```
+
+This creates `dist/FFOnline.jar`.
+
+### Run from command line
+
+```bash
+ant run
+# or
+java -jar dist/FFOnline.jar
+```
+
+### Build/run from NetBeans
+
+1. Open the project in NetBeans.
+2. Use **Build Project** or **Run Project**.
 
 ## Credits
 Code by [Anna Jaqueline](https://codeberg.org/TheFallenWarrior)
