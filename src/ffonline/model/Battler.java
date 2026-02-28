@@ -151,6 +151,10 @@ public abstract class Battler {
     public void decreaseHitMultiplier(){
         hitMultiplier = Math.max(hitMultiplier-1, 0);
     }
+    
+    public void resetHitMultiplier(){
+        hitMultiplier = 1;
+    }
 
     public abstract int getBaseHitsPerTurn();
     
