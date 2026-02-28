@@ -94,7 +94,7 @@ public class ServerController {
                 out.println("Enter your username:");
                 username = in.readLine();
                 
-                if(username == null || username.trim().isEmpty()) username = "Guest";
+                if(username == null || username.isBlank()) username = "Guest";
                 
                 out.println("Welcome, "+username+"!");
                 
