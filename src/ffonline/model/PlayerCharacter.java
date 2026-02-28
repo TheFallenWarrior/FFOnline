@@ -62,9 +62,17 @@ public class PlayerCharacter extends Battler {
     }
 
     @Override
-    // TODO: Implement method logic
     public void battleEnd(){
-
+        resetHitMultiplier();
+        
+        // Remove temporary status ailments
+        removeStatus(StatusAilment.BLIND);
+        removeStatus(StatusAilment.PARALYZED);
+        removeStatus(StatusAilment.ASLEEP);
+        removeStatus(StatusAilment.SILENCED);
+        
+        // Clear stat buffs/debuffs
+        updateStats();
     }
 
     @Override
