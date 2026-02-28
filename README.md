@@ -12,13 +12,14 @@ The game is still in development and as of now, it's not yet functional.
  - ~~Items and equipment~~
  - Player character and progression
  - Magic and enemies' special attacks
- - Magic and items out of battle
  - Player party and character creation
  - Encode enemy data and AI
  - Battle commands (FIGHT, MAGIC, DRINK, etc.)
  - Enemy formations
  - Battle system
+ - Using magic and items out of battle
  - Locations (overworld, towns, shops, dungeons)
+ - Transportation (SHIP, AIRSHIP, CANOE)
  - Local chat and whispers
  - Key items and game progress
 
