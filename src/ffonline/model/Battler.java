@@ -115,7 +115,7 @@ public abstract class Battler {
             if((hitRoll > finalHitChance && hitRoll != 0) || hitRoll == 200) continue; // Attack missed
 
             // Calculate damage
-            // Due to a bug in the original game, elements and enemy types have no
+            // INTENTIONAL: Due to a bug in the original game, elements and enemy types have no
             // effect in damage output. 
             int baseDamage = damage + rng.nextInt(0, 1+damage);
             if(target.hasStatus(StatusAilment.ASLEEP) || target.hasStatus(StatusAilment.PARALYZED))
