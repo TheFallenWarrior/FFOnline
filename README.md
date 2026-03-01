@@ -11,6 +11,9 @@ The game is still in development and as of now, it's not yet functional.
  - ~~Global chat~~
  - ~~Items and equipment~~
  - Player character and progression
+   - ~~Equipment and stat calculation~~
+   - Creating new characters from JSON job data
+   - Leveling up, EXP and stat curves
  - Magic and enemies' special attacks
  - Player party and character creation
  - Encode enemy data and AI
