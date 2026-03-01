@@ -28,8 +28,9 @@ The game is still in development and as of now, it's not yet functional.
 
 ## Limitations
 
- - Plain text only; support for encryption, compression, or MUD-specific protocols (e.g. GMCP, MSSP, etc.) is not planned
+ - Networking is plain text only; support for encryption, compression, or MUD-specific protocols (e.g. GMCP, MSSP, etc.) is not planned
  - No persistent data is stored, your account and game progress are lost as soon as you disconnect; data storage in a database is not a planned feature
+ - Random numbers are generated using `java.util.Random`, as FFOnline does not reimplement the original RNG algorithm. If you are well-acquainted to FF1's behavior, you might notice some deviation.
 
 ## How to Build
 
