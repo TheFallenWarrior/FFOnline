@@ -15,7 +15,7 @@ The game is still in development and as of now, it's not yet functional.
    - Creating new characters from JSON job data
    - Leveling up, EXP and stat curves
  - Magic and enemies' special attacks
- - Player party and character creation
+ - Player party and player-facing character creation
  - Encode enemy data and AI
  - Battle commands (FIGHT, MAGIC, DRINK, etc.)
  - Enemy formations
