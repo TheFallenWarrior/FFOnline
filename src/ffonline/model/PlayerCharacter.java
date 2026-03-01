@@ -43,6 +43,7 @@ public class PlayerCharacter extends Battler {
     private int agility;
     private int intelligence;
     private int vitality;
+    private int luck;
     
     private int critChance;
     private int baseHitChance;
@@ -305,5 +306,13 @@ public class PlayerCharacter extends Battler {
 
     public void setCritChance(int critChance) {
         this.critChance = critChance&0xff;
+    }
+
+    public int getLuck() {
+        return luck;
+    }
+
+    public void setLuck(int luck) {
+        this.luck = luck&0xff;
     }
 }
