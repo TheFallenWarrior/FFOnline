@@ -188,6 +188,9 @@ public class PlayerCharacter extends Battler {
     public void updateStats(boolean blackBeltBugEnable){
         // Weapon stats
         if(equippedWeapon != null){
+            // INTENTIONAL: Due to a bug in FF1, weapon elemental affinities are never loaded and have no effect
+            // INTENTIONAL: Another bug causes characters to be weak to the element their weapon is strong against,
+            //  but because of the bug described above, it has no effect
             setDamage(strength/2 + equippedWeapon.getDamage());
             setHitChance(baseHitChance + equippedWeapon.getHitChance());
             critChance = equippedWeapon.getCritChance();
