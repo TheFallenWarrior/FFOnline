@@ -94,6 +94,7 @@ public abstract class Battler {
      * Battle methods
      */
 
+    // TODO: Move this method to a battle command class
     public AttackResult attack(Battler target){
         int totalDamage = 0, successfulHits = 0;
         boolean isCritical = false;
