@@ -82,13 +82,15 @@ public class ServerController {
         }
 
         @Override
-        public void run() {
-            try (
+        public void run(){
+            try(
                 BufferedReader in = new BufferedReader(
-                        new InputStreamReader(clientSocket.getInputStream()));
-            ) {
+                    new InputStreamReader(clientSocket.getInputStream())
+                );
+            ){
                 out = new PrintWriter(
-                    clientSocket.getOutputStream(), true
+                    clientSocket.getOutputStream(),
+                        true
                 );
                 
                 out.println("Enter your username:");
@@ -99,12 +101,12 @@ public class ServerController {
                 out.println("Welcome, "+username+"!");
                 
                 String command;
-                while ((command = in.readLine()) != null) {
+                while((command = in.readLine()) != null){
                     runGameCommand(command);
                 }
-            } catch (IOException e) {
+            } catch(IOException e){
                 LOGGER.log(Level.WARNING, "Connection error with {0}.", clientSocket.getRemoteSocketAddress());
-            } finally {
+            } finally{
                 cleanup();
             }
         }
