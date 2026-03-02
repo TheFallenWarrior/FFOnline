@@ -176,15 +176,15 @@ public abstract class Battler {
     }
 
     public EnumSet<StatusAilment> getStatuses(){
-        return statuses.clone();
+        return EnumSet.copyOf(statuses);
     }
 
     public void setAttackElements(EnumSet<Element> attackElements){
-        this.attackElements = attackElements;
+        this.attackElements = EnumSet.copyOf(attackElements);
     }
 
     public EnumSet<Element> getAttackElements(){
-        return attackElements.clone();
+        return EnumSet.copyOf(attackElements);
     }
 
     public void setElementalResistances(EnumSet<Element> elementalResistances){
@@ -192,7 +192,7 @@ public abstract class Battler {
     }
 
     public EnumSet<Element> getElementalResistances(){
-        return elementalResistances.clone();
+        return EnumSet.copyOf(elementalResistances);
     }
 
     public void setElementalWeaknesses(EnumSet<Element> elementalWeaknesses){
@@ -200,7 +200,7 @@ public abstract class Battler {
     }
 
     public EnumSet<Element> getElementalWeaknesses(){
-        return elementalWeaknesses.clone();
+        return EnumSet.copyOf(elementalWeaknesses);
     }
     
     public int getMaxHp(){
