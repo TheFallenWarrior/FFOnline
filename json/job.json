@@ -2,7 +2,7 @@
     {
         "hp": 35,
         "strength": 20,
-        "aglility": 5,
+        "agility": 5,
         "intelligence": 1,
         "vitality": 10,
         "luck": 5,
@@ -15,7 +15,7 @@
     {
         "hp": 30,
         "strength": 5,
-        "aglility": 10,
+        "agility": 10,
         "intelligence": 5,
         "vitality": 5,
         "luck": 15,
@@ -28,7 +28,7 @@
     {
         "hp": 33,
         "strength": 5,
-        "aglility": 5,
+        "agility": 5,
         "intelligence": 5,
         "vitality": 20,
         "luck": 5,
@@ -41,7 +41,7 @@
     {
         "hp": 30,
         "strength": 10,
-        "aglility": 10,
+        "agility": 10,
         "intelligence": 10,
         "vitality": 5,
         "luck": 5,
@@ -54,7 +54,7 @@
     {
         "hp": 28,
         "strength": 5,
-        "aglility": 5,
+        "agility": 5,
         "intelligence": 15,
         "vitality": 10,
         "luck": 5,
@@ -67,7 +67,7 @@
     {
         "hp": 25,
         "strength": 1,
-        "aglility": 10,
+        "agility": 10,
         "intelligence": 20,
         "vitality": 1,
         "luck": 10,
@@ -80,7 +80,7 @@
     {
         "hp": 0,
         "strength": 0,
-        "aglility": 0,
+        "agility": 0,
         "intelligence": 0,
         "vitality": 0,
         "luck": 0,
@@ -93,7 +93,7 @@
     {
         "hp": 0,
         "strength": 0,
-        "aglility": 0,
+        "agility": 0,
         "intelligence": 0,
         "vitality": 0,
         "luck": 0,
@@ -106,7 +106,7 @@
     {
         "hp": 0,
         "strength": 0,
-        "aglility": 0,
+        "agility": 0,
         "intelligence": 0,
         "vitality": 0,
         "luck": 0,
@@ -119,7 +119,7 @@
     {
         "hp": 0,
         "strength": 0,
-        "aglility": 0,
+        "agility": 0,
         "intelligence": 0,
         "vitality": 0,
         "luck": 0,
@@ -132,7 +132,7 @@
     {
         "hp": 0,
         "strength": 0,
-        "aglility": 0,
+        "agility": 0,
         "intelligence": 0,
         "vitality": 0,
         "luck": 0,
@@ -145,7 +145,7 @@
     {
         "hp": 0,
         "strength": 0,
-        "aglility": 0,
+        "agility": 0,
         "intelligence": 0,
         "vitality": 0,
         "luck": 0,
