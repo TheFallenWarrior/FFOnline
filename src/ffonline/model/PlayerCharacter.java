@@ -73,7 +73,7 @@ public class PlayerCharacter extends Battler {
             int evadeChance,
             CharacterJob job
     ){
-        super(hp, damage, hitChance, evadeChance);
+        super(hp&0xff, damage, hitChance, evadeChance);
         this.strength = strength&0xff;
         this.agility = agility&0xff;
         this.intelligence = intelligence&0xff;
