@@ -16,10 +16,17 @@ The game is still in development and as of now, it's not yet functional.
    - Leveling up, EXP and stat curves
  - Magic and enemies' special attacks
  - Player party and player-facing character creation
+ - Game state manager in the controller with command dispatching
  - Encode enemy data and AI
  - Battle commands (FIGHT, MAGIC, DRINK, etc.)
+   - Base Command class
+   - FIGHT command
+   - MAGIC command
+   - DRINK command
+   - ITEM command
+   - RUN command
  - Enemy formations
- - Battle system
+ - Battle engine with turn/command orchestration
  - Using magic and items out of battle
  - Locations (overworld, towns, shops, dungeons)
  - Transportation (SHIP, AIRSHIP, CANOE)
