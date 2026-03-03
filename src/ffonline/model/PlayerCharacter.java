@@ -38,7 +38,7 @@ import tools.jackson.databind.JsonNode;
  */
 public class PlayerCharacter extends Battler {
     private static final int MAX_INVENTORY = 4;
-    private static final Logger LOGGER = Logger.getLogger(Armor.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(PlayerCharacter.class.getName());
     public static final String JSON_PATH = "json/job.json";
 
     private int level;
