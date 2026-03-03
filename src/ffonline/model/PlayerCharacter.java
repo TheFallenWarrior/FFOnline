@@ -50,7 +50,6 @@ public class PlayerCharacter extends Battler {
     private int vitality;
     private int luck;
     
-    private int critChance;
     private int baseHitChance;
     private int baseHitsPerTurn;
     
@@ -253,11 +252,11 @@ public class PlayerCharacter extends Battler {
             //  but because of the bug described above, it has no effect
             setDamage(strength/2 + equippedWeapon.getDamage());
             setHitChance(baseHitChance + equippedWeapon.getHitChance());
-            critChance = equippedWeapon.getCritChance();
+            setCritChance(equippedWeapon.getCritChance());
         } else{
             setDamage(strength/2);
             setHitChance(baseHitChance);
-            critChance = 0;
+            setCritChance(0);
         }
         
         baseHitsPerTurn = (1+(getHitChance()/32));
@@ -280,7 +279,7 @@ public class PlayerCharacter extends Battler {
         if(job == CharacterJob.BLACK_BELT || job == CharacterJob.MASTER){
             if(equippedWeapon == null){
                 setDamage(level*2);
-                critChance = level*2;
+                setCritChance(level*2);
                 baseHitsPerTurn *= 2;
             } else{
                 setDamage(1 + getDamage());
@@ -356,15 +355,6 @@ public class PlayerCharacter extends Battler {
 
     public void setBaseHitChance(int baseHitChance) {
         this.baseHitChance = baseHitChance&0xff;
-    }
-
-    @Override
-    public int getCritChance() {
-        return critChance;
-    }
-
-    public void setCritChance(int critChance) {
-        this.critChance = critChance&0xff;
     }
 
     public int getLuck() {

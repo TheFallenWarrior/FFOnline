@@ -47,6 +47,7 @@ public abstract class Battler {
     private int absorb; // Defense
     private int evadeChance; // Evasion
     private int hitChance;   // Accuracy
+    private int critChance;
     private int magicAbsorb;
 
     private int hitMultiplier = 1; // Affects number of hit per turn
@@ -153,8 +154,6 @@ public abstract class Battler {
         return new AttackResult(totalDamage, successfulHits, isCritical);
     }
     
-    public abstract int getCritChance();
-
     /**
      * Removes temporary battle effects; on enemies, it immediately kills them.
      */
@@ -290,5 +289,13 @@ public abstract class Battler {
 
     public void setMagicAbsorb(int magicAbsorb){
         this.magicAbsorb = magicAbsorb&0xff;
+    }
+
+    public int getCritChance() {
+        return critChance;
+    }
+
+    public void setCritChance(int critChance) {
+        this.critChance = critChance&0xff;
     }
 }
