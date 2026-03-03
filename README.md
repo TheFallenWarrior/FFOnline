@@ -72,4 +72,4 @@ java -jar dist/FFOnline.jar
 ## Credits
 Code by [Anna Jaqueline](https://codeberg.org/TheFallenWarrior)
 
-Based on the [Final Fantasy - Game Mechanics Guide](http://www.gamefaqs.com/nes/522595-final-fantasy/faqs/57009) by AstralEsper
+Based on the [Final Fantasy - Game Mechanics Guide](http://www.gamefaqs.com/nes/522595-final-fantasy/faqs/57009) by AstralEsper and FFBytes by Y Dienyddiwr Da.
