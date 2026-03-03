@@ -50,7 +50,7 @@ public abstract class Battler {
     private int critChance;
     private int magicAbsorb;
 
-    private int hitMultiplier = 1; // Affects number of hit per turn
+    private int hitMultiplier = 1; // Affects number of hits per turn
 
     public Battler(){
         statuses = EnumSet.noneOf(StatusAilment.class);
