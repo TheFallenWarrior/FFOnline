@@ -19,7 +19,7 @@ The game is still in development and as of now, it's not yet functional.
  - Game state manager in the controller with command dispatching
  - Encode enemy data and AI
  - Battle commands (FIGHT, MAGIC, DRINK, etc.)
-   - Base Command class
+   - ~~Base Command class~~
    - FIGHT command
    - MAGIC command
    - DRINK command
