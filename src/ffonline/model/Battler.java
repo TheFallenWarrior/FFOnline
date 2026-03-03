@@ -66,6 +66,22 @@ public abstract class Battler {
         elementalWeaknesses = EnumSet.noneOf(Element.class);
         rng = new Random(rngSeed);
     }
+    
+    public Battler(int hp, int damage, int hitChance, int evadeChance){
+        this.hp = maxHp = hp&0xffff;
+        this.damage = damage&0xff;
+        this.hitChance = hitChance&0xff;
+        this.evadeChance = evadeChance&0xff;
+        
+        statuses = EnumSet.noneOf(StatusAilment.class);
+        elementalOffense = EnumSet.noneOf(Element.class);
+        elementalResistances = EnumSet.noneOf(Element.class);
+        elementalWeaknesses = EnumSet.noneOf(Element.class);
+        rng = new Random();
+        
+        name = "null";
+        absorb = magicAbsorb = 0;
+    }
 
     /*
      * Status ailment management

@@ -28,6 +28,9 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import tools.jackson.databind.JsonNode;
 
 /**
  *
@@ -35,7 +38,9 @@ import java.util.Optional;
  */
 public class PlayerCharacter extends Battler {
     private static final int MAX_INVENTORY = 4;
-    
+    private static final Logger LOGGER = Logger.getLogger(Armor.class.getName());
+    public static final String JSON_PATH = "json/job.json";
+
     private int level;
     private int exp;
     
@@ -57,6 +62,60 @@ public class PlayerCharacter extends Battler {
     private final ArrayList<Weapon> weaponInventory = new ArrayList<>();
     private Weapon equippedWeapon;
 
+    public PlayerCharacter(
+            int hp,
+            int strength,
+            int agility,
+            int intelligence,
+            int vitality,
+            int luck,
+            int damage,
+            int hitChance,
+            int evadeChance,
+            CharacterJob job
+    ){
+        super(hp, damage, hitChance, evadeChance);
+        this.strength = strength&0xff;
+        this.agility = agility&0xff;
+        this.intelligence = intelligence&0xff;
+        this.vitality = vitality&0xff;
+        this.luck = luck&0xff;
+        this.job = job;
+    }
+    
+    public static PlayerCharacter buildFromJson(JsonNode node){
+        int hp = node.path("hp").asInt(0);
+        int strength = node.path("strength").asInt(0);
+        int agility = node.path("agility").asInt(0);
+        int intelligence = node.path("intelligence").asInt(0);
+        int vitality = node.path("vitality").asInt(0);
+        int luck = node.path("luck").asInt(0);
+        int damage = node.path("damage").asInt(0);
+        int hitChance = node.path("hitChance").asInt(0);
+        int evadeChance = node.path("evadeChance").asInt(0);
+
+        Optional<String> optJob = node.path("job").asStringOpt();
+        CharacterJob resolvedJob = CharacterJob.FIGHTER;
+        try{
+            resolvedJob = CharacterJob.valueOf(optJob.orElse("Non-coercible value"));
+        } catch(IllegalArgumentException e){
+            LOGGER.log(Level.WARNING, "Unknown armor type found in JSON: {0}", optJob.orElse("Non-coercible value"));
+        }
+        
+        return new PlayerCharacter(
+            hp,
+            strength,
+            agility,
+            intelligence,
+            vitality,
+            luck,
+            damage,
+            hitChance,
+            evadeChance,
+            resolvedJob
+        );
+    }
+    
     @Override
     public boolean canReceiveStatus(StatusAilment status){
         return (status != StatusAilment.CONFUSED && super.canReceiveStatus(status));
