@@ -33,7 +33,7 @@ import java.util.Random;
 public abstract class Battler {
     private String name;
     private final EnumSet<StatusAilment> statuses;
-    private EnumSet<Element> attackElements;
+    private EnumSet<Element> elementalOffense;
     private EnumSet<Element> elementalResistances;
     private EnumSet<Element> elementalWeaknesses;
     
@@ -53,7 +53,7 @@ public abstract class Battler {
 
     public Battler(){
         statuses = EnumSet.noneOf(StatusAilment.class);
-        attackElements = EnumSet.noneOf(Element.class);
+        elementalOffense = EnumSet.noneOf(Element.class);
         elementalResistances = EnumSet.noneOf(Element.class);
         elementalWeaknesses = EnumSet.noneOf(Element.class);
         rng = new Random();
@@ -61,7 +61,7 @@ public abstract class Battler {
     
     public Battler(long rngSeed){
         statuses = EnumSet.noneOf(StatusAilment.class);
-        attackElements = EnumSet.noneOf(Element.class);
+        elementalOffense = EnumSet.noneOf(Element.class);
         elementalResistances = EnumSet.noneOf(Element.class);
         elementalWeaknesses = EnumSet.noneOf(Element.class);
         rng = new Random(rngSeed);
@@ -179,12 +179,12 @@ public abstract class Battler {
         return EnumSet.copyOf(statuses);
     }
 
-    public void setAttackElements(EnumSet<Element> attackElements){
-        this.attackElements = EnumSet.copyOf(attackElements);
+    public void setElementalOffense(EnumSet<Element> elementalOffense){
+        this.elementalOffense = EnumSet.copyOf(elementalOffense);
     }
 
-    public EnumSet<Element> getAttackElements(){
-        return EnumSet.copyOf(attackElements);
+    public EnumSet<Element> getElementalOffense(){
+        return EnumSet.copyOf(elementalOffense);
     }
 
     public void setElementalResistances(EnumSet<Element> elementalResistances){

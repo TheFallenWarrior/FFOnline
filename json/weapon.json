@@ -7,7 +7,7 @@
         "critChance": 1,
         "damage": 12,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "BLACK_BELT",
@@ -23,7 +23,7 @@
         "critChance": 2,
         "damage": 5,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -44,7 +44,7 @@
         "critChance": 3,
         "damage": 6,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -68,7 +68,7 @@
         "critChance": 4,
         "damage": 9,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -87,7 +87,7 @@
         "critChance": 5,
         "damage": 9,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -105,7 +105,7 @@
         "critChance": 6,
         "damage": 15,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -123,7 +123,7 @@
         "critChance": 7,
         "damage": 16,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -139,7 +139,7 @@
         "critChance": 8,
         "damage": 10,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -158,7 +158,7 @@
         "critChance": 9,
         "damage": 16,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "BLACK_BELT",
@@ -174,7 +174,7 @@
         "critChance": 10,
         "damage": 7,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -195,7 +195,7 @@
         "critChance": 11,
         "damage": 14,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -213,7 +213,7 @@
         "critChance": 12,
         "damage": 13,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -232,7 +232,7 @@
         "critChance": 13,
         "damage": 20,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -250,7 +250,7 @@
         "critChance": 14,
         "damage": 22,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -266,7 +266,7 @@
         "critChance": 15,
         "damage": 15,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -285,7 +285,7 @@
         "critChance": 16,
         "damage": 10,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -306,7 +306,7 @@
         "critChance": 17,
         "damage": 23,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -324,7 +324,7 @@
         "critChance": 18,
         "damage": 12,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -342,7 +342,7 @@
         "critChance": 19,
         "damage": 25,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -358,7 +358,7 @@
         "critChance": 20,
         "damage": 26,
         "spellId": 0,
-        "attackElements": [
+        "elementalOffense": [
             "FIRE"
         ],
         "enemyTypes": [
@@ -381,7 +381,7 @@
         "critChance": 21,
         "damage": 29,
         "spellId": 0,
-        "attackElements": [
+        "elementalOffense": [
             "ICE"
         ],
         "enemyTypes": [],
@@ -401,7 +401,7 @@
         "critChance": 22,
         "damage": 19,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [
             "DRAGON"
         ],
@@ -422,7 +422,7 @@
         "critChance": 23,
         "damage": 21,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [
             "GIANT"
         ],
@@ -442,7 +442,7 @@
         "critChance": 24,
         "damage": 32,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [
             "UNDEAD"
         ],
@@ -462,7 +462,7 @@
         "critChance": 25,
         "damage": 19,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [
             "AQUATIC"
         ],
@@ -483,7 +483,7 @@
         "critChance": 26,
         "damage": 18,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [
             "WERE"
         ],
@@ -503,7 +503,7 @@
         "critChance": 27,
         "damage": 18,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [
             "MAGICAL",
             "MAGE"
@@ -525,7 +525,7 @@
         "critChance": 28,
         "damage": 12,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",
@@ -547,7 +547,7 @@
         "critChance": 29,
         "damage": 28,
         "spellId": 18,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [
             "UNDEAD"
         ],
@@ -565,7 +565,7 @@
         "critChance": 30,
         "damage": 6,
         "spellId": 20,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "WHITE_MAGE",
@@ -581,7 +581,7 @@
         "critChance": 31,
         "damage": 12,
         "spellId": 21,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "BLACK_MAGE",
@@ -597,7 +597,7 @@
         "critChance": 32,
         "damage": 30,
         "spellId": 4,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "KNIGHT",
@@ -613,7 +613,7 @@
         "critChance": 33,
         "damage": 15,
         "spellId": 31,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "BLACK_WIZARD"
@@ -627,7 +627,7 @@
         "critChance": 34,
         "damage": 24,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "KNIGHT",
@@ -643,7 +643,7 @@
         "critChance": 35,
         "damage": 22,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "KNIGHT",
@@ -660,7 +660,7 @@
         "critChance": 36,
         "damage": 18,
         "spellId": 23,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "KNIGHT",
@@ -676,7 +676,7 @@
         "critChance": 37,
         "damage": 22,
         "spellId": 38,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "KNIGHT",
@@ -692,7 +692,7 @@
         "critChance": 38,
         "damage": 33,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "NINJA"
@@ -706,7 +706,7 @@
         "critChance": 39,
         "damage": 45,
         "spellId": 0,
-        "attackElements": [
+        "elementalOffense": [
             "STATUS",
             "POISON",
             "TIME",
@@ -738,7 +738,7 @@
         "critChance": 40,
         "damage": 56,
         "spellId": 0,
-        "attackElements": [],
+        "elementalOffense": [],
         "enemyTypes": [],
         "equippable": [
             "FIGHTER",

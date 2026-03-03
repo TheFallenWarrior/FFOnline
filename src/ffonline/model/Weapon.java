@@ -41,7 +41,7 @@ public class Weapon extends Item {
     private final int critChance; // Weapon index number, 1-based
     private final int damage;
     private final int spellId;
-    private final EnumSet<Element> attackElements;
+    private final EnumSet<Element> elementalOffense;
     private final EnumSet<EnemyType> enemyTypes; // The enemy types the weapon is strong against
     private final EnumSet<CharacterJob> equippable;
     
@@ -53,7 +53,7 @@ public class Weapon extends Item {
         int critChance,
         int damage,
         int spellId,
-        EnumSet<Element> attackElements,
+        EnumSet<Element> elementalOffense,
         EnumSet<EnemyType> enemyTypes,
         EnumSet<CharacterJob> equippable
     ){
@@ -62,7 +62,7 @@ public class Weapon extends Item {
         this.critChance = critChance&0xff;
         this.damage = damage&0xff;
         this.spellId = spellId&0xff;
-        this.attackElements = attackElements.clone();
+        this.elementalOffense = elementalOffense.clone();
         this.enemyTypes = enemyTypes.clone();
         this.equippable = equippable.clone();
     }
@@ -77,8 +77,8 @@ public class Weapon extends Item {
         int damage = node.path("damage").asInt(0);
         int spellId = node.path("spellId").asInt(0);
         
-        EnumSet<Element> attackElements = EnumSet.noneOf(Element.class);
-        JsonNode attackElemNode = node.path("attackElements");
+        EnumSet<Element> elementalOffense = EnumSet.noneOf(Element.class);
+        JsonNode attackElemNode = node.path("elementalOffense");
         if(attackElemNode.isArray()){
             for(JsonNode i : attackElemNode){
                 Optional<String> optValue = i.asStringOpt();
@@ -86,7 +86,7 @@ public class Weapon extends Item {
                     LOGGER.log(Level.WARNING, "Non-string element found in JSON");
                 } else{
                     try{
-                        attackElements.add(Element.valueOf(optValue.get()));
+                        elementalOffense.add(Element.valueOf(optValue.get()));
                     } catch(IllegalArgumentException e){
                         LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", optValue.get());
                     }
@@ -136,7 +136,7 @@ public class Weapon extends Item {
             critChance,
             damage,
             spellId,
-            attackElements,
+            elementalOffense,
             enemyTypes,
             equippable
         );
@@ -162,8 +162,8 @@ public class Weapon extends Item {
         return spellId;
     }
 
-    public EnumSet<Element> getAttackElements() {
-        return attackElements.clone();
+    public EnumSet<Element> getElementalOffense() {
+        return elementalOffense.clone();
     }
 
     public EnumSet<EnemyType> getEnemyTypes() {
