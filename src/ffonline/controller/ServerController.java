@@ -76,6 +76,7 @@ public class ServerController {
         private final Socket clientSocket;
         private PrintWriter out;
         private String username;
+        private GameStateManager game;
 
         ClientHandler(Socket socket) {
             this.clientSocket = socket;
@@ -99,6 +100,8 @@ public class ServerController {
                 if(username == null || username.isBlank()) username = "Guest";
                 
                 out.println("Welcome, "+username+"!");
+                
+                game = new GameStateManager(in, out);
                 
                 String command;
                 while((command = in.readLine()) != null){
