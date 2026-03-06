@@ -116,6 +116,8 @@ public class ServerController {
         
         private void runGameCommand(String command){
             String[] splitCommand = command.split(" ", 2);
+            
+            // Commands that depend on other players are inlined here.
             switch (splitCommand[0]) {
                 case "ooc" -> broadcast(username+" says \""+splitCommand[1]+"\"");
                 
