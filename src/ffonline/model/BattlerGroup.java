@@ -28,6 +28,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 /**
  *
@@ -35,15 +36,24 @@ import java.util.Optional;
  * @param <T> The type of the battlers that make up the BattlerGroup
  */
 public class BattlerGroup<T extends Battler> extends ArrayList<T>{
+    protected Random rng;
     
-    public BattlerGroup(){}
+    public BattlerGroup(){
+        rng = new Random();
+    }
+    
+    public BattlerGroup(long rngSeed){
+        rng = new Random(rngSeed);
+    }
     
     public BattlerGroup(T[] members){
         addAll(Arrays.asList(members));
+        rng = new Random();
     }
 
     public BattlerGroup(ArrayList<T> members){
         addAll(members);
+        rng = new Random();
     }
 
     public Optional<T> getOptional(int index){
@@ -66,5 +76,20 @@ public class BattlerGroup<T extends Battler> extends ArrayList<T>{
                 alive.add(member);
         }
         return Collections.unmodifiableList(alive);
+    }
+    
+    public Optional<T> getRandom(){
+        if(isEmpty()) return Optional.empty();
+        
+        int index = rng.nextInt(0, size());
+        return Optional.of(get(index));
+    }
+    
+    public Optional<T> getRandomAlive(){
+        List<T> alive = getAliveMembers();
+        if(alive.isEmpty()) return Optional.empty();
+        
+        int index = rng.nextInt(0, alive.size());
+        return Optional.of(alive.get(index));
     }
 }
