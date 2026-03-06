@@ -100,6 +100,7 @@ public class ServerController {
                 if(username == null || username.isBlank()) username = "Guest";
                 
                 out.println("Welcome, "+username+"!");
+                broadcast("LIGHT WARRIOR "+username+"'s journey begins..");
                 
                 game = new GameStateManager(in, out);
                 
@@ -148,6 +149,7 @@ public class ServerController {
             try{
                 clientSocket.close();
             } catch(IOException ignored){}
+            broadcast("LIGHT WARRIOR "+username+" disappeared into the void.");
             LOGGER.log(Level.INFO, "Client disconnected: {0}.", clientSocket.getRemoteSocketAddress());
         }
     }
