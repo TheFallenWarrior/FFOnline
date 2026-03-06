@@ -31,50 +31,37 @@ import java.util.Optional;
 
 /**
  *
- * @author user
+ * @author thefa
  * @param <T> The type of the battlers that make up the BattlerGroup
  */
-public class BattlerGroup<T extends Battler> {
-    private final ArrayList<T> members = new ArrayList<>();
+public class BattlerGroup<T extends Battler> extends ArrayList<T>{
     
     public BattlerGroup(){}
     
     public BattlerGroup(T[] members){
-        this.members.addAll(Arrays.asList(members));
+        addAll(Arrays.asList(members));
     }
-    
+
     public BattlerGroup(ArrayList<T> members){
-        this.members.addAll(members);
+        addAll(members);
     }
-    
-    public void addMember(T member){
-        members.add(member);
-    }
-    
-    public Optional<T> getMember(int index){
-        if(index < 0 || index >= members.size()) return Optional.empty();
-        return Optional.of(members.get(index));
-    }
-    
-    public List<T> getMembers(){
-        return Collections.unmodifiableList(members);
-    }
-    
-    public int getSize(){
-        return members.size();
+
+    public Optional<T> getOptional(int index){
+        if(index < 0 || index >= size()) return Optional.empty();
+        return Optional.of(get(index));
     }
     
     public int getAliveSize(){
         int alive = 0;
-        for(var member : members){
+        for(var member : this){
             if(!member.hasStatus(StatusAilment.DEAD)) alive++;
         }
         return alive;
     }
-    
+
     public List<T> getAliveMembers(){
         List<T> alive = new ArrayList<>();
-        for(var member : members){
+        for(var member : this){
             if(!member.hasStatus(StatusAilment.DEAD))
                 alive.add(member);
         }
