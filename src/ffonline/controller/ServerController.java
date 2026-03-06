@@ -120,7 +120,12 @@ public class ServerController {
             
             // Commands that depend on other players are inlined here.
             switch (splitCommand[0]) {
-                case "ooc" -> broadcast(username+" says \""+splitCommand[1]+"\"");
+                case "ooc" -> {
+                    if(splitCommand.length > 1)
+                        broadcast(username+" says \""+splitCommand[1]+"\"");
+                    else
+                        out.println("Error: Expected message after command.");
+                }
                 
                 case "who" -> {
                     out.println("Logged in users:");
