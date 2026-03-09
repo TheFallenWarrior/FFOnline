@@ -46,7 +46,7 @@ public class Presentation {
             " ABSORB\t%d\n" +
             " EVADE%%\t%d\n\n",
             character.getName(),
-            character.getJob().toString(),
+            character.getJob().displayName(),
             character.getLevel(),
             character.getExp(),
             -1, // Placeholder
@@ -70,11 +70,7 @@ public class Presentation {
                 member.getName(),
                 member.getHp(),
                 "Sad", // Placeholder
-                (
-                    member.getJob().toString().length() < 8 ?
-                    member.getJob().toString(): 
-                    member.getJob().toString().substring(0, 8)
-                )
+                member.getJob().displayName()
             ));
         }
         return str;
