@@ -28,16 +28,24 @@ package ffonline.model;
  * @author thefa
  */
 public enum CharacterJob {
-    FIGHTER,
-    THIEF,
-    BLACK_BELT,
-    RED_MAGE,
-    WHITE_MAGE,
-    BLACK_MAGE,
-    KNIGHT,
-    NINJA,
-    MASTER,
-    RED_WIZARD,
-    WHITE_WIZARD,
-    BLACK_WIZARD
+    FIGHTER("FIGHTER"),
+    THIEF("THIEF"),
+    BLACK_BELT("Bl.BELT"),
+    RED_MAGE("RedMAGE"),
+    WHITE_MAGE("Wh.MAGE"),
+    BLACK_MAGE("Bl.MAGE"),
+    KNIGHT("KNIGHT"),
+    NINJA("NINJA"),
+    MASTER("MASTER"),
+    RED_WIZARD("RedWIZ"),
+    WHITE_WIZARD("Wh.WIZ"),
+    BLACK_WIZARD("Bl.WIZ");
+    
+    private final String displayName;
+    
+    CharacterJob(String name){
+        this.displayName = name;
+    }
+    
+    public String displayName(){ return displayName; }
 }
