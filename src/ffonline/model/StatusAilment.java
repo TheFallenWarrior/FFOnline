@@ -28,12 +28,20 @@ package ffonline.model;
  * @author thefa
  */
 public enum StatusAilment {
-    DEAD,
-    PETRIFIED,
-    POISONED,
-    BLIND,
-    PARALYZED,
-    ASLEEP,
-    SILENCED,
-    CONFUSED
+    DEAD("Dead"),
+    PETRIFIED("Stone"),
+    POISONED("Poison"),
+    BLIND("Dark"),
+    PARALYZED("Stun"),
+    ASLEEP("Asleep"),
+    SILENCED("Mute"),
+    CONFUSED("Confused");
+
+    private final String displayName;
+
+    StatusAilment(String name){
+        this.displayName = name;
+    }
+    
+    public String displayName(){ return displayName; }
 }
