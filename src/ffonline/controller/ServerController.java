@@ -75,7 +75,7 @@ public class ServerController {
     private class ClientHandler implements Runnable {
         private final Socket clientSocket;
         private PrintWriter out;
-        private boolean isCleanedUp = false;
+        private ClientState state = ClientState.NAME_INPUT;
         private String username;
         private GameStateManager game;
 
@@ -104,6 +104,7 @@ public class ServerController {
                 broadcast("LIGHT WARRIOR "+username+"'s journey begins..");
                 
                 game = new GameStateManager(in, out);
+                state = ClientState.IN_GAME;
                 
                 String command;
                 while(!clientSocket.isClosed() && (command = in.readLine()) != null){
@@ -151,7 +152,7 @@ public class ServerController {
         }
         
         private void cleanup(){
-            if(isCleanedUp) return;
+            if(state == ClientState.LOGGED_OUT) return;
             
             clients.remove(this);
             try{
@@ -159,7 +160,7 @@ public class ServerController {
             } catch(IOException ignored){}
             broadcast("LIGHT WARRIOR "+username+" disappeared into the void.");
             LOGGER.log(Level.INFO, "Client disconnected: {0}.", clientSocket.getRemoteSocketAddress());
-            isCleanedUp = true;
+            state = ClientState.LOGGED_OUT;
         }
     }
 }
