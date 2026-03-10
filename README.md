@@ -18,12 +18,10 @@ The game is still in development and as of now, it's not yet functional.
  - Player party and player-facing character creation
  - Game state manager in the controller with command dispatching
  - Encode enemy data and AI
- - Battle commands (FIGHT, MAGIC, DRINK, etc.)
+ - Battle commands
    - ~~Base Command class~~
    - FIGHT command
-   - MAGIC command
-   - DRINK command
-   - ITEM command
+   - Magic commands (MAGIC, DRINK, ITEM)
    - RUN command
  - Enemy formations
  - Battle engine with turn/command orchestration
@@ -36,8 +34,8 @@ The game is still in development and as of now, it's not yet functional.
 ## Limitations
 
  - Networking is plain text only; support for encryption, compression, or MUD-specific protocols (e.g. GMCP, MSSP, etc.) is not planned
- - No persistent data is stored, your account and game progress are lost as soon as you disconnect; data storage in a database is not a planned feature
- - Random numbers are generated using `java.util.Random`, as FFOnline does not reimplement the original RNG algorithm. If you are well-acquainted to FF1's behavior, you might notice some deviation.
+ - No persistent data is stored, your account and game progress are lost as soon as you disconnect
+ - Random numbers are generated using `java.util.Random`, as FFOnline does not implement the original RNG algorithm. If you are well-acquainted to FF1's behavior, you might notice some deviation
 
 ## How to Build
 
@@ -72,4 +70,4 @@ java -jar dist/FFOnline.jar
 ## Credits
 Code by [Anna Jaqueline](https://codeberg.org/TheFallenWarrior)
 
-Based on the [Final Fantasy - Game Mechanics Guide](http://www.gamefaqs.com/nes/522595-final-fantasy/faqs/57009) by AstralEsper and FFBytes by Y Dienyddiwr Da.
+Based on the documentation in [Final Fantasy - Game Mechanics Guide](http://www.gamefaqs.com/nes/522595-final-fantasy/faqs/57009) by AstralEsper and FFBytes by Y Dienyddiwr Da.
