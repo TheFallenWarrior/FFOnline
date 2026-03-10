@@ -139,7 +139,11 @@ public class ServerController {
                     }
                 }
                 
-                case "logout" -> cleanup();
+                case "logout" -> {
+                    try{
+                        clientSocket.close();
+                    } catch(IOException ignored){}
+                }
                 
                 case "" -> {}
                 
