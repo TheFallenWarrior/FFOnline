@@ -124,7 +124,7 @@ public class ServerController {
             switch (splitCommand[0]) {
                 case "ooc" -> {
                     if(splitCommand.length > 1)
-                        broadcast(username+" says \""+splitCommand[1]+"\"");
+                        broadcast(username+" says, \""+splitCommand[1]+"\"");
                     else
                         out.println("Error: Expected message after command.");
                 }
