@@ -46,6 +46,18 @@ public class Presentation {
         return "OK";
     }
     
+    public static String login(String username){
+        return "LIGHT WARRIOR "+username+"'s journey begins..";
+    }
+    
+    public static String logout(String username){
+        return "LIGHT WARRIOR "+username+" disappeared into the void.";
+    }
+    
+    public static String say(String username, String message){
+        return username+" says, \""+message+"\"";
+    }
+    
     public static String characterStats(PlayerCharacter character){
         return String.format(
             "%s - %s - LEV %d\n\n" +
