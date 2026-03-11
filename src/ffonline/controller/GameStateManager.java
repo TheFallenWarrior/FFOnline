@@ -65,22 +65,26 @@ public class GameStateManager {
         }
     }
     
+    private Optional<PlayerCharacter> resolveCharacter(String token){
+        Optional<PlayerCharacter> charOpt = party.getFromName(token);
+        if(charOpt.isPresent()) return charOpt;
+        
+        try{
+            int charIndex = Integer.parseInt(token)-1;
+            return party.getOptional(charIndex);
+        } catch(NumberFormatException e){
+            return Optional.empty();
+        }
+    }
+    
     private void statusCommand(String[] splitCommand){
         switch(splitCommand.length){
             case 1 -> out.print(Presentation.partyStats(party));
             
             case 2 -> {
-                Optional<PlayerCharacter> charOpt = party.getFromName(splitCommand[1]);
-                if(charOpt.isPresent()){
-                    out.print(Presentation.characterStats(charOpt.get()));
-                } else{
-                    try{
-                        int charIndex = Integer.parseInt(splitCommand[1])-1;
-                        out.print(Presentation.characterStats(party.get(charIndex)));
-                    } catch(NumberFormatException | IndexOutOfBoundsException e){
-                        out.println("Error: '"+splitCommand[1]+"' isn't a valid character name or character index.");
-                    }
-                }
+                Optional<PlayerCharacter> charOpt = resolveCharacter(splitCommand[1]);
+                if(charOpt.isPresent()) out.print(Presentation.characterStats(charOpt.get()));
+                else out.println("Error: '"+splitCommand[1]+"' isn't a valid character name or character index.");
             }
             
             default -> out.println("Error: wrong number of arguments.");
