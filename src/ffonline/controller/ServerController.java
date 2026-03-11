@@ -142,7 +142,13 @@ public class ServerController {
                 case "logout" -> {
                     try{
                         clientSocket.close();
-                    } catch(IOException ignored){}
+                    } catch(IOException e){
+                        LOGGER.log(
+                            Level.WARNING,
+                            "IOException occurred when closing {0}'s socket.",
+                            clientSocket.getRemoteSocketAddress()
+                        );
+                    }
                 }
                 
                 default -> game.runGameCommand(command);
@@ -162,7 +168,14 @@ public class ServerController {
             clients.remove(this);
             try{
                 clientSocket.close();
-            } catch(IOException ignored){}
+            } catch(IOException e){
+                LOGGER.log(
+                    Level.WARNING,
+                    "IOException occurred when closing {0}'s socket.",
+                    clientSocket.getRemoteSocketAddress()
+                );
+            }
+            
             broadcast("LIGHT WARRIOR "+username+" disappeared into the void.");
             LOGGER.log(Level.INFO, "Client disconnected: {0}.", clientSocket.getRemoteSocketAddress());
             state = ClientState.LOGGED_OUT;
