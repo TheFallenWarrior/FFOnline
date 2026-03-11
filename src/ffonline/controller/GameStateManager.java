@@ -24,9 +24,11 @@
 package ffonline.controller;
 
 import ffonline.JsonLoader;
+import ffonline.model.PlayerCharacter;
 import ffonline.model.PlayerParty;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
+import java.util.Optional;
 
 /**
  *
@@ -47,5 +49,42 @@ public class GameStateManager {
         party.add(JsonLoader.getPlayerCharacter(0).get());
         party.add(JsonLoader.getPlayerCharacter(0).get());
         party.add(JsonLoader.getPlayerCharacter(0).get());
+    }
+    
+    public void runGameCommand(String command){
+        String[] splitCommand = command.split(" ");
+        
+        switch(splitCommand[0].toLowerCase()){
+            case "status" -> statusCommand(splitCommand);
+            
+            case "score" -> statusCommand(splitCommand);
+            
+            case "" -> {}
+                
+            default -> out.println("Unknown command: \""+splitCommand[0]+"\"");
+        }
+    }
+    
+    private void statusCommand(String[] splitCommand){
+        switch(splitCommand.length){
+            case 1 -> out.print(Presentation.partyStatus(party));
+            
+            case 2 -> {
+                Optional<PlayerCharacter> charOpt = party.getFromName(splitCommand[1]);
+                if(charOpt.isPresent()){
+                    out.print(Presentation.characterStatus(charOpt.get()));
+                } else{
+                    try{
+                        int charIndex = Integer.parseInt(splitCommand[1])-1;
+                        out.print(Presentation.characterStatus(party.get(charIndex)));
+                    } catch(NumberFormatException | IndexOutOfBoundsException e){
+                        out.println("Error: '"+splitCommand[1]+"' isn't a valid character name or character index.");
+                    }
+                }
+            }
+            
+            default -> out.println("Error: wrong number of arguments.");
+        }
+        out.flush();
     }
 }

@@ -145,9 +145,7 @@ public class ServerController {
                     } catch(IOException ignored){}
                 }
                 
-                case "" -> {}
-                
-                default -> out.println("Unknown command: \""+splitCommand[0]+"\"");
+                default -> game.runGameCommand(command);
             }
         }
         
