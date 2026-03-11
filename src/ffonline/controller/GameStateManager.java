@@ -67,16 +67,16 @@ public class GameStateManager {
     
     private void statusCommand(String[] splitCommand){
         switch(splitCommand.length){
-            case 1 -> out.print(Presentation.partyStatus(party));
+            case 1 -> out.print(Presentation.partyStats(party));
             
             case 2 -> {
                 Optional<PlayerCharacter> charOpt = party.getFromName(splitCommand[1]);
                 if(charOpt.isPresent()){
-                    out.print(Presentation.characterStatus(charOpt.get()));
+                    out.print(Presentation.characterStats(charOpt.get()));
                 } else{
                     try{
                         int charIndex = Integer.parseInt(splitCommand[1])-1;
-                        out.print(Presentation.characterStatus(party.get(charIndex)));
+                        out.print(Presentation.characterStats(party.get(charIndex)));
                     } catch(NumberFormatException | IndexOutOfBoundsException e){
                         out.println("Error: '"+splitCommand[1]+"' isn't a valid character name or character index.");
                     }

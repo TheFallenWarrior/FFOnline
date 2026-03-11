@@ -46,7 +46,7 @@ public class Presentation {
         return "OK";
     }
     
-    public static String characterStatus(PlayerCharacter character){
+    public static String characterStats(PlayerCharacter character){
         return String.format(
             "%s - %s - LEV %d\n\n" +
             " EXP. POINTS\t%d\n" +
@@ -77,7 +77,7 @@ public class Presentation {
         );
     }
     
-    public static String partyStatus(PlayerParty party){
+    public static String partyStats(PlayerParty party){
         StringBuilder str = new StringBuilder(" NAME\tHP\tSTATUS\tJOB\n");
         for(PlayerCharacter member : party){
             str = str.append(String.format(
