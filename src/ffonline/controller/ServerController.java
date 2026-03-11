@@ -108,7 +108,7 @@ public class ServerController {
                 
                 String command;
                 while(!clientSocket.isClosed() && (command = in.readLine()) != null){
-                    runGameCommand(command);
+                    runCommand(command);
                 }
             } catch(IOException e){
                 LOGGER.log(Level.WARNING, "Connection error with {0}.", clientSocket.getRemoteSocketAddress());
@@ -117,7 +117,7 @@ public class ServerController {
             }
         }
         
-        private void runGameCommand(String command){
+        private void runCommand(String command){
             ParsedCommand parseComm = new ParsedCommand(command, 0);
             
             // Commands that depend on shared server state are resolved here.
