@@ -121,7 +121,7 @@ public class ServerController {
             String[] splitCommand = command.split(" ", 2);
             
             // Commands that depend on shared server state are resolved here.
-            switch (splitCommand[0]) {
+            switch (splitCommand[0].toLowerCase()) {
                 case "ooc" -> {
                     if(splitCommand.length > 1)
                         broadcast(username+" says, \""+splitCommand[1]+"\"");
