@@ -78,9 +78,9 @@ public class Presentation {
     }
     
     public static String partyStatus(PlayerParty party){
-        String str = " NAME\tHP\tSTATUS\tJOB\n";
+        StringBuilder str = new StringBuilder(" NAME\tHP\tSTATUS\tJOB\n");
         for(PlayerCharacter member : party){
-            str = str.concat(String.format(
+            str = str.append(String.format(
                 " %s\t%d\t%s\t%s\n",
                 member.getName(),
                 member.getHp(),
@@ -88,6 +88,6 @@ public class Presentation {
                 member.getJob().displayName()
             ));
         }
-        return str;
+        return str.toString();
     }
 }
