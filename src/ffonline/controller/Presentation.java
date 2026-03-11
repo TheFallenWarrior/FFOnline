@@ -35,8 +35,8 @@ import ffonline.model.StatusAilment;
 public class Presentation {
     /**
      * Returns the name of the most severe status afflicting a character
-     * @param battler the Battler to get the status ailment from
-     * @return a String with the name of the first status ailment in battler.statuses, or "OK" if there are none
+     * @param battler the {@code Battler} to get the status ailment from
+     * @return a string with the name of the first status ailment in {@code battler.statuses}, or "OK" if there are none
      */
     private static String statusAilment(Battler battler){
         for(StatusAilment status : battler.getStatuses()){
