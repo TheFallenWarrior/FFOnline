@@ -103,7 +103,7 @@ public class ServerController {
                 out.println("Welcome, "+username+"!");
                 broadcast("LIGHT WARRIOR "+username+"'s journey begins..");
                 
-                game = new GameStateManager(in, out);
+                game = new GameStateManager(out);
                 state = ClientState.IN_GAME;
                 
                 String command;

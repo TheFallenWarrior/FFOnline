@@ -26,7 +26,6 @@ package ffonline.controller;
 import ffonline.JsonLoader;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.PlayerParty;
-import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Optional;
@@ -38,11 +37,9 @@ import java.util.Optional;
 public class GameStateManager {
     private final PlayerParty party = new PlayerParty();
     
-    private final BufferedReader in;
     private final PrintWriter out;
     
-    public GameStateManager(BufferedReader in, PrintWriter out){
-        this.in = in;
+    public GameStateManager(PrintWriter out){
         this.out = out;
         
         // Placeholder party of 4 fighters
