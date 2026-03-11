@@ -132,7 +132,7 @@ public class ServerController {
                 case "who" -> {
                     out.println("Logged in users:");
                     for(ClientHandler client : clients){
-                        if(client.state == ClientState.NAME_INPUT) continue;
+                        if(client.state != ClientState.IN_GAME) continue;
                         
                         if(client == this) out.println(" "+client.username+" (you)");
                         else out.println(" "+client.username);
@@ -151,8 +151,8 @@ public class ServerController {
         
         private void broadcast(String message){
             for(ClientHandler client : clients){
-                if(client.state == ClientState.NAME_INPUT || client == this) continue;
-                client.out.println(message);
+                if(client.state == ClientState.IN_GAME && client != this)
+                    client.out.println(message);
             }
         }
         
