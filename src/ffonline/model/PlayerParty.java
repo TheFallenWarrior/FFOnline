@@ -26,6 +26,7 @@ package ffonline.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -37,6 +38,13 @@ public class PlayerParty extends BattlerGroup<PlayerCharacter> {
     
     public List<Item> getInventory(){
         return Collections.unmodifiableList(inventory);
+    }
+    
+    public Optional<PlayerCharacter> getFromName(String name){
+        for(PlayerCharacter member : this){
+            if(member.getName().equals(name)) return Optional.of(member);
+        }
+        return Optional.empty();
     }
 
     public int getGil(){
