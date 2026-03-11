@@ -23,14 +23,29 @@
  */
 package ffonline.controller;
 
+import ffonline.model.Battler;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.PlayerParty;
+import ffonline.model.StatusAilment;
 
 /**
  *
  * @author thefa
  */
 public class Presentation {
+    /**
+     * Returns the name of the most severe status afflicting a character
+     * @param battler the Battler to get the status ailment from
+     * @return a String with the name of the first status ailment in battler.statuses, or "OK" if there are none
+     */
+    private static String statusAilment(Battler battler){
+        for(StatusAilment status : battler.getStatuses()){
+            return status.displayName();
+        }
+        
+        return "OK";
+    }
+    
     public static String characterStatus(PlayerCharacter character){
         return String.format(
             "%s - %s - LEV %d\n\n" +
@@ -69,7 +84,7 @@ public class Presentation {
                 " %s\t%d\t%s\t%s\n",
                 member.getName(),
                 member.getHp(),
-                "Sad", // Placeholder
+                statusAilment(member),
                 member.getJob().displayName()
             ));
         }
