@@ -118,13 +118,13 @@ public class ServerController {
         }
         
         private void runGameCommand(String command){
-            String[] splitCommand = command.split(" ", 2);
+            ParsedCommand parseComm = new ParsedCommand(command, 0);
             
             // Commands that depend on shared server state are resolved here.
-            switch (splitCommand[0].toLowerCase()) {
+            switch (parseComm.getVerb()) {
                 case "ooc" -> {
-                    if(splitCommand.length > 1)
-                        broadcast(username+" says, \""+splitCommand[1]+"\"");
+                    if(parseComm.getRest().length() > 0)
+                        broadcast(username+" says, \""+parseComm.getRest()+"\"");
                     else
                         out.println("Error: Expected message after command.");
                 }

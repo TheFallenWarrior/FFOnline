@@ -28,6 +28,7 @@ import ffonline.model.PlayerCharacter;
 import ffonline.model.PlayerParty;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -52,16 +53,16 @@ public class GameStateManager {
     }
     
     public void runGameCommand(String command){
-        String[] splitCommand = command.split(" ");
+        ParsedCommand parseComm = new ParsedCommand(command, 1);
         
-        switch(splitCommand[0].toLowerCase()){
-            case "status" -> statusCommand(splitCommand);
+        switch(parseComm.getVerb()){
+            case "status" -> statusCommand(parseComm.getArgs());
             
-            case "score" -> statusCommand(splitCommand);
+            case "score" -> statusCommand(parseComm.getArgs());
             
             case "" -> {}
                 
-            default -> out.println("Unknown command: \""+splitCommand[0]+"\"");
+            default -> out.println("Unknown command: \""+parseComm.getVerb()+"\"");
         }
     }
     
@@ -77,17 +78,15 @@ public class GameStateManager {
         }
     }
     
-    private void statusCommand(String[] splitCommand){
-        switch(splitCommand.length){
-            case 1 -> out.print(Presentation.partyStats(party));
+    private void statusCommand(List<String> args){
+        switch(args.size()){
+            case 0 -> out.print(Presentation.partyStats(party));
             
-            case 2 -> {
-                Optional<PlayerCharacter> charOpt = resolveCharacter(splitCommand[1]);
+            case 1 -> {
+                Optional<PlayerCharacter> charOpt = resolveCharacter(args.getFirst());
                 if(charOpt.isPresent()) out.print(Presentation.characterStats(charOpt.get()));
-                else out.println("Error: '"+splitCommand[1]+"' isn't a valid character name or character index.");
+                else out.println("Error: '"+args.getFirst()+"' isn't a valid character name or character index.");
             }
-            
-            default -> out.println("Error: wrong number of arguments.");
         }
         out.flush();
     }
