@@ -120,7 +120,7 @@ public class ServerController {
         private void runGameCommand(String command){
             String[] splitCommand = command.split(" ", 2);
             
-            // Commands that depend on other players are inlined here.
+            // Commands that depend on shared server state are resolved here.
             switch (splitCommand[0]) {
                 case "ooc" -> {
                     if(splitCommand.length > 1)
