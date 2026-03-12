@@ -27,7 +27,9 @@ import ffonline.JsonLoader;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.PlayerParty;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -38,9 +40,11 @@ public class GameStateManager {
     private final PlayerParty party = new PlayerParty();
     
     private final PrintWriter out;
+    private final Map<String, CommandHandler> commands = new HashMap<>();
     
     public GameStateManager(PrintWriter out){
         this.out = out;
+        registerCommands();
         
         // Placeholder party of 4 fighters
         party.add(JsonLoader.getPlayerCharacter(0).get());
@@ -49,18 +53,25 @@ public class GameStateManager {
         party.add(JsonLoader.getPlayerCharacter(0).get());
     }
     
+    private void registerCommands(){
+        commands.put("", (List<String> args) -> {});
+
+        commands.put("status", this::statusCommand);
+        
+        // Alias
+        commands.put("score", this::statusCommand);
+    }
+    
     public void runGameCommand(String command){
         ParsedCommand parseComm = new ParsedCommand(command, 1);
         
-        switch(parseComm.getVerb()){
-            case "status" -> statusCommand(parseComm.getArgs());
-            
-            case "score" -> statusCommand(parseComm.getArgs());
-            
-            case "" -> {}
-                
-            default -> out.println("Unknown command: \""+parseComm.getVerb()+"\"");
+        CommandHandler handler = commands.get(parseComm.getVerb());
+        if(handler != null){
+            handler.handle(parseComm.getArgs());
+            return;
         }
+        
+        out.println("Unknown command: \""+parseComm.getVerb()+"\"");
     }
     
     private Optional<PlayerCharacter> resolveCharacter(String token){
@@ -86,5 +97,10 @@ public class GameStateManager {
             }
         }
         out.flush();
+    }
+    
+    @FunctionalInterface
+    private interface CommandHandler {
+        void handle(List<String> args);
     }
 }
