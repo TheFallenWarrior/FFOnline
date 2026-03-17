@@ -62,9 +62,9 @@ public class Weapon extends Item {
         this.critChance = critChance&0xff;
         this.damage = damage&0xff;
         this.spellId = spellId&0xff;
-        this.elementalOffense = elementalOffense.clone();
-        this.enemyTypes = enemyTypes.clone();
-        this.equippable = equippable.clone();
+        this.elementalOffense = EnumSet.copyOf(elementalOffense);
+        this.enemyTypes = EnumSet.copyOf(enemyTypes);
+        this.equippable = EnumSet.copyOf(equippable);
     }
     
     public static Weapon buildFromJson(JsonNode node){
@@ -163,14 +163,14 @@ public class Weapon extends Item {
     }
 
     public EnumSet<Element> getElementalOffense() {
-        return elementalOffense.clone();
+        return EnumSet.copyOf(elementalOffense);
     }
 
     public EnumSet<EnemyType> getEnemyTypes() {
-        return enemyTypes.clone();
+        return EnumSet.copyOf(enemyTypes);
     }
     
     public EnumSet<CharacterJob> getEquippable(){
-        return equippable.clone();
+        return EnumSet.copyOf(equippable);
     }
 }

@@ -58,10 +58,10 @@ public class Armor extends Item{
         super(name, shopId, price);
         this.weight = weight&0xff;
         this.absorb = absorb&0xff;
-        this.elementalResistances = elementalResistances.clone();
+        this.elementalResistances = EnumSet.copyOf(elementalResistances);
         this.spellId = spellId&0xff;
         this.type = type;
-        this.equippable = equippable.clone();
+        this.equippable = EnumSet.copyOf(equippable);
     }
     
     public static Armor buildFromJson(JsonNode node){
@@ -141,7 +141,7 @@ public class Armor extends Item{
     }
 
     public EnumSet<Element> getElementalResistances() {
-        return elementalResistances.clone();
+        return EnumSet.copyOf(elementalResistances);
     }
 
     public int getSpellId() {
@@ -153,6 +153,6 @@ public class Armor extends Item{
     }
     
     public EnumSet<CharacterJob> getEquippable(){
-        return equippable.clone();
+        return EnumSet.copyOf(equippable);
     }
 }
