@@ -24,12 +24,19 @@
 package ffonline.model;
 
 import java.util.EnumSet;
+import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import tools.jackson.databind.JsonNode;
 
 /**
  *
  * @author thefa
  */
 public class Magic extends Item {
+    private static final Logger LOGGER = Logger.getLogger(Armor.class.getName());
+    public static final String JSON_PATH = "json/armor.json";
+    
     final private int spellId;
     final private int effectivity;
     final private CommandTarget targeting;
@@ -61,6 +68,99 @@ public class Magic extends Item {
         this.effectElements = EnumSet.copyOf(elements);
         this.effectStatuses = EnumSet.copyOf(effectStatuses);
         this.equippable = EnumSet.copyOf(equippable);
+    }
+    
+    public static Magic buildFromJson(JsonNode node){
+        String name = node.path("name").asString("Non-coercible value");
+        int shopId = node.path("shopId").asInt(0);
+        int price = node.path("price").asInt(0);
+        int spellId = node.path("spellId").asInt(0);
+        int effectivity = node.path("effectivity").asInt(0);
+
+        
+        Optional<String> optTarget = node.path("targeting").asStringOpt();
+        CommandTarget resolvedTarget = CommandTarget.SINGLE_ENEMY;
+        try{
+            resolvedTarget = CommandTarget.valueOf(optTarget.orElse("Non-coercible value"));
+        } catch(IllegalArgumentException e){
+            LOGGER.log(Level.WARNING, "Unknown magic targeting found in JSON: {0}", optTarget.orElse("Non-coercible value"));
+        }
+        
+        Optional<String> optEffect = node.path("effect").asStringOpt();
+        MagicEffect resolvedEffect = MagicEffect.DAMAGE;
+        try{
+            resolvedTarget = CommandTarget.valueOf(optEffect.orElse("Non-coercible value"));
+        } catch(IllegalArgumentException e){
+            LOGGER.log(Level.WARNING, "Unknown magic effect found in JSON: {0}", optEffect.orElse("Non-coercible value"));
+        }
+        
+        EnumSet<Element> elements = EnumSet.noneOf(Element.class);
+        JsonNode elemNode = node.path("elements");
+        if (elemNode.isArray()){
+            for (JsonNode i : elemNode){
+                Optional<String> optValue = i.asStringOpt();
+                if(optValue.isEmpty()){
+                    LOGGER.log(Level.WARNING, "Non-string element found in JSON");
+                } else{
+                    try{
+                        elements.add(Element.valueOf(optValue.get()));
+                    } catch (IllegalArgumentException e){
+                        LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", optValue.get());
+                    }
+                }
+            }
+        }
+        
+        EnumSet<Element> effectElements = EnumSet.noneOf(Element.class);
+        JsonNode effectElemNode = node.path("effectElements");
+        if (effectElemNode.isArray()){
+            for (JsonNode i : effectElemNode){
+                Optional<String> optValue = i.asStringOpt();
+                if(optValue.isEmpty()){
+                    LOGGER.log(Level.WARNING, "Non-string element found in JSON");
+                } else{
+                    try{
+                        effectElements.add(Element.valueOf(optValue.get()));
+                    } catch (IllegalArgumentException e){
+                        LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", optValue.get());
+                    }
+                }
+            }
+        }
+        
+        EnumSet<StatusAilment> effectStatuses = EnumSet.noneOf(StatusAilment.class);
+        JsonNode effectStatNode = node.path("elements");
+        if(effectStatNode.isArray()){
+            for (JsonNode i : effectStatNode){
+                Optional<String> optValue = i.asStringOpt();
+                if(optValue.isEmpty()){
+                    LOGGER.log(Level.WARNING, "Non-string element found in JSON");
+                } else{
+                    try{
+                        effectStatuses.add(StatusAilment.valueOf(optValue.get()));
+                    } catch(IllegalArgumentException e){
+                        LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", optValue.get());
+                    }
+                }
+            }
+        }
+        
+        // TODO: Add equippable information to magic JSON
+        EnumSet<CharacterJob> equippable = EnumSet.noneOf(CharacterJob.class);
+        
+        return new Magic(
+                name,
+                shopId,
+                price,
+                spellId,
+                effectivity,
+                resolvedTarget,
+                resolvedEffect,
+                elements,
+                effectElements,
+                effectStatuses,
+                equippable
+        );
     }
 
     public int getSpellId(){
