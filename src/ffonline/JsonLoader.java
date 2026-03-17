@@ -25,6 +25,7 @@ package ffonline;
 
 import ffonline.model.Armor;
 import ffonline.model.Item;
+import ffonline.model.Magic;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.Weapon;
 import java.io.File;
@@ -47,12 +48,14 @@ public class JsonLoader {
     private static JsonNode itemJsonRoot = null;
     private static JsonNode weaponJsonRoot = null;
     private static JsonNode jobJsonRoot = null;
+    private static JsonNode magicJsonRoot = null;
     
     public static void init() throws JacksonException{
         armorJsonRoot = MAPPER.readTree(new File(Armor.JSON_PATH));
         itemJsonRoot = MAPPER.readTree(new File(Item.JSON_PATH));
         weaponJsonRoot = MAPPER.readTree(new File(Weapon.JSON_PATH));
         jobJsonRoot = MAPPER.readTree(new File(PlayerCharacter.JSON_PATH));
+        magicJsonRoot = MAPPER.readTree(new File(Magic.JSON_PATH));
     }
     
     private static <T> Optional<T> get(
@@ -111,6 +114,16 @@ public class JsonLoader {
             Weapon.JSON_PATH,
             Weapon::buildFromJson,
             "Weapon"
+        );
+    }
+    
+    public static Optional<Magic> getMagic(int jsonId){
+        return get(
+                magicJsonRoot,
+                jsonId,
+                Magic.JSON_PATH,
+                Magic::buildFromJson,
+                "Magic"
         );
     }
     
