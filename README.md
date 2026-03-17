@@ -14,7 +14,7 @@ The game is still in development and as of now, it's not yet functional.
    - ~~Equipment and stat calculation~~
    - ~~Creating new characters from JSON job data~~
    - Leveling up, EXP and stat curves
- - Magic and enemies' special attacks
+ - ~~Magic and enemies' special attacks~~
  - Player party and player-facing character creation
  - ~~Game state manager with command dispatching~~
  - Encode enemy data and AI
