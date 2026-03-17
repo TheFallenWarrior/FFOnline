@@ -126,7 +126,7 @@ public class Magic extends Item {
     }
 
     public EnumSet<Element> getElements(){
-        return elements;
+        return EnumSet.copyOf(elements);
     }
 
     public CommandTarget getTargeting(){
@@ -138,14 +138,14 @@ public class Magic extends Item {
     }
 
     public EnumSet<StatusAilment> getEffectStatuses(){
-        return effectStatuses;
+        return EnumSet.copyOf(effectStatuses);
     }
 
     public EnumSet<Element> getEffectElements(){
-        return effectElements;
+        return EnumSet.copyOf(effectElements);
     }
 
     public EnumSet<CharacterJob> getEquippable(){
-        return equippable;
+        return EnumSet.copyOf(equippable);
     }
 }
