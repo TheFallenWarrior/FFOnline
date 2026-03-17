@@ -35,7 +35,7 @@ import tools.jackson.databind.JsonNode;
  */
 public class Magic extends Item {
     private static final Logger LOGGER = Logger.getLogger(Armor.class.getName());
-    public static final String JSON_PATH = "json/armor.json";
+    public static final String JSON_PATH = "json/magic.json";
     
     final private int spellId;
     final private int effectivity;
