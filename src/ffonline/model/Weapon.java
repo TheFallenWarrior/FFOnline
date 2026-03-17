@@ -23,9 +23,8 @@
  */
 package ffonline.model;
 
+import ffonline.JsonLoader;
 import java.util.EnumSet;
-import java.util.Optional;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import tools.jackson.databind.JsonNode;
 
@@ -77,56 +76,9 @@ public class Weapon extends Item {
         int damage = node.path("damage").asInt(0);
         int spellId = node.path("spellId").asInt(0);
         
-        EnumSet<Element> elementalOffense = EnumSet.noneOf(Element.class);
-        JsonNode attackElemNode = node.path("elementalOffense");
-        if(attackElemNode.isArray()){
-            for(JsonNode i : attackElemNode){
-                Optional<String> optValue = i.asStringOpt();
-                if(optValue.isEmpty()){
-                    LOGGER.log(Level.WARNING, "Non-string element found in JSON");
-                } else{
-                    try{
-                        elementalOffense.add(Element.valueOf(optValue.get()));
-                    } catch(IllegalArgumentException e){
-                        LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", optValue.get());
-                    }
-                }
-            }
-        }
-        
-        EnumSet<EnemyType> enemyTypes = EnumSet.noneOf(EnemyType.class);
-         JsonNode enemyTypesNode = node.path("enemyTypes");
-        if(enemyTypesNode.isArray()){
-            for(JsonNode i : enemyTypesNode){
-                Optional<String> optValue = i.asStringOpt();
-                if(optValue.isEmpty()){
-                    LOGGER.log(Level.WARNING, "Non-string enemy type found in JSON");
-                } else{
-                    try{
-                        enemyTypes.add(EnemyType.valueOf(optValue.get()));
-                    } catch(IllegalArgumentException e){
-                        LOGGER.log(Level.WARNING, "Unknown enemy type found in JSON: {0}", optValue.get());
-                    }
-                }
-            }
-        }
-        
-        EnumSet<CharacterJob> equippable = EnumSet.noneOf(CharacterJob.class);
-        JsonNode equippableNode = node.path("equippable");
-        if(equippableNode.isArray()){
-            for(JsonNode i : equippableNode){
-                Optional<String> optValue = i.asStringOpt();
-                if(optValue.isEmpty()){
-                    LOGGER.log(Level.WARNING, "Non-string job found in JSON");
-                } else{
-                    try{
-                        equippable.add(CharacterJob.valueOf(optValue.get()));
-                    } catch(IllegalArgumentException e){
-                        LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", optValue.get());
-                    }
-                }
-            }
-        }
+        EnumSet<Element> elementalOffense = JsonLoader.parseEnumSet(node.path("elementalOffense"), Element.class, "element");
+        EnumSet<EnemyType> enemyTypes = JsonLoader.parseEnumSet(node.path("enemyTypes"), EnemyType.class, "enemy type");
+        EnumSet<CharacterJob> equippable = JsonLoader.parseEnumSet(node.path("equippable"), CharacterJob.class, "job");
         
         return new Weapon(
             name,

@@ -23,6 +23,7 @@
  */
 package ffonline.model;
 
+import ffonline.JsonLoader;
 import java.util.EnumSet;
 import java.util.Optional;
 import java.util.logging.Logger;
@@ -81,39 +82,8 @@ public class Armor extends Item{
             LOGGER.log(Level.WARNING, "Unknown armor type found in JSON: {0}", optType.orElse("Non-coercible value"));
         }
         
-        EnumSet<Element> elementalResistances = EnumSet.noneOf(Element.class);
-        JsonNode elemResistNode = node.path("elementalResistances");
-        if (elemResistNode.isArray()) {
-            for (JsonNode i : elemResistNode) {
-                Optional<String> optValue = i.asStringOpt();
-                if(optValue.isEmpty()){
-                    LOGGER.log(Level.WARNING, "Non-string element found in JSON");
-                } else{
-                    try {
-                        elementalResistances.add(Element.valueOf(optValue.get()));
-                    } catch (IllegalArgumentException e) {
-                        LOGGER.log(Level.WARNING, "Unknown element found in JSON: {0}", optValue.get());
-                    }
-                }
-            }
-        }
-        
-        EnumSet<CharacterJob> equippable = EnumSet.noneOf(CharacterJob.class);
-        JsonNode equippableNode = node.path("equippable");
-        if(equippableNode.isArray()){
-            for(JsonNode i : equippableNode){
-                Optional<String> optValue = i.asStringOpt();
-                if(optValue.isEmpty()){
-                    LOGGER.log(Level.WARNING, "Non-string job found in JSON");
-                } else{
-                    try{
-                        equippable.add(CharacterJob.valueOf(optValue.get()));
-                    } catch(IllegalArgumentException e){
-                        LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", optValue.get());
-                    }
-                }
-            }
-        }
+        EnumSet<Element> elementalResistances = JsonLoader.parseEnumSet(node.path("elementalResistances"), Element.class, "element");
+        EnumSet<CharacterJob> equippable = JsonLoader.parseEnumSet(node.path("equippable"), CharacterJob.class, "job");
         
         return new Armor(
             name,
