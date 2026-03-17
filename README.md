@@ -62,9 +62,9 @@ ant run
 java -jar dist/FFOnline.jar
 ```
 
-### Build/run from NetBeans
+### Build/run from NetBeans IDE
 
-1. Open the project in NetBeans.
+1. Open the project in NetBeans IDE.
 2. Use **Build Project** or **Run Project**.
 
 ## Credits
