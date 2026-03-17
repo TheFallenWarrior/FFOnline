@@ -29,6 +29,7 @@ import ffonline.model.Magic;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.Weapon;
 import java.io.File;
+import java.util.EnumSet;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.logging.Level;
@@ -56,6 +57,28 @@ public class JsonLoader {
         weaponJsonRoot = MAPPER.readTree(new File(Weapon.JSON_PATH));
         jobJsonRoot = MAPPER.readTree(new File(PlayerCharacter.JSON_PATH));
         magicJsonRoot = MAPPER.readTree(new File(Magic.JSON_PATH));
+    }
+
+    public static <E extends Enum<E>> EnumSet<E> parseEnumSet(JsonNode node, Class<E> type, String label){
+        EnumSet<E> result = EnumSet.noneOf(type);
+        
+        if(!node.isArray()) return result;
+        
+        for(JsonNode element : node){
+            Optional<String> optValue = element.asStringOpt();
+            
+            if(optValue.isEmpty()){
+                LOGGER.log(Level.WARNING, "Non-string {0} found in JSON", label);
+                continue;
+            }
+            
+            try{
+                result.add(Enum.valueOf(type, optValue.get()));
+            } catch(IllegalArgumentException e){
+                LOGGER.log(Level.WARNING, "Unknown {0} found in JSON: {1}", new Object[]{label, optValue.get()});
+            }
+        }
+        return result;
     }
     
     private static <T> Optional<T> get(
