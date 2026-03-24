@@ -2,55 +2,83 @@
     {
         "name": "CURE",
         "shopId": 176,
-        "price": 0,
+        "price": 100,
         "spellId": 1,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "HP_RECOVERY",
         "effectivity": 16,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 1,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "KNIGHT",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "HARM",
         "shopId": 177,
-        "price": 0,
+        "price": 100,
         "spellId": 2,
         "targeting": "ALL_ENEMIES",
         "elements": [],
         "effect": "HARM",
         "effectivity": 20,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 1,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "FOG ",
         "shopId": 178,
-        "price": 0,
+        "price": 100,
         "spellId": 3,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "DEFENSE_UP",
         "effectivity": 8,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 1,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "KNIGHT",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "RUSE",
         "shopId": 179,
-        "price": 0,
+        "price": 100,
         "spellId": 4,
         "targeting": "ACTOR",
         "elements": [],
         "effect": "EVASION_UP",
         "effectivity": 80,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 1,
+        "equippable": [
+            "WHITE_MAGE",
+            "KNIGHT",
+            "WHITE_WIZARD",
+            "RED_WIZARD"           
+        ]
     },
     {
         "name": "FIRE",
         "shopId": 180,
-        "price": 0,
+        "price": 100,
         "spellId": 5,
         "targeting": "SINGLE_ENEMY",
         "elements": [
@@ -59,12 +87,20 @@
         "effect": "DAMAGE",
         "effectivity": 10,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 1,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "SLEP",
         "shopId": 181,
-        "price": 0,
+        "price": 100,
         "spellId": 6,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -75,24 +111,40 @@
         "effectElements": [],
         "effectStatuses": [
             "ASLEEP"
+        ],
+        "level": 1,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
         ]
     },
     {
         "name": "LOCK",
         "shopId": 182,
-        "price": 0,
+        "price": 100,
         "spellId": 7,
         "targeting": "SINGLE_ENEMY",
         "elements": [],
         "effect": "EVASION_DOWN",
         "effectivity": 20,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 1,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "LIT ",
         "shopId": 183,
-        "price": 0,
+        "price": 100,
         "spellId": 8,
         "targeting": "SINGLE_ENEMY",
         "elements": [
@@ -101,12 +153,20 @@
         "effect": "DAMAGE",
         "effectivity": 10,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 1,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "LAMP",
         "shopId": 184,
-        "price": 0,
+        "price": 400,
         "spellId": 9,
         "targeting": "SINGLE_ALLY",
         "elements": [],
@@ -115,12 +175,20 @@
         "effectElements": [],
         "effectStatuses": [
             "BLIND"
+        ],
+        "level": 2,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "KNIGHT",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
         ]
     },
     {
         "name": "MUTE",
         "shopId": 185,
-        "price": 0,
+        "price": 400,
         "spellId": 10,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -131,12 +199,20 @@
         "effectElements": [],
         "effectStatuses": [
             "SILENCED"
+        ],
+        "level": 2,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "KNIGHT",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
         ]
     },
     {
         "name": "ALIT",
         "shopId": 186,
-        "price": 0,
+        "price": 400,
         "spellId": 11,
         "targeting": "ALL_ALLIES",
         "elements": [],
@@ -145,24 +221,40 @@
         "effectElements": [
             "LIGHTNING"
         ],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 2,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "KNIGHT",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "INVS",
         "shopId": 187,
-        "price": 0,
+        "price": 400,
         "spellId": 12,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "EVASION_UP",
         "effectivity": 40,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 2,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "KNIGHT",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
-        "name": "ICE ",
+        "name": "ICE",
         "shopId": 188,
-        "price": 0,
+        "price": 400,
         "spellId": 13,
         "targeting": "SINGLE_ENEMY",
         "elements": [
@@ -171,12 +263,20 @@
         "effect": "DAMAGE",
         "effectivity": 20,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 2,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "DARK",
         "shopId": 189,
-        "price": 0,
+        "price": 400,
         "spellId": 14,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -187,24 +287,40 @@
         "effectElements": [],
         "effectStatuses": [
             "BLIND"
+        ],
+        "level": 2,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
         ]
     },
     {
         "name": "TMPR",
         "shopId": 190,
-        "price": 0,
+        "price": 400,
         "spellId": 15,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "ATTACK_ACCURACY_UP",
         "effectivity": 14,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 2,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "SLOW",
         "shopId": 191,
-        "price": 0,
+        "price": 400,
         "spellId": 16,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -213,36 +329,57 @@
         "effect": "HIT_MULTIPLIER_DOWN",
         "effectivity": 0,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 2,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "CUR2",
         "shopId": 192,
-        "price": 0,
+        "price": 1500,
         "spellId": 17,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "HP_RECOVERY",
         "effectivity": 33,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 3,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "KNIGHT",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "HRM2",
         "shopId": 193,
-        "price": 0,
+        "price": 1500,
         "spellId": 18,
         "targeting": "ALL_ENEMIES",
         "elements": [],
         "effect": "HARM",
         "effectivity": 40,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 3,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "AFIR",
         "shopId": 194,
-        "price": 0,
+        "price": 1500,
         "spellId": 19,
         "targeting": "ALL_ALLIES",
         "elements": [],
@@ -251,24 +388,37 @@
         "effectElements": [
             "FIRE"
         ],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 3,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "KNIGHT",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "HEAL",
         "shopId": 195,
-        "price": 0,
+        "price": 1500,
         "spellId": 20,
         "targeting": "ALL_ALLIES",
         "elements": [],
         "effect": "HP_RECOVERY",
         "effectivity": 12,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 3,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "FIR2",
         "shopId": 196,
-        "price": 0,
+        "price": 1500,
         "spellId": 21,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -277,12 +427,20 @@
         "effect": "DAMAGE",
         "effectivity": 30,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 3,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "HOLD",
         "shopId": 197,
-        "price": 0,
+        "price": 1500,
         "spellId": 22,
         "targeting": "SINGLE_ENEMY",
         "elements": [
@@ -293,12 +451,20 @@
         "effectElements": [],
         "effectStatuses": [
             "PARALYZED"
+        ],
+        "level": 3,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
         ]
     },
     {
         "name": "LIT2",
         "shopId": 198,
-        "price": 0,
+        "price": 1500,
         "spellId": 23,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -307,24 +473,40 @@
         "effect": "DAMAGE",
         "effectivity": 30,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 3,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "LOK2",
         "shopId": 199,
-        "price": 0,
+        "price": 1500,
         "spellId": 24,
         "targeting": "ALL_ENEMIES",
         "elements": [],
         "effect": "EVASION_UP",
         "effectivity": 20,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 3,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "PURE",
         "shopId": 200,
-        "price": 0,
+        "price": 4000,
         "spellId": 25,
         "targeting": "SINGLE_ALLY",
         "elements": [],
@@ -333,12 +515,19 @@
         "effectElements": [],
         "effectStatuses": [
             "POISON"
+        ],
+        "level": 4,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
         ]
     },
     {
         "name": "FEAR",
         "shopId": 201,
-        "price": 0,
+        "price": 4000,
         "spellId": 26,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -347,12 +536,17 @@
         "effect": "MORALE_DOWN",
         "effectivity": 40,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 4,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "AICE",
         "shopId": 202,
-        "price": 0,
+        "price": 4000,
         "spellId": 27,
         "targeting": "ALL_ALLIES",
         "elements": [],
@@ -361,12 +555,19 @@
         "effectElements": [
             "ICE"
         ],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 4,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "AMUT",
         "shopId": 203,
-        "price": 0,
+        "price": 4000,
         "spellId": 28,
         "targeting": "SINGLE_ALLY",
         "elements": [],
@@ -375,12 +576,18 @@
         "effectElements": [],
         "effectStatuses": [
             "SILENCED"
+        ],
+        "level": 4,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
         ]
     },
     {
         "name": "SLP2",
         "shopId": 204,
-        "price": 0,
+        "price": 4000,
         "spellId": 29,
         "targeting": "SINGLE_ENEMY",
         "elements": [],
@@ -389,24 +596,40 @@
         "effectElements": [],
         "effectStatuses": [
             "ASLEEP"
+        ],
+        "level": 4,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
         ]
     },
     {
         "name": "FAST",
         "shopId": 205,
-        "price": 0,
+        "price": 4000,
         "spellId": 30,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "HIT_MULTIPLIER_UP",
         "effectivity": 0,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 4,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "CONF",
         "shopId": 206,
-        "price": 0,
+        "price": 4000,
         "spellId": 31,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -417,12 +640,20 @@
         "effectElements": [],
         "effectStatuses": [
             "CONFUSED"
+        ],
+        "level": 4,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
         ]
     },
     {
         "name": "ICE2",
         "shopId": 207,
-        "price": 0,
+        "price": 4000,
         "spellId": 32,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -431,60 +662,91 @@
         "effect": "DAMAGE",
         "effectivity": 40,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 4,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "NINJA",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "CUR3",
         "shopId": 208,
-        "price": 0,
+        "price": 8000,
         "spellId": 33,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "HP_RECOVERY",
         "effectivity": 66,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 5,
+        "equippable": [
+            "WHITE_MAGE",
+            "RED_MAGE",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "LIFE",
         "shopId": 209,
-        "price": 0,
+        "price": 8000,
         "spellId": 34,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "NOTHING",
         "effectivity": 0,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 5,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "HRM3",
         "shopId": 210,
-        "price": 0,
+        "price": 8000,
         "spellId": 35,
         "targeting": "ALL_ENEMIES",
         "elements": [],
         "effect": "HARM",
         "effectivity": 60,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 5,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "HEL2",
         "shopId": 211,
-        "price": 0,
+        "price": 8000,
         "spellId": 36,
         "targeting": "ALL_ALLIES",
         "elements": [],
         "effect": "HP_RECOVERY",
         "effectivity": 48,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 5,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "FIR3",
         "shopId": 212,
-        "price": 0,
+        "price": 8000,
         "spellId": 37,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -493,12 +755,19 @@
         "effect": "DAMAGE",
         "effectivity": 50,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 5,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "BANE",
         "shopId": 213,
-        "price": 0,
+        "price": 8000,
         "spellId": 38,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -509,84 +778,124 @@
         "effectElements": [],
         "effectStatuses": [
             "DEAD"
+        ],
+        "level": 5,
+        "equippable": [
+            "BLACK_MAGE",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
         ]
     },
     {
         "name": "WARP",
         "shopId": 214,
-        "price": 0,
+        "price": 8000,
         "spellId": 39,
         "targeting": "ALL_ALLIES",
         "elements": [],
         "effect": "NOTHING",
         "effectivity": 0,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 5,
+        "equippable": [
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "SLO2",
         "shopId": 215,
-        "price": 0,
+        "price": 8000,
         "spellId": 40,
         "targeting": "SINGLE_ENEMY",
         "elements": [],
         "effect": "HIT_MULTIPLIER_DOWN",
         "effectivity": 0,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 5,
+        "equippable": [
+            "BLACK_MAGE",
+            "RED_MAGE",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "SOFT",
         "shopId": 216,
-        "price": 0,
+        "price": 20000,
         "spellId": 41,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "NOTHING",
         "effectivity": 0,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 6,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "EXIT",
         "shopId": 217,
-        "price": 0,
+        "price": 20000,
         "spellId": 42,
         "targeting": "ALL_ALLIES",
         "elements": [],
         "effect": "NOTHING",
         "effectivity": 0,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 6,
+        "equippable": [
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "FOG2",
         "shopId": 218,
-        "price": 0,
+        "price": 20000,
         "spellId": 43,
         "targeting": "ALL_ALLIES",
         "elements": [],
         "effect": "DEFENSE_UP",
         "effectivity": 12,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 6,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "INV2",
         "shopId": 219,
-        "price": 0,
+        "price": 20000,
         "spellId": 44,
         "targeting": "ALL_ALLIES",
         "elements": [],
         "effect": "EVASION_UP",
         "effectivity": 40,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 6,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "LIT3",
         "shopId": 220,
-        "price": 0,
+        "price": 20000,
         "spellId": 45,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -595,12 +904,18 @@
         "effect": "DAMAGE",
         "effectivity": 60,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 6,
+        "equippable": [
+            "BLACK_MAGE",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "RUB ",
         "shopId": 221,
-        "price": 0,
+        "price": 20000,
         "spellId": 46,
         "targeting": "SINGLE_ENEMY",
         "elements": [
@@ -611,12 +926,17 @@
         "effectElements": [],
         "effectStatuses": [
             "DEAD"
+        ],
+        "level": 6,
+        "equippable": [
+            "BLACK_MAGE",
+            "BLACK_WIZARD"
         ]
     },
     {
         "name": "QAKE",
         "shopId": 222,
-        "price": 0,
+        "price": 20000,
         "spellId": 47,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -627,12 +947,17 @@
         "effectElements": [],
         "effectStatuses": [
             "DEAD"
+        ],
+        "level": 6,
+        "equippable": [
+            "BLACK_MAGE",
+            "BLACK_WIZARD"
         ]
     },
     {
         "name": "STUN",
         "shopId": 223,
-        "price": 0,
+        "price": 20000,
         "spellId": 48,
         "targeting": "SINGLE_ENEMY",
         "elements": [
@@ -643,36 +968,49 @@
         "effectElements": [],
         "effectStatuses": [
             "PARALYZED"
+        ],
+        "level": 6,
+        "equippable": [
+            "BLACK_MAGE",
+            "BLACK_WIZARD"
         ]
     },
     {
         "name": "CUR4",
         "shopId": 224,
-        "price": 0,
+        "price": 45000,
         "spellId": 49,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "FULL_RECOVERY",
         "effectivity": 0,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 7,
+        "equippable": [
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "HRM4",
         "shopId": 225,
-        "price": 0,
+        "price": 45000,
         "spellId": 50,
         "targeting": "ALL_ENEMIES",
         "elements": [],
         "effect": "HARM",
         "effectivity": 80,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 7,
+        "equippable": [
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "ARUB",
         "shopId": 226,
-        "price": 0,
+        "price": 45000,
         "spellId": 51,
         "targeting": "ALL_ALLIES",
         "elements": [],
@@ -683,24 +1021,35 @@
             "DEATH",
             "EARTH"
         ],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 7,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "HEL3",
         "shopId": 227,
-        "price": 0,
+        "price": 45000,
         "spellId": 52,
         "targeting": "ALL_ALLIES",
         "elements": [],
         "effect": "HP_RECOVERY",
         "effectivity": 48,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 7,
+        "equippable": [
+            "WHITE_MAGE",
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "ICE3",
         "shopId": 228,
-        "price": 0,
+        "price": 45000,
         "spellId": 53,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -709,12 +1058,18 @@
         "effect": "DAMAGE",
         "effectivity": 70,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 7,
+        "equippable": [
+            "BLACK_MAGE",
+            "BLACK_WIZARD",
+            "RED_WIZARD"
+        ]
     },
     {
         "name": "BRAK",
         "shopId": 229,
-        "price": 0,
+        "price": 45000,
         "spellId": 54,
         "targeting": "SINGLE_ENEMY",
         "elements": [
@@ -725,24 +1080,32 @@
         "effectElements": [],
         "effectStatuses": [
             "PETRIFIED"
+        ],
+        "level": 7,
+        "equippable": [
+            "BLACK_WIZARD"
         ]
     },
     {
         "name": "SABR",
         "shopId": 230,
-        "price": 0,
+        "price": 45000,
         "spellId": 55,
         "targeting": "ACTOR",
         "elements": [],
         "effect": "ATTACK_ACCURACY_UP",
         "effectivity": 16,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 7,
+        "equippable": [
+            "BLACK_WIZARD"
+        ]
     },
     {
         "name": "BLND",
         "shopId": 231,
-        "price": 0,
+        "price": 45000,
         "spellId": 56,
         "targeting": "SINGLE_ENEMY",
         "elements": [
@@ -753,36 +1116,49 @@
         "effectElements": [],
         "effectStatuses": [
             "BLIND"
+        ],
+        "level": 7,
+        "equippable": [
+            "BLACK_MAGE",
+            "BLACK_WIZARD"
         ]
     },
     {
         "name": "LIF2",
         "shopId": 232,
-        "price": 0,
+        "price": 60000,
         "spellId": 57,
         "targeting": "SINGLE_ALLY",
         "elements": [],
         "effect": "NOTHING",
         "effectivity": 0,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 8,
+        "equippable": [
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "FADE",
         "shopId": 233,
-        "price": 0,
+        "price": 60000,
         "spellId": 58,
         "targeting": "ALL_ENEMIES",
         "elements": [],
         "effect": "DAMAGE",
         "effectivity": 80,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 8,
+        "equippable": [
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "WALL",
         "shopId": 234,
-        "price": 0,
+        "price": 60000,
         "spellId": 59,
         "targeting": "SINGLE_ALLY",
         "elements": [],
@@ -798,36 +1174,48 @@
             "LIGHTNING",
             "EARTH"
         ],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 8,
+        "equippable": [
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "XFER",
         "shopId": 235,
-        "price": 0,
+        "price": 60000,
         "spellId": 60,
         "targeting": "SINGLE_ENEMY",
         "elements": [],
         "effect": "UNRESIST_ELEMENT",
         "effectivity": 0,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 8,
+        "equippable": [
+            "WHITE_WIZARD"
+        ]
     },
     {
         "name": "NUKE",
         "shopId": 236,
-        "price": 0,
+        "price": 60000,
         "spellId": 61,
         "targeting": "ALL_ENEMIES",
         "elements": [],
         "effect": "DAMAGE",
         "effectivity": 100,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 8,
+        "equippable": [
+            "BLACK_WIZARD"
+        ]
     },
     {
         "name": "STOP",
         "shopId": 237,
-        "price": 0,
+        "price": 60000,
         "spellId": 62,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -838,12 +1226,16 @@
         "effectElements": [],
         "effectStatuses": [
             "PARALYZED"
+        ],
+        "level": 8,
+        "equippable": [
+            "BLACK_WIZARD"
         ]
     },
     {
         "name": "ZAP!",
         "shopId": 238,
-        "price": 0,
+        "price": 60000,
         "spellId": 63,
         "targeting": "ALL_ENEMIES",
         "elements": [
@@ -854,12 +1246,16 @@
         "effectElements": [],
         "effectStatuses": [
             "DEAD"
+        ],
+        "level": 8,
+        "equippable": [
+            "BLACK_WIZARD"
         ]
     },
     {
         "name": "XXXX",
         "shopId": 239,
-        "price": 0,
+        "price": 60000,
         "spellId": 64,
         "targeting": "SINGLE_ENEMY",
         "elements": [
@@ -870,6 +1266,10 @@
         "effectElements": [],
         "effectStatuses": [
             "DEAD"
+        ],
+        "level": 8,
+        "equippable": [
+            "BLACK_WIZARD"
         ]
     },
     {
@@ -882,7 +1282,9 @@
         "effect": "HP_RECOVERY",
         "effectivity": 16,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "PURE",
@@ -896,7 +1298,9 @@
         "effectElements": [],
         "effectStatuses": [
             "POISON"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "FROST",
@@ -910,7 +1314,9 @@
         "effect": "DAMAGE",
         "effectivity": 24,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "HEAT",
@@ -924,7 +1330,9 @@
         "effect": "DAMAGE",
         "effectivity": 12,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "GLANCE",
@@ -940,7 +1348,9 @@
         "effectElements": [],
         "effectStatuses": [
             "PETRIFIED"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "GAZE",
@@ -956,7 +1366,9 @@
         "effectElements": [],
         "effectStatuses": [
             "PARALYZED"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "FLASH",
@@ -972,7 +1384,9 @@
         "effectElements": [],
         "effectStatuses": [
             "BLIND"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "SCORCH",
@@ -986,7 +1400,9 @@
         "effect": "DAMAGE",
         "effectivity": 7,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "CRACK",
@@ -1002,7 +1418,9 @@
         "effectElements": [],
         "effectStatuses": [
             "DEAD"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "SQUINT",
@@ -1018,7 +1436,9 @@
         "effectElements": [],
         "effectStatuses": [
             "DEAD"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "STARE",
@@ -1030,7 +1450,9 @@
         "effect": "DAMAGE",
         "effectivity": 17,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "GLARE",
@@ -1046,7 +1468,9 @@
         "effectElements": [],
         "effectStatuses": [
             "DEAD"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "BLIZZARD",
@@ -1060,7 +1484,9 @@
         "effect": "DAMAGE",
         "effectivity": 50,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "BLAZE",
@@ -1074,7 +1500,9 @@
         "effect": "DAMAGE",
         "effectivity": 64,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "INFERNO",
@@ -1088,7 +1516,9 @@
         "effect": "DAMAGE",
         "effectivity": 96,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "CREMATE",
@@ -1102,7 +1532,9 @@
         "effect": "DAMAGE",
         "effectivity": 24,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "POISON",
@@ -1118,7 +1550,9 @@
         "effectElements": [],
         "effectStatuses": [
             "PETRIFIED"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "TRANCE",
@@ -1132,7 +1566,9 @@
         "effectElements": [],
         "effectStatuses": [
             "PARALYZED"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "POISON",
@@ -1146,7 +1582,9 @@
         "effect": "DAMAGE",
         "effectivity": 68,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "THUNDER",
@@ -1160,7 +1598,9 @@
         "effect": "DAMAGE",
         "effectivity": 76,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "TOXIC",
@@ -1176,7 +1616,9 @@
         "effectElements": [],
         "effectStatuses": [
             "DEAD"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "SNORTING",
@@ -1192,7 +1634,9 @@
         "effectElements": [],
         "effectStatuses": [
             "BLIND"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "NUCLEAR",
@@ -1204,7 +1648,9 @@
         "effect": "DAMAGE",
         "effectivity": 80,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "INK",
@@ -1220,7 +1666,9 @@
         "effectElements": [],
         "effectStatuses": [
             "BLIND"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "STINGER",
@@ -1236,7 +1684,9 @@
         "effectElements": [],
         "effectStatuses": [
             "POISON"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "DAZZLE",
@@ -1252,7 +1702,9 @@
         "effectElements": [],
         "effectStatuses": [
             "PARALYZED"
-        ]
+        ],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "SWIRL",
@@ -1264,7 +1716,9 @@
         "effect": "DAMAGE",
         "effectivity": 64,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     },
     {
         "name": "TORNADO",
@@ -1276,6 +1730,8 @@
         "effect": "DAMAGE",
         "effectivity": 64,
         "effectElements": [],
-        "effectStatuses": []
+        "effectStatuses": [],
+        "level": 0,
+        "equippable": []
     }
 ]
