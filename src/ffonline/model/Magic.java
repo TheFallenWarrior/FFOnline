@@ -38,6 +38,7 @@ public class Magic extends Item {
     private static final Logger LOGGER = Logger.getLogger(Armor.class.getName());
     public static final String JSON_PATH = "json/magic.json";
     
+    final private int level;
     final private int spellId;
     final private int effectivity;
     final private CommandTarget targeting;
@@ -51,6 +52,7 @@ public class Magic extends Item {
         String name,
         int shopId,
         int price,
+        int level,
         int spellId,
         int effectivity,
         CommandTarget targeting,
@@ -61,6 +63,7 @@ public class Magic extends Item {
         EnumSet<CharacterJob> equippable
     ){
         super(name, shopId, price);
+        this.level = level&0xff;
         this.spellId = spellId&0xff;
         this.effectivity = effectivity&0xff;
         this.targeting = targeting;
@@ -75,6 +78,7 @@ public class Magic extends Item {
         String name = node.path("name").asString("Non-coercible value");
         int shopId = node.path("shopId").asInt(0);
         int price = node.path("price").asInt(0);
+        int level = node.path("level").asInt(0);
         int spellId = node.path("spellId").asInt(0);
         int effectivity = node.path("effectivity").asInt(0);
 
@@ -98,14 +102,13 @@ public class Magic extends Item {
         EnumSet<Element> elements = JsonLoader.parseEnumSet(node.path("elements"), Element.class, "element");
         EnumSet<Element> effectElements = JsonLoader.parseEnumSet(node.path("effectElements"), Element.class, "element");
         EnumSet<StatusAilment> effectStatuses = JsonLoader.parseEnumSet(node.path("effectStatuses"), StatusAilment.class, "status");
-        
-        // TODO: Add equippable information to magic JSON
-        EnumSet<CharacterJob> equippable = EnumSet.noneOf(CharacterJob.class);
+        EnumSet<CharacterJob> equippable = JsonLoader.parseEnumSet(node.path("equippable"), CharacterJob.class, "job");
         
         return new Magic(
                 name,
                 shopId,
                 price,
+                level,
                 spellId,
                 effectivity,
                 resolvedTarget,
@@ -124,6 +127,10 @@ public class Magic extends Item {
         return optMagic;
     }
 
+    public int getLevel(){
+        return level;
+    }
+    
     public int getSpellId(){
         return spellId;
     }
