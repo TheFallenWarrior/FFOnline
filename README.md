@@ -13,6 +13,7 @@ The game is still in development and as of now, it's not yet functional.
  - Player character and progression
    - ~~Equipment and stat calculation~~
    - ~~Creating new characters from JSON job data~~
+   - Learning magic spells
    - Leveling up, EXP and stat curves
  - ~~Magic and enemies' special attacks~~
  - Player party and player-facing character creation
