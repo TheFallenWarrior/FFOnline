@@ -33,29 +33,29 @@ public class Item{
     public static final String JSON_PATH = "json/item.json";
     
     private final String name;
-    private final int shopId; // Number that indentifies the item in shops
+    private final int itemId; // Number that indentifies the item in shops
     private final int price;
 
-    public Item(String name, int shopId, int price){
+    public Item(String name, int itemId, int price){
         this.name = name;
-        this.shopId = shopId&0xff;
+        this.itemId = itemId&0xff;
         this.price = price&0xffff;
     }
     
     public static Item buildFromJson(JsonNode node){
         String name = node.path("name").asString("Non-coercible value");
-        int shopId = node.path("shopId").asInt(0);
+        int itemId = node.path("itemId").asInt(0);
         int price = node.path("price").asInt(0);
         
-        return new Item(name, shopId, price);
+        return new Item(name, itemId, price);
     }
     
     public String getName() {
         return name;
     }
 
-    public int getShopId() {
-        return shopId;
+    public int getItemId() {
+        return itemId;
     }
 
     public int getPrice() {

@@ -1,7 +1,7 @@
 [
     {
         "name": "Wooden Nunchucks",
-        "shopId": 28,
+        "itemId": 28,
         "price": 10,
         "hitChance": 0,
         "critChance": 1,
@@ -17,7 +17,7 @@
     },
     {
         "name": "Small Knife",
-        "shopId": 29,
+        "itemId": 29,
         "price": 5,
         "hitChance": 10,
         "critChance": 2,
@@ -38,7 +38,7 @@
     },
     {
         "name": "Wooden Staff",
-        "shopId": 30,
+        "itemId": 30,
         "price": 5,
         "hitChance": 0,
         "critChance": 3,
@@ -62,7 +62,7 @@
     },
     {
         "name": "Rapier",
-        "shopId": 31,
+        "itemId": 31,
         "price": 10,
         "hitChance": 5,
         "critChance": 4,
@@ -81,7 +81,7 @@
     },
     {
         "name": "Iron Hammer",
-        "shopId": 32,
+        "itemId": 32,
         "price": 10,
         "hitChance": 0,
         "critChance": 5,
@@ -99,7 +99,7 @@
     },
     {
         "name": "Short Sword",
-        "shopId": 33,
+        "itemId": 33,
         "price": 550,
         "hitChance": 10,
         "critChance": 6,
@@ -117,7 +117,7 @@
     },
     {
         "name": "Hand Axe",
-        "shopId": 34,
+        "itemId": 34,
         "price": 550,
         "hitChance": 5,
         "critChance": 7,
@@ -133,7 +133,7 @@
     },
     {
         "name": "Scimtar",
-        "shopId": 35,
+        "itemId": 35,
         "price": 200,
         "hitChance": 10,
         "critChance": 8,
@@ -152,7 +152,7 @@
     },
     {
         "name": "Iron Nunchucks",
-        "shopId": 36,
+        "itemId": 36,
         "price": 200,
         "hitChance": 0,
         "critChance": 9,
@@ -168,7 +168,7 @@
     },
     {
         "name": "Large Knife",
-        "shopId": 37,
+        "itemId": 37,
         "price": 175,
         "hitChance": 10,
         "critChance": 10,
@@ -189,7 +189,7 @@
     },
     {
         "name": "Iron Staff",
-        "shopId": 38,
+        "itemId": 38,
         "price": 200,
         "hitChance": 0,
         "critChance": 11,
@@ -207,7 +207,7 @@
     },
     {
         "name": "Sabre",
-        "shopId": 39,
+        "itemId": 39,
         "price": 450,
         "hitChance": 5,
         "critChance": 12,
@@ -226,7 +226,7 @@
     },
     {
         "name": "Long Sword",
-        "shopId": 1500,
+        "itemId": 1500,
         "price": 0,
         "hitChance": 10,
         "critChance": 13,
@@ -244,7 +244,7 @@
     },
     {
         "name": "Great Axe",
-        "shopId": 41,
+        "itemId": 41,
         "price": 2000,
         "hitChance": 5,
         "critChance": 14,
@@ -260,7 +260,7 @@
     },
     {
         "name": "Falchon",
-        "shopId": 42,
+        "itemId": 42,
         "price": 450,
         "hitChance": 10,
         "critChance": 15,
@@ -279,7 +279,7 @@
     },
     {
         "name": "Silver Knife",
-        "shopId": 800,
+        "itemId": 800,
         "price": 0,
         "hitChance": 15,
         "critChance": 16,
@@ -300,7 +300,7 @@
     },
     {
         "name": "Silver Sword",
-        "shopId": 44,
+        "itemId": 44,
         "price": 4000,
         "hitChance": 15,
         "critChance": 17,
@@ -318,7 +318,7 @@
     },
     {
         "name": "Silver Hammer",
-        "shopId": 45,
+        "itemId": 45,
         "price": 2500,
         "hitChance": 5,
         "critChance": 18,
@@ -336,7 +336,7 @@
     },
     {
         "name": "Silver Axe",
-        "shopId": 46,
+        "itemId": 46,
         "price": 4500,
         "hitChance": 10,
         "critChance": 19,
@@ -352,7 +352,7 @@
     },
     {
         "name": "Flame Sword",
-        "shopId": 47,
+        "itemId": 47,
         "price": 10000,
         "hitChance": 20,
         "critChance": 20,
@@ -375,7 +375,7 @@
     },
     {
         "name": "Ice Sword",
-        "shopId": 48,
+        "itemId": 48,
         "price": 15000,
         "hitChance": 25,
         "critChance": 21,
@@ -395,7 +395,7 @@
     },
     {
         "name": "Dragon Sword",
-        "shopId": 49,
+        "itemId": 49,
         "price": 8000,
         "hitChance": 15,
         "critChance": 22,
@@ -416,7 +416,7 @@
     },
     {
         "name": "Giant Sword",
-        "shopId": 50,
+        "itemId": 50,
         "price": 8000,
         "hitChance": 20,
         "critChance": 23,
@@ -436,7 +436,7 @@
     },
     {
         "name": "Sun Sword",
-        "shopId": 51,
+        "itemId": 51,
         "price": 20000,
         "hitChance": 30,
         "critChance": 24,
@@ -456,7 +456,7 @@
     },
     {
         "name": "Coral Sword",
-        "shopId": 52,
+        "itemId": 52,
         "price": 8000,
         "hitChance": 15,
         "critChance": 25,
@@ -477,7 +477,7 @@
     },
     {
         "name": "Were Sword",
-        "shopId": 53,
+        "itemId": 53,
         "price": 6000,
         "hitChance": 15,
         "critChance": 26,
@@ -497,7 +497,7 @@
     },
     {
         "name": "Rune Sword",
-        "shopId": 54,
+        "itemId": 54,
         "price": 5000,
         "hitChance": 15,
         "critChance": 27,
@@ -519,7 +519,7 @@
     },
     {
         "name": "Power Staff",
-        "shopId": 55,
+        "itemId": 55,
         "price": 12345,
         "hitChance": 0,
         "critChance": 28,
@@ -541,7 +541,7 @@
     },
     {
         "name": "Light Axe",
-        "shopId": 56,
+        "itemId": 56,
         "price": 10000,
         "hitChance": 15,
         "critChance": 29,
@@ -559,7 +559,7 @@
     },
     {
         "name": "Heal Staff",
-        "shopId": 57,
+        "itemId": 57,
         "price": 25000,
         "hitChance": 0,
         "critChance": 30,
@@ -575,7 +575,7 @@
     },
     {
         "name": "Mage Staff",
-        "shopId": 58,
+        "itemId": 58,
         "price": 25000,
         "hitChance": 10,
         "critChance": 31,
@@ -591,7 +591,7 @@
     },
     {
         "name": "Defense",
-        "shopId": 59,
+        "itemId": 59,
         "price": 40000,
         "hitChance": 35,
         "critChance": 32,
@@ -607,7 +607,7 @@
     },
     {
         "name": "Wizard Staff",
-        "shopId": 60,
+        "itemId": 60,
         "price": 50000,
         "hitChance": 15,
         "critChance": 33,
@@ -621,7 +621,7 @@
     },
     {
         "name": "Vorpal",
-        "shopId": 61,
+        "itemId": 61,
         "price": 30000,
         "hitChance": 25,
         "critChance": 34,
@@ -637,7 +637,7 @@
     },
     {
         "name": "CatClaw",
-        "shopId": 62,
+        "itemId": 62,
         "price": 65000,
         "hitChance": 35,
         "critChance": 35,
@@ -654,7 +654,7 @@
     },
     {
         "name": "Thor Hammer",
-        "shopId": 63,
+        "itemId": 63,
         "price": 40000,
         "hitChance": 15,
         "critChance": 36,
@@ -670,7 +670,7 @@
     },
     {
         "name": "Bane Sword",
-        "shopId": 64,
+        "itemId": 64,
         "price": 60000,
         "hitChance": 20,
         "critChance": 37,
@@ -686,7 +686,7 @@
     },
     {
         "name": "Katana",
-        "shopId": 65,
+        "itemId": 65,
         "price": 60000,
         "hitChance": 35,
         "critChance": 38,
@@ -700,7 +700,7 @@
     },
     {
         "name": "Xcalber",
-        "shopId": 66,
+        "itemId": 66,
         "price": 60000,
         "hitChance": 35,
         "critChance": 39,
@@ -732,7 +732,7 @@
     },
     {
         "name": "Masmune",
-        "shopId": 67,
+        "itemId": 67,
         "price": 60000,
         "hitChance": 50,
         "critChance": 40,

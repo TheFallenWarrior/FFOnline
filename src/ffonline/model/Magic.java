@@ -50,7 +50,7 @@ public class Magic extends Item {
 
     public Magic(
         String name,
-        int shopId,
+        int itemId,
         int price,
         int level,
         int spellId,
@@ -62,7 +62,7 @@ public class Magic extends Item {
         EnumSet<StatusAilment> effectStatuses,
         EnumSet<CharacterJob> equippable
     ){
-        super(name, shopId, price);
+        super(name, itemId, price);
         this.level = level&0xff;
         this.spellId = spellId&0xff;
         this.effectivity = effectivity&0xff;
@@ -76,7 +76,7 @@ public class Magic extends Item {
     
     public static Magic buildFromJson(JsonNode node){
         String name = node.path("name").asString("Non-coercible value");
-        int shopId = node.path("shopId").asInt(0);
+        int itemId = node.path("itemId").asInt(0);
         int price = node.path("price").asInt(0);
         int level = node.path("level").asInt(0);
         int spellId = node.path("spellId").asInt(0);
@@ -106,7 +106,7 @@ public class Magic extends Item {
         
         return new Magic(
                 name,
-                shopId,
+                itemId,
                 price,
                 level,
                 spellId,
@@ -130,7 +130,7 @@ public class Magic extends Item {
     public int getLevel(){
         return level;
     }
-    
+
     public int getSpellId(){
         return spellId;
     }

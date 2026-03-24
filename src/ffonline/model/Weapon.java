@@ -44,7 +44,7 @@ public class Weapon extends Item {
     
     public Weapon(
         String name,
-        int shopId,
+        int itemId,
         int price,
         int hitChance,
         int critChance,
@@ -54,7 +54,7 @@ public class Weapon extends Item {
         EnumSet<EnemyType> enemyTypes,
         EnumSet<CharacterJob> equippable
     ){
-        super(name, shopId, price);
+        super(name, itemId, price);
         this.hitChance = hitChance&0xff;
         this.critChance = critChance&0xff;
         this.damage = damage&0xff;
@@ -66,7 +66,7 @@ public class Weapon extends Item {
     
     public static Weapon buildFromJson(JsonNode node){
         String name = node.path("name").asString("Non-coercible value");
-        int shopId = node.path("shopId").asInt(0);
+        int itemId = node.path("itemId").asInt(0);
         int price = node.path("price").asInt(0);
         
         int hitChance = node.path("hitChance").asInt(0);
@@ -80,7 +80,7 @@ public class Weapon extends Item {
         
         return new Weapon(
             name,
-            shopId,
+            itemId,
             price,
             hitChance,
             critChance,

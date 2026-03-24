@@ -1,117 +1,117 @@
 [
     {
         "name": "LUTE",
-        "shopId": 1,
+        "itemId": 1,
         "price": 0
     },
     {
         "name": "CROWN",
-        "shopId": 2,
+        "itemId": 2,
         "price": 0
     },
     {
         "name": "CRYSTAL",
-        "shopId": 3,
+        "itemId": 3,
         "price": 0
     },
     {
         "name": "HERB",
-        "shopId": 4,
+        "itemId": 4,
         "price": 0
     },
     {
         "name": "KEY",
-        "shopId": 5,
+        "itemId": 5,
         "price": 0
     },
     {
         "name": "TNT",
-        "shopId": 6,
+        "itemId": 6,
         "price": 0
     },
     {
         "name": "ADAMANT",
-        "shopId": 7,
+        "itemId": 7,
         "price": 0
     },
     {
         "name": "SLAB",
-        "shopId": 8,
+        "itemId": 8,
         "price": 0
     },
     {
         "name": "RUBY",
-        "shopId": 9,
+        "itemId": 9,
         "price": 0
     },
     {
         "name": "ROD",
-        "shopId": 10,
+        "itemId": 10,
         "price": 0
     },
     {
         "name": "FLOATER",
-        "shopId": 11,
+        "itemId": 11,
         "price": 0
     },
     {
         "name": "CHIME",
-        "shopId": 12,
+        "itemId": 12,
         "price": 0
     },
     {
         "name": "TAIL",
-        "shopId": 13,
+        "itemId": 13,
         "price": 0
     },
     {
         "name": "CUBE",
-        "shopId": 14,
+        "itemId": 14,
         "price": 0
     },
     {
         "name": "BOTTLE",
-        "shopId": 15,
+        "itemId": 15,
         "price": 50000
     },
     {
         "name": "OXYALE",
-        "shopId": 16,
+        "itemId": 16,
         "price": 0
     },
     {
         "name": "CANOE",
-        "shopId": 17,
+        "itemId": 17,
         "price": 0
     },
     {
         "name": "TENT",
-        "shopId": 22,
+        "itemId": 22,
         "price": 75
     },
     {
         "name": "CABIN",
-        "shopId": 23,
+        "itemId": 23,
         "price": 250
     },
     {
         "name": "HOUSE",
-        "shopId": 24,
+        "itemId": 24,
         "price": 3000
     },
     {
         "name": "HEAL",
-        "shopId": 25,
+        "itemId": 25,
         "price": 60
     },
     {
         "name": "PURE",
-        "shopId": 26,
+        "itemId": 26,
         "price": 75
     },
     {
         "name": "SOFT",
-        "shopId": 27,
+        "itemId": 27,
         "price": 800
     }
 ]

@@ -47,7 +47,7 @@ public class Armor extends Item{
 
     public Armor(
             String name,
-            int shopId,
+            int itemId,
             int price,
             int weight,
             int absorb,
@@ -56,7 +56,7 @@ public class Armor extends Item{
             ArmorType type,
             EnumSet<CharacterJob> equippable
     ){
-        super(name, shopId, price);
+        super(name, itemId, price);
         this.weight = weight&0xff;
         this.absorb = absorb&0xff;
         this.elementalResistances = EnumSet.copyOf(elementalResistances);
@@ -67,7 +67,7 @@ public class Armor extends Item{
     
     public static Armor buildFromJson(JsonNode node){
         String name = node.path("name").asString("Non-coercible value");
-        int shopId = node.path("shopId").asInt(0);
+        int itemId = node.path("itemId").asInt(0);
         int price = node.path("price").asInt(0);
         
         int weight = node.path("weight").asInt(0); 
@@ -87,7 +87,7 @@ public class Armor extends Item{
         
         return new Armor(
             name,
-            shopId,
+            itemId,
             price,
             weight,
             absorb,
