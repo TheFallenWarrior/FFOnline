@@ -116,6 +116,13 @@ public class Magic extends Item {
                 equippable
         );
     }
+    
+    public static Optional<Magic> getBySpellId(int spellId){
+        Optional<Magic> optMagic = JsonLoader.getMagic(spellId-1);
+        if(optMagic.isEmpty() || optMagic.get().spellId != spellId) return Optional.empty();
+        
+        return optMagic;
+    }
 
     public int getSpellId(){
         return spellId;
