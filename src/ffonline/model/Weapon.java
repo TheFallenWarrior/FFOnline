@@ -25,7 +25,6 @@ package ffonline.model;
 
 import ffonline.JsonLoader;
 import java.util.EnumSet;
-import java.util.logging.Logger;
 import tools.jackson.databind.JsonNode;
 
 /**
@@ -33,7 +32,6 @@ import tools.jackson.databind.JsonNode;
  * @author thefa
  */
 public class Weapon extends Item {
-    private static final Logger LOGGER = Logger.getLogger(Weapon.class.getName());
     public static final String JSON_PATH = "json/weapon.json";
     
     private final int hitChance;
