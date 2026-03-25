@@ -106,53 +106,6 @@ public abstract class Battler {
         if(status == StatusAilment.DEAD) hp = 1;
         statuses.remove(status);
     }
-
-    /*
-     * Battle methods
-     */
-
-    // TODO: Move this method to a battle command class
-    public AttackResult attack(Battler target){
-        int totalDamage = 0, successfulHits = 0;
-        boolean isCritical = false;
-
-        for(int i=0;i<getHitsPerTurn();i++){
-            // Calculate hit/miss
-            int baseHitChance = 168;
-            if(hasStatus(StatusAilment.BLIND))        baseHitChance -= 40;
-            if(target.hasStatus(StatusAilment.BLIND)) baseHitChance += 40;
-
-            int finalHitChance;
-            if(target.hasStatus(StatusAilment.ASLEEP) || target.hasStatus(StatusAilment.PARALYZED))
-                finalHitChance = baseHitChance;
-            else finalHitChance = Math.min(baseHitChance + hitChance, 255) - target.getEvadeChance();
-
-            // A hit roll of 200 is an automatic miss; 0 is an automatic hit
-            int hitRoll = rng.nextInt(0, 201);
-            if((hitRoll > finalHitChance && hitRoll != 0) || hitRoll == 200) continue; // Attack missed
-
-            // Calculate damage
-            // INTENTIONAL: Due to a bug in the original game, elements and enemy types have no
-            // effect in damage output. 
-            int baseDamage = damage + rng.nextInt(0, 1+damage);
-            if(target.hasStatus(StatusAilment.ASLEEP) || target.hasStatus(StatusAilment.PARALYZED))
-                baseDamage = (baseDamage*5) / 4;
-
-            int attackDamage = Math.max(baseDamage - target.absorb, 1);
-            
-            if(hitRoll <= getCritChance()){
-                attackDamage += baseDamage;
-                isCritical = true;
-            }
-
-            totalDamage += attackDamage;
-            successfulHits++;
-
-            target.offsetHp(-attackDamage);
-        }
-        
-        return new AttackResult(totalDamage, successfulHits, isCritical);
-    }
     
     /**
      * Removes temporary battle effects; on enemies, it immediately kills them.
