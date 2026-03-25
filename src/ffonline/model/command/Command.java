@@ -32,12 +32,12 @@ import ffonline.model.BattlerGroup;
  */
 public abstract class Command {
     // NOTE: These fields should be references to the respective objects
-    private final BattlerGroup allies;
-    private final BattlerGroup enemies;
-    private final Battler actor; // Entity performing the command
-    private final Battler allyTarget;
-    private final Battler enemyTarget;
-    private final CommandTarget targeting;
+    protected final BattlerGroup allies;
+    protected final BattlerGroup enemies;
+    protected final Battler actor; // Entity performing the command
+    protected final Battler allyTarget;
+    protected final Battler enemyTarget;
+    protected final CommandTarget targeting;
     
     public Command(
         BattlerGroup allies,
