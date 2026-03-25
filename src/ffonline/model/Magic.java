@@ -23,6 +23,7 @@
  */
 package ffonline.model;
 
+import ffonline.model.command.CommandTarget;
 import ffonline.JsonLoader;
 import java.util.EnumSet;
 import java.util.Optional;

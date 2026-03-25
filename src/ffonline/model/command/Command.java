@@ -21,7 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package ffonline.model;
+package ffonline.model.command;
+
+import ffonline.model.Battler;
+import ffonline.model.BattlerGroup;
 
 /**
  * Base class for battle commands
