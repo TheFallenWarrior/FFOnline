@@ -94,7 +94,7 @@ public class Magic extends Item {
         Optional<String> optEffect = node.path("effect").asStringOpt();
         MagicEffect resolvedEffect = MagicEffect.DAMAGE;
         try{
-            resolvedTarget = CommandTarget.valueOf(optEffect.orElse("Non-coercible value"));
+            resolvedEffect = MagicEffect.valueOf(optEffect.orElse("Non-coercible value"));
         } catch(IllegalArgumentException e){
             LOGGER.log(Level.WARNING, "Unknown magic effect found in JSON: {0}", optEffect.orElse("Non-coercible value"));
         }
