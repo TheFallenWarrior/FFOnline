@@ -25,6 +25,7 @@ package ffonline.model.command;
 
 import ffonline.model.Battler;
 import ffonline.model.BattlerGroup;
+import java.util.Random;
 
 /**
  * Base class for battle commands
@@ -38,6 +39,7 @@ public abstract class Command {
     protected final Battler allyTarget;
     protected final Battler enemyTarget;
     protected final CommandTarget targeting;
+    protected final Random rng;
     
     public Command(
         BattlerGroup allies,
@@ -53,6 +55,7 @@ public abstract class Command {
         this.allyTarget = allyTarget;
         this.enemyTarget = enemyTarget;
         this.targeting = targeting;
+        rng = new Random();
     }
     
     public abstract void execute();
