@@ -46,6 +46,30 @@ public class PlayerParty extends BattlerGroup<PlayerCharacter> {
         }
         return Optional.empty();
     }
+    
+    public Optional<PlayerCharacter> getRandomWeighted(){
+        if(getAliveSize() == 0) return Optional.empty();
+        if(size() != 4) return getRandomAlive();
+        
+        while(true){
+            int choice = rng.nextInt(8);
+            List<Integer> weights = List.of(4, 2, 1, 1);
+            PlayerCharacter chosen = get(0);
+            
+            int accumulator = 0;
+            
+            for(int i=0;i<4;i++){
+                accumulator += weights.get(i);
+                if(choice < accumulator){
+                    chosen = get(i);
+                    break;
+                }
+            }
+            
+            if(!chosen.hasStatus(StatusAilment.DEAD))
+                return Optional.of(chosen);
+        }
+    }
 
     public int getGil(){
         return gil;
