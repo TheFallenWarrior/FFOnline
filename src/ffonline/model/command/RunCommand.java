@@ -84,7 +84,7 @@ public class RunCommand extends Command {
         
         if(actor instanceof PlayerCharacter character)
             charActor = character;
-        else // Enemies always succeed from running
+        else // Enemies always succeed at running
             return new CommandResult(actor, true);
         
         for(int i=0;i<allies.size();i++){
@@ -120,7 +120,7 @@ public class RunCommand extends Command {
                 );
             }
             
-            // The forth character uses the ones digit of their HP
+            // The fourth character uses the ones digit of their HP
             case 3 -> {
                 String hpStr = ""+actor.getHp();
                 int ones = hpStr.charAt(hpStr.length()-1);
