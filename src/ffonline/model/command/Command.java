@@ -33,8 +33,8 @@ import java.util.Random;
  */
 public abstract class Command {
     // NOTE: These fields should be references to the respective objects
-    protected final BattlerGroup allies;
-    protected final BattlerGroup enemies;
+    protected final BattlerGroup<Battler> allies;
+    protected final BattlerGroup<Battler> enemies;
     protected final Battler actor; // Entity performing the command
     protected final Battler allyTarget;
     protected final Battler enemyTarget;
