@@ -28,7 +28,6 @@ import ffonline.model.PlayerCharacter;
 import ffonline.model.PlayerParty;
 import java.io.PrintWriter;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -54,7 +53,7 @@ public class GameStateManager {
     }
     
     private void registerCommands(){
-        commands.put("", (List<String> args) -> {});
+        commands.put("", (ParsedCommand parseComm) -> {});
 
         commands.put("status", this::statusCommand);
         
@@ -67,7 +66,7 @@ public class GameStateManager {
         
         CommandHandler handler = commands.get(parseComm.getVerb());
         if(handler != null){
-            handler.handle(parseComm.getArgs());
+            handler.handle(parseComm);
             return;
         }
         
@@ -86,14 +85,14 @@ public class GameStateManager {
         }
     }
     
-    private void statusCommand(List<String> args){
-        switch(args.size()){
+    private void statusCommand(ParsedCommand parseComm){
+        switch(parseComm.getArgs().size()){
             case 0 -> out.print(Presentation.partyStats(party));
             
             case 1 -> {
-                Optional<PlayerCharacter> charOpt = resolveCharacter(args.getFirst());
+                Optional<PlayerCharacter> charOpt = resolveCharacter(parseComm.getArgs().getFirst());
                 if(charOpt.isPresent()) out.print(Presentation.characterStats(charOpt.get()));
-                else out.println("Error: '"+args.getFirst()+"' isn't a valid character name or character index.");
+                else out.println("Error: '"+parseComm.getArgs().getFirst()+"' isn't a valid character name or character index.");
             }
         }
         out.flush();
@@ -101,6 +100,6 @@ public class GameStateManager {
     
     @FunctionalInterface
     private interface CommandHandler {
-        void handle(List<String> args);
+        void handle(ParsedCommand parseComm);
     }
 }
