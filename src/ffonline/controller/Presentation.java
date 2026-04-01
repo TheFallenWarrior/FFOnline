@@ -60,32 +60,28 @@ public class Presentation {
     
     public static String characterStats(PlayerCharacter character){
         return String.format(
-            "%s - %s - LEV %d\n\n" +
-            " EXP. POINTS\t%d\n" +
-            " FOR LEV UP\t%d\n\n" +
-            " STR.\t%d\n" +
-            " AGL.\t%d\n" +
-            " INT.\t%d\n" +
-            " VIT.\t%d\n" +
-            " LUCK\t%d\n\n" +
-            " DAMAGE\t%d\n" +
-            " HIT%%\t%d\n" +
-            " ABSORB\t%d\n" +
-            " EVADE%%\t%d\n\n",
+            "%s - %s - LEV %2d\n\n" +
+            " EXP. POINTS\t%6d\n" +
+            " FOR LEV UP\t%6d\n\n" +
+            " STR.\t%2d\tDAMAGE\t%2d\n" +
+            " AGL.\t%2d\tHIT%%\t%2d\n" +
+            " INT.\t%2d\tABSORB\t%2d\n" +
+            " VIT.\t%2d\tEVADE%%\t%2d\n" +
+            " LUCK\t%2d\n\n",
             character.getName(),
             character.getJob().displayName(),
             character.getLevel(),
             character.getExp(),
             -1, // Placeholder
             character.getStrength(),
-            character.getAgility(),
-            character.getIntelligence(),
-            character.getVitality(),
-            character.getLuck(),
             character.getDamage(),
+            character.getAgility(),
             character.getHitChance(),
+            character.getIntelligence(),
             character.getAbsorb(),
-            character.getEvadeChance()
+            character.getVitality(),
+            character.getEvadeChance(),
+            character.getLuck()
         );
     }
     
