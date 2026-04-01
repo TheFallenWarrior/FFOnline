@@ -50,6 +50,12 @@ public class CommandResult {
         this.resultList.add(result);
     }
     
+    public CommandResult(Battler target, boolean isHit){
+        IndividualCommandResult result = new IndividualCommandResult(target, isHit);
+        
+        this.resultList.add(result);
+    }
+    
     public List<IndividualCommandResult> getResultList(){
         return Collections.unmodifiableList(resultList);
     }
@@ -81,6 +87,13 @@ public class CommandResult {
             this.type = type;
             this.numHits = 0;
             this.totalDamage = totalDamage;
+        }
+        
+        public IndividualCommandResult(Battler target, boolean isHit){
+            this.target = target;
+            this.type = (isHit ? CommandResultType.HIT : CommandResultType.MISS);
+            this.numHits = 0;
+            this.totalDamage = 0;
         }
     }
 }
