@@ -106,18 +106,18 @@ public class Magic extends Item {
         EnumSet<CharacterJob> equippable = JsonLoader.parseEnumSet(node.path("equippable"), CharacterJob.class, "job");
         
         return new Magic(
-                name,
-                itemId,
-                price,
-                level,
-                spellId,
-                effectivity,
-                resolvedTarget,
-                resolvedEffect,
-                elements,
-                effectElements,
-                effectStatuses,
-                equippable
+            name,
+            itemId,
+            price,
+            level,
+            spellId,
+            effectivity,
+            resolvedTarget,
+            resolvedEffect,
+            elements,
+            effectElements,
+            effectStatuses,
+            equippable
         );
     }
     

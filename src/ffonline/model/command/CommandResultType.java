@@ -28,8 +28,8 @@ package ffonline.model.command;
  * @author thefa
  */
 public enum CommandResultType {
-        HIT,
-        MISS,
-        INEFFECTIVE,
-        CRITICAL
+    HIT,
+    MISS,
+    INEFFECTIVE,
+    CRITICAL
 }
