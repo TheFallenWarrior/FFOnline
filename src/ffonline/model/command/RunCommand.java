@@ -36,18 +36,18 @@ import java.util.Map;
  * @author thefa
  */
 public class RunCommand extends Command {
-    private final static Map<Integer, StatusAilment> statusBitmasks = new HashMap<>();
+    private final static Map<StatusAilment, Integer> statusBitmasks = new HashMap<>();
     public RunCommand(BattlerGroup allies, Battler actor){
         super(allies, null, actor, null, null, CommandTarget.ACTOR);
         
-        statusBitmasks.put(0x01, StatusAilment.DEAD);
-        statusBitmasks.put(0x02, StatusAilment.PETRIFIED);
-        statusBitmasks.put(0x04, StatusAilment.POISONED);
-        statusBitmasks.put(0x08, StatusAilment.BLIND);
-        statusBitmasks.put(0x10, StatusAilment.PARALYZED);
-        statusBitmasks.put(0x20, StatusAilment.ASLEEP);
-        statusBitmasks.put(0x40, StatusAilment.SILENCED);
-        statusBitmasks.put(0x80, StatusAilment.CONFUSED);
+        statusBitmasks.put(StatusAilment.DEAD, 0x01);
+        statusBitmasks.put(StatusAilment.PETRIFIED, 0x02);
+        statusBitmasks.put(StatusAilment.POISONED, 0x04);
+        statusBitmasks.put(StatusAilment.BLIND, 0x08);
+        statusBitmasks.put(StatusAilment.PARALYZED, 0x10);
+        statusBitmasks.put(StatusAilment.ASLEEP, 0x20);
+        statusBitmasks.put(StatusAilment.SILENCED, 0x40);
+        statusBitmasks.put(StatusAilment.CONFUSED, 0x80);
 }
     
     /**
@@ -68,8 +68,8 @@ public class RunCommand extends Command {
     private int unmaskStatus(EnumSet<StatusAilment> statuses){
         int accumulator = 0;
         for(var entry : statusBitmasks.entrySet()){
-            if(statuses.contains(entry.getValue())){
-                accumulator |= entry.getKey();
+            if(statuses.contains(entry.getKey())){
+                accumulator |= entry.getValue();
             }
         }
         
