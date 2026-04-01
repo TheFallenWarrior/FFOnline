@@ -72,14 +72,14 @@ public class Main {
     }
 
     private static void printUsageAndExit(int status){
-        System.out.print("""
-            Usage: FFOnline <options>
-            Options:
-            \t-c<clients>\tDefine the maximum number of concurrent clients (Default: 50)
-            \t-h\t\tShow this message and exit
-            \t-p<port>\tDefine the port to run on (Default: 4080)
-            \t-q\t\tQuiet; only log errors
-        """);
+        System.out.print(
+            " Usage: FFOnline <options>\n" +
+            " Options:\n" +
+            " \t-c<clients>\tDefine the maximum number of concurrent clients (Default: 50)\n" +
+            " \t-h\t\tShow this message and exit\n" +
+            " \t-p<port>\tDefine the port to run on (Default: 4080)\n" +
+            " \t-q\t\tQuiet; only log errors\n\n"
+        );
         System.exit(status);
     }
 }
