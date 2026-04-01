@@ -117,7 +117,7 @@ public class RunCommand extends Command {
                 );
             }
             
-            // The forth character uses the ones character of their HP
+            // The forth character uses the ones digit of their HP
             case 3 -> {
                 String hpStr = ""+actor.getHp();
                 int ones = hpStr.charAt(hpStr.length()-1);
