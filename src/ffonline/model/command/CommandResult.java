@@ -34,16 +34,12 @@ import java.util.List;
  */
 public class CommandResult {
     private final ArrayList<IndividualCommandResult> resultList = new ArrayList<>();
-    public final CommandTarget targeting;
     
-    public CommandResult(ArrayList<IndividualCommandResult> resultList, CommandTarget targeting){
+    public CommandResult(ArrayList<IndividualCommandResult> resultList){
         this.resultList.addAll(resultList);
-        this.targeting = targeting;
     }
     
     public CommandResult(Battler target, int totalDamage, int successfulHits, boolean isCritical){
-        this.targeting = CommandTarget.SINGLE_ENEMY;
-        
         IndividualCommandResult result = new IndividualCommandResult(
                 target,
                 (isCritical ? CommandResultType.CRITICAL : CommandResultType.HIT),
