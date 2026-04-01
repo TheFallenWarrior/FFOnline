@@ -21,7 +21,7 @@ The game is still in development and as of now, it's not yet functional.
  - Encode enemy data and AI
  - Battle commands
    - ~~Base Command class~~
-   - FIGHT command
+   - ~~FIGHT command~~
    - Magic commands (MAGIC, DRINK, ITEM)
    - RUN command
  - Enemy formations
