@@ -58,7 +58,7 @@ public abstract class Command {
         rng = new Random();
     }
     
-    public abstract void execute();
+    public abstract CommandResult execute();
     
     public BattlerGroup getAllies(){
         return allies;
