@@ -98,7 +98,10 @@ public class RunCommand extends Command {
         //  but it's bugged, and loads special values according to the character index.
         
         // Default to the correct behavior if unexpected party size
-        if(allies.size() != 4) success = evaluateRun(charActor.getLevel(), charActor);
+        if(allies.size() != 4){
+            success = evaluateRun(charActor.getLevel(), charActor);
+            return new CommandResult(actor, success);
+        }
         
         switch(charIndex){
             // The first character uses the third character's status byte
