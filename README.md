@@ -23,7 +23,7 @@ The game is still in development and as of now, it's not yet functional.
    - ~~Base Command class~~
    - ~~FIGHT command~~
    - Magic commands (MAGIC, DRINK, ITEM)
-   - RUN command
+   - ~~RUN command~~
  - Enemy formations
  - Battle engine with turn/command orchestration
  - Using magic and items out of battle
