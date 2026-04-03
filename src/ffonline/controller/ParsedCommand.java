@@ -24,9 +24,10 @@
 package ffonline.controller;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -46,11 +47,31 @@ public class ParsedCommand {
             return;
         }
         
-        List<String> splitCommand = new ArrayList<>();
-        splitCommand.addAll(Arrays.asList(command.split("\\s+", 2+argsLength)));
-        verb = splitCommand.getFirst().toLowerCase();
-        args.addAll(splitCommand.subList(1, Math.min(1+argsLength, splitCommand.size())));
-        rest = (1+argsLength >= splitCommand.size() ? "" : splitCommand.getLast());
+        List<String> tokens = new ArrayList<>();
+        
+        Pattern pattern = Pattern.compile("\"([^\"]*)\"|\\S+");
+        Matcher matcher = pattern.matcher(command);
+        
+        while(matcher.find()){
+            if(matcher.group(1) != null) tokens.add(matcher.group(1)); // Quoted token
+            else tokens.add(matcher.group()); // Unquoted token
+        }
+        
+        verb = tokens.getFirst().toLowerCase();
+        
+        int argsEnd = Math.min(1+argsLength, tokens.size());
+        args.addAll(tokens.subList(1, argsEnd));
+        
+        if(argsEnd < tokens.size()){
+            StringBuilder restBuilder = new StringBuilder();
+            for(int i=argsEnd;i<tokens.size();i++){
+                if(i > argsEnd) restBuilder.append(" ");
+                restBuilder.append(tokens.get(i));
+            }
+            rest = restBuilder.toString();
+        } else{
+            rest = "";
+        }
     }
     
     public ParsedCommand reparse(int argsLength){
