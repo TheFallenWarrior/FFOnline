@@ -9,7 +9,7 @@
         "damage": 10,
         "hitChance": 10,
         "evadeChance": 53,
-        "magicAbsorb": 15,
+        "magicDefense": 15,
         "job": "FIGHTER"
     },
     {
@@ -22,7 +22,7 @@
         "damage": 2,
         "hitChance": 5,
         "evadeChance": 58,
-        "magicAbsorb": 15,
+        "magicDefense": 15,
         "job": "THIEF"
     },
     {
@@ -35,7 +35,7 @@
         "damage": 2,
         "hitChance": 5,
         "evadeChance": 53,
-        "magicAbsorb": 10,
+        "magicDefense": 10,
         "job": "BLACK_BELT"
     },
     {
@@ -48,7 +48,7 @@
         "damage": 5,
         "hitChance": 7,
         "evadeChance": 58,
-        "magicAbsorb": 20,
+        "magicDefense": 20,
         "job": "RED_MAGE"
     },
     {
@@ -61,7 +61,7 @@
         "damage": 2,
         "hitChance": 5,
         "evadeChance": 53,
-        "magicAbsorb": 20,
+        "magicDefense": 20,
         "job": "WHITE_MAGE"
     },
     {
@@ -74,7 +74,7 @@
         "damage": 1,
         "hitChance": 5,
         "evadeChance": 58,
-        "magicAbsorb": 20,
+        "magicDefense": 20,
         "job": "BLACK_MAGE"
     },
     {
@@ -87,7 +87,7 @@
         "damage": 0,
         "hitChance": 0,
         "evadeChance": 0,
-        "magicAbsorb": 0,
+        "magicDefense": 0,
         "job": "KNIGHT"
     },
     {
@@ -100,7 +100,7 @@
         "damage": 0,
         "hitChance": 0,
         "evadeChance": 0,
-        "magicAbsorb": 0,
+        "magicDefense": 0,
         "job": "NINJA"
     },
     {
@@ -113,7 +113,7 @@
         "damage": 0,
         "hitChance": 0,
         "evadeChance": 0,
-        "magicAbsorb": 0,
+        "magicDefense": 0,
         "job": "MASTER"
     },
     {
@@ -126,7 +126,7 @@
         "damage": 0,
         "hitChance": 0,
         "evadeChance": 0,
-        "magicAbsorb": 0,
+        "magicDefense": 0,
         "job": "RED_WIZARD"
     },
     {
@@ -139,7 +139,7 @@
         "damage": 0,
         "hitChance": 0,
         "evadeChance": 0,
-        "magicAbsorb": 0,
+        "magicDefense": 0,
         "job": "WHITE_WIZARD"
     },
     {
@@ -152,7 +152,7 @@
         "damage": 0,
         "hitChance": 0,
         "evadeChance": 0,
-        "magicAbsorb": 0,
+        "magicDefense": 0,
         "job": "BLACK_WIZARD"
     }
 ]

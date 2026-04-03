@@ -48,7 +48,7 @@ public abstract class Battler {
     private int evadeChance; // Evasion
     private int hitChance;   // Accuracy
     private int critChance;
-    private int magicAbsorb;
+    private int magicDefense;
 
     private int hitMultiplier = 1; // Affects number of hits per turn
 
@@ -81,7 +81,7 @@ public abstract class Battler {
         rng = new Random();
         
         name = "null";
-        absorb = magicAbsorb = 0;
+        absorb = magicDefense = 0;
     }
 
     /*
@@ -236,12 +236,12 @@ public abstract class Battler {
         return hitMultiplier;
     }
     
-    public int getMagicAbsorb(){
-        return magicAbsorb;
+    public int getMagicDefense(){
+        return magicDefense;
     }
 
-    public void setMagicAbsorb(int magicAbsorb){
-        this.magicAbsorb = magicAbsorb&0xff;
+    public void setMagicDefense(int magicDefense){
+        this.magicDefense = magicDefense&0xff;
     }
 
     public int getCritChance() {
