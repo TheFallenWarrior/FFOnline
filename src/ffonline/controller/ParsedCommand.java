@@ -47,8 +47,8 @@ public class ParsedCommand {
         }
         
         List<String> splitCommand = new ArrayList<>();
-        splitCommand.addAll(Arrays.asList(command.split(" ", 2+argsLength)));
-        verb = splitCommand.getFirst().strip().toLowerCase();
+        splitCommand.addAll(Arrays.asList(command.split("\\s+", 2+argsLength)));
+        verb = splitCommand.getFirst().toLowerCase();
         args.addAll(splitCommand.subList(1, Math.min(1+argsLength, splitCommand.size())));
         rest = (1+argsLength >= splitCommand.size() ? "" : splitCommand.getLast());
     }
