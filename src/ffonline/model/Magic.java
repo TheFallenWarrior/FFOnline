@@ -70,7 +70,7 @@ public class Magic extends Item {
         this.targeting = targeting;
         this.effect = effect;
         this.elements = EnumSet.copyOf(elements);
-        this.effectElements = EnumSet.copyOf(elements);
+        this.effectElements = EnumSet.copyOf(effectElements);
         this.effectStatuses = EnumSet.copyOf(effectStatuses);
         this.equippable = EnumSet.copyOf(equippable);
     }
