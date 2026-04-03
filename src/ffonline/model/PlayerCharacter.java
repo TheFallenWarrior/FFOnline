@@ -100,7 +100,7 @@ public class PlayerCharacter extends Battler {
         try{
             resolvedJob = CharacterJob.valueOf(optJob.orElse("Non-coercible value"));
         } catch(IllegalArgumentException e){
-            LOGGER.log(Level.WARNING, "Unknown armor type found in JSON: {0}", optJob.orElse("Non-coercible value"));
+            LOGGER.log(Level.WARNING, "Unknown job found in JSON: {0}", optJob.orElse("Non-coercible value"));
         }
         
         return new PlayerCharacter(
