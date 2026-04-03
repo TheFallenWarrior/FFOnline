@@ -71,9 +71,10 @@ public class PlayerCharacter extends Battler {
             int damage,
             int hitChance,
             int evadeChance,
+            int magicDefense,
             CharacterJob job
     ){
-        super(hp&0xff, damage, hitChance, evadeChance);
+        super(hp&0xff, damage, hitChance, evadeChance, magicDefense);
         this.strength = strength&0xff;
         this.agility = agility&0xff;
         this.intelligence = intelligence&0xff;
@@ -92,6 +93,7 @@ public class PlayerCharacter extends Battler {
         int damage = node.path("damage").asInt(0);
         int hitChance = node.path("hitChance").asInt(0);
         int evadeChance = node.path("evadeChance").asInt(0);
+        int magicDefense = node.path("magicDefense").asInt(0);
 
         Optional<String> optJob = node.path("job").asStringOpt();
         CharacterJob resolvedJob = CharacterJob.FIGHTER;
@@ -111,6 +113,7 @@ public class PlayerCharacter extends Battler {
             damage,
             hitChance,
             evadeChance,
+            magicDefense,
             resolvedJob
         );
     }

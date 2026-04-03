@@ -68,11 +68,12 @@ public abstract class Battler {
         rng = new Random(rngSeed);
     }
     
-    public Battler(int hp, int damage, int hitChance, int evadeChance){
+    public Battler(int hp, int damage, int hitChance, int evadeChance, int magicDefense){
         this.hp = maxHp = hp&0xffff;
         this.damage = damage&0xff;
         this.hitChance = hitChance&0xff;
         this.evadeChance = evadeChance&0xff;
+        this.magicDefense = magicDefense&0xff;
         
         statuses = EnumSet.noneOf(StatusAilment.class);
         elementalOffense = EnumSet.noneOf(Element.class);
@@ -81,7 +82,7 @@ public abstract class Battler {
         rng = new Random();
         
         name = "null";
-        absorb = magicDefense = 0;
+        absorb = 0;
     }
 
     /*
