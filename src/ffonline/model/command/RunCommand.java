@@ -65,7 +65,7 @@ public class RunCommand extends Command {
      * @param statuses EnumSet-encoded status set
      * @return bit-mask-encoded status set
      */
-    private int unmaskStatus(EnumSet<StatusAilment> statuses){
+    private int maskStatus(EnumSet<StatusAilment> statuses){
         int accumulator = 0;
         for(var entry : statusBitmasks.entrySet()){
             if(statuses.contains(entry.getKey())){
@@ -107,7 +107,7 @@ public class RunCommand extends Command {
             // The first character uses the third character's status byte
             case 0 -> {
                 success = evaluateRun(
-                    unmaskStatus(allies.get(2).getStatuses()),
+                    maskStatus(allies.get(2).getStatuses()),
                     charActor
                 );
             }
@@ -115,7 +115,7 @@ public class RunCommand extends Command {
             // The second character uses the fourth character's status byte
             case 1 -> {
                 success = evaluateRun(
-                    unmaskStatus(allies.get(3).getStatuses()),
+                    maskStatus(allies.get(3).getStatuses()),
                     charActor
                 );
             }
