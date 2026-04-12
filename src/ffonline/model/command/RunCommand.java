@@ -27,8 +27,8 @@ import ffonline.model.Battler;
 import ffonline.model.BattlerGroup;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.StatusAilment;
+import java.util.EnumMap;
 import java.util.EnumSet;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -36,7 +36,7 @@ import java.util.Map;
  * @author thefa
  */
 public class RunCommand extends Command {
-    private final static Map<StatusAilment, Integer> statusBitmasks = new HashMap<>();
+    private final static Map<StatusAilment, Integer> statusBitmasks = new EnumMap<>(StatusAilment.class);
     public RunCommand(BattlerGroup allies, Battler actor){
         super(allies, null, actor, null, null, CommandTarget.ACTOR);
         
