@@ -27,6 +27,7 @@ import ffonline.JsonLoader;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.EnumSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -55,10 +56,10 @@ public class PlayerCharacter extends Battler {
     
     private CharacterJob job;
     
-    private final ArrayList<Armor> armorInventory = new ArrayList<>();
+    private final List<Armor> armorInventory = new ArrayList<>();
     private final EnumMap<ArmorType, Armor> equippedArmors = new EnumMap<>(ArmorType.class);
 
-    private final ArrayList<Weapon> weaponInventory = new ArrayList<>();
+    private final List<Weapon> weaponInventory = new ArrayList<>();
     private Weapon equippedWeapon;
 
     public PlayerCharacter(

@@ -33,9 +33,9 @@ import java.util.List;
  * @author thefa
  */
 public class CommandResult {
-    private final ArrayList<IndividualCommandResult> resultList = new ArrayList<>();
+    private final List<IndividualCommandResult> resultList = new ArrayList<>();
     
-    public CommandResult(ArrayList<IndividualCommandResult> resultList){
+    public CommandResult(List<IndividualCommandResult> resultList){
         this.resultList.addAll(resultList);
     }
     

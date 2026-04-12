@@ -51,7 +51,7 @@ public class BattlerGroup<T extends Battler> extends ArrayList<T>{
         rng = new Random();
     }
 
-    public BattlerGroup(ArrayList<T> members){
+    public BattlerGroup(List<T> members){
         addAll(members);
         rng = new Random();
     }
