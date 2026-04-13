@@ -37,6 +37,7 @@ import java.util.Map;
  */
 public class RunCommand extends Command {
     private final static Map<StatusAilment, Integer> statusBitmasks = new EnumMap<>(StatusAilment.class);
+    
     public RunCommand(BattlerGroup allies, Battler actor){
         super(allies, null, actor, null, null, CommandTarget.ACTOR);
         
