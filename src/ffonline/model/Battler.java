@@ -94,6 +94,10 @@ public abstract class Battler {
     }
 
     public boolean canReceiveStatus(StatusAilment status){
+        return isAlive();
+    }
+    
+    public boolean isAlive(){
         return (!hasStatus(StatusAilment.DEAD) && !hasStatus(StatusAilment.PETRIFIED));
     }
 
@@ -106,7 +110,7 @@ public abstract class Battler {
     public void removeStatus(StatusAilment status){
         if(status == StatusAilment.DEAD) hp = 1;
         statuses.remove(status);
-    }
+    } 
     
     /**
      * Removes temporary battle effects; on enemies, it immediately kills them.
