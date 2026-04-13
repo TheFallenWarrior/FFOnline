@@ -249,7 +249,12 @@ public class PlayerCharacter extends Battler {
     }
     
     public boolean receiveMagic(Magic magic){
-        if(magic == null || magic.getLevel()-1 >= MAGIC_LEVELS || !magic.isEquippable(job)) return false;
+        if(
+            magic == null ||
+            magic.getLevel() <= 0 ||
+            magic.getLevel() > MAGIC_LEVELS ||
+            !magic.isEquippable(job)
+        ) return false;
         
         return magicInventory[magic.getLevel()-1].add(magic);
     }
