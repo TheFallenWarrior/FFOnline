@@ -64,7 +64,7 @@ public class BattlerGroup<T extends Battler> extends ArrayList<T>{
     public int getAliveSize(){
         int alive = 0;
         for(var member : this){
-            if(!member.hasStatus(StatusAilment.DEAD)) alive++;
+            if(member.isAlive()) alive++;
         }
         return alive;
     }
@@ -72,7 +72,7 @@ public class BattlerGroup<T extends Battler> extends ArrayList<T>{
     public List<T> getAliveMembers(){
         List<T> alive = new ArrayList<>();
         for(var member : this){
-            if(!member.hasStatus(StatusAilment.DEAD))
+            if(member.isAlive())
                 alive.add(member);
         }
         return Collections.unmodifiableList(alive);

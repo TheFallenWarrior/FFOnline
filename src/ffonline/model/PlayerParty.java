@@ -66,8 +66,7 @@ public class PlayerParty extends BattlerGroup<PlayerCharacter> {
                 }
             }
             
-            if(!chosen.hasStatus(StatusAilment.DEAD))
-                return Optional.of(chosen);
+            if(chosen.isAlive()) return Optional.of(chosen);
         }
     }
 
