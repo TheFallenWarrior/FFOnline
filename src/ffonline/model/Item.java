@@ -29,6 +29,7 @@ import tools.jackson.databind.JsonNode;
  *
  * @author thefa
  */
+@SuppressWarnings("EqualsAndHashcode")
 public class Item{
     public static final String JSON_PATH = "json/item.json";
     
@@ -50,6 +51,12 @@ public class Item{
         return new Item(name, itemId, price);
     }
     
+    @Override
+    public boolean equals(Object other){
+        if(!(other instanceof Item itemOther)) return false;
+        return itemId == itemOther.itemId;
+    }
+
     public String getName() {
         return name;
     }
