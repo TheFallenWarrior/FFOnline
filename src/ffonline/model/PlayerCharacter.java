@@ -135,8 +135,6 @@ public class PlayerCharacter extends Battler {
 
     @Override
     public void battleEnd(){
-        resetHitMultiplier();
-        
         // Remove temporary status ailments
         removeStatus(StatusAilment.BLIND);
         removeStatus(StatusAilment.PARALYZED);
@@ -144,6 +142,7 @@ public class PlayerCharacter extends Battler {
         removeStatus(StatusAilment.SILENCED);
         
         // Clear stat buffs/debuffs
+        resetHitMultiplier();
         updateStats();
     }
 
