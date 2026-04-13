@@ -290,7 +290,10 @@ public class PlayerCharacter extends Battler {
                 setDamage(1 + getDamage());
             }
                         
-            // INTENTIONAL: The original Black Belt level-up bug is replicated
+            // INTENTIONAL: The original Black Belt level-up bug is replicated:
+            //  on level-up, the game mistakenly checks whether a weapon is equipped
+            //  to apply the absorb bonus. When changing equipment, it works as
+            //  intended by checking whether any armor is worn.
             if(
                 !blackBeltBugEnable && totalAbsorb == 0 ||
                 blackBeltBugEnable && equippedWeapon == null
