@@ -60,10 +60,10 @@ public class PlayerCharacter extends Battler {
     
     private CharacterJob job;
     
-    private final Inventory<Armor> armorInventory = new Inventory<>();
+    private final Inventory<Armor> armorInventory = new Inventory<>(MAX_INVENTORY);
     private final EnumMap<ArmorType, Armor> equippedArmors = new EnumMap<>(ArmorType.class);
 
-    private final Inventory<Weapon> weaponInventory = new Inventory<>();
+    private final Inventory<Weapon> weaponInventory = new Inventory<>(MAX_INVENTORY);
     private Weapon equippedWeapon;
     
     private final Inventory<Magic>[] magicInventory = new Inventory[MAGIC_LEVELS];
@@ -157,10 +157,8 @@ public class PlayerCharacter extends Battler {
     }
     
     public boolean receiveArmor(Armor armor){
-        if(armor == null || armorInventory.size() >= MAX_INVENTORY)
-            return false;
-        armorInventory.add(armor);
-        return true;
+        if(armor == null) return false;
+        return armorInventory.add(armor);
     }
     
     public Optional<Armor> dropArmor(int inventoryIndex){
@@ -215,10 +213,8 @@ public class PlayerCharacter extends Battler {
     }
     
     public boolean receiveWeapon(Weapon weapon){
-        if(weapon == null || weaponInventory.size() >= MAX_INVENTORY)
-            return false;
-        weaponInventory.add(weapon);
-        return true;
+        if(weapon == null) return false;
+        return weaponInventory.add(weapon);
     }
     
     public Optional<Weapon> dropWeapon(int inventoryIndex){
