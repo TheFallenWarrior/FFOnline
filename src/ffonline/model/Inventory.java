@@ -33,6 +33,31 @@ import java.util.Map;
  * @param <T> The type of item held in the inventory
  */
 public class Inventory<T extends Item> extends ArrayList<T> {
+    private final long maxSize;
+    
+    public Inventory(){
+        this.maxSize = Long.MAX_VALUE;
+    }
+    
+    public Inventory(long maxSize){
+        this.maxSize = maxSize;
+    }
+    
+    /**
+     * Add item to inventory. Will reject the operation if the item is {@code null},
+     * or if {@code maxSize} was reached.<br>
+     * NOTE: This method does not throw on rejection as {@link Collection#add}
+     * specifies, and returns {@code false} instead.
+     * @param item the {@code Item} to be added
+     * @return {@code true} if {@code item} was added, {@code false} otherwise
+     */
+    @Override
+    public boolean add(T item){
+        if(item == null || size() >= maxSize) return false;
+        super.add(item);
+        return true;
+    }
+    
     public int count(int itemId){
         int accumulator = 0;
         for(T item : this){
