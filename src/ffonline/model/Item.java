@@ -29,7 +29,6 @@ import tools.jackson.databind.JsonNode;
  *
  * @author thefa
  */
-@SuppressWarnings("EqualsAndHashcode")
 public class Item{
     public static final String JSON_PATH = "json/item.json";
     
@@ -55,6 +54,13 @@ public class Item{
     public boolean equals(Object other){
         if(!(other instanceof Item itemOther)) return false;
         return itemId == itemOther.itemId;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 89 * hash + this.itemId;
+        return hash;
     }
 
     public String getName() {
