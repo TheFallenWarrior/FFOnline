@@ -25,6 +25,7 @@ package ffonline.model;
 
 import ffonline.JsonLoader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.List;
@@ -39,6 +40,9 @@ import tools.jackson.databind.JsonNode;
  */
 public class PlayerCharacter extends Battler {
     private static final int MAX_INVENTORY = 4;
+    private static final int MAGIC_LEVELS = 8;
+    private static final int MAGIC_MAX_INVENTORY = 3;
+    
     private static final Logger LOGGER = Logger.getLogger(PlayerCharacter.class.getName());
     public static final String JSON_PATH = "json/job.json";
 
@@ -61,6 +65,8 @@ public class PlayerCharacter extends Battler {
 
     private final Inventory<Weapon> weaponInventory = new Inventory<>();
     private Weapon equippedWeapon;
+    
+    private final Inventory<Magic>[] magicInventory = new Inventory[MAGIC_LEVELS];
 
     public PlayerCharacter(
             int hp,
@@ -82,6 +88,9 @@ public class PlayerCharacter extends Battler {
         this.vitality = vitality&0xff;
         this.luck = luck&0xff;
         this.job = job;
+        
+        for(int i=0;i<MAGIC_LEVELS;i++)
+            magicInventory[i] = new Inventory<>(MAGIC_MAX_INVENTORY);
     }
     
     public static PlayerCharacter buildFromJson(JsonNode node){
@@ -244,6 +253,12 @@ public class PlayerCharacter extends Battler {
         updateStats();
     }
     
+    public boolean receiveMagic(Magic magic){
+        if(magic == null || magic.getLevel() >= MAGIC_LEVELS || !magic.isEquippable(job)) return false;
+        
+        return magicInventory[magic.getLevel()].add(magic);
+    }
+    
     public void updateStats(){
         updateStats(false);
     }
@@ -371,5 +386,24 @@ public class PlayerCharacter extends Battler {
 
     public void setLuck(int luck) {
         this.luck = luck&0xff;
+    }
+    
+    public List<Magic> getMagicInventory(int level){
+        if(level < 0 || level >= MAGIC_LEVELS){
+            LOGGER.log(Level.WARNING, "Tried to read invalid magic inventory level: {0}", level);
+            return Collections.EMPTY_LIST;
+        }
+        return Collections.unmodifiableList(magicInventory[level]);
+    }
+    
+    /**
+     * @return A flat {@code List} with all spells the character knows
+     */
+    public List<Magic> getMagicInventory(){
+        List<Magic> magicList = new ArrayList<>();
+        for(int i=0;i<MAGIC_LEVELS;i++){
+            magicList.addAll(magicInventory[i]);
+        }
+        return magicList;
     }
 }
