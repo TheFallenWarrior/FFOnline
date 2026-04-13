@@ -33,7 +33,7 @@ import java.util.Optional;
  * @author thefa
  */
 public class PlayerParty extends BattlerGroup<PlayerCharacter> {
-    private final List<Item> inventory = new ArrayList<>();
+    private final Inventory<Item> inventory = new Inventory<>();
     private int gil = 400; // Starting amount of gold
     
     public List<Item> getInventory(){

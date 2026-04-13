@@ -56,10 +56,10 @@ public class PlayerCharacter extends Battler {
     
     private CharacterJob job;
     
-    private final List<Armor> armorInventory = new ArrayList<>();
+    private final Inventory<Armor> armorInventory = new Inventory<>();
     private final EnumMap<ArmorType, Armor> equippedArmors = new EnumMap<>(ArmorType.class);
 
-    private final List<Weapon> weaponInventory = new ArrayList<>();
+    private final Inventory<Weapon> weaponInventory = new Inventory<>();
     private Weapon equippedWeapon;
 
     public PlayerCharacter(
