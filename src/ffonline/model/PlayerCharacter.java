@@ -404,6 +404,6 @@ public class PlayerCharacter extends Battler {
         for(int i=0;i<MAGIC_LEVELS;i++){
             magicList.addAll(magicInventory[i]);
         }
-        return magicList;
+        return Collections.unmodifiableList(magicList);
     }
 }
