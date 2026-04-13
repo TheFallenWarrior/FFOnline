@@ -113,7 +113,7 @@ public abstract class Battler {
     } 
     
     /**
-     * Removes temporary battle effects; on enemies, it immediately kills them.
+     * Removes temporary battle effects
      */
     public abstract void battleEnd();
 
