@@ -127,6 +127,10 @@ public class Magic extends Item {
         
         return optMagic;
     }
+    
+    public boolean isEquippable(CharacterJob job){
+        return equippable.contains(job);
+    }
 
     public int getLevel(){
         return level;
