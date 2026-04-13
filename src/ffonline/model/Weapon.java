@@ -35,7 +35,7 @@ public class Weapon extends Item {
     public static final String JSON_PATH = "json/weapon.json";
     
     private final int hitChance;
-    private final int critChance; // Weapon index number, 1-based
+    private final int weaponId; // Weapon index number, 1-based
     private final int damage;
     private final int spellId;
     private final EnumSet<Element> elementalOffense;
@@ -47,7 +47,7 @@ public class Weapon extends Item {
         int itemId,
         int price,
         int hitChance,
-        int critChance,
+        int weaponId,
         int damage,
         int spellId,
         EnumSet<Element> elementalOffense,
@@ -56,7 +56,7 @@ public class Weapon extends Item {
     ){
         super(name, itemId, price);
         this.hitChance = hitChance&0xff;
-        this.critChance = critChance&0xff;
+        this.weaponId = weaponId&0xff;
         this.damage = damage&0xff;
         this.spellId = spellId&0xff;
         this.elementalOffense = EnumSet.copyOf(elementalOffense);
@@ -100,8 +100,8 @@ public class Weapon extends Item {
         return hitChance;
     }
     
-    public int getCritChance() {
-        return critChance;
+    public int getWeaponId() {
+        return weaponId;
     }
 
     public int getDamage() {

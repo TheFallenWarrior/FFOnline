@@ -254,9 +254,10 @@ public class PlayerCharacter extends Battler {
             // INTENTIONAL: Due to a bug in FF1, weapon elemental affinities are never loaded and have no effect
             // INTENTIONAL: Another bug causes characters to be weak to the element their weapon is strong against,
             //  but because of the bug described above, it has no effect
+            // INTENTIONAL: The weapon ID is used as the critical chance for physical attacks
             setDamage(strength/2 + equippedWeapon.getDamage());
             setHitChance(baseHitChance + equippedWeapon.getHitChance());
-            setCritChance(equippedWeapon.getCritChance());
+            setCritChance(equippedWeapon.getWeaponId());
         } else{
             setDamage(strength/2);
             setHitChance(baseHitChance);
