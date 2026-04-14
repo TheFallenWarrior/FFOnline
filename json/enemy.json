@@ -1,0 +1,4104 @@
+[
+    {
+        "name": "IMP",
+        "exp": 6,
+        "gil": 6,
+        "hp": 8,
+        "morale": 106,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 6,
+        "absorb": 4,
+        "hitsPerTurn": 1,
+        "hitChance": 2,
+        "damage": 4,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "GIANT"
+        ],
+        "magicDefense": 16,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "GrIMP",
+        "exp": 18,
+        "gil": 18,
+        "hp": 16,
+        "morale": 120,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 9,
+        "absorb": 6,
+        "hitsPerTurn": 1,
+        "hitChance": 4,
+        "damage": 8,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "GIANT"
+        ],
+        "magicDefense": 23,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "WOLF",
+        "exp": 24,
+        "gil": 6,
+        "hp": 20,
+        "morale": 105,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 36,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 5,
+        "damage": 8,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 28,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "GrWOLF",
+        "exp": 93,
+        "gil": 22,
+        "hp": 72,
+        "morale": 108,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 54,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 18,
+        "damage": 14,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 46,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "WrWOLF",
+        "exp": 135,
+        "gil": 67,
+        "hp": 68,
+        "morale": 120,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 42,
+        "absorb": 6,
+        "hitsPerTurn": 1,
+        "hitChance": 17,
+        "damage": 14,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "WERE",
+            "REGENERATIVE"
+        ],
+        "magicDefense": 45,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "FrWOLF",
+        "exp": 402,
+        "gil": 200,
+        "hp": 92,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            67,
+            67,
+            67,
+            67
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 32,
+        "evadeChance": 54,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 23,
+        "damage": 25,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 55,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "ICE"
+        ]
+    },
+    {
+        "name": "IGUANA",
+        "exp": 153,
+        "gil": 50,
+        "hp": 92,
+        "morale": 134,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 12,
+        "hitsPerTurn": 1,
+        "hitChance": 23,
+        "damage": 18,
+        "critChance": 10,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 55,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "AGAMA",
+        "exp": 2472,
+        "gil": 1200,
+        "hp": 296,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            68,
+            68,
+            68,
+            68
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 32,
+        "evadeChance": 36,
+        "absorb": 18,
+        "hitsPerTurn": 2,
+        "hitChance": 74,
+        "damage": 31,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 143,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "FIRE"
+        ]
+    },
+    {
+        "name": "SAURIA",
+        "exp": 1977,
+        "gil": 658,
+        "hp": 196,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            69,
+            69,
+            69,
+            69
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 24,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 54,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 91,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "GIANT",
+        "exp": 879,
+        "gil": 879,
+        "hp": 240,
+        "morale": 136,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 12,
+        "hitsPerTurn": 1,
+        "hitChance": 60,
+        "damage": 38,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "GIANT"
+        ],
+        "magicDefense": 120,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "FrGIANT",
+        "exp": 1752,
+        "gil": 1752,
+        "hp": 336,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 16,
+        "hitsPerTurn": 1,
+        "hitChance": 78,
+        "damage": 60,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "GIANT"
+        ],
+        "magicDefense": 150,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "ICE"
+        ]
+    },
+    {
+        "name": "R.GIANT",
+        "exp": 1506,
+        "gil": 1506,
+        "hp": 300,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 83,
+        "damage": 73,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "GIANT"
+        ],
+        "magicDefense": 135,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "FIRE"
+        ]
+    },
+    {
+        "name": "SAHAG",
+        "exp": 30,
+        "gil": 30,
+        "hp": 28,
+        "morale": 110,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 72,
+        "absorb": 4,
+        "hitsPerTurn": 1,
+        "hitChance": 7,
+        "damage": 10,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "AQUATIC"
+        ],
+        "magicDefense": 28,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "R.SAHAG",
+        "exp": 105,
+        "gil": 105,
+        "hp": 64,
+        "morale": 142,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 78,
+        "absorb": 8,
+        "hitsPerTurn": 1,
+        "hitChance": 16,
+        "damage": 15,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "AQUATIC"
+        ],
+        "magicDefense": 46,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "WzSAHAG",
+        "exp": 882,
+        "gil": 882,
+        "hp": 204,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 96,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 51,
+        "damage": 47,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "AQUATIC"
+        ],
+        "magicDefense": 101,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "PIRATE",
+        "exp": 40,
+        "gil": 40,
+        "hp": 6,
+        "morale": 255,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 12,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 2,
+        "damage": 8,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 15,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "KYZOKU",
+        "exp": 60,
+        "gil": 120,
+        "hp": 50,
+        "morale": 106,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 6,
+        "hitsPerTurn": 1,
+        "hitChance": 13,
+        "damage": 14,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 37,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "SHARK",
+        "exp": 267,
+        "gil": 66,
+        "hp": 120,
+        "morale": 121,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 72,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 30,
+        "damage": 22,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "AQUATIC"
+        ],
+        "magicDefense": 70,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "GrSHARK",
+        "exp": 2361,
+        "gil": 600,
+        "hp": 344,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 72,
+        "absorb": 8,
+        "hitsPerTurn": 1,
+        "hitChance": 86,
+        "damage": 50,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "AQUATIC"
+        ],
+        "magicDefense": 170,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "OddEYE",
+        "exp": 42,
+        "gil": 10,
+        "hp": 10,
+        "morale": 110,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            70,
+            70,
+            70,
+            70
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 128,
+        "evadeChance": 84,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 2,
+        "damage": 4,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 14,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "BigEYE",
+        "exp": 3591,
+        "gil": 3591,
+        "hp": 304,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            70,
+            71,
+            70,
+            71
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 24,
+        "absorb": 16,
+        "hitsPerTurn": 2,
+        "hitChance": 76,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "AQUATIC"
+        ],
+        "magicDefense": 156,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "BONE",
+        "exp": 9,
+        "gil": 3,
+        "hp": 10,
+        "morale": 124,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 12,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 2,
+        "damage": 10,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "UNDEAD"
+        ],
+        "magicDefense": 17,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE"
+        ]
+    },
+    {
+        "name": "R.BONE",
+        "exp": 378,
+        "gil": 378,
+        "hp": 144,
+        "morale": 156,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 42,
+        "absorb": 12,
+        "hitsPerTurn": 1,
+        "hitChance": 36,
+        "damage": 26,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "UNDEAD"
+        ],
+        "magicDefense": 76,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE"
+        ]
+    },
+    {
+        "name": "CREEP",
+        "exp": 63,
+        "gil": 15,
+        "hp": 56,
+        "morale": 104,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 8,
+        "hitsPerTurn": 1,
+        "hitChance": 14,
+        "damage": 17,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 40,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": []
+    },
+    {
+        "name": "CRAWL",
+        "exp": 186,
+        "gil": 200,
+        "hp": 84,
+        "morale": 106,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 42,
+        "absorb": 8,
+        "hitsPerTurn": 8,
+        "hitChance": 21,
+        "damage": 1,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 51,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "HYENA",
+        "exp": 288,
+        "gil": 72,
+        "hp": 120,
+        "morale": 122,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 4,
+        "hitsPerTurn": 1,
+        "hitChance": 30,
+        "damage": 22,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 76,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "CEREBUS",
+        "exp": 1182,
+        "gil": 600,
+        "hp": 192,
+        "morale": 146,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            72,
+            72,
+            72,
+            72
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 48,
+        "absorb": 8,
+        "hitsPerTurn": 1,
+        "hitChance": 48,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 103,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "FIRE"
+        ]
+    },
+    {
+        "name": "OGRE",
+        "exp": 195,
+        "gil": 195,
+        "hp": 100,
+        "morale": 116,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 18,
+        "absorb": 10,
+        "hitsPerTurn": 1,
+        "hitChance": 25,
+        "damage": 18,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "GIANT"
+        ],
+        "magicDefense": 65,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "GrOGRE",
+        "exp": 282,
+        "gil": 300,
+        "hp": 132,
+        "morale": 126,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 30,
+        "absorb": 14,
+        "hitsPerTurn": 1,
+        "hitChance": 33,
+        "damage": 23,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "GIANT"
+        ],
+        "magicDefense": 71,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "WzOGRE",
+        "exp": 723,
+        "gil": 723,
+        "hp": 144,
+        "morale": 134,
+        "magicInventory": [
+            4,
+            14,
+            6,
+            22,
+            32
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 64,
+        "specialAttackChance": 0,
+        "evadeChance": 54,
+        "absorb": 10,
+        "hitsPerTurn": 1,
+        "hitChance": 36,
+        "damage": 23,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "GIANT",
+            "MAGE",
+            "REGENERATIVE"
+        ],
+        "magicDefense": 80,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "ASP",
+        "exp": 123,
+        "gil": 50,
+        "hp": 56,
+        "morale": 107,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 30,
+        "absorb": 6,
+        "hitsPerTurn": 1,
+        "hitChance": 14,
+        "damage": 6,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 46,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "COBRA",
+        "exp": 165,
+        "gil": 50,
+        "hp": 80,
+        "morale": 110,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 36,
+        "absorb": 10,
+        "hitsPerTurn": 1,
+        "hitChance": 20,
+        "damage": 22,
+        "critChance": 31,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 56,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "SeaSNAKE",
+        "exp": 957,
+        "gil": 600,
+        "hp": 224,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 12,
+        "hitsPerTurn": 1,
+        "hitChance": 56,
+        "damage": 35,
+        "critChance": 0,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON",
+            "AQUATIC"
+        ],
+        "magicDefense": 116,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "SCORPION",
+        "exp": 225,
+        "gil": 70,
+        "hp": 84,
+        "morale": 112,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 54,
+        "absorb": 10,
+        "hitsPerTurn": 2,
+        "hitChance": 21,
+        "damage": 22,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 55,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "LOBSTER",
+        "exp": 639,
+        "gil": 300,
+        "hp": 148,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 60,
+        "absorb": 18,
+        "hitsPerTurn": 3,
+        "hitChance": 37,
+        "damage": 35,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [
+            "AQUATIC"
+        ],
+        "magicDefense": 85,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "BULL",
+        "exp": 489,
+        "gil": 489,
+        "hp": 164,
+        "morale": 124,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 4,
+        "hitsPerTurn": 2,
+        "hitChance": 41,
+        "damage": 22,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 95,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "ZomBULL",
+        "exp": 1050,
+        "gil": 1050,
+        "hp": 224,
+        "morale": 136,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 36,
+        "absorb": 14,
+        "hitsPerTurn": 1,
+        "hitChance": 56,
+        "damage": 40,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "UNDEAD"
+        ],
+        "magicDefense": 116,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE"
+        ]
+    },
+    {
+        "name": "TROLL",
+        "exp": 621,
+        "gil": 621,
+        "hp": 184,
+        "morale": 136,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 12,
+        "hitsPerTurn": 3,
+        "hitChance": 46,
+        "damage": 24,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "REGENERATIVE"
+        ],
+        "magicDefense": 100,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": []
+    },
+    {
+        "name": "SeaTROLL",
+        "exp": 852,
+        "gil": 852,
+        "hp": 216,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 54,
+        "damage": 40,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "AQUATIC",
+            "REGENERATIVE"
+        ],
+        "magicDefense": 110,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "SHADOW",
+        "exp": 90,
+        "gil": 45,
+        "hp": 50,
+        "morale": 124,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 36,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 13,
+        "damage": 10,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "BLIND"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "UNDEAD"
+        ],
+        "magicDefense": 37,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "IMAGE",
+        "exp": 231,
+        "gil": 231,
+        "hp": 86,
+        "morale": 160,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 90,
+        "absorb": 4,
+        "hitsPerTurn": 1,
+        "hitChance": 22,
+        "damage": 22,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "UNDEAD"
+        ],
+        "magicDefense": 52,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "WRAITH",
+        "exp": 432,
+        "gil": 432,
+        "hp": 114,
+        "morale": 160,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 108,
+        "absorb": 12,
+        "hitsPerTurn": 1,
+        "hitChance": 29,
+        "damage": 40,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "UNDEAD"
+        ],
+        "magicDefense": 67,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "GHOST",
+        "exp": 990,
+        "gil": 990,
+        "hp": 180,
+        "morale": 184,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 36,
+        "absorb": 30,
+        "hitsPerTurn": 1,
+        "hitChance": 45,
+        "damage": 93,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "UNDEAD"
+        ],
+        "magicDefense": 85,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "ZOMBIE",
+        "exp": 24,
+        "gil": 12,
+        "hp": 20,
+        "morale": 120,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 6,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 5,
+        "damage": 10,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "UNDEAD"
+        ],
+        "magicDefense": 25,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "GHOUL ",
+        "exp": 93,
+        "gil": 50,
+        "hp": 48,
+        "morale": 124,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 12,
+        "absorb": 6,
+        "hitsPerTurn": 3,
+        "hitChance": 12,
+        "damage": 8,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "UNDEAD"
+        ],
+        "magicDefense": 36,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE"
+        ]
+    },
+    {
+        "name": "GEIST",
+        "exp": 117,
+        "gil": 117,
+        "hp": 56,
+        "morale": 160,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 46,
+        "absorb": 10,
+        "hitsPerTurn": 3,
+        "hitChance": 14,
+        "damage": 8,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "UNDEAD"
+        ],
+        "magicDefense": 40,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE"
+        ]
+    },
+    {
+        "name": "SPECTER",
+        "exp": 150,
+        "gil": 150,
+        "hp": 52,
+        "morale": 160,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 42,
+        "absorb": 12,
+        "hitsPerTurn": 1,
+        "hitChance": 13,
+        "damage": 20,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "UNDEAD"
+        ],
+        "magicDefense": 45,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE"
+        ]
+    },
+    {
+        "name": "WORM",
+        "exp": 4344,
+        "gil": 1000,
+        "hp": 256,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 36,
+        "absorb": 10,
+        "hitsPerTurn": 1,
+        "hitChance": 112,
+        "damage": 65,
+        "critChance": 10,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 200,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "Sand W",
+        "exp": 2683,
+        "gil": 900,
+        "hp": 200,
+        "morale": 124,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            73,
+            73,
+            73,
+            73
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 62,
+        "absorb": 14,
+        "hitsPerTurn": 1,
+        "hitChance": 50,
+        "damage": 46,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 103,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "Grey W",
+        "exp": 1671,
+        "gil": 400,
+        "hp": 280,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 4,
+        "absorb": 31,
+        "hitsPerTurn": 1,
+        "hitChance": 70,
+        "damage": 50,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 143,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "EYE",
+        "exp": 3225,
+        "gil": 3225,
+        "hp": 162,
+        "morale": 200,
+        "magicInventory": [
+            64,
+            54,
+            46,
+            23,
+            22,
+            10,
+            16,
+            6
+        ],
+        "specialAttackInventory": [
+            69,
+            74,
+            70,
+            75
+        ],
+        "magicChance": 80,
+        "specialAttackChance": 80,
+        "evadeChance": 12,
+        "absorb": 30,
+        "hitsPerTurn": 1,
+        "hitChance": 42,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGE"
+        ],
+        "magicDefense": 92,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "PHANTOM",
+        "exp": 1,
+        "gil": 1,
+        "hp": 360,
+        "morale": 200,
+        "magicInventory": [
+            62,
+            63,
+            60,
+            54,
+            46,
+            22,
+            10,
+            16
+        ],
+        "specialAttackInventory": [
+            76,
+            76,
+            76,
+            76
+        ],
+        "magicChance": 64,
+        "specialAttackChance": 64,
+        "evadeChance": 24,
+        "absorb": 60,
+        "hitsPerTurn": 1,
+        "hitChance": 150,
+        "damage": 120,
+        "critChance": 40,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "UNDEAD",
+            "REGENERATIVE"
+        ],
+        "magicDefense": 160,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "MEDUSA",
+        "exp": 699,
+        "gil": 699,
+        "hp": 68,
+        "morale": 150,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            69,
+            69,
+            69,
+            69
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 36,
+        "absorb": 10,
+        "hitsPerTurn": 1,
+        "hitChance": 17,
+        "damage": 20,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 55,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "GrMEDUSA",
+        "exp": 1218,
+        "gil": 1218,
+        "hp": 96,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            69,
+            69,
+            69,
+            69
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 72,
+        "absorb": 12,
+        "hitsPerTurn": 10,
+        "hitChance": 24,
+        "damage": 11,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "MAGICAL"
+        ],
+        "magicDefense": 70,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "CATMAN",
+        "exp": 780,
+        "gil": 780,
+        "hp": 160,
+        "morale": 148,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 16,
+        "hitsPerTurn": 2,
+        "hitChance": 40,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "WERE",
+            "REGENERATIVE"
+        ],
+        "magicDefense": 93,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "MANCAT",
+        "exp": 603,
+        "gil": 800,
+        "hp": 110,
+        "morale": 150,
+        "magicInventory": [
+            21,
+            16,
+            14,
+            6,
+            5,
+            8,
+            1,
+            6
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 96,
+        "specialAttackChance": 0,
+        "evadeChance": 60,
+        "absorb": 30,
+        "hitsPerTurn": 3,
+        "hitChance": 28,
+        "damage": 20,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGE"
+        ],
+        "magicDefense": 62,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "FIRE",
+            "ICE",
+            "LIGHTNING",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "PEDE",
+        "exp": 1194,
+        "gil": 300,
+        "hp": 222,
+        "morale": 111,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 56,
+        "damage": 39,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 116,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "GrPEDE",
+        "exp": 2244,
+        "gil": 1000,
+        "hp": 320,
+        "morale": 176,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 24,
+        "hitsPerTurn": 1,
+        "hitChance": 80,
+        "damage": 73,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 185,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "FIRE",
+            "ICE"
+        ]
+    },
+    {
+        "name": "TIGER",
+        "exp": 438,
+        "gil": 108,
+        "hp": 132,
+        "morale": 116,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 8,
+        "hitsPerTurn": 2,
+        "hitChance": 33,
+        "damage": 22,
+        "critChance": 25,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 85,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "Saber T",
+        "exp": 843,
+        "gil": 500,
+        "hp": 200,
+        "morale": 180,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 42,
+        "absorb": 8,
+        "hitsPerTurn": 2,
+        "hitChance": 50,
+        "damage": 24,
+        "critChance": 70,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 106,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "VAMPIRE",
+        "exp": 1200,
+        "gil": 2000,
+        "hp": 156,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            90,
+            90,
+            90,
+            90
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 32,
+        "evadeChance": 72,
+        "absorb": 24,
+        "hitsPerTurn": 1,
+        "hitChance": 39,
+        "damage": 76,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "UNDEAD",
+            "REGENERATIVE"
+        ],
+        "magicDefense": 75,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "WzVAMP",
+        "exp": 2385,
+        "gil": 3000,
+        "hp": 300,
+        "morale": 200,
+        "magicInventory": [
+            19,
+            10,
+            32,
+            32,
+            23,
+            23,
+            21,
+            21
+        ],
+        "specialAttackInventory": [
+            90,
+            90,
+            90,
+            90
+        ],
+        "magicChance": 32,
+        "specialAttackChance": 32,
+        "evadeChance": 72,
+        "absorb": 28,
+        "hitsPerTurn": 1,
+        "hitChance": 42,
+        "damage": 90,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "UNDEAD",
+            "MAGE",
+            "REGENERATIVE"
+        ],
+        "magicDefense": 84,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "GARGOYLE",
+        "exp": 132,
+        "gil": 80,
+        "hp": 80,
+        "morale": 132,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 45,
+        "absorb": 8,
+        "hitsPerTurn": 4,
+        "hitChance": 20,
+        "damage": 12,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL"
+        ],
+        "magicDefense": 53,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "R.GOYLE",
+        "exp": 387,
+        "gil": 387,
+        "hp": 94,
+        "morale": 134,
+        "magicInventory": [
+            21,
+            22,
+            5,
+            5
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 64,
+        "specialAttackChance": 0,
+        "evadeChance": 72,
+        "absorb": 32,
+        "hitsPerTurn": 4,
+        "hitChance": 24,
+        "damage": 10,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL"
+        ],
+        "magicDefense": 127,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "FIRE",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "EARTH",
+        "exp": 1536,
+        "gil": 768,
+        "hp": 288,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 18,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 72,
+        "damage": 66,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL"
+        ],
+        "magicDefense": 130,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "LIGHTNING",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "FIRE",
+        "exp": 1620,
+        "gil": 800,
+        "hp": 276,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 42,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 69,
+        "damage": 50,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL"
+        ],
+        "magicDefense": 130,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "Frost D",
+        "exp": 1701,
+        "gil": 2000,
+        "hp": 200,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            77,
+            77,
+            77
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 120,
+        "absorb": 8,
+        "hitsPerTurn": 1,
+        "hitChance": 50,
+        "damage": 53,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 196,
+        "elementalWeaknesses": [
+            "FIRE",
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "POISON",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "Red D",
+        "exp": 2904,
+        "gil": 4000,
+        "hp": 248,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            78,
+            78,
+            78
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 96,
+        "absorb": 30,
+        "hitsPerTurn": 1,
+        "hitChance": 62,
+        "damage": 75,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 200,
+        "elementalWeaknesses": [
+            "POISON",
+            "ICE"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "ZombieD",
+        "exp": 2331,
+        "gil": 999,
+        "hp": 268,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 30,
+        "hitsPerTurn": 1,
+        "hitChance": 67,
+        "damage": 56,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "DRAGON",
+            "UNDEAD"
+        ],
+        "magicDefense": 135,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "SCUM",
+        "exp": 84,
+        "gil": 20,
+        "hp": 24,
+        "morale": 124,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 0,
+        "absorb": 255,
+        "hitsPerTurn": 1,
+        "hitChance": 1,
+        "damage": 1,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 36,
+        "elementalWeaknesses": [
+            "FIRE",
+            "ICE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "LIGHTNING",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "MUCK",
+        "exp": 255,
+        "gil": 70,
+        "hp": 76,
+        "morale": 152,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 4,
+        "absorb": 7,
+        "hitsPerTurn": 1,
+        "hitChance": 19,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 55,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "FIRE",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "OOZE",
+        "exp": 252,
+        "gil": 70,
+        "hp": 76,
+        "morale": 144,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 6,
+        "absorb": 6,
+        "hitsPerTurn": 1,
+        "hitChance": 19,
+        "damage": 32,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 55,
+        "elementalWeaknesses": [
+            "FIRE",
+            "ICE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "LIGHTNING",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "SLIME",
+        "exp": 1101,
+        "gil": 900,
+        "hp": 156,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 255,
+        "hitsPerTurn": 1,
+        "hitChance": 39,
+        "damage": 49,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 85,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE",
+            "LIGHTNING",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "SPIDER",
+        "exp": 30,
+        "gil": 8,
+        "hp": 28,
+        "morale": 109,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 30,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 7,
+        "damage": 10,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 28,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "ARACHNID",
+        "exp": 141,
+        "gil": 50,
+        "hp": 64,
+        "morale": 111,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 12,
+        "hitsPerTurn": 1,
+        "hitChance": 16,
+        "damage": 5,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 46,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "MATICOR",
+        "exp": 1317,
+        "gil": 650,
+        "hp": 164,
+        "morale": 150,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            89,
+            89,
+            89,
+            89
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 72,
+        "absorb": 8,
+        "hitsPerTurn": 2,
+        "hitChance": 41,
+        "damage": 22,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 95,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "SPHINX",
+        "exp": 1160,
+        "gil": 1160,
+        "hp": 228,
+        "morale": 132,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 120,
+        "absorb": 12,
+        "hitsPerTurn": 3,
+        "hitChance": 57,
+        "damage": 23,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 115,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "R.ANKYLO",
+        "exp": 1428,
+        "gil": 300,
+        "hp": 256,
+        "morale": 146,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 56,
+        "absorb": 38,
+        "hitsPerTurn": 3,
+        "hitChance": 64,
+        "damage": 60,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 130,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "ANKYLO",
+        "exp": 2610,
+        "gil": 1,
+        "hp": 352,
+        "morale": 144,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 48,
+        "hitsPerTurn": 1,
+        "hitChance": 88,
+        "damage": 98,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 156,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "MUMMY",
+        "exp": 300,
+        "gil": 300,
+        "hp": 80,
+        "morale": 172,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 20,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "ASLEEP"
+        ],
+        "enemyTypes": [
+            "UNDEAD"
+        ],
+        "magicDefense": 60,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE"
+        ]
+    },
+    {
+        "name": "WzMUMMY",
+        "exp": 984,
+        "gil": 1000,
+        "hp": 188,
+        "morale": 148,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 24,
+        "hitsPerTurn": 1,
+        "hitChance": 47,
+        "damage": 43,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "ASLEEP"
+        ],
+        "enemyTypes": [
+            "UNDEAD"
+        ],
+        "magicDefense": 95,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE"
+        ]
+    },
+    {
+        "name": "COCTRICE",
+        "exp": 186,
+        "gil": 200,
+        "hp": 50,
+        "morale": 124,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 72,
+        "absorb": 4,
+        "hitsPerTurn": 1,
+        "hitChance": 10,
+        "damage": 1,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "PETRIFIED"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 47,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "PERILISK",
+        "exp": 423,
+        "gil": 500,
+        "hp": 44,
+        "morale": 124,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            74,
+            74,
+            74,
+            74
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 32,
+        "evadeChance": 72,
+        "absorb": 4,
+        "hitsPerTurn": 1,
+        "hitChance": 11,
+        "damage": 20,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 45,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "WYVERN",
+        "exp": 1173,
+        "gil": 50,
+        "hp": 212,
+        "morale": 150,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 96,
+        "absorb": 12,
+        "hitsPerTurn": 1,
+        "hitChance": 53,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 115,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "WYRM",
+        "exp": 1218,
+        "gil": 502,
+        "hp": 260,
+        "morale": 150,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 60,
+        "absorb": 22,
+        "hitsPerTurn": 1,
+        "hitChance": 65,
+        "damage": 40,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 131,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "TYRO",
+        "exp": 3387,
+        "gil": 502,
+        "hp": 480,
+        "morale": 144,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 60,
+        "absorb": 10,
+        "hitsPerTurn": 1,
+        "hitChance": 133,
+        "damage": 65,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 200,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "T REX",
+        "exp": 7200,
+        "gil": 600,
+        "hp": 600,
+        "morale": 150,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 60,
+        "absorb": 10,
+        "hitsPerTurn": 1,
+        "hitChance": 144,
+        "damage": 115,
+        "critChance": 30,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 200,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "CARIBE",
+        "exp": 240,
+        "gil": 20,
+        "hp": 92,
+        "morale": 138,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 72,
+        "absorb": 0,
+        "hitsPerTurn": 1,
+        "hitChance": 23,
+        "damage": 22,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 68,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "R.CARIBE",
+        "exp": 546,
+        "gil": 46,
+        "hp": 172,
+        "morale": 142,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 72,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 43,
+        "damage": 37,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 83,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "GATOR",
+        "exp": 816,
+        "gil": 900,
+        "hp": 184,
+        "morale": 138,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 16,
+        "hitsPerTurn": 2,
+        "hitChance": 46,
+        "damage": 42,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 103,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "FrGATOR",
+        "exp": 1890,
+        "gil": 2000,
+        "hp": 288,
+        "morale": 142,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 20,
+        "hitsPerTurn": 2,
+        "hitChance": 72,
+        "damage": 56,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 143,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "OCHO",
+        "exp": 1224,
+        "gil": 102,
+        "hp": 208,
+        "morale": 176,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 24,
+        "hitsPerTurn": 3,
+        "hitChance": 52,
+        "damage": 20,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 116,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "NAOCHO",
+        "exp": 3189,
+        "gil": 500,
+        "hp": 344,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 32,
+        "hitsPerTurn": 3,
+        "hitChance": 86,
+        "damage": 35,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 170,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "HYDRA",
+        "exp": 915,
+        "gil": 150,
+        "hp": 212,
+        "morale": 138,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 36,
+        "absorb": 14,
+        "hitsPerTurn": 3,
+        "hitChance": 53,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 116,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "R.HYDRA",
+        "exp": 1215,
+        "gil": 400,
+        "hp": 182,
+        "morale": 152,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            80,
+            80
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 36,
+        "absorb": 14,
+        "hitsPerTurn": 3,
+        "hitChance": 46,
+        "damage": 20,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 103,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "FIRE"
+        ]
+    },
+    {
+        "name": "GUARD",
+        "exp": 1224,
+        "gil": 400,
+        "hp": 200,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 72,
+        "absorb": 40,
+        "hitsPerTurn": 2,
+        "hitChance": 50,
+        "damage": 25,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 110,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH"
+        ]
+    },
+    {
+        "name": "SENTRY",
+        "exp": 4000,
+        "gil": 2000,
+        "hp": 400,
+        "morale": 150,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 96,
+        "absorb": 48,
+        "hitsPerTurn": 1,
+        "hitChance": 90,
+        "damage": 102,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 160,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "FIRE",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "WATER",
+        "exp": 1962,
+        "gil": 800,
+        "hp": 300,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 72,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 68,
+        "damage": 69,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL"
+        ],
+        "magicDefense": 130,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "AIR",
+        "exp": 1614,
+        "gil": 807,
+        "hp": 358,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 144,
+        "absorb": 4,
+        "hitsPerTurn": 1,
+        "hitChance": 62,
+        "damage": 53,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL"
+        ],
+        "magicDefense": 130,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "NAGA",
+        "exp": 2355,
+        "gil": 2355,
+        "hp": 356,
+        "morale": 200,
+        "magicInventory": [
+            23,
+            7,
+            6,
+            8,
+            8,
+            22,
+            16,
+            14
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 96,
+        "specialAttackChance": 0,
+        "evadeChance": 72,
+        "absorb": 8,
+        "hitsPerTurn": 1,
+        "hitChance": 71,
+        "damage": 9,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [
+            "AQUATIC",
+            "MAGE"
+        ],
+        "magicDefense": 116,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "GrNAGA",
+        "exp": 3489,
+        "gil": 4000,
+        "hp": 420,
+        "morale": 154,
+        "magicInventory": [
+            4,
+            10,
+            16,
+            14,
+            6,
+            5,
+            8,
+            20
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 96,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 16,
+        "hitsPerTurn": 1,
+        "hitChance": 88,
+        "damage": 7,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [
+            "MAGE"
+        ],
+        "magicDefense": 143,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "CHIMERA",
+        "exp": 2064,
+        "gil": 2500,
+        "hp": 300,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            80,
+            80,
+            80
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 72,
+        "absorb": 20,
+        "hitsPerTurn": 4,
+        "hitChance": 60,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 130,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "JIMERA",
+        "exp": 4584,
+        "gil": 5000,
+        "hp": 350,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            80,
+            81,
+            80,
+            81
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 60,
+        "absorb": 18,
+        "hitsPerTurn": 4,
+        "hitChance": 70,
+        "damage": 40,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 143,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "WIZARD",
+        "exp": 276,
+        "gil": 300,
+        "hp": 84,
+        "morale": 126,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 66,
+        "absorb": 16,
+        "hitsPerTurn": 2,
+        "hitChance": 21,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL",
+            "AQUATIC"
+        ],
+        "magicDefense": 98,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "FIRE",
+            "ICE"
+        ]
+    },
+    {
+        "name": "SORCERER",
+        "exp": 822,
+        "gil": 999,
+        "hp": 112,
+        "morale": 130,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            82,
+            82,
+            82,
+            82
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 48,
+        "absorb": 12,
+        "hitsPerTurn": 3,
+        "hitChance": 28,
+        "damage": 1,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [
+            "DEAD"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 187,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "GARLAND",
+        "exp": 130,
+        "gil": 250,
+        "hp": 106,
+        "morale": 255,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 12,
+        "absorb": 10,
+        "hitsPerTurn": 1,
+        "hitChance": 27,
+        "damage": 15,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 64,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "Gas D",
+        "exp": 4068,
+        "gil": 5000,
+        "hp": 352,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            83,
+            83,
+            83
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 96,
+        "absorb": 16,
+        "hitsPerTurn": 1,
+        "hitChance": 68,
+        "damage": 72,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 200,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "EARTH"
+        ]
+    },
+    {
+        "name": "Blue D",
+        "exp": 3274,
+        "gil": 2000,
+        "hp": 454,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            84,
+            84,
+            84
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 96,
+        "absorb": 20,
+        "hitsPerTurn": 1,
+        "hitChance": 86,
+        "damage": 92,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 200,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": []
+    },
+    {
+        "name": "MudGOL",
+        "exp": 1257,
+        "gil": 800,
+        "hp": 176,
+        "morale": 200,
+        "magicInventory": [
+            30
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 32,
+        "specialAttackChance": 0,
+        "evadeChance": 28,
+        "absorb": 7,
+        "hitsPerTurn": 1,
+        "hitChance": 44,
+        "damage": 64,
+        "critChance": 1,
+        "elementalOffense": [
+            "POISON"
+        ],
+        "attackStatuses": [
+            "POISON"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "MAGE"
+        ],
+        "magicDefense": 93,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "FIRE",
+            "ICE",
+            "LIGHTNING"
+        ]
+    },
+    {
+        "name": "RockGOL",
+        "exp": 2385,
+        "gil": 1000,
+        "hp": 200,
+        "morale": 200,
+        "magicInventory": [
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 48,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 16,
+        "hitsPerTurn": 1,
+        "hitChance": 50,
+        "damage": 70,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL",
+            "MAGE"
+        ],
+        "magicDefense": 110,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "FIRE",
+            "ICE",
+            "LIGHTNING",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "IronGOL",
+        "exp": 6717,
+        "gil": 3000,
+        "hp": 304,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            85,
+            85,
+            85,
+            85
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 16,
+        "evadeChance": 24,
+        "absorb": 100,
+        "hitsPerTurn": 1,
+        "hitChance": 76,
+        "damage": 93,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL"
+        ],
+        "magicDefense": 143,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "FIRE",
+            "ICE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "BADMAN",
+        "exp": 1263,
+        "gil": 1800,
+        "hp": 260,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 36,
+        "absorb": 38,
+        "hitsPerTurn": 2,
+        "hitChance": 65,
+        "damage": 44,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 135,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "EVILMAN",
+        "exp": 2700,
+        "gil": 3000,
+        "hp": 190,
+        "morale": 200,
+        "magicInventory": [
+            60,
+            61,
+            60,
+            64,
+            56
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 32,
+        "specialAttackChance": 0,
+        "evadeChance": 42,
+        "absorb": 32,
+        "hitsPerTurn": 1,
+        "hitChance": 48,
+        "damage": 55,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL",
+            "MAGE"
+        ],
+        "magicDefense": 173,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH"
+        ]
+    },
+    {
+        "name": "ASTOS",
+        "exp": 2250,
+        "gil": 2000,
+        "hp": 168,
+        "morale": 255,
+        "magicInventory": [
+            46,
+            40,
+            30,
+            21,
+            23,
+            16,
+            14,
+            6
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 96,
+        "specialAttackChance": 0,
+        "evadeChance": 78,
+        "absorb": 40,
+        "hitsPerTurn": 1,
+        "hitChance": 42,
+        "damage": 26,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 170,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "MAGE",
+        "exp": 1095,
+        "gil": 1095,
+        "hp": 105,
+        "morale": 200,
+        "magicInventory": [
+            46,
+            45,
+            37,
+            38,
+            40,
+            37,
+            48,
+            45
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 64,
+        "specialAttackChance": 0,
+        "evadeChance": 78,
+        "absorb": 40,
+        "hitsPerTurn": 1,
+        "hitChance": 27,
+        "damage": 26,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGE"
+        ],
+        "magicDefense": 170,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "FIGHTER",
+        "exp": 3420,
+        "gil": 3420,
+        "hp": 200,
+        "morale": 158,
+        "magicInventory": [
+            59,
+            60,
+            52,
+            43,
+            44,
+            49,
+            36,
+            33
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 48,
+        "specialAttackChance": 0,
+        "evadeChance": 90,
+        "absorb": 38,
+        "hitsPerTurn": 1,
+        "hitChance": 45,
+        "damage": 40,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGE"
+        ],
+        "magicDefense": 186,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "MADPONY",
+        "exp": 63,
+        "gil": 15,
+        "hp": 64,
+        "morale": 106,
+        "magicInventory": [],
+        "specialAttackInventory": [],
+        "magicChance": 0,
+        "specialAttackChance": 0,
+        "evadeChance": 22,
+        "absorb": 2,
+        "hitsPerTurn": 2,
+        "hitChance": 16,
+        "damage": 10,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [],
+        "magicDefense": 40,
+        "elementalWeaknesses": [],
+        "elementalResistances": []
+    },
+    {
+        "name": "NITEMARE",
+        "exp": 1272,
+        "gil": 700,
+        "hp": 200,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            86,
+            86,
+            86,
+            86
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 32,
+        "evadeChance": 132,
+        "absorb": 24,
+        "hitsPerTurn": 3,
+        "hitChance": 50,
+        "damage": 30,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL"
+        ],
+        "magicDefense": 100,
+        "elementalWeaknesses": [
+            "ICE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "WarMECH",
+        "exp": 32000,
+        "gil": 32000,
+        "hp": 1000,
+        "morale": 200,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            87,
+            87,
+            87,
+            87
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 32,
+        "evadeChance": 96,
+        "absorb": 80,
+        "hitsPerTurn": 2,
+        "hitChance": 200,
+        "damage": 128,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "REGENERATIVE"
+        ],
+        "magicDefense": 200,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "FIRE",
+            "ICE",
+            "LIGHTNING",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "LICH",
+        "exp": 2200,
+        "gil": 3000,
+        "hp": 400,
+        "morale": 255,
+        "magicInventory": [
+            32,
+            29,
+            30,
+            23,
+            22,
+            21,
+            16,
+            6
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 96,
+        "specialAttackChance": 0,
+        "evadeChance": 24,
+        "absorb": 40,
+        "hitsPerTurn": 1,
+        "hitChance": 49,
+        "damage": 40,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "UNDEAD",
+            "MAGE"
+        ],
+        "magicDefense": 120,
+        "elementalWeaknesses": [
+            "FIRE"
+        ],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE"
+        ]
+    },
+    {
+        "name": "LICH",
+        "exp": 2000,
+        "gil": 1,
+        "hp": 500,
+        "morale": 255,
+        "magicInventory": [
+            61,
+            62,
+            63,
+            64,
+            61,
+            62,
+            63,
+            64
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 96,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 50,
+        "hitsPerTurn": 1,
+        "hitChance": 64,
+        "damage": 50,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [
+            "MAGICAL",
+            "UNDEAD",
+            "MAGE"
+        ],
+        "magicDefense": 140,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "DEATH",
+            "ICE"
+        ]
+    },
+    {
+        "name": "KARY",
+        "exp": 2475,
+        "gil": 3000,
+        "hp": 600,
+        "morale": 255,
+        "magicInventory": [
+            21,
+            14,
+            21,
+            14,
+            21,
+            22,
+            21,
+            22
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 48,
+        "specialAttackChance": 0,
+        "evadeChance": 48,
+        "absorb": 50,
+        "hitsPerTurn": 6,
+        "hitChance": 63,
+        "damage": 40,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL",
+            "MAGE"
+        ],
+        "magicDefense": 183,
+        "elementalWeaknesses": [
+            "STATUS"
+        ],
+        "elementalResistances": [
+            "POISON",
+            "FIRE",
+            "ICE",
+            "LIGHTNING"
+        ]
+    },
+    {
+        "name": "KARY",
+        "exp": 2000,
+        "gil": 1,
+        "hp": 700,
+        "morale": 255,
+        "magicInventory": [
+            37,
+            46,
+            37,
+            46,
+            37,
+            48,
+            37,
+            48
+        ],
+        "specialAttackInventory": [],
+        "magicChance": 48,
+        "specialAttackChance": 0,
+        "evadeChance": 60,
+        "absorb": 60,
+        "hitsPerTurn": 6,
+        "hitChance": 63,
+        "damage": 60,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "MAGICAL",
+            "MAGE"
+        ],
+        "magicDefense": 183,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "POISON",
+            "FIRE",
+            "ICE",
+            "LIGHTNING"
+        ]
+    },
+    {
+        "name": "KRAKEN",
+        "exp": 4245,
+        "gil": 5000,
+        "hp": 800,
+        "morale": 255,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            88,
+            88,
+            88,
+            88
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 32,
+        "evadeChance": 84,
+        "absorb": 60,
+        "hitsPerTurn": 8,
+        "hitChance": 90,
+        "damage": 50,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "AQUATIC"
+        ],
+        "magicDefense": 160,
+        "elementalWeaknesses": [
+            "LIGHTNING"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "KRAKEN",
+        "exp": 2000,
+        "gil": 1,
+        "hp": 900,
+        "morale": 255,
+        "magicInventory": [
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23,
+            23
+        ],
+        "specialAttackInventory": [
+            88,
+            88,
+            88,
+            88
+        ],
+        "magicChance": 48,
+        "specialAttackChance": 32,
+        "evadeChance": 98,
+        "absorb": 70,
+        "hitsPerTurn": 8,
+        "hitChance": 114,
+        "damage": 70,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "AQUATIC"
+        ],
+        "magicDefense": 200,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "FIRE",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "TIAMAT",
+        "exp": 5496,
+        "gil": 6000,
+        "hp": 1000,
+        "morale": 255,
+        "magicInventory": [],
+        "specialAttackInventory": [
+            84,
+            83,
+            77,
+            78
+        ],
+        "magicChance": 0,
+        "specialAttackChance": 64,
+        "evadeChance": 72,
+        "absorb": 80,
+        "hitsPerTurn": 4,
+        "hitChance": 80,
+        "damage": 49,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON"
+        ],
+        "magicDefense": 200,
+        "elementalWeaknesses": [
+            "POISON"
+        ],
+        "elementalResistances": [
+            "FIRE",
+            "ICE",
+            "LIGHTNING",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "TIAMAT",
+        "exp": 2000,
+        "gil": 1,
+        "hp": 1100,
+        "morale": 255,
+        "magicInventory": [
+            38,
+            32,
+            23,
+            21,
+            38,
+            32,
+            23,
+            21
+        ],
+        "specialAttackInventory": [
+            84,
+            83,
+            77,
+            78
+        ],
+        "magicChance": 64,
+        "specialAttackChance": 64,
+        "evadeChance": 90,
+        "absorb": 90,
+        "hitsPerTurn": 4,
+        "hitChance": 85,
+        "damage": 75,
+        "critChance": 1,
+        "elementalOffense": [],
+        "attackStatuses": [],
+        "enemyTypes": [
+            "DRAGON",
+            "MAGE"
+        ],
+        "magicDefense": 200,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "FIRE",
+            "ICE",
+            "LIGHTNING",
+            "EARTH"
+        ]
+    },
+    {
+        "name": "CHAOS",
+        "exp": 0,
+        "gil": 0,
+        "hp": 2000,
+        "morale": 255,
+        "magicInventory": [
+            53,
+            45,
+            40,
+            49,
+            37,
+            32,
+            30,
+            61
+        ],
+        "specialAttackInventory": [
+            73,
+            79,
+            91,
+            92
+        ],
+        "magicChance": 64,
+        "specialAttackChance": 64,
+        "evadeChance": 100,
+        "absorb": 100,
+        "hitsPerTurn": 2,
+        "hitChance": 200,
+        "damage": 100,
+        "critChance": 1,
+        "elementalOffense": [
+            "STATUS"
+        ],
+        "attackStatuses": [
+            "PARALYZED"
+        ],
+        "enemyTypes": [],
+        "magicDefense": 200,
+        "elementalWeaknesses": [],
+        "elementalResistances": [
+            "STATUS",
+            "POISON",
+            "TIME",
+            "DEATH",
+            "FIRE",
+            "ICE",
+            "LIGHTNING",
+            "EARTH"
+        ]
+    }
+]
