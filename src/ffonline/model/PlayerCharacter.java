@@ -324,7 +324,7 @@ public class PlayerCharacter extends Battler {
         }
     }
     
-        public boolean shouldLevelUp(){
+    public boolean shouldLevelUp(){
         int nextExp = CharacterProgression.getExpForLevelUp(level);
         
         return (nextExp != 0 && exp >= nextExp);
