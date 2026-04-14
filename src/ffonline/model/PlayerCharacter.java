@@ -40,7 +40,6 @@ import tools.jackson.databind.JsonNode;
  */
 public class PlayerCharacter extends Battler {
     private static final int MAX_INVENTORY = 4;
-    private static final int MAGIC_LEVELS = 8;
     private static final int MAGIC_MAX_INVENTORY = 3;
     
     private static final Logger LOGGER = Logger.getLogger(PlayerCharacter.class.getName());
@@ -66,7 +65,7 @@ public class PlayerCharacter extends Battler {
     private final Inventory<Weapon> weaponInventory = new Inventory<>(MAX_INVENTORY);
     private Weapon equippedWeapon;
     
-    private final Inventory<Magic>[] magicInventory = new Inventory[MAGIC_LEVELS];
+    private final Inventory<Magic>[] magicInventory = new Inventory[Magic.MAGIC_LEVELS];
 
     public PlayerCharacter(
             int hp,
@@ -89,7 +88,7 @@ public class PlayerCharacter extends Battler {
         this.luck = luck&0xff;
         this.job = job;
         
-        for(int i=0;i<MAGIC_LEVELS;i++)
+        for(int i=0;i<Magic.MAGIC_LEVELS;i++)
             magicInventory[i] = new Inventory<>(MAGIC_MAX_INVENTORY);
     }
     
@@ -252,7 +251,7 @@ public class PlayerCharacter extends Battler {
         if(
             magic == null ||
             magic.getLevel() <= 0 ||
-            magic.getLevel() > MAGIC_LEVELS ||
+            magic.getLevel() > Magic.MAGIC_LEVELS ||
             !magic.isEquippable(job)
         ) return false;
         
@@ -389,7 +388,7 @@ public class PlayerCharacter extends Battler {
     }
     
     public List<Magic> getMagicInventory(int level){
-        if(level < 0 || level >= MAGIC_LEVELS){
+        if(level < 0 || level >= Magic.MAGIC_LEVELS){
             LOGGER.log(Level.WARNING, "Tried to read invalid magic inventory level: {0}", level);
             return Collections.emptyList();
         }
@@ -401,7 +400,7 @@ public class PlayerCharacter extends Battler {
      */
     public List<Magic> getMagicInventory(){
         List<Magic> magicList = new ArrayList<>();
-        for(int i=0;i<MAGIC_LEVELS;i++){
+        for(int i=0;i<Magic.MAGIC_LEVELS;i++){
             magicList.addAll(magicInventory[i]);
         }
         return Collections.unmodifiableList(magicList);

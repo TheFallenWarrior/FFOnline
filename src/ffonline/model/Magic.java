@@ -39,6 +39,8 @@ public class Magic extends Item {
     private static final Logger LOGGER = Logger.getLogger(Magic.class.getName());
     public static final String JSON_PATH = "json/magic.json";
     
+    public static final int MAGIC_LEVELS = 8;
+    
     final private int level;
     final private int spellId;
     final private int effectivity;
