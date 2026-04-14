@@ -80,33 +80,56 @@ public class PlayerCharacterGrowth{
     
     public static Optional<StatGrowth> getGrowth(CharacterJob job, int newLevel, Random rng){
         if(newLevel <= 1 || newLevel > 50) return Optional.empty();
-        
-        JsonNode jobRoot = JsonLoader.getGrowth().path(job.name());
-        
-        // These stats always grow by the same amount every level
-        int hitChance = jobRoot.path("hitChance").asInt(0);
-        int magicDefense = jobRoot.path("magicDefense").asInt(0);
-        
-        // Stat growth resolution (+SAIVL notation)
+
+        JsonNode growthRoot = JsonLoader.getGrowth();
+        JsonNode jobRoot = growthRoot.path(job.name());
+
+        // Resolve the base-class node for fields that promoted classes cannot override.
+        // A promoted-class entry omits "saivl"; scan for whichever base class promotes into this job.
+        JsonNode baseRoot = jobRoot;
+        if(!jobRoot.has("saivl")){
+            for(CharacterJob candidate : CharacterJob.values()){
+                JsonNode candidateRoot = growthRoot.path(candidate.name());
+                Optional<String> promOpt = candidateRoot.path("promotion").asStringOpt();
+                if(promOpt.isPresent() && promOpt.get().equals(job.name())){
+                    baseRoot = candidateRoot;
+                    break;
+                }
+            }
+        }
+
+        // hitChance always comes from the base class — no override allowed
+        int hitChance = baseRoot.path("hitChance").asInt(0);
+
+        // magicDefense: use the promoted-class override when present, else fall back to base class
+        int magicDefense = jobRoot.has("magicDefense")
+                ? jobRoot.path("magicDefense").asInt(0)
+                : baseRoot.path("magicDefense").asInt(0);
+
+        // Stat growth resolution (+SAIVL notation) — always from the base class
         int[] saivl = new int[]{0, 0, 0, 0, 0, 0}; // [HP, Str, Agl, Int, Vit, Luck]
-        String saivlStr = jobRoot.path("saivl").path(newLevel-1).asString("");
-        
+        String saivlStr = baseRoot.path("saivl").path(newLevel-1).asString("");
+
         if(saivlStr.contains("+")) saivl[0] = 1;
         if(saivlStr.contains("S")) saivl[1] = 1;
         if(saivlStr.contains("A")) saivl[2] = 1;
         if(saivlStr.contains("I")) saivl[3] = 1;
         if(saivlStr.contains("V")) saivl[4] = 1;
         if(saivlStr.contains("L")) saivl[5] = 1;
-        
+
         // Stats not marked for growth still have a 25% chance of increasing (except HP)
         for(int i=1;i<6;i++){
             if(saivl[i] != 0) continue;
             if(rng.nextInt(0, 4) == 0) saivl[i] = 1;
         }
-        
-        // MP resolution
+
+        // MP resolution — mpMode: use the promoted-class override when present, else fall back to base class
         List<Integer> mp = new ArrayList<>();
         Optional<String> optMode = jobRoot.path("mpMode").asStringOpt();
+        if(!optMode.isPresent()){
+            optMode = baseRoot.path("mpMode").asStringOpt();
+        }
+
         MpMode mpMode = MpMode.NONE;
         try{
             mpMode = MpMode.valueOf(optMode.orElse("Non-coercible value"));
