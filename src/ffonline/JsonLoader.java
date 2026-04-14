@@ -27,6 +27,7 @@ import ffonline.model.Armor;
 import ffonline.model.Item;
 import ffonline.model.Magic;
 import ffonline.model.PlayerCharacter;
+import ffonline.model.PlayerCharacterGrowth;
 import ffonline.model.Weapon;
 import java.io.File;
 import java.util.EnumSet;
@@ -50,6 +51,7 @@ public class JsonLoader {
     private static JsonNode weaponJsonRoot = null;
     private static JsonNode jobJsonRoot = null;
     private static JsonNode magicJsonRoot = null;
+    private static JsonNode growthJsonRoot = null;
     
     public static void init() throws JacksonException{
         armorJsonRoot = MAPPER.readTree(new File(Armor.JSON_PATH));
@@ -57,6 +59,7 @@ public class JsonLoader {
         weaponJsonRoot = MAPPER.readTree(new File(Weapon.JSON_PATH));
         jobJsonRoot = MAPPER.readTree(new File(PlayerCharacter.JSON_PATH));
         magicJsonRoot = MAPPER.readTree(new File(Magic.JSON_PATH));
+        growthJsonRoot = MAPPER.readTree(new File(PlayerCharacterGrowth.JSON_PATH));
     }
 
     public static <E extends Enum<E>> EnumSet<E> parseEnumSet(JsonNode node, Class<E> type, String label){
@@ -79,6 +82,15 @@ public class JsonLoader {
             }
         }
         return result;
+    }
+    
+    
+    public static JsonNode getGrowth(){
+        if(growthJsonRoot == null)
+            throw new IllegalStateException("JsonLoader not initialized");
+        
+        // Parsing of stat-growth data is handled by PlayerCharacterGrowth directly
+        return growthJsonRoot;
     }
     
     private static <T> Optional<T> get(
