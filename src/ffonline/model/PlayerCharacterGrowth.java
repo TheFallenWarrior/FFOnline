@@ -143,12 +143,12 @@ public class PlayerCharacterGrowth{
         return Optional.of(new StatGrowth(
                 hitChance,
                 magicDefense,
+                saivl[0] == 1,
                 saivl[1],
                 saivl[2],
                 saivl[3],
                 saivl[4],
                 saivl[5],
-                saivl[0] == 1,
                 mp
         ));
     }
@@ -180,12 +180,12 @@ public class PlayerCharacterGrowth{
         public StatGrowth(
             int hitChance,
             int magicDefense,
+            boolean hpBonus,
             int strength,
             int agility,
             int intelligence,
             int vitality,
             int luck,
-            boolean hpBonus,
             List<Integer> mp
                 
         ){
