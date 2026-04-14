@@ -141,7 +141,8 @@ public class Enemy extends Battler{
         int critChance = node.path("critChance").asInt(0);
         int magicDefense = node.path("magicDefense").asInt(0);
 
-        EnumSet<Element> elementalOffense = JsonLoader.parseEnumSet(node.path("elementalOffense"), Element.class, "element");
+        // INTENTIONAL: Status-inflicting attacks mistakenly use the enemy's elemental weakness as its elements
+        EnumSet<Element> elementalOffense = JsonLoader.parseEnumSet(node.path("elementalWeaknesses"), Element.class, "element");
         EnumSet<StatusAilment> attackStatuses = JsonLoader.parseEnumSet(node.path("attackStatuses"), StatusAilment.class, "status ailment");
         EnumSet<EnemyType> enemyTypes = JsonLoader.parseEnumSet(node.path("enemyTypes"), EnemyType.class, "enemy type");
         EnumSet<Element> elementalWeaknesses = JsonLoader.parseEnumSet(node.path("elementalWeaknesses"), Element.class, "element");
