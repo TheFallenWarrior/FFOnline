@@ -342,8 +342,8 @@ public class PlayerCharacter extends Battler {
         if(growthOpt.isEmpty()) return growthOpt;
         var growth = growthOpt.get();
         
-        setBaseHitChance(growth.getHitChance());
-        setMagicDefense(growth.getMagicDefense());
+        setBaseHitChance(baseHitChance + growth.getHitChance());
+        offsetMagicDefense(growth.getMagicDefense());
         
         setStrength(strength + growth.getStrength());
         setAgility(agility + growth.getAgility());
