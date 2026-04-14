@@ -52,6 +52,7 @@
         989641
     ],
     "FIGHTER": {
+        "promotion": "KNIGHT",
         "mpMode": "none",
         "hitChance": 3,
         "magicDefense": 3,
@@ -108,6 +109,7 @@
         ]
     },
     "THIEF": {
+        "promotion": "NINJA",
         "mpMode": "none",
         "hitChance": 2,
         "magicDefense": 2,
@@ -164,6 +166,7 @@
         ]
     },
     "BLACK_BELT": {
+        "promotion": "MASTER",
         "mpMode": "none",
         "hitChance": 3,
         "magicDefense": 4,
@@ -220,6 +223,7 @@
         ]
     },
     "RED_MAGE": {
+        "promotion": "RED_WIZARD",
         "mpMode": "full",
         "mp": [
             "2/0/0/0/0/0/0/0",
@@ -328,6 +332,7 @@
         ]
     },
     "WHITE_MAGE": {
+        "promotion": "WHITE_WIZARD",
         "mpMode": "full",
         "mp": [
             "2/0/0/0/0/0/0/0",
@@ -436,6 +441,7 @@
         ]
     },
     "BLACK_MAGE": {
+        "promotion": "BLACK_WIZARD",
         "mpMode": "full",
         "mp": [
             "2/0/0/0/0/0/0/0",
