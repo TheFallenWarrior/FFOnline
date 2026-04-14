@@ -23,10 +23,15 @@
  */
 package ffonline.model;
 
+import ffonline.JsonLoader;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Optional;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+import tools.jackson.databind.JsonNode;
 
 /**
  *
@@ -99,6 +104,72 @@ public class Enemy extends Battler{
         this.baseHitsPerTurn = baseHitsPerTurn&0xff;
         this.attackStatuses = EnumSet.copyOf(attackStatuses);
         this.enemyTypes = EnumSet.copyOf(enemyTypes);
+    }
+    
+    public static Enemy buildFromJson(JsonNode node){
+        String name = node.path("name").asString("Non-coercible value");
+        int exp = node.path("exp").asInt(0);
+        int gil = node.path("gil").asInt(0);
+        int hp = node.path("hp").asInt(0);
+        int morale = node.path("morale").asInt(0);
+        
+        List<Magic> magicInventory = new ArrayList<>();
+        if(node.path("magicInventory").isArray()){
+            for(JsonNode spellNode : node.path("magicInventory")){
+                Optional<Magic> optSpell = Magic.getBySpellId(spellNode.asInt(0));
+                if(optSpell.isPresent()) magicInventory.add(optSpell.get());
+                else LOGGER.log(Level.WARNING, "Invalid spellId {0} found in JSON", spellNode.asInt(0));
+            }
+        }
+        int magicChance = node.path("magicChance").asInt(0);
+        
+        List<Magic> skillInventory = new ArrayList<>();
+        if(node.path("skillInventory").isArray()){
+            for(JsonNode spellNode : node.path("skillInventory")){
+                Optional<Magic> optSpell = Magic.getBySpellId(spellNode.asInt(0));
+                if(optSpell.isPresent()) skillInventory.add(optSpell.get());
+                else LOGGER.log(Level.WARNING, "Invalid spellId {0} found in JSON", spellNode.asInt(0));
+            }
+        }
+        int skillChance = node.path("skillChance").asInt(0);
+        
+        int evadeChance = node.path("evadeChance").asInt(0);
+        int absorb = node.path("absorb").asInt(0);
+        int baseHitsPerTurn = node.path("baseHitsPerTurn").asInt(0);
+        int hitChance = node.path("hitChance").asInt(0);
+        int damage = node.path("damage").asInt(0);
+        int critChance = node.path("critChance").asInt(0);
+        int magicDefense = node.path("magicDefense").asInt(0);
+
+        EnumSet<Element> elementalOffense = JsonLoader.parseEnumSet(node.path("elementalOffense"), Element.class, "element");
+        EnumSet<StatusAilment> attackStatuses = JsonLoader.parseEnumSet(node.path("attackStatuses"), StatusAilment.class, "status ailment");
+        EnumSet<EnemyType> enemyTypes = JsonLoader.parseEnumSet(node.path("enemyTypes"), EnemyType.class, "enemy type");
+        EnumSet<Element> elementalWeaknesses = JsonLoader.parseEnumSet(node.path("elementalWeaknesses"), Element.class, "element");
+        EnumSet<Element> elementalResistances = JsonLoader.parseEnumSet(node.path("elementalResistances"), Element.class, "element");
+        
+        return new Enemy(
+            name,
+            exp,
+            gil,
+            hp,
+            morale,
+            magicInventory,
+            magicChance,
+            skillInventory,
+            skillChance,
+            evadeChance,
+            absorb,
+            baseHitsPerTurn,
+            hitChance,
+            damage,
+            critChance,
+            elementalOffense,
+            attackStatuses,
+            enemyTypes,
+            magicDefense,
+            elementalWeaknesses,
+            elementalResistances
+        );
     }
     
     @Override
