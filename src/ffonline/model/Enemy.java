@@ -178,10 +178,10 @@ public class Enemy extends Battler{
         return (status != StatusAilment.POISONED && super.canReceiveStatus(status));
     }
 
-    @Override
     /**
      * No-op, enemies should be discarded when a battle ends
      */
+    @Override
     public void battleEnd(){}
 
     public int getExp() {
