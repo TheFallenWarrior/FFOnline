@@ -84,6 +84,33 @@ public abstract class Battler {
         name = "null";
         absorb = 0;
     }
+    
+    public Battler(
+        int hp,
+        int damage,
+        int absorb,
+        int hitChance,
+        int critChance,
+        int evadeChance,
+        int magicDefense,
+        EnumSet<Element> elementalOffense,
+        EnumSet<Element> elementalWeaknesses,
+        EnumSet<Element> elementalResistances
+    ){
+        this.hp = maxHp = hp&0xffff;
+        this.damage = damage&0xff;
+        this.absorb = absorb&0xff;
+        this.hitChance = hitChance&0xff;
+        this.critChance = critChance&0xff;
+        this.evadeChance = evadeChance&0xff;
+        this.magicDefense = magicDefense&0xff;
+        
+        this.elementalOffense = EnumSet.copyOf(elementalOffense);
+        this.elementalWeaknesses = EnumSet.copyOf(elementalWeaknesses);
+        this.elementalResistances = EnumSet.copyOf(elementalResistances);
+        
+        statuses = EnumSet.noneOf(StatusAilment.class);
+    }
 
     /*
      * Status ailment management
