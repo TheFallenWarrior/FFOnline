@@ -66,7 +66,6 @@ public class Main {
             else printUsageAndExit(1);
         }
         
-        JsonLoader.init();
         ServerController controller = new ServerController(port, maxClients, isQuiet);
         controller.listen();
     }
