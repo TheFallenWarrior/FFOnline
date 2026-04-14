@@ -25,6 +25,7 @@ package ffonline.model;
 
 import ffonline.JsonLoader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.EnumSet;
@@ -460,5 +461,21 @@ public class PlayerCharacter extends Battler {
             magicList.addAll(magicInventory[i]);
         }
         return Collections.unmodifiableList(magicList);
+    }
+    
+    public List<Integer> getMp(){
+        List<Integer> mpList = new ArrayList<>();
+        for(int mpSlot : mp){
+            mpList.add(mpSlot);
+        }
+        return Collections.unmodifiableList(mpList);
+    }
+    
+    public List<Integer> getMaxMp(){
+        List<Integer> mpList = new ArrayList<>();
+        for(int mpSlot : maxMp){
+            mpList.add(mpSlot);
+        }
+        return Collections.unmodifiableList(mpList);
     }
 }
