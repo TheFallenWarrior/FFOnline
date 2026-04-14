@@ -369,6 +369,9 @@ public class PlayerCharacter extends Battler {
             }
         }
         
+        // Enable the Black Belt bug
+        updateStats(true);
+        
         return growthOpt;
     }
 
