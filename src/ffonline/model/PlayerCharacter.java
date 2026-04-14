@@ -59,9 +59,6 @@ public class PlayerCharacter extends Battler {
     private int baseHitsPerTurn;
     
     private CharacterJob job;
-
-    private final int[] mp = new int[Magic.MAGIC_LEVELS];
-    private final int[] maxMp = new int[Magic.MAGIC_LEVELS];
     
     private final Inventory<Armor> armorInventory = new Inventory<>(MAX_INVENTORY);
     private final EnumMap<ArmorType, Armor> equippedArmors = new EnumMap<>(ArmorType.class);
@@ -69,7 +66,8 @@ public class PlayerCharacter extends Battler {
     private final Inventory<Weapon> weaponInventory = new Inventory<>(MAX_INVENTORY);
     private Weapon equippedWeapon;
     
-    private final Inventory<Magic>[] magicInventory = new Inventory[Magic.MAGIC_LEVELS];
+    private final List<MagicLevel> spellbook = new ArrayList<>();
+    
 
     public PlayerCharacter(
             int hp,
@@ -94,14 +92,13 @@ public class PlayerCharacter extends Battler {
         
         this.level = 1;
         
-        if(
-            job == CharacterJob.RED_MAGE ||
-            job == CharacterJob.WHITE_MAGE ||
-            job == CharacterJob.BLACK_MAGE
-        ) mp[0] = STARTING_MP;
-        
-        for(int i=0;i<Magic.MAGIC_LEVELS;i++)
-            magicInventory[i] = new Inventory<>(MAGIC_MAX_INVENTORY);
+        for (int i = 0; i < Magic.MAGIC_LEVELS; i++) {
+            spellbook.add(new MagicLevel());
+        }
+
+        if (EnumSet.of(CharacterJob.RED_MAGE, CharacterJob.WHITE_MAGE, CharacterJob.BLACK_MAGE).contains(job)) {
+            spellbook.get(0).mp = spellbook.get(0).maxMp = STARTING_MP;
+        }
     }
     
     public static PlayerCharacter buildFromJson(JsonNode node){
@@ -263,11 +260,11 @@ public class PlayerCharacter extends Battler {
         if(
             magic == null ||
             magic.getLevel() <= 0 ||
-            magic.getLevel() > Magic.MAGIC_LEVELS ||
+            magic.getLevel() > spellbook.size() ||
             !magic.isEquippable(job)
         ) return false;
         
-        return magicInventory[magic.getLevel()-1].add(magic);
+        return spellbook.get(magic.getLevel()-1).magicInventory.add(magic);
     }
     
     public void updateStats(){
@@ -356,15 +353,15 @@ public class PlayerCharacter extends Battler {
         if(growth.isHpBonus()) offsetMaxHp(20 + rng.nextInt(0, 6));
         
         // MP handling
-        if(growth.getMp().size() != maxMp.length){
+        if(growth.getMp().size() != spellbook.size()){
             LOGGER.log(
                 Level.WARNING,
                 "MP length mismatch: {0} vs {1}",
-                new Object[]{growth.getMp().size(), maxMp.length}
+                new Object[]{growth.getMp().size(), spellbook.size()}
             );
         } else{
-            for(int i=0;i<maxMp.length;i++){
-                maxMp[i] += growth.getMp().get(i);
+            for(int i=0;i<spellbook.size();i++){
+                spellbook.get(i).maxMp += growth.getMp().get(i);
             }
         }
         
@@ -451,33 +448,26 @@ public class PlayerCharacter extends Battler {
             LOGGER.log(Level.WARNING, "Tried to read invalid magic inventory level: {0}", level);
             return Collections.emptyList();
         }
-        return Collections.unmodifiableList(magicInventory[level]);
+        return Collections.unmodifiableList(spellbook.get(level).magicInventory);
     }
     
     /**
      * @return A flat {@code List} with all spells the character knows
      */
     public List<Magic> getMagicInventory(){
-        List<Magic> magicList = new ArrayList<>();
-        for(int i=0;i<Magic.MAGIC_LEVELS;i++){
-            magicList.addAll(magicInventory[i]);
-        }
-        return Collections.unmodifiableList(magicList);
+        return spellbook.stream().flatMap(t -> t.magicInventory.stream()).toList();
     }
     
     public List<Integer> getMp(){
-        List<Integer> mpList = new ArrayList<>();
-        for(int mpSlot : mp){
-            mpList.add(mpSlot);
-        }
-        return Collections.unmodifiableList(mpList);
+        return spellbook.stream().map(t -> t.mp).toList();
     }
     
     public List<Integer> getMaxMp(){
-        List<Integer> mpList = new ArrayList<>();
-        for(int mpSlot : maxMp){
-            mpList.add(mpSlot);
-        }
-        return Collections.unmodifiableList(mpList);
+        return spellbook.stream().map(t -> t.maxMp).toList();
+    }
+    
+    private class MagicLevel{
+        int mp, maxMp;
+        final Inventory<Magic> magicInventory = new Inventory<>(MAGIC_MAX_INVENTORY);
     }
 }
