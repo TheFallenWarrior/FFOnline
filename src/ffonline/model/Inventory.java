@@ -41,6 +41,7 @@ public class Inventory<T extends Item> extends ArrayList<T> {
     }
     
     public Inventory(int maxSize){
+        super(maxSize);
         this.maxSize = maxSize;
     }
     
