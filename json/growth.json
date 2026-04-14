@@ -53,7 +53,7 @@
     ],
     "FIGHTER": {
         "promotion": "KNIGHT",
-        "mpMode": "none",
+        "mpMode": "NONE",
         "hitChance": 3,
         "magicDefense": 3,
         "saivl": [
@@ -110,7 +110,7 @@
     },
     "THIEF": {
         "promotion": "NINJA",
-        "mpMode": "none",
+        "mpMode": "NONE",
         "hitChance": 2,
         "magicDefense": 2,
         "saivl": [
@@ -167,7 +167,7 @@
     },
     "BLACK_BELT": {
         "promotion": "MASTER",
-        "mpMode": "none",
+        "mpMode": "NONE",
         "hitChance": 3,
         "magicDefense": 4,
         "saivl": [
@@ -224,7 +224,7 @@
     },
     "RED_MAGE": {
         "promotion": "RED_WIZARD",
-        "mpMode": "full",
+        "mpMode": "FULL",
         "mp": [
             "2/0/0/0/0/0/0/0",
             "3/1/0/0/0/0/0/0",
@@ -333,7 +333,7 @@
     },
     "WHITE_MAGE": {
         "promotion": "WHITE_WIZARD",
-        "mpMode": "full",
+        "mpMode": "FULL",
         "mp": [
             "2/0/0/0/0/0/0/0",
             "3/1/0/0/0/0/0/0",
@@ -442,7 +442,7 @@
     },
     "BLACK_MAGE": {
         "promotion": "BLACK_WIZARD",
-        "mpMode": "full",
+        "mpMode": "FULL",
         "mp": [
             "2/0/0/0/0/0/0/0",
             "3/1/0/0/0/0/0/0",
@@ -550,10 +550,10 @@
         ]
     },
     "KNIGHT": {
-        "mpMode": "limited"
+        "mpMode": "LIMITED"
     },
     "NINJA": {
-        "mpMode": "limited"
+        "mpMode": "LIMITED"
     },
     "MASTER": {
         "magicDefense": 1
