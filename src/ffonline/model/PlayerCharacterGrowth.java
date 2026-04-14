@@ -102,9 +102,11 @@ public class PlayerCharacterGrowth{
         int hitChance = baseRoot.path("hitChance").asInt(0);
 
         // magicDefense: use the promoted-class override when present, else fall back to base class
-        int magicDefense = jobRoot.has("magicDefense")
-                ? jobRoot.path("magicDefense").asInt(0)
-                : baseRoot.path("magicDefense").asInt(0);
+        int magicDefense = (
+            jobRoot.has("magicDefense") ?
+            jobRoot.path("magicDefense").asInt(0) :
+            baseRoot.path("magicDefense").asInt(0)
+        );
 
         // Stat growth resolution (+SAIVL notation), always from the base class
         int[] saivl = new int[]{0, 0, 0, 0, 0, 0}; // [HP, Str, Agl, Int, Vit, Luck]
