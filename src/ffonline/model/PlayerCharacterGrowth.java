@@ -24,9 +24,11 @@
 package ffonline.model;
 
 import ffonline.JsonLoader;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import tools.jackson.core.JacksonException;
@@ -76,13 +78,88 @@ public class PlayerCharacterGrowth{
         return 0;
     }
     
+    public static Optional<StatGrowth> getGrowth(CharacterJob job, int newLevel, Random rng){
+        if(newLevel <= 1 || newLevel > 50) return Optional.empty();
+        
+        JsonNode jobRoot = JsonLoader.getGrowth().path(job.name());
+        
+        // These stats always grow by the same amount every level
+        int hitChance = jobRoot.path("hitChance").asInt(0);
+        int magicDefense = jobRoot.path("magicDefense").asInt(0);
+        
+        // Stat growth resolution (+SAIVL notation)
+        int[] saivl = new int[]{0, 0, 0, 0, 0, 0}; // [HP, Str, Agl, Int, Vit, Luck]
+        String saivlStr = jobRoot.path("saivl").path(newLevel-1).asString("");
+        
+        if(saivlStr.indexOf('+') != -1) saivl[0] = 1;
+        if(saivlStr.indexOf('S') != -1) saivl[1] = 1;
+        if(saivlStr.indexOf('A') != -1) saivl[2] = 1;
+        if(saivlStr.indexOf('I') != -1) saivl[3] = 1;
+        if(saivlStr.indexOf('V') != -1) saivl[4] = 1;
+        if(saivlStr.indexOf('L') != -1) saivl[5] = 1;
+        
+        // Stats not marked for growth still have a 25% chance of increasing (except HP)
+        for(int i=1;i<6;i++){
+            if(saivl[i] != 0) continue;
+            if(rng.nextInt(0, 4) == 0) saivl[i] = 1;
+        }
+        
+        // MP resolution
+        List<Integer> mp = new ArrayList<>();
+        Optional<String> optMode = jobRoot.path("mpMode").asStringOpt();
+        MpMode mpMode = MpMode.NONE;
+        try{
+            mpMode = MpMode.valueOf(optMode.orElse("Non-coercible value"));
+        } catch(IllegalArgumentException e){
+            LOGGER.log(Level.SEVERE, "Unknown MP mode found in JSON:{0}", optMode.orElse("Non-coercible value"));
+        }
+        
+        switch(mpMode){
+            case MpMode.NONE -> {
+                for(int i=0; i < Magic.MAGIC_LEVELS; i++) mp.add(0);
+            }
+            
+            case MpMode.LIMITED -> {
+                // Starting at level 15, gain a charge for the 3 lower spell levels every
+                //  odd level.
+                // NOTE: Characters with limit MP growth should have their max MPs capped
+                //  at 4, but we can't see the character's max MP from this method.
+                if(newLevel > 15 || newLevel%2 == 1){
+                    int i = 0;
+                    for(; i < 3; i++) mp.add(1);
+                    for(; i < Magic.MAGIC_LEVELS; i++) mp.add(0);
+                }
+                else for(int i=0; i < Magic.MAGIC_LEVELS; i++) mp.add(0);
+            }
+            
+            case MpMode.FULL -> {
+                JsonNode mpNode = jobRoot.path("mp");
+                
+                String[] mpStr = mpNode.path(newLevel).asString("0/0/0/0/0/0/0/0").split("/");
+                for(String str : mpStr) mp.add(Integer.valueOf(str));
+            }
+        }
+        
+        return Optional.of(new StatGrowth(
+                hitChance,
+                magicDefense,
+                saivl[1],
+                saivl[2],
+                saivl[3],
+                saivl[4],
+                saivl[5],
+                saivl[0] == 1,
+                mp
+        ));
+    }
+    
     private enum MpMode{
         NONE,    // No MP growth
         LIMITED, // Limited MP growth (KNIGHT, NINJA)
-        FULL     // New MP values read from JSON
+        FULL     // MP increase read directly from JSON
     }
     
-    public class StatGrowth{
+    public static class StatGrowth{
         private final int hitChance;
         private final int magicDefense;
         private final int strength;
