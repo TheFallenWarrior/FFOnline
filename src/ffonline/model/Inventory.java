@@ -34,13 +34,13 @@ import java.util.Map;
  * @param <T> The type of item held in the inventory
  */
 public class Inventory<T extends Item> extends ArrayList<T> {
-    private final long maxSize;
+    private final int maxSize;
     
     public Inventory(){
-        this.maxSize = Long.MAX_VALUE;
+        this.maxSize = Integer.MAX_VALUE;
     }
     
-    public Inventory(long maxSize){
+    public Inventory(int maxSize){
         this.maxSize = maxSize;
     }
     
