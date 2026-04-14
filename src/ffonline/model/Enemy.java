@@ -28,6 +28,21 @@ package ffonline.model;
  * @author thefa
  */
 public class Enemy extends Battler{
+    private static final int MAGIC_MAX_INVENTORY = 8;
+    private static final int SKILL_MAX_INVENTORY = 4;
+    
+    private int exp;
+    private int gil;
+    
+    private int morale;
+    private int baseHitsPerTurn
+    
+    private final Inventory<Magic> magicInventory = new Inventory<>(MAGIC_MAX_INVENTORY);
+    private int magicChance;
+    
+    private final Inventory<Magic> skillInventory = new Inventory<>(SKILL_MAX_INVENTORY);
+    private int skillChance;
+    
     @Override
     public boolean canReceiveStatus(StatusAilment status){
         return (status != StatusAilment.POISONED && super.canReceiveStatus(status));
