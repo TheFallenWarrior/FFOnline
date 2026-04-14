@@ -94,7 +94,9 @@ public class Inventory<T extends Item> extends ArrayList<T> {
         
         for(T item : this){
             if(!map.containsKey(item)){
-                map.put(item, count(item.getItemId()));
+                map.put(item, 1);
+            } else{
+                map.replace(item, 1 + map.get(item));
             }
         }
         return map;
