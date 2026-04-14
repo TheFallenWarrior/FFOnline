@@ -88,6 +88,8 @@ public class PlayerCharacter extends Battler {
         this.luck = luck&0xff;
         this.job = job;
         
+        this.level = 1;
+        
         for(int i=0;i<Magic.MAGIC_LEVELS;i++)
             magicInventory[i] = new Inventory<>(MAGIC_MAX_INVENTORY);
     }
