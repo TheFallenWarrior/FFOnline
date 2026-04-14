@@ -24,6 +24,7 @@
 package ffonline.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,6 +57,23 @@ public class Inventory<T extends Item> extends ArrayList<T> {
         if(item == null || size() >= maxSize) return false;
         super.add(item);
         return true;
+    }
+    
+    /**
+     * Add all items from the specified collection to the end of the inventory using
+     * {@link Inventory#add}
+     * @param items collection containing the items to be added to the inventory
+     * @return {@code true} if the inventory was modified, {@code false} otherwise
+     */
+    @Override
+    public boolean addAll(Collection<? extends T> items){
+        if(items == null) return false;
+        
+        boolean result = false;
+        for(T item: items){
+            result |= add(item);
+        }
+        return result;
     }
     
     public int count(int itemId){
