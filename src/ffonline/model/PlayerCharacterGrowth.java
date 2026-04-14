@@ -91,12 +91,12 @@ public class PlayerCharacterGrowth{
         int[] saivl = new int[]{0, 0, 0, 0, 0, 0}; // [HP, Str, Agl, Int, Vit, Luck]
         String saivlStr = jobRoot.path("saivl").path(newLevel-1).asString("");
         
-        if(saivlStr.indexOf('+') != -1) saivl[0] = 1;
-        if(saivlStr.indexOf('S') != -1) saivl[1] = 1;
-        if(saivlStr.indexOf('A') != -1) saivl[2] = 1;
-        if(saivlStr.indexOf('I') != -1) saivl[3] = 1;
-        if(saivlStr.indexOf('V') != -1) saivl[4] = 1;
-        if(saivlStr.indexOf('L') != -1) saivl[5] = 1;
+        if(saivlStr.contains("+")) saivl[0] = 1;
+        if(saivlStr.contains("S")) saivl[1] = 1;
+        if(saivlStr.contains("A")) saivl[2] = 1;
+        if(saivlStr.contains("I")) saivl[3] = 1;
+        if(saivlStr.contains("V")) saivl[4] = 1;
+        if(saivlStr.contains("L")) saivl[5] = 1;
         
         // Stats not marked for growth still have a 25% chance of increasing (except HP)
         for(int i=1;i<6;i++){
