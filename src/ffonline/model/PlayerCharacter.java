@@ -41,10 +41,11 @@ import tools.jackson.databind.JsonNode;
 public class PlayerCharacter extends Battler {
     private static final int MAX_INVENTORY = 4;
     private static final int MAGIC_MAX_INVENTORY = 3;
+    private static final int STARTING_MP = 2;
     
     private static final Logger LOGGER = Logger.getLogger(PlayerCharacter.class.getName());
     public static final String JSON_PATH = "json/job.json";
-
+    
     private int level;
     private int exp;
     
@@ -58,6 +59,9 @@ public class PlayerCharacter extends Battler {
     private int baseHitsPerTurn;
     
     private CharacterJob job;
+
+    private final int[] mp = new int[Magic.MAGIC_LEVELS];
+    private final int[] maxMp = new int[Magic.MAGIC_LEVELS];
     
     private final Inventory<Armor> armorInventory = new Inventory<>(MAX_INVENTORY);
     private final EnumMap<ArmorType, Armor> equippedArmors = new EnumMap<>(ArmorType.class);
@@ -89,6 +93,12 @@ public class PlayerCharacter extends Battler {
         this.job = job;
         
         this.level = 1;
+        
+        if(
+            job == CharacterJob.RED_MAGE ||
+            job == CharacterJob.WHITE_MAGE ||
+            job == CharacterJob.BLACK_MAGE
+        ) mp[0] = STARTING_MP;
         
         for(int i=0;i<Magic.MAGIC_LEVELS;i++)
             magicInventory[i] = new Inventory<>(MAGIC_MAX_INVENTORY);
@@ -345,7 +355,18 @@ public class PlayerCharacter extends Battler {
         // Optionally add 20..25 to max HP
         if(growth.isHpBonus()) offsetMaxHp(20 + rng.nextInt(0, 6));
         
-        // TODO: MP handling
+        // MP handling
+        if(growth.getMp().size() != maxMp.length){
+            LOGGER.log(
+                Level.WARNING,
+                "MP length mismatch: {0} vs {1}",
+                new Object[]{growth.getMp().size(), maxMp.length}
+            );
+        } else{
+            for(int i=0;i<maxMp.length;i++){
+                maxMp[i] += growth.getMp().get(i);
+            }
+        }
         
         return growthOpt;
     }
