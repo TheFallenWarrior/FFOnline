@@ -314,6 +314,39 @@ public class PlayerCharacter extends Battler {
             ) setAbsorb(level);
         }
     }
+    
+        public boolean shouldLevelUp(){
+        int nextExp = CharacterProgression.getExpForLevelUp(level);
+        
+        return (nextExp != 0 && exp >= nextExp);
+    }
+    
+    public Optional<CharacterProgression.StatGrowth> levelUp(){
+        // INTENTIONAL: A character only levels up once at a time, even if they have
+        //  enough EXP to go up multiple levels.
+        if(!shouldLevelUp()) return Optional.empty();
+        
+        var growthOpt = CharacterProgression.getGrowth(job, ++level, rng);
+        if(growthOpt.isEmpty()) return growthOpt;
+        var growth = growthOpt.get();
+        
+        setBaseHitChance(growth.getHitChance());
+        setMagicDefense(growth.getMagicDefense());
+        
+        setStrength(strength + growth.getStrength());
+        setAgility(agility + growth.getAgility());
+        setIntelligence(intelligence + growth.getIntelligence());
+        setVitality(vitality + growth.getVitality());
+        setLuck(luck + growth.getLuck());
+        
+        offsetMaxHp(vitality/4);
+        // Optionally add 20..25 to max HP
+        if(growth.isHpBonus()) offsetMaxHp(20 + rng.nextInt(0, 6));
+        
+        // TODO: MP handling
+        
+        return growthOpt;
+    }
 
     public int getLevel() {
         return level;
@@ -323,7 +356,7 @@ public class PlayerCharacter extends Battler {
         this.level = level&0xff;
     }
 
-    public int getExp() {
+    public int getExp() { 
         return exp;
     }
 
