@@ -98,7 +98,7 @@ public class PlayerCharacterGrowth{
             }
         }
 
-        // hitChance always comes from the base class — no override allowed
+        // hitChance always comes from the base class
         int hitChance = baseRoot.path("hitChance").asInt(0);
 
         // magicDefense: use the promoted-class override when present, else fall back to base class
@@ -106,7 +106,7 @@ public class PlayerCharacterGrowth{
                 ? jobRoot.path("magicDefense").asInt(0)
                 : baseRoot.path("magicDefense").asInt(0);
 
-        // Stat growth resolution (+SAIVL notation) — always from the base class
+        // Stat growth resolution (+SAIVL notation), always from the base class
         int[] saivl = new int[]{0, 0, 0, 0, 0, 0}; // [HP, Str, Agl, Int, Vit, Luck]
         String saivlStr = baseRoot.path("saivl").path(newLevel-1).asString("");
 
@@ -123,7 +123,7 @@ public class PlayerCharacterGrowth{
             if(rng.nextInt(0, 4) == 0) saivl[i] = 1;
         }
 
-        // MP resolution — mpMode: use the promoted-class override when present, else fall back to base class
+        // MP resolution; use the promoted-class mpMode override when present, else fall back to base class
         List<Integer> mp = new ArrayList<>();
         Optional<String> optMode = jobRoot.path("mpMode").asStringOpt();
         if(!optMode.isPresent()){
@@ -145,8 +145,9 @@ public class PlayerCharacterGrowth{
             case MpMode.LIMITED -> {
                 // Starting at level 15, gain a charge for the 3 lower spell levels every
                 //  odd level.
-                // NOTE: Characters with limit MP growth should have their max MPs capped
-                //  at 4, but we can't see the character's max MP from this method.
+                // NOTE: Characters with limited MP growth should have their max MPs capped
+                //  at 4, but we ignore this, since we can't see the character's max MP
+                //  from this method.
                 if(newLevel > 15 || newLevel%2 == 1){
                     int i = 0;
                     for(; i < 3; i++) mp.add(1);
