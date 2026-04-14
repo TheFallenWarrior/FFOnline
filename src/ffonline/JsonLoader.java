@@ -32,6 +32,8 @@ import ffonline.model.Weapon;
 import java.io.File;
 import java.util.EnumSet;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -45,26 +47,29 @@ import tools.jackson.databind.ObjectMapper;
 public class JsonLoader {
     public static final ObjectMapper MAPPER = new ObjectMapper();
     private static final Logger LOGGER = Logger.getLogger(JsonLoader.class.getName());
-    
-    private static JsonNode armorJsonRoot = null;
-    private static JsonNode itemJsonRoot = null;
-    private static JsonNode weaponJsonRoot = null;
-    private static JsonNode jobJsonRoot = null;
-    private static JsonNode magicJsonRoot = null;
-    private static JsonNode growthJsonRoot = null;
-    
-    public static void init() throws JacksonException{
-        armorJsonRoot = MAPPER.readTree(new File(Armor.JSON_PATH));
-        itemJsonRoot = MAPPER.readTree(new File(Item.JSON_PATH));
-        weaponJsonRoot = MAPPER.readTree(new File(Weapon.JSON_PATH));
-        jobJsonRoot = MAPPER.readTree(new File(PlayerCharacter.JSON_PATH));
-        magicJsonRoot = MAPPER.readTree(new File(Magic.JSON_PATH));
-        growthJsonRoot = MAPPER.readTree(new File(CharacterProgression.JSON_PATH));
+
+    // Thread-safe cache: key = logical name, value = loaded JsonNode
+    private static final ConcurrentMap<String, JsonNode> JSON_CACHE = new ConcurrentHashMap<>();
+
+    /**
+     * Lazy-loads and caches a JSON root node. 
+     * computeIfAbsent guarantees thread-safe initialization: only one thread will parse the file,
+     *  others will wait and receive the cached instance.
+     */
+    private static JsonNode getJsonRoot(String cacheKey, String jsonPath){
+        return JSON_CACHE.computeIfAbsent(cacheKey, k ->{
+            try{
+                return MAPPER.readTree(new File(jsonPath));
+            } catch (JacksonException e){
+                LOGGER.log(Level.SEVERE, "Critical error loading JSON from{0}", jsonPath);
+                throw new IllegalStateException("Failed to load JSON: " + jsonPath, e);
+            }
+        });
     }
 
     public static <E extends Enum<E>> EnumSet<E> parseEnumSet(JsonNode node, Class<E> type, String label){
         EnumSet<E> result = EnumSet.noneOf(type);
-        
+
         if(!node.isArray()) return result;
         
         for(JsonNode element : node){
@@ -83,92 +88,85 @@ public class JsonLoader {
         }
         return result;
     }
-    
-    
+
     public static JsonNode getGrowth(){
-        if(growthJsonRoot == null)
-            throw new IllegalStateException("JsonLoader not initialized");
-        
         // Parsing of stat-growth data is handled by CharacterProgression directly
-        return growthJsonRoot;
+        return getJsonRoot("Growth", CharacterProgression.JSON_PATH);
     }
-    
+
     private static <T> Optional<T> get(
-        JsonNode root,
-        int jsonId,
-        String jsonPath,
-        Function<JsonNode, T> constructor,
-        String typeName
+            int jsonId,
+            String jsonPath,
+            Function<JsonNode, T> constructor,
+            String typeName
     ){
-        if(root == null)
-            throw new IllegalStateException("JsonLoader not initialized");
-        
+        JsonNode root = getJsonRoot(typeName, jsonPath);
         try{
             JsonNode node = root.get(jsonId);
-            
-            if(node == null || node.isNull()){
-                LOGGER.log(
-                    Level.SEVERE,
-                    "{0} ID {1} not found in {2}",
-                    new Object[]{typeName, jsonId, jsonPath}
-                );
+            if (node == null || node.isNull()){
+                LOGGER.log(Level.SEVERE, "{0} ID {1} not found in {2}", new Object[]{typeName, jsonId, jsonPath});
                 return Optional.empty();
             }
-            
             return Optional.of(constructor.apply(node));
         } catch(JacksonException e){
             LOGGER.log(Level.SEVERE, "Critical error loading "+typeName+" data", e);
             return Optional.empty();
         }
     }
-    
+
     public static Optional<Armor> getArmor(int jsonId){
         return get(
-            armorJsonRoot,
             jsonId,
             Armor.JSON_PATH,
             Armor::buildFromJson,
             "Armor"
         );
     }
-    
+
     public static Optional<Item> getItem(int jsonId){
         return get(
-            itemJsonRoot,
             jsonId,
             Item.JSON_PATH,
             Item::buildFromJson,
             "Item"
         );
     }
-    
+
     public static Optional<Weapon> getWeapon(int jsonId){
         return get(
-            weaponJsonRoot,
             jsonId,
             Weapon.JSON_PATH,
             Weapon::buildFromJson,
             "Weapon"
         );
     }
-    
+
     public static Optional<Magic> getMagic(int jsonId){
         return get(
-                magicJsonRoot,
                 jsonId,
                 Magic.JSON_PATH,
                 Magic::buildFromJson,
                 "Magic"
         );
     }
-    
+
     public static Optional<PlayerCharacter> getPlayerCharacter(int jsonId){
         return get(
-                jobJsonRoot,
                 jsonId,
                 PlayerCharacter.JSON_PATH,
                 PlayerCharacter::buildFromJson,
                 "PlayerCharacter"
         );
+    }
+
+    @Deprecated
+    public static void init(){
+        // Triggers loading of all JSON roots without failing on missing IDs
+        getJsonRoot("armor", Armor.JSON_PATH);
+        getJsonRoot("item", Item.JSON_PATH);
+        getJsonRoot("weapon", Weapon.JSON_PATH);
+        getJsonRoot("player", PlayerCharacter.JSON_PATH);
+        getJsonRoot("magic", Magic.JSON_PATH);
+        getJsonRoot("growth", CharacterProgression.JSON_PATH);
     }
 }
