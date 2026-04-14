@@ -212,6 +212,10 @@ public abstract class Battler {
         setHp(hp);
     }
 
+    public void offsetMaxHp(int offset){
+        setMaxHp(maxHp + offset);
+    }
+
     public int getHp(){
         return hp;
     }
@@ -263,6 +267,10 @@ public abstract class Battler {
     public void setHitChance(int hitChance){
         this.hitChance = hitChance&0xff;
     }
+    
+    public void offsetHitChance(int offset){
+        setHitChance(hitChance + offset);
+    }
 
     public int getHitMultiplier(){
         return hitMultiplier;
@@ -274,6 +282,10 @@ public abstract class Battler {
 
     public void setMagicDefense(int magicDefense){
         this.magicDefense = magicDefense&0xff;
+    }
+    
+    public void offsetMagicDefense(int offset){
+        setMagicDefense(magicDefense + offset);
     }
 
     public int getCritChance() {
