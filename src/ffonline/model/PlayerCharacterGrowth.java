@@ -159,6 +159,10 @@ public class PlayerCharacterGrowth{
         FULL     // MP increase read directly from JSON
     }
     
+    /**
+     * DTO for stat increases. With the exception of hpBonus, its fields are
+     * designed to be added (accumulated) to character stats upon level up.
+     */
     public static class StatGrowth{
         private final int hitChance;
         private final int magicDefense;
