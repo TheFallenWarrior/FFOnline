@@ -25,7 +25,6 @@ package ffonline.model;
 
 import ffonline.JsonLoader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.EnumSet;
