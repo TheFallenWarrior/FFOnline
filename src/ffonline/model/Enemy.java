@@ -50,7 +50,7 @@ public class Enemy extends Battler{
     private final int morale;
     private final int baseHitsPerTurn;
     private final EnumSet<EnemyType> enemyTypes;
-    private final EnumSet<StatusAilment> attackStatuses;
+    private final EnumSet<StatusAilment> attackStatuses; // Status that can be inflicted by normal attacks
     
     private final Inventory<Magic> magicInventory = new Inventory<>(MAGIC_MAX_INVENTORY);
     private final int magicChance;
