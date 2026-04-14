@@ -40,7 +40,7 @@ import tools.jackson.databind.JsonNode;
  */
 public class CharacterProgression{
     public static final String JSON_PATH = "json/growth.json";
-    private static final Logger LOGGER = Logger.getLogger(Enemy.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(CharacterProgression.class.getName());
     
     public static Optional<CharacterJob> getPromotion(CharacterJob job){
         JsonNode jobRoot = JsonLoader.getGrowth().path(job.name());
