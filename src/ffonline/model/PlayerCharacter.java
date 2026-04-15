@@ -362,6 +362,11 @@ public class PlayerCharacter extends Battler {
         } else{
             for(int i=0;i<spellbook.size();i++){
                 spellbook.get(i).maxMp += growth.getMp().get(i);
+                
+                // Knights and Ninjas have an MP cap of 4
+                if(job == CharacterJob.KNIGHT || job == CharacterJob.NINJA){
+                    spellbook.get(i).maxMp = Math.min(4, spellbook.get(i).maxMp);
+                }
             }
         }
         
