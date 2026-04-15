@@ -42,9 +42,7 @@ public class CharacterProgression{
     public static final String JSON_PATH = "json/growth.json";
     private static final Logger LOGGER = Logger.getLogger(CharacterProgression.class.getName());
     
-    public static Optional<CharacterJob> getPromotion(CharacterJob job){
-        JsonNode jobRoot = JsonLoader.getGrowth().path(job.name());
-        
+    public static Optional<CharacterJob> getPromotion(JsonNode jobRoot, CharacterJob job){
         // This catches promoted jobs not having promotions of their own
         Optional<String> promOpt = jobRoot.path("promotion").asStringOpt();
         
@@ -61,10 +59,8 @@ public class CharacterProgression{
         return Optional.empty();
     }
     
-    public static int getExpForLevelUp(int currentLevel){
+    public static int getExpForLevelUp(JsonNode expRoot, int currentLevel){
         if(currentLevel <= 0 || currentLevel >= 50) return 0;
-        
-        JsonNode expRoot = JsonLoader.getGrowth().path("exp");
         
         try{
             JsonNode expNode = expRoot.get(currentLevel);
@@ -78,11 +74,10 @@ public class CharacterProgression{
         return 0;
     }
     
-    public static Optional<StatGrowth> getGrowth(CharacterJob job, int newLevel, Random rng){
+    public static Optional<StatGrowth> getGrowth(JsonNode jobRoot, CharacterJob job, int newLevel, Random rng){
         if(newLevel <= 1 || newLevel > 50) return Optional.empty();
 
         JsonNode growthRoot = JsonLoader.getGrowth();
-        JsonNode jobRoot = growthRoot.path(job.name());
 
         // Resolve the base-class node for fields that promoted classes cannot override.
         // A promoted-class entry omits "saivl"; scan for whichever base class promotes into this job.
@@ -177,6 +172,24 @@ public class CharacterProgression{
                 saivl[5],
                 mp
         ));
+    }
+    
+    public static Optional<StatGrowth> getGrowth(CharacterJob job, int newLevel, Random rng){
+        JsonNode jobRoot = JsonLoader.getGrowth().path(job.name());
+        
+        return getGrowth(jobRoot, job, newLevel, rng);
+    }
+    
+    public static Optional<CharacterJob> getPromotion(CharacterJob job){
+        JsonNode jobRoot = JsonLoader.getGrowth().path(job.name());
+        
+        return getPromotion(jobRoot, job);
+    }
+    
+    public static int getExpForLevelUp(int currentLevel){
+        JsonNode expRoot = JsonLoader.getGrowth().path("exp");
+        
+        return getExpForLevelUp(expRoot, currentLevel);
     }
     
     private enum MpMode{
