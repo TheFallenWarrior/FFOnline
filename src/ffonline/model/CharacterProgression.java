@@ -145,7 +145,7 @@ public class CharacterProgression{
                 // NOTE: Characters with limited MP growth should have their max MPs capped
                 //  at 4, but we ignore this, since we can't see the character's max MP
                 //  from this method.
-                if(newLevel > 15 || newLevel%2 == 1){
+                if(newLevel > 15 && newLevel%2 == 1){
                     int i = 0;
                     for(; i < 3; i++) mp.add(1);
                     for(; i < Magic.MAGIC_LEVELS; i++) mp.add(0);
