@@ -221,10 +221,7 @@ public abstract class Battler {
     }
 
     public void setHp(int hp){
-        if(
-            hasStatus(StatusAilment.DEAD) ||
-            hasStatus(StatusAilment.PETRIFIED)
-        ) return;
+        if(!isAlive()) return;
         if(hp <= 0){
             addStatus(StatusAilment.DEAD);
             return;
