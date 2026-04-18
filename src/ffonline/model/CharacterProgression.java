@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalInt;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -62,15 +63,11 @@ public class CharacterProgression{
     public static int getExpForLevelUp(JsonNode expRoot, int currentLevel){
         if(currentLevel <= 0 || currentLevel >= 50) return 0;
         
-        try{
-            JsonNode expNode = expRoot.get(currentLevel);
-            
-            if(expNode != null)
-                return expRoot.get(currentLevel).asInt();
-        } catch(JacksonException e){
-            LOGGER.log(Level.WARNING, "Critical error retrieving EXP from JSON", e);
-        }
+        OptionalInt optExp = expRoot.path(currentLevel).asIntOpt();
         
+        if(optExp.isPresent()) return optExp.getAsInt();
+        
+        LOGGER.log(Level.WARNING, "Couldn't retrieve EXP from JSON index {0}", currentLevel);
         return 0;
     }
     
