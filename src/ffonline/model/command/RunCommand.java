@@ -38,9 +38,7 @@ import java.util.Map;
 public class RunCommand extends Command {
     private final static Map<StatusAilment, Integer> statusBitmasks = new EnumMap<>(StatusAilment.class);
     
-    public RunCommand(BattlerGroup allies, Battler actor){
-        super(allies, null, actor, null, null, CommandTarget.ACTOR);
-        
+    static {
         statusBitmasks.put(StatusAilment.DEAD, 0x01);
         statusBitmasks.put(StatusAilment.PETRIFIED, 0x02);
         statusBitmasks.put(StatusAilment.POISONED, 0x04);
@@ -49,6 +47,10 @@ public class RunCommand extends Command {
         statusBitmasks.put(StatusAilment.ASLEEP, 0x20);
         statusBitmasks.put(StatusAilment.SILENCED, 0x40);
         statusBitmasks.put(StatusAilment.CONFUSED, 0x80);
+    }
+    
+    public RunCommand(BattlerGroup allies, Battler actor){
+        super(allies, null, actor, null, null, CommandTarget.ACTOR);
 }
     
     /**
