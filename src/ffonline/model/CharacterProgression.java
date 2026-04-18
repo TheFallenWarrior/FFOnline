@@ -52,7 +52,7 @@ public class CharacterProgression{
                 promoted = CharacterJob.valueOf(promOpt.get());
                 return Optional.of(promoted);
             } catch(IllegalArgumentException e){
-                LOGGER.log(Level.SEVERE, "Unknown job found in JSON:{0}", promOpt.get());
+                LOGGER.log(Level.WARNING, "Unknown job found in JSON:{0}", promOpt.get());
             }
         }
         
@@ -68,7 +68,7 @@ public class CharacterProgression{
             if(expNode != null)
                 return expRoot.get(currentLevel).asInt();
         } catch(JacksonException e){
-            LOGGER.log(Level.SEVERE, "Critical error retrieving EXP from JSON", e);
+            LOGGER.log(Level.WARNING, "Critical error retrieving EXP from JSON", e);
         }
         
         return 0;
@@ -131,7 +131,7 @@ public class CharacterProgression{
         try{
             mpMode = MpMode.valueOf(optMode.orElse("Non-coercible value"));
         } catch(IllegalArgumentException e){
-            LOGGER.log(Level.SEVERE, "Unknown MP mode found in JSON:{0}", optMode.orElse("Non-coercible value"));
+            LOGGER.log(Level.WARNING, "Unknown MP mode found in JSON:{0}", optMode.orElse("Non-coercible value"));
         }
         
         switch(mpMode){
@@ -162,7 +162,7 @@ public class CharacterProgression{
                         mp.add(Integer.valueOf(str));
                     } catch(NumberFormatException e){
                         mp.add(0);
-                        LOGGER.log(Level.SEVERE, "Non-numeric MP in MP string: {0}", mpStr);
+                        LOGGER.log(Level.WARNING, "Non-numeric MP in MP string: {0}", mpStr);
                     }
                 }
             }
