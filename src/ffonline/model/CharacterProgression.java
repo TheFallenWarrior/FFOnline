@@ -230,7 +230,6 @@ public class CharacterProgression{
             int vitality,
             int luck,
             List<Integer> mp
-                
         ){
             this.hitChance = hitChance;
             this.magicDefense = magicDefense;
