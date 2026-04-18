@@ -133,7 +133,7 @@ public class RunCommand extends Command {
             
             // Default to the correct behavior if invalid character index
             // NOTE: the third character should instead use the identifier of who acts third
-            //  in the current round (0..8 or 128..131) but that's terribly out of scope from
+            //  in the current round (0..8 or 128..131) but that value is not accessible from
             //  this method.
             default -> { success = evaluateRun(charActor.getLevel(), charActor); }
         }
