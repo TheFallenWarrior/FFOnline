@@ -157,7 +157,14 @@ public class CharacterProgression{
                 JsonNode mpNode = jobRoot.path("mp");
                 
                 String[] mpStr = mpNode.path(newLevel).asString("0/0/0/0/0/0/0/0").split("/");
-                for(String str : mpStr) mp.add(Integer.valueOf(str));
+                for(String str : mpStr){
+                    try{
+                        mp.add(Integer.valueOf(str));
+                    } catch(NumberFormatException e){
+                        mp.add(0);
+                        LOGGER.log(Level.SEVERE, "Non-numeric MP in MP string: {0}", mpStr);
+                    }
+                }
             }
         }
         
