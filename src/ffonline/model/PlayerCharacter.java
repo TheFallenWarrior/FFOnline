@@ -92,11 +92,11 @@ public class PlayerCharacter extends Battler {
         
         this.level = 1;
         
-        for (int i = 0; i < Magic.MAGIC_LEVELS; i++) {
+        for(int i=0;i<Magic.MAGIC_LEVELS;i++){
             spellbook.add(new MagicLevel());
         }
 
-        if (EnumSet.of(CharacterJob.RED_MAGE, CharacterJob.WHITE_MAGE, CharacterJob.BLACK_MAGE).contains(job)) {
+        if(EnumSet.of(CharacterJob.RED_MAGE, CharacterJob.WHITE_MAGE, CharacterJob.BLACK_MAGE).contains(job)){
             spellbook.get(0).mp = spellbook.get(0).maxMp = STARTING_MP;
         }
     }
@@ -221,7 +221,7 @@ public class PlayerCharacter extends Battler {
     }
     
     public boolean receiveWeapon(Weapon weapon){
-        if(weapon == null) return false;
+        if(weapon == null) return false; 
         return weaponInventory.add(weapon);
     }
     
@@ -376,55 +376,55 @@ public class PlayerCharacter extends Battler {
         return growthOpt;
     }
 
-    public int getLevel() {
+    public int getLevel(){
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(int level){
         this.level = level&0xff;
     }
 
-    public int getExp() { 
+    public int getExp(){ 
         return exp;
     }
 
-    public void setExp(int exp) {
+    public void setExp(int exp){
         this.exp = exp;
     }
 
-    public int getStrength() {
+    public int getStrength(){
         return strength;
     }
 
-    public void setStrength(int strength) {
+    public void setStrength(int strength){
         this.strength = strength&0xff;
     }
 
-    public int getAgility() {
+    public int getAgility(){
         return agility;
     }
 
-    public void setAgility(int agility) {
+    public void setAgility(int agility){
         this.agility = agility&0xff;
     }
 
-    public int getIntelligence() {
+    public int getIntelligence(){
         return intelligence;
     }
 
-    public void setIntelligence(int intelligence) {
+    public void setIntelligence(int intelligence){
         this.intelligence = intelligence&0xff;
     }
 
-    public int getVitality() {
+    public int getVitality(){
         return vitality;
     }
 
-    public void setVitality(int vitality) {
+    public void setVitality(int vitality){
         this.vitality = vitality&0xff;
     }
 
-    public CharacterJob getJob() {
+    public CharacterJob getJob(){
         return job;
     }
     
@@ -432,19 +432,19 @@ public class PlayerCharacter extends Battler {
         this.job = job;
     }
 
-    public int getBaseHitChance() {
+    public int getBaseHitChance(){
         return baseHitChance;
     }
 
-    public void setBaseHitChance(int baseHitChance) {
+    public void setBaseHitChance(int baseHitChance){
         this.baseHitChance = baseHitChance&0xff;
     }
 
-    public int getLuck() {
+    public int getLuck(){
         return luck;
     }
 
-    public void setLuck(int luck) {
+    public void setLuck(int luck){
         this.luck = luck&0xff;
     }
     
