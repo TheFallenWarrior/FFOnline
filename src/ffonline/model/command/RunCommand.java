@@ -49,7 +49,7 @@ public class RunCommand extends Command {
         statusBitmasks.put(StatusAilment.CONFUSED, 0x80);
     }
     
-    public RunCommand(BattlerGroup allies, Battler actor){
+    public RunCommand(BattlerGroup<Battler> allies, Battler actor){
         super(allies, null, actor, null, null, CommandTarget.ACTOR);
 }
     
