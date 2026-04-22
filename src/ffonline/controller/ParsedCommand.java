@@ -77,6 +77,7 @@ public class ParsedCommand {
     public ParsedCommand reparse(int argsLength){
         StringBuilder command = new StringBuilder(verb);
         for(String arg : args){
+            if(arg.contains(" ")) arg = "\""+arg+"\"";
             command.append(" ").append(arg);
         }
         command.append(" ").append(rest);
