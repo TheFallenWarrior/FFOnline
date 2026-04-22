@@ -125,11 +125,8 @@ public class RunCommand extends Command {
             
             // The fourth character uses the ones digit of their HP
             case 3 -> {
-                String hpStr = ""+actor.getHp();
-                int ones = hpStr.charAt(hpStr.length()-1);
-                
-                // Convert from ASCII encoding to FF's string encoding
-                ones = (ones-0x30) + 0x80;
+                // Convert raw digit to FF's string encoding
+                int ones = (actor.getHp()%10) + 0x80;
                 success = evaluateRun(ones, charActor);
             }
             
