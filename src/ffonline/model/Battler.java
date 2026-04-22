@@ -160,6 +160,7 @@ public abstract class Battler {
     public abstract int getBaseHitsPerTurn();
     
     public int getHitsPerTurn(){
+        if(hitMultiplier == 0) return 1;
         return getBaseHitsPerTurn()*hitMultiplier;
     }
     
