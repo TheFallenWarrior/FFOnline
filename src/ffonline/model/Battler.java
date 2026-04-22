@@ -110,6 +110,7 @@ public abstract class Battler {
         this.elementalResistances = EnumSet.copyOf(elementalResistances);
         
         statuses = EnumSet.noneOf(StatusAilment.class);
+        rng = new Random();
     }
 
     /*
