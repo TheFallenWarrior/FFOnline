@@ -42,8 +42,8 @@ public abstract class Command {
     protected final Random rng;
     
     public Command(
-        BattlerGroup allies,
-        BattlerGroup enemies,
+        BattlerGroup<Battler> allies,
+        BattlerGroup<Battler> enemies,
         Battler actor,
         Battler allyTarget,
         Battler enemyTarget,
@@ -60,11 +60,11 @@ public abstract class Command {
     
     public abstract CommandResult execute();
     
-    public BattlerGroup getAllies(){
+    public BattlerGroup<Battler> getAllies(){
         return allies;
     }
 
-    public BattlerGroup getEnemies(){
+    public BattlerGroup<Battler> getEnemies(){
         return enemies;
     }
 
