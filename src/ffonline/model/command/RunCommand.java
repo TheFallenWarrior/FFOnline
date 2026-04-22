@@ -38,7 +38,7 @@ import java.util.Map;
 public class RunCommand extends Command {
     private final static Map<StatusAilment, Integer> statusBitmasks = new EnumMap<>(StatusAilment.class);
     
-    static {
+    static{
         statusBitmasks.put(StatusAilment.DEAD, 0x01);
         statusBitmasks.put(StatusAilment.PETRIFIED, 0x02);
         statusBitmasks.put(StatusAilment.POISONED, 0x04);
