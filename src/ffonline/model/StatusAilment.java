@@ -35,7 +35,7 @@ public enum StatusAilment {
     PARALYZED("Stun"),
     ASLEEP("Asleep"),
     SILENCED("Mute"),
-    CONFUSED("Confused");
+    CONFUSED("Conf");
 
     private final String displayName;
 
