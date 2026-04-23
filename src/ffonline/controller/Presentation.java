@@ -59,6 +59,9 @@ public class Presentation {
     }
     
     public static String characterStats(PlayerCharacter character){
+        // INTENTIONAL: Experience displays wrong values for numbers smaller than
+        //  0 or bigger than 999999. However, in such cases, '%999999' won't yield
+        //  the same results as FF's 24-bit int to decimal conversion.
         return String.format(
             "%s - %s - LEV %2d\n\n" +
             " EXP. POINTS\t%6d\n" +
@@ -71,8 +74,8 @@ public class Presentation {
             character.getName(),
             character.getJob().displayName(),
             character.getLevel(),
-            character.getExp(),
-            -1, // Placeholder
+            character.getExp()%999999,
+            character.getExpForNextLevel()%999999,
             character.getStrength(),
             character.getDamage(),
             character.getAgility(),
