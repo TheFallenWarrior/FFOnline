@@ -449,7 +449,7 @@ public class PlayerCharacter extends Battler {
     }
     
     public List<Magic> getMagicInventory(int level){
-        if(level < 0 || level >= Magic.MAGIC_LEVELS){
+        if(level < 0 || level >= spellbook.size()){
             LOGGER.log(Level.WARNING, "Tried to read invalid magic inventory level: {0}", level);
             return Collections.emptyList();
         }
