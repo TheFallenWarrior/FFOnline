@@ -375,6 +375,10 @@ public class PlayerCharacter extends Battler {
         
         return growthOpt;
     }
+    
+    public int getExpForNextLevel(){
+        return CharacterProgression.getExpForLevelUp(level) - exp;
+    }
 
     public int getLevel(){
         return level;
