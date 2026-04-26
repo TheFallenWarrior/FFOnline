@@ -25,7 +25,9 @@ package ffonline.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -35,35 +37,65 @@ import java.util.Random;
  * @author thefa
  * @param <T> The type of the battlers that make up the BattlerGroup
  */
-public class BattlerGroup<T extends Battler> extends ArrayList<T>{
+public class BattlerGroup<T extends Battler> implements Iterable<T> {
+    private final List<T> members = new ArrayList<>();
     protected Random rng;
-    
+
     public BattlerGroup(){
-        rng = new Random();
+        this.rng = new Random();
     }
-    
+
     public BattlerGroup(long rngSeed){
-        rng = new Random(rngSeed);
+        this.rng = new Random(rngSeed);
     }
-    
+
     public BattlerGroup(T[] members){
-        addAll(Arrays.asList(members));
-        rng = new Random();
+        this.members.addAll(Arrays.asList(members));
+        this.rng = new Random();
     }
 
     public BattlerGroup(List<T> members){
-        addAll(members);
-        rng = new Random();
+        this.members.addAll(members);
+        this.rng = new Random();
+    }
+
+    public boolean add(T element){
+        return members.add(element);
+    }
+
+    public boolean addAll(Collection<? extends T> elements){
+        return members.addAll(elements);
+    }
+
+    public int size(){
+        return members.size();
+    }
+
+    public boolean isEmpty(){
+        return members.isEmpty();
+    }
+
+    public T get(int index){
+        return members.get(index);
+    }
+
+    public List<T> asUnmodifiableList(){
+        return Collections.unmodifiableList(members);
+    }
+
+    @Override
+    public Iterator<T> iterator(){
+        return members.iterator();
     }
 
     public Optional<T> getOptional(int index){
         if(index < 0 || index >= size()) return Optional.empty();
-        return Optional.of(get(index));
+        return Optional.of(members.get(index));
     }
-    
+
     public int getAliveSize(){
         int alive = 0;
-        for(var member : this){
+        for(var member : members){
             if(member.isAlive()) alive++;
         }
         return alive;
@@ -71,24 +103,25 @@ public class BattlerGroup<T extends Battler> extends ArrayList<T>{
 
     public List<T> getAliveMembers(){
         List<T> alive = new ArrayList<>();
-        for(var member : this){
-            if(member.isAlive())
+        for(var member : members){
+            if(member.isAlive()){
                 alive.add(member);
+            }
         }
         return Collections.unmodifiableList(alive);
     }
-    
+
     public Optional<T> getRandom(){
-        if(isEmpty()) return Optional.empty();
-        
+        if(members.isEmpty()) return Optional.empty();
+
         int index = rng.nextInt(0, size());
-        return Optional.of(get(index));
+        return Optional.of(members.get(index));
     }
-    
+
     public Optional<T> getRandomAlive(){
         List<T> alive = getAliveMembers();
         if(alive.isEmpty()) return Optional.empty();
-        
+
         int index = rng.nextInt(0, alive.size());
         return Optional.of(alive.get(index));
     }
