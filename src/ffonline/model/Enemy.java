@@ -205,7 +205,7 @@ public class Enemy extends Battler{
     }
 
     public List<Magic> getMagicInventory(){
-        return Collections.unmodifiableList(magicInventory);
+        return magicInventory.asUnmodifiableList();
     }
     
     public int getMagicChance() {
@@ -213,7 +213,7 @@ public class Enemy extends Battler{
     }
     
     public List<Magic> getSkillInventory(){
-        return Collections.unmodifiableList(skillInventory);
+        return skillInventory.asUnmodifiableList();
     }
 
     public int getSkillChance() {

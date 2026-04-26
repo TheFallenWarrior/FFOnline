@@ -25,38 +25,41 @@ package ffonline.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 /**
  *
  * @author thefa
  * @param <T> The type of item held in the inventory
  */
-public class Inventory<T extends Item> extends ArrayList<T> {
+public class Inventory<T extends Item> implements Iterable<T> {
     private final int maxSize;
+    private final List<T> items;
     
     public Inventory(){
         this.maxSize = Integer.MAX_VALUE;
+        this.items = new ArrayList<>();
     }
     
     public Inventory(int maxSize){
-        super(maxSize);
+        this.items = new ArrayList<>(maxSize);
         this.maxSize = maxSize;
     }
     
     /**
      * Add item to inventory. Will reject the operation if the item is {@code null},
-     * or if {@code maxSize} was reached.<br>
-     * NOTE: This method does not throw on rejection as {@link Collection#add}
-     * specifies, and returns {@code false} instead.
+     * or if {@code maxSize} was reached.
      * @param item the {@code Item} to be added
      * @return {@code true} if {@code item} was added, {@code false} otherwise
      */
-    @Override
     public boolean add(T item){
-        if(item == null || size() >= maxSize) return false;
-        super.add(item);
+        if(item == null || items.size() >= maxSize) return false;
+        items.add(item);
         return true;
     }
     
@@ -66,7 +69,6 @@ public class Inventory<T extends Item> extends ArrayList<T> {
      * @param items collection containing the items to be added to the inventory
      * @return {@code true} if the inventory was modified, {@code false} otherwise
      */
-    @Override
     public boolean addAll(Collection<? extends T> items){
         if(items == null) return false;
         
@@ -75,6 +77,31 @@ public class Inventory<T extends Item> extends ArrayList<T> {
             result |= add(item);
         }
         return result;
+    }
+    
+    public T get(int index){
+        return items.get(index);
+    }
+    
+    public int size(){
+        return items.size();
+    }
+    
+    public boolean remove(T item){
+        return items.remove(item);
+    }
+    
+    public T remove(int index){
+        return items.remove(index);
+    }
+    
+    public Stream<T> stream(){
+        return items.stream();
+    }
+    
+    @Override
+    public Iterator<T> iterator() {
+        return items.iterator();
     }
     
     public int count(int itemId){
@@ -92,7 +119,7 @@ public class Inventory<T extends Item> extends ArrayList<T> {
     public Map<T, Integer> countAll(){
         Map<T, Integer> map = new HashMap<>();
         
-        for(T item : this){
+        for(T item : items){
             if(!map.containsKey(item)){
                 map.put(item, 1);
             } else{
@@ -100,5 +127,9 @@ public class Inventory<T extends Item> extends ArrayList<T> {
             }
         }
         return map;
+    }
+    
+    public List<T> asUnmodifiableList(){
+        return Collections.unmodifiableList(items);
     }
 }

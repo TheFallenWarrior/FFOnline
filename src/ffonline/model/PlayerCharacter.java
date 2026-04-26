@@ -457,7 +457,7 @@ public class PlayerCharacter extends Battler {
             LOGGER.log(Level.WARNING, "Tried to read invalid magic inventory level: {0}", level);
             return Collections.emptyList();
         }
-        return Collections.unmodifiableList(spellbook.get(level).magicInventory);
+        return spellbook.get(level).magicInventory.asUnmodifiableList();
     }
     
     /**

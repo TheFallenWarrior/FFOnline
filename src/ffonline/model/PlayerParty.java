@@ -23,7 +23,6 @@
  */
 package ffonline.model;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,7 +35,7 @@ public class PlayerParty extends BattlerGroup<PlayerCharacter> {
     private int gil = 400; // Starting amount of gold
     
     public List<Item> getInventory(){
-        return Collections.unmodifiableList(inventory);
+        return inventory.asUnmodifiableList();
     }
     
     public Optional<PlayerCharacter> getFromName(String name){
