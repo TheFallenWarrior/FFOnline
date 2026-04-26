@@ -27,28 +27,13 @@ import ffonline.model.Battler;
 import ffonline.model.BattlerGroup;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.StatusAilment;
-import java.util.EnumMap;
 import java.util.EnumSet;
-import java.util.Map;
 
 /**
  *
  * @author thefa
  */
 public class RunCommand extends Command {
-    private final static Map<StatusAilment, Integer> statusBitmasks = new EnumMap<>(StatusAilment.class);
-    
-    static{
-        statusBitmasks.put(StatusAilment.DEAD, 0x01);
-        statusBitmasks.put(StatusAilment.PETRIFIED, 0x02);
-        statusBitmasks.put(StatusAilment.POISONED, 0x04);
-        statusBitmasks.put(StatusAilment.BLIND, 0x08);
-        statusBitmasks.put(StatusAilment.PARALYZED, 0x10);
-        statusBitmasks.put(StatusAilment.ASLEEP, 0x20);
-        statusBitmasks.put(StatusAilment.SILENCED, 0x40);
-        statusBitmasks.put(StatusAilment.CONFUSED, 0x80);
-    }
-    
     public RunCommand(BattlerGroup<? extends Battler> allies, Battler actor){
         super(allies, null, actor, null, null, CommandTarget.ACTOR);
 }
@@ -70,10 +55,8 @@ public class RunCommand extends Command {
      */
     private int maskStatus(EnumSet<StatusAilment> statuses){
         int accumulator = 0;
-        for(var entry : statusBitmasks.entrySet()){
-            if(statuses.contains(entry.getKey())){
-                accumulator |= entry.getValue();
-            }
+        for(StatusAilment status : statuses){
+            accumulator |= (1 << status.ordinal());
         }
         
         return accumulator;
