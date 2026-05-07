@@ -61,10 +61,10 @@ public class CommandResult {
     }
 
     public static class IndividualCommandResult {
-        public final Battler target;
-        public final CommandResultType type;
-        public final int numHits;
-        public final int totalDamage;
+        private final Battler target;
+        private final CommandResultType type;
+        private final int numHits;
+        private final int totalDamage;
         
         public IndividualCommandResult(
             Battler target,
@@ -94,6 +94,22 @@ public class CommandResult {
             this.type = (isHit ? CommandResultType.HIT : CommandResultType.MISS);
             this.numHits = 0;
             this.totalDamage = 0;
+        }
+
+        public Battler getTarget() {
+            return target;
+        }
+
+        public CommandResultType getType() {
+            return type;
+        }
+
+        public int getNumHits() {
+            return numHits;
+        }
+
+        public int getTotalDamage() {
+            return totalDamage;
         }
     }
 }
