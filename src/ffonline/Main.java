@@ -67,7 +67,7 @@ public class Main {
         }
         
         ServerController controller = new ServerController(port, maxClients, isQuiet);
-        controller.listen();
+        controller.start();
     }
 
     private static void printUsageAndExit(int status){

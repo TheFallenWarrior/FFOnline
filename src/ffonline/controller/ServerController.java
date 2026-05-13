@@ -54,7 +54,7 @@ public class ServerController {
         if(isQuiet) LOGGER.setLevel(Level.SEVERE);
     }
     
-    public void listen(){
+    public void start(){
         try(ServerSocket serverSocket = new ServerSocket(port)){
             LOGGER.log(Level.INFO, "Started FFOnline server in port {0}.", port);
             while(true){
