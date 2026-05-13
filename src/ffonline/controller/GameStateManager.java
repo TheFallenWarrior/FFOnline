@@ -54,14 +54,19 @@ public class GameStateManager {
     
     private void registerCommands(){
         commands.put("", (ParsedCommand parseComm) -> {});
+        registerCommand("status", this::statusCommand);
+        registerCommand("help", this::helpCommand);
+    }
 
-        commands.put("status", this::statusCommand);
-        commands.put("help", this::helpCommand);
-
-        // Aliases
-        commands.put("score", this::statusCommand);
-        commands.put("?", this::helpCommand);
-        commands.put("commands", this::helpCommand);
+    /**
+     * Registers a handler for a command and all its aliases as defined in
+     * CommandHelp.
+     */
+    private void registerCommand(String name, CommandHandler handler){
+        commands.put(name, handler);
+        CommandHelp.findHelp(name).ifPresent(
+            helpData -> helpData.aliases().forEach(alias -> commands.put(alias, handler))
+        );
     }
     
     public void runGameCommand(String command){
