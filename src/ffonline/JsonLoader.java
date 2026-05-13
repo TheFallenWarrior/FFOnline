@@ -143,19 +143,19 @@ public class JsonLoader {
 
     public static Optional<Magic> getMagic(int jsonId){
         return get(
-                jsonId,
-                Magic.JSON_PATH,
-                Magic::buildFromJson,
-                "Magic"
+            jsonId,
+            Magic.JSON_PATH,
+            Magic::buildFromJson,
+            "Magic"
         );
     }
 
     public static Optional<PlayerCharacter> getPlayerCharacter(int jsonId){
         return get(
-                jsonId,
-                PlayerCharacter.JSON_PATH,
-                PlayerCharacter::buildFromJson,
-                "PlayerCharacter"
+            jsonId,
+            PlayerCharacter.JSON_PATH,
+            PlayerCharacter::buildFromJson,
+            "PlayerCharacter"
         );
     }
 

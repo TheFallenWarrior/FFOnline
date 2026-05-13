@@ -33,12 +33,12 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args){
         int port = 4080, maxClients = 50;
         boolean isQuiet = false;
         for(String arg : args){
-            if (arg.startsWith("-p")){
-                try {
+            if(arg.startsWith("-p")){
+                try{
                     port = Integer.parseInt(arg.substring(2));
                 }catch(NumberFormatException e){
                     System.err.println("Error: Failed to parse port number.\n");
@@ -50,7 +50,7 @@ public class Main {
                 }
             }
             else if(arg.startsWith("-c")){
-                try {
+                try{
                     maxClients = Integer.parseInt(arg.substring(2));
                 }catch(NumberFormatException e){
                     System.err.println("Error: Failed to parse maximum number of clients.\n");
