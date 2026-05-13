@@ -90,7 +90,7 @@ public class GameStateManager {
     
     private void statusCommand(ParsedCommand parseComm){
         switch(parseComm.getArgs().size()){
-            case 0 -> out.print(Presentation.partyStats(party));
+            case 0 -> out.println(Presentation.partyStats(party));
             
             case 1 -> {
                 Optional<PlayerCharacter> charOpt = resolveCharacter(parseComm.getArgs().getFirst());
@@ -104,7 +104,7 @@ public class GameStateManager {
     private void helpCommand(ParsedCommand parseComm){
         switch(parseComm.getArgs().size()){
             case 0 -> {
-                out.print(Presentation.help(CommandHelp.getUsages()));
+                out.println(Presentation.help(CommandHelp.getUsages()));
             }
             
             case 1 -> {
@@ -112,7 +112,7 @@ public class GameStateManager {
                 if(helpOpt.isEmpty())
                     out.println("Unknown command: \""+parseComm.getArgs().getFirst()+"\"");
                 else
-                    out.print(Presentation.help(helpOpt.get()));
+                    out.println(Presentation.help(helpOpt.get()));
             }
         }
         out.flush();

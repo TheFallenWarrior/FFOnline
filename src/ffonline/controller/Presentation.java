@@ -86,6 +86,7 @@ public class Presentation {
                     (alias.equals(helpData.aliases().getLast()) ? "" : ", ")
                 ));
             }
+            str.append("\n");
         }
         return str.toString();
     }
@@ -102,7 +103,7 @@ public class Presentation {
             " AGL.\t%2d\tHIT%%\t%2d\n" +
             " INT.\t%2d\tABSORB\t%2d\n" +
             " VIT.\t%2d\tEVADE%%\t%2d\n" +
-            " LUCK\t%2d\n\n",
+            " LUCK\t%2d\n",
             character.getName(),
             character.getJob().displayName(),
             character.getLevel(),
