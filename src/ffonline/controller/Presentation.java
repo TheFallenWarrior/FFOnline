@@ -73,8 +73,8 @@ public class Presentation {
             " Usage: %s \n" +
             " Description: %s\n",
             helpData.name().toUpperCase(),
-            helpData.Usage(),
-            helpData.Description()
+            helpData.usage(),
+            helpData.description()
         ));
         
         if(!helpData.aliases().isEmpty()){

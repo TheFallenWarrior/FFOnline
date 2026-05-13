@@ -54,13 +54,13 @@ public class CommandHelp {
     }
     
     public static List<String> getUsages(){
-        return SERVER_COMMANDS.stream().map(t -> t.Usage).toList();
+        return SERVER_COMMANDS.stream().map(t -> t.usage).toList();
     }
     
     public record HelpData(
         String name,
         List<String> aliases,
-        String Usage,
-        String Description
+        String usage,
+        String description
     ){}
 }
