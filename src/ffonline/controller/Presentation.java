@@ -27,6 +27,7 @@ import ffonline.model.Battler;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.PlayerParty;
 import ffonline.model.StatusAilment;
+import java.util.List;
 
 /**
  *
@@ -56,6 +57,37 @@ public class Presentation {
     
     public static String say(String username, String message){
         return username+" says, \""+message+"\"";
+    }
+    
+    public static String help(List<String> commands){
+        StringBuilder str = new StringBuilder("Available commands listed below. Type 'help <command>' for more information.\n");
+        for(String command : commands){
+            str.append(String.format(" %s\n", command));
+        }
+        return str.toString();
+    }
+    
+    public static String help(CommandHelp.HelpData helpData){
+        StringBuilder str = new StringBuilder(String.format(
+            "%s command help:\n" +
+            " Usage: %s \n" +
+            " Description: %s\n",
+            helpData.name().toUpperCase(),
+            helpData.Usage(),
+            helpData.Description()
+        ));
+        
+        if(!helpData.aliases().isEmpty()){
+            str.append(" Aliases: ");
+            for(String alias : helpData.aliases()){
+                str.append(String.format(
+                    "%s%s",
+                    alias,
+                    (alias.equals(helpData.aliases().getLast()) ? "" : ", ")
+                ));
+            }
+        }
+        return str.toString();
     }
     
     public static String characterStats(PlayerCharacter character){
