@@ -30,12 +30,16 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author thefa
  */
 public class GameStateManager {
+    private static final Logger LOGGER = Logger.getLogger(GameStateManager.class.getName());
+    
     private final PlayerParty party = new PlayerParty();
     
     private final PrintWriter out;
@@ -64,8 +68,9 @@ public class GameStateManager {
      */
     private void registerCommand(String name, CommandHandler handler){
         commands.put(name, handler);
-        CommandHelp.findHelp(name).ifPresent(
-            helpData -> helpData.aliases().forEach(alias -> commands.put(alias, handler))
+        CommandHelp.findHelp(name).ifPresentOrElse(
+            helpData -> helpData.aliases().forEach(alias -> commands.put(alias, handler)),
+            () -> LOGGER.log(Level.WARNING, "No HelpData for command {0}", name)
         );
     }
     
