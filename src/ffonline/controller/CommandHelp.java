@@ -43,7 +43,7 @@ public class CommandHelp {
         ));
     }
     
-    public Optional<HelpData> findHelp(String topic){
+    public static Optional<HelpData> findHelp(String topic){
         for(HelpData cmd : SERVER_COMMANDS){
             if(cmd.name().equals(topic)) return Optional.of(cmd);
             if(cmd.aliases().contains(topic)) return Optional.of(cmd);
