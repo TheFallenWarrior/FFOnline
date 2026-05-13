@@ -98,8 +98,9 @@ public class JsonLoader {
             int jsonId,
             String jsonPath,
             Function<JsonNode, T> constructor,
-            String typeName
+            Class<T> type
     ){
+        String typeName = type.getSimpleName();
         JsonNode root = getJsonRoot(typeName, jsonPath);
         try{
             JsonNode node = root.get(jsonId);
@@ -119,7 +120,7 @@ public class JsonLoader {
             jsonId,
             Armor.JSON_PATH,
             Armor::buildFromJson,
-            "Armor"
+            Armor.class
         );
     }
 
@@ -128,7 +129,7 @@ public class JsonLoader {
             jsonId,
             Item.JSON_PATH,
             Item::buildFromJson,
-            "Item"
+            Item.class
         );
     }
 
@@ -137,7 +138,7 @@ public class JsonLoader {
             jsonId,
             Weapon.JSON_PATH,
             Weapon::buildFromJson,
-            "Weapon"
+            Weapon.class
         );
     }
 
@@ -146,7 +147,7 @@ public class JsonLoader {
             jsonId,
             Magic.JSON_PATH,
             Magic::buildFromJson,
-            "Magic"
+            Magic.class
         );
     }
 
@@ -155,18 +156,18 @@ public class JsonLoader {
             jsonId,
             PlayerCharacter.JSON_PATH,
             PlayerCharacter::buildFromJson,
-            "PlayerCharacter"
+            PlayerCharacter.class
         );
     }
 
     @Deprecated
     public static void init(){
         // Triggers loading of all JSON roots without failing on missing IDs
-        getJsonRoot("Armor", Armor.JSON_PATH);
-        getJsonRoot("Item", Item.JSON_PATH);
-        getJsonRoot("Weapon", Weapon.JSON_PATH);
-        getJsonRoot("PlayerCharacter", PlayerCharacter.JSON_PATH);
-        getJsonRoot("Magic", Magic.JSON_PATH);
+        getJsonRoot(Armor.class.getSimpleName(), Armor.JSON_PATH);
+        getJsonRoot(Item.class.getSimpleName(), Item.JSON_PATH);
+        getJsonRoot(Weapon.class.getSimpleName(), Weapon.JSON_PATH);
+        getJsonRoot(PlayerCharacter.class.getSimpleName(), PlayerCharacter.JSON_PATH);
+        getJsonRoot(Magic.class.getSimpleName(), Magic.JSON_PATH);
         getJsonRoot("Growth", CharacterProgression.JSON_PATH);
     }
 }
