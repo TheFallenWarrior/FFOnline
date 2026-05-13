@@ -52,6 +52,10 @@ public class CommandHelp {
         return Optional.empty();
     }
     
+    public static List<String> getUsages(){
+        return SERVER_COMMANDS.stream().map(t -> t.Usage).toList();
+    }
+    
     public record HelpData(
         String name,
         List<String> aliases,
