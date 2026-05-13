@@ -56,9 +56,12 @@ public class GameStateManager {
         commands.put("", (ParsedCommand parseComm) -> {});
 
         commands.put("status", this::statusCommand);
-        
-        // Alias
+        commands.put("help", this::helpCommand);
+
+        // Aliases
         commands.put("score", this::statusCommand);
+        commands.put("?", this::helpCommand);
+        commands.put("commands", this::helpCommand);
     }
     
     public void runGameCommand(String command){
@@ -93,6 +96,23 @@ public class GameStateManager {
                 Optional<PlayerCharacter> charOpt = resolveCharacter(parseComm.getArgs().getFirst());
                 if(charOpt.isPresent()) out.print(Presentation.characterStats(charOpt.get()));
                 else out.println("Error: '"+parseComm.getArgs().getFirst()+"' isn't a valid character name or character index.");
+            }
+        }
+        out.flush();
+    }
+    
+    private void helpCommand(ParsedCommand parseComm){
+        switch(parseComm.getArgs().size()){
+            case 0 -> {
+                out.print(Presentation.help(CommandHelp.getUsages()));
+            }
+            
+            case 1 -> {
+                Optional<CommandHelp.HelpData> helpOpt = CommandHelp.findHelp(parseComm.getArgs().getFirst());
+                if(helpOpt.isEmpty())
+                    out.println("Unknown command: \""+parseComm.getArgs().getFirst()+"\"");
+                else
+                    out.print(Presentation.help(helpOpt.get()));
             }
         }
         out.flush();
