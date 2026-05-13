@@ -162,11 +162,11 @@ public class JsonLoader {
     @Deprecated
     public static void init(){
         // Triggers loading of all JSON roots without failing on missing IDs
-        getJsonRoot("armor", Armor.JSON_PATH);
-        getJsonRoot("item", Item.JSON_PATH);
-        getJsonRoot("weapon", Weapon.JSON_PATH);
-        getJsonRoot("player", PlayerCharacter.JSON_PATH);
-        getJsonRoot("magic", Magic.JSON_PATH);
-        getJsonRoot("growth", CharacterProgression.JSON_PATH);
+        getJsonRoot("Armor", Armor.JSON_PATH);
+        getJsonRoot("Item", Item.JSON_PATH);
+        getJsonRoot("Weapon", Weapon.JSON_PATH);
+        getJsonRoot("PlayerCharacter", PlayerCharacter.JSON_PATH);
+        getJsonRoot("Magic", Magic.JSON_PATH);
+        getJsonRoot("Growth", CharacterProgression.JSON_PATH);
     }
 }
