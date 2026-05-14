@@ -27,7 +27,6 @@ import ffonline.model.Battler;
 import ffonline.model.BattlerGroup;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.StatusAilment;
-import java.util.EnumSet;
 
 /**
  *
@@ -46,20 +45,6 @@ public class RunCommand extends Command {
      */
     private boolean evaluateRun(int value, PlayerCharacter charActor){
         return (charActor.getLuck() > rng.nextInt(0, (value&0xff) + 16));
-    }
-    
-    /**
-     * Get original status encoding from {@code EnumSet<StatusAilment>}
-     * @param statuses EnumSet-encoded status set
-     * @return bit-mask-encoded status set
-     */
-    private int maskStatus(EnumSet<StatusAilment> statuses){
-        int accumulator = 0;
-        for(StatusAilment status : statuses){
-            accumulator |= (1 << status.ordinal());
-        }
-        
-        return accumulator;
     }
     
     @Override
@@ -93,7 +78,7 @@ public class RunCommand extends Command {
             // The first character uses the third character's status byte
             case 0 -> {
                 success = evaluateRun(
-                    maskStatus(allies.get(2).getStatuses()),
+                    StatusAilment.bitmask(allies.get(2).getStatuses()),
                     charActor
                 );
             }
@@ -101,7 +86,7 @@ public class RunCommand extends Command {
             // The second character uses the fourth character's status byte
             case 1 -> {
                 success = evaluateRun(
-                    maskStatus(allies.get(3).getStatuses()),
+                    StatusAilment.bitmask(allies.get(3).getStatuses()),
                     charActor
                 );
             }
