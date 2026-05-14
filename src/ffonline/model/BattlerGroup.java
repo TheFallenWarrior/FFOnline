@@ -125,4 +125,10 @@ public class BattlerGroup<T extends Battler> implements Iterable<T> {
         int index = rng.nextInt(0, alive.size());
         return Optional.of(alive.get(index));
     }
+    
+    public void swap(int indexA, int indexB){
+        T tmp = members.get(indexA);
+        members.set(indexA, members.get(indexB));
+        members.set(indexB, tmp);
+    }
 }

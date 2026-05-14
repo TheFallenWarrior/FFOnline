@@ -67,6 +67,52 @@ public class PlayerParty extends BattlerGroup<PlayerCharacter> {
             if(chosen.isAlive()) return Optional.of(chosen);
         }
     }
+    
+    /**
+     * Re-orders the party after battle, moving characters with status ailments
+     * toward the back. Priority: Normal > Poisoned > Petrified > Dead.
+     * Only operates on a full 4-character party.
+     */
+    public void sort(){
+       if(size() != 4) return;
+
+       int n = size();
+
+       // Each tag = original slot index (0–3) + status weight:
+       //  Dead=64, Petrified=32, Poisoned=16, Normal=0
+       int[] tags = new int[n];
+       for(int i = 0; i < n; i++){
+           PlayerCharacter pc = get(i);
+           int statusVal = 0;
+           if(pc.hasStatus(StatusAilment.DEAD))      statusVal = 64;
+           else if(pc.hasStatus(StatusAilment.PETRIFIED)) statusVal = 32;
+           else if(pc.hasStatus(StatusAilment.POISONED))  statusVal = 16;
+           tags[i] = i + statusVal;
+       }
+
+       // Bubble sort: n passes of n-1 comparisons (no early-exit optimization).
+       for(int pass = 0; pass < n; pass++){
+           for(int i = 0; i < n-1; i++){
+               if(tags[i] > tags[i+1]){
+                   // INTENTIONAL: Bug from the original game: the swap routine is
+                   // passed the *original* slot numbers encoded in the tag values
+                   // (low 2 bits) rather than the *current* comparison positions i
+                   // and i+1. As tags migrate through the array during sorting, the
+                   // original slot numbers they carry no longer correspond to their
+                   // current positions, so the wrong pair of characters ends up being
+                   // swapped. This affects 106 of the 256 possible status combinations.
+                   int slotA = tags[i]   & 0x03;
+                   int slotB = tags[i+1] & 0x03;
+
+                   swap(slotA, slotB);          // reorder party members
+
+                   int tmp  = tags[slotA];      // mirror swap in the tag array
+                   tags[slotA] = tags[slotB];
+                   tags[slotB] = tmp;
+               }
+           }
+       }
+    }
 
     public int getGil(){
         return gil;
