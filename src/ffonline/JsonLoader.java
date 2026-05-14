@@ -24,6 +24,7 @@
 package ffonline;
 
 import ffonline.model.Armor;
+import ffonline.model.Enemy;
 import ffonline.model.Item;
 import ffonline.model.Magic;
 import ffonline.model.PlayerCharacter;
@@ -148,6 +149,15 @@ public class JsonLoader {
             Magic.JSON_PATH,
             Magic::buildFromJson,
             Magic.class
+        );
+    }
+
+    public static Optional<Enemy> getEnemy(int jsonId){
+        return get(
+            jsonId,
+            Enemy.JSON_PATH,
+            Enemy::buildFromJson,
+            Enemy.class
         );
     }
 
