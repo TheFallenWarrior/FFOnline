@@ -34,7 +34,7 @@ import tools.jackson.databind.*;
  *
  * @author thefa
  */
-public class Armor extends Item{
+public class Armor extends Item {
     private static final Logger LOGGER = Logger.getLogger(Armor.class.getName());
     public static final String JSON_PATH = "json/armor.json";
     
@@ -46,15 +46,15 @@ public class Armor extends Item{
     private final EnumSet<CharacterJob> equippable;
 
     public Armor(
-            String name,
-            int itemId,
-            int price,
-            int weight,
-            int absorb,
-            EnumSet<Element> elementalResistances,
-            int spellId,
-            ArmorType type,
-            EnumSet<CharacterJob> equippable
+        String name,
+        int itemId,
+        int price,
+        int weight,
+        int absorb,
+        EnumSet<Element> elementalResistances,
+        int spellId,
+        ArmorType type,
+        EnumSet<CharacterJob> equippable
     ){
         super(name, itemId, price);
         this.weight = weight&0xff;
@@ -102,19 +102,19 @@ public class Armor extends Item{
         return equippable.contains(job);
     }
     
-    public int getWeight() {
+    public int getWeight(){
         return weight;
     }
 
-    public int getAbsorb() {
+    public int getAbsorb(){
         return absorb;
     }
 
-    public EnumSet<Element> getElementalResistances() {
+    public EnumSet<Element> getElementalResistances(){
         return EnumSet.copyOf(elementalResistances);
     }
 
-    public int getSpellId() {
+    public int getSpellId(){
         return spellId;
     }
     

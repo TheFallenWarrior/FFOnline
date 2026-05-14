@@ -96,27 +96,27 @@ public class Weapon extends Item {
         return equippable.contains(job);
     }
     
-    public int getHitChance() {
+    public int getHitChance(){
         return hitChance;
     }
     
-    public int getWeaponId() {
+    public int getWeaponId(){
         return weaponId;
     }
 
-    public int getDamage() {
+    public int getDamage(){
         return damage;
     }
 
-    public int getSpellId() {
+    public int getSpellId(){
         return spellId;
     }
 
-    public EnumSet<Element> getElementalOffense() {
+    public EnumSet<Element> getElementalOffense(){
         return EnumSet.copyOf(elementalOffense);
     }
 
-    public EnumSet<EnemyType> getEnemyTypes() {
+    public EnumSet<EnemyType> getEnemyTypes(){
         return EnumSet.copyOf(enemyTypes);
     }
     

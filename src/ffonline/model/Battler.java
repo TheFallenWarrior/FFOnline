@@ -287,11 +287,11 @@ public abstract class Battler {
         setMagicDefense(magicDefense + offset);
     }
 
-    public int getCritChance() {
+    public int getCritChance(){
         return critChance;
     }
 
-    public void setCritChance(int critChance) {
+    public void setCritChance(int critChance){
         this.critChance = critChance&0xff;
     }
 }

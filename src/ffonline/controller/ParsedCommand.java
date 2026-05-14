@@ -85,15 +85,15 @@ public class ParsedCommand {
         return new ParsedCommand(command.toString(), argsLength);
     }
 
-    public String getVerb() {
+    public String getVerb(){
         return verb;
     }
 
-    public List<String> getArgs() {
+    public List<String> getArgs(){
         return Collections.unmodifiableList(args);
     }
 
-    public String getRest() {
+    public String getRest(){
         return rest;
     }
 }

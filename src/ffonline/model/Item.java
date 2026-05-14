@@ -57,21 +57,21 @@ public class Item{
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode(){
         int hash = 5;
         hash = 89 * hash + this.itemId;
         return hash;
     }
 
-    public String getName() {
+    public String getName(){
         return name;
     }
 
-    public int getItemId() {
+    public int getItemId(){
         return itemId;
     }
 
-    public int getPrice() {
+    public int getPrice(){
         return price;
     }
 }

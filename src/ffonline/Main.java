@@ -40,7 +40,7 @@ public class Main {
             if(arg.startsWith("-p")){
                 try{
                     port = Integer.parseInt(arg.substring(2));
-                }catch(NumberFormatException e){
+                } catch(NumberFormatException e){
                     System.err.println("Error: Failed to parse port number.\n");
                     printUsageAndExit(1);
                 }
@@ -52,7 +52,7 @@ public class Main {
             else if(arg.startsWith("-c")){
                 try{
                     maxClients = Integer.parseInt(arg.substring(2));
-                }catch(NumberFormatException e){
+                } catch(NumberFormatException e){
                     System.err.println("Error: Failed to parse maximum number of clients.\n");
                     printUsageAndExit(1);
                 }

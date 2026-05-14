@@ -63,7 +63,7 @@ public class JsonLoader {
         return JSON_CACHE.computeIfAbsent(cacheKey, k ->{
             try{
                 return MAPPER.readTree(new File(jsonPath));
-            } catch (JacksonException e){
+            } catch(JacksonException e){
                 LOGGER.log(Level.SEVERE, "Critical error loading JSON from{0}", jsonPath);
                 throw new IllegalStateException("Failed to load JSON: " + jsonPath, e);
             }
@@ -107,7 +107,7 @@ public class JsonLoader {
         JsonNode root = getJsonRoot(typeName, jsonPath);
         try{
             JsonNode node = root.get(jsonId);
-            if (node == null || node.isNull()){
+            if(node == null || node.isNull()){
                 LOGGER.log(Level.SEVERE, "{0} ID {1} not found in {2}", new Object[]{typeName, jsonId, jsonPath});
                 return Optional.empty();
             }

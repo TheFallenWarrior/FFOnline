@@ -36,7 +36,7 @@ import tools.jackson.databind.JsonNode;
  *
  * @author thefa
  */
-public class Enemy extends Battler{
+public class Enemy extends Battler {
     private static final int MAGIC_MAX_INVENTORY = 8;
     private static final int SKILL_MAX_INVENTORY = 4;
     
@@ -183,23 +183,23 @@ public class Enemy extends Battler{
     @Override
     public void battleEnd(){}
 
-    public int getExp() {
+    public int getExp(){
         return exp;
     }
 
-    public int getGil() {
+    public int getGil(){
         return gil;
     }
 
-    public int getMorale() {
+    public int getMorale(){
         return morale;
     }
 
-    public EnumSet<EnemyType> getEnemyTypes() {
+    public EnumSet<EnemyType> getEnemyTypes(){
         return enemyTypes;
     }
 
-    public EnumSet<StatusAilment> getAttackStatuses() {
+    public EnumSet<StatusAilment> getAttackStatuses(){
         return attackStatuses;
     }
 
@@ -207,7 +207,7 @@ public class Enemy extends Battler{
         return magicInventory.asUnmodifiableList();
     }
     
-    public int getMagicChance() {
+    public int getMagicChance(){
         return magicChance;
     }
     
@@ -215,7 +215,7 @@ public class Enemy extends Battler{
         return skillInventory.asUnmodifiableList();
     }
 
-    public int getSkillChance() {
+    public int getSkillChance(){
         return skillChance;
     }
     

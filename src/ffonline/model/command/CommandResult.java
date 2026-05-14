@@ -96,19 +96,19 @@ public class CommandResult {
             this.totalDamage = 0;
         }
 
-        public Battler getTarget() {
+        public Battler getTarget(){
             return target;
         }
 
-        public CommandResultType getType() {
+        public CommandResultType getType(){
             return type;
         }
 
-        public int getNumHits() {
+        public int getNumHits(){
             return numHits;
         }
 
-        public int getTotalDamage() {
+        public int getTotalDamage(){
             return totalDamage;
         }
     }

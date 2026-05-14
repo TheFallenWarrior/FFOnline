@@ -100,7 +100,7 @@ public class Inventory<T extends Item> implements Iterable<T> {
     }
     
     @Override
-    public Iterator<T> iterator() {
+    public Iterator<T> iterator(){
         return items.iterator();
     }
     

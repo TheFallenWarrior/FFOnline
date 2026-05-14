@@ -79,7 +79,7 @@ public class ServerController {
         private String username;
         private GameStateManager game;
 
-        ClientHandler(Socket socket) {
+        ClientHandler(Socket socket){
             this.clientSocket = socket;
         }
 
@@ -92,7 +92,7 @@ public class ServerController {
             ){
                 out = new PrintWriter(
                     clientSocket.getOutputStream(),
-                        true
+                    true
                 );
                 
                 out.println("Enter your username:");
@@ -121,7 +121,7 @@ public class ServerController {
             ParsedCommand parseComm = new ParsedCommand(command, 0);
             
             // Commands that depend on shared server state are resolved here.
-            switch (parseComm.getVerb()) {
+            switch(parseComm.getVerb()){
                 case "ooc" -> {
                     if(parseComm.getRest().length() > 0)
                         broadcast(Presentation.say(username, parseComm.getRest()));

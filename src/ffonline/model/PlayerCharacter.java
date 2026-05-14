@@ -70,17 +70,17 @@ public class PlayerCharacter extends Battler {
     
 
     public PlayerCharacter(
-            int hp,
-            int strength,
-            int agility,
-            int intelligence,
-            int vitality,
-            int luck,
-            int damage,
-            int hitChance,
-            int evadeChance,
-            int magicDefense,
-            CharacterJob job
+        int hp,
+        int strength,
+        int agility,
+        int intelligence,
+        int vitality,
+        int luck,
+        int damage,
+        int hitChance,
+        int evadeChance,
+        int magicDefense,
+        CharacterJob job
     ){
         super(hp&0xff, damage, hitChance, evadeChance, magicDefense);
         this.strength = strength&0xff;
