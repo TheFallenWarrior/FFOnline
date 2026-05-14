@@ -51,6 +51,8 @@ public class JsonLoader {
 
     // Thread-safe cache: key = logical name, value = loaded JsonNode
     private static final ConcurrentMap<String, JsonNode> JSON_CACHE = new ConcurrentHashMap<>();
+    
+    private JsonLoader(){}
 
     /**
      * Lazy-loads and caches a JSON root node. 

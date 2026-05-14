@@ -34,6 +34,8 @@ import java.util.Optional;
 public class CommandHelp {
     private static final List<HelpData> SERVER_COMMANDS = new ArrayList<>();
     
+    private CommandHelp(){}
+    
     static{
         SERVER_COMMANDS.addAll(List.of(
             new HelpData("ooc", List.of(), "ooc <message>", "Send a global chat message (out-of-character)"),

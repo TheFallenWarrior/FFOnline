@@ -34,6 +34,9 @@ import java.util.List;
  * @author thefa
  */
 public class Presentation {
+    
+    private Presentation(){}
+    
     /**
      * Returns the name of the most severe status afflicting a character
      * @param battler the {@code Battler} to get the status ailment from
