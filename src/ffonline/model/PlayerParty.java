@@ -84,7 +84,7 @@ public class PlayerParty extends BattlerGroup<PlayerCharacter> {
        for(int i = 0; i < n; i++){
            PlayerCharacter pc = get(i);
            int statusVal = 0;
-           if(pc.hasStatus(StatusAilment.DEAD))      statusVal = 64;
+           if(pc.hasStatus(StatusAilment.DEAD))           statusVal = 64;
            else if(pc.hasStatus(StatusAilment.PETRIFIED)) statusVal = 32;
            else if(pc.hasStatus(StatusAilment.POISONED))  statusVal = 16;
            tags[i] = i + statusVal;
@@ -95,18 +95,20 @@ public class PlayerParty extends BattlerGroup<PlayerCharacter> {
            for(int i = 0; i < n-1; i++){
                if(tags[i] > tags[i+1]){
                    // INTENTIONAL: Bug from the original game: the swap routine is
-                   // passed the *original* slot numbers encoded in the tag values
-                   // (low 2 bits) rather than the *current* comparison positions i
-                   // and i+1. As tags migrate through the array during sorting, the
-                   // original slot numbers they carry no longer correspond to their
-                   // current positions, so the wrong pair of characters ends up being
-                   // swapped. This affects 106 of the 256 possible status combinations.
+                   //  passed the *original* slot numbers encoded in the tag values
+                   //  (low 2 bits) rather than the *current* comparison positions i
+                   //  and i+1. As tags migrate through the array during sorting, the
+                   //  original slot numbers they carry no longer correspond to their
+                   //  current positions, so the wrong pair of characters ends up being
+                   //  swapped. This affects 106 of the 256 possible status combinations.
                    int slotA = tags[i]   & 0x03;
                    int slotB = tags[i+1] & 0x03;
 
-                   swap(slotA, slotB);          // reorder party members
+                   // reorder party members
+                   swap(slotA, slotB);
 
-                   int tmp  = tags[slotA];      // mirror swap in the tag array
+                   // mirror swap in the tag array
+                   int tmp  = tags[slotA];
                    tags[slotA] = tags[slotB];
                    tags[slotB] = tmp;
                }
