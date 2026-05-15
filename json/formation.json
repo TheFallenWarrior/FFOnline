@@ -1,0 +1,4098 @@
+[
+    {
+        "formationId": 0,
+        "type": "SMALL",
+        "enemies": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            4
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 1,
+        "type": "SMALL",
+        "enemies": [
+            21,
+            24,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            5,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 2,
+        "type": "SMALL",
+        "enemies": [
+            1,
+            2,
+            3,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            2,
+            2,
+            2
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            3,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 3,
+        "type": "SMALL",
+        "enemies": [
+            2,
+            3,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            4,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            1
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 4,
+        "type": "SMALL",
+        "enemies": [
+            43,
+            44,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            2
+        ],
+        "enemyMaxCountB": [
+            3,
+            4
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 5,
+        "type": "SMALL",
+        "enemies": [
+            73,
+            69,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            2
+        ],
+        "enemyMaxCountB": [
+            0,
+            4
+        ],
+        "surpriseFactor": 55,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 6,
+        "type": "BIG",
+        "enemies": [
+            116,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 7,
+        "type": "MIX",
+        "enemies": [
+            23,
+            27,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            3,
+            1
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 8,
+        "type": "SMALL",
+        "enemies": [
+            44,
+            45,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            5,
+            4
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 9,
+        "type": "BIG",
+        "enemies": [
+            9,
+            6,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            3,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 10,
+        "type": "SMALL",
+        "enemies": [
+            39,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            0
+        ],
+        "surpriseFactor": 90,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 11,
+        "type": "SMALL",
+        "enemies": [
+            3,
+            2,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            3,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            4,
+            0
+        ],
+        "enemyMaxCountB": [
+            8,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 12,
+        "type": "BIG",
+        "enemies": [
+            27,
+            25,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            3,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 13,
+        "type": "SMALL",
+        "enemies": [
+            30,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 14,
+        "type": "MIX",
+        "enemies": [
+            1,
+            4,
+            9,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            3,
+            2,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            5,
+            2
+        ],
+        "surpriseFactor": 33,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 15,
+        "type": "SMALL",
+        "enemies": [
+            46,
+            45,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            0,
+            4,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            2
+        ],
+        "enemyMaxCountB": [
+            5,
+            5
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 16,
+        "type": "SMALL",
+        "enemies": [
+            62,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            8,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 17,
+        "type": "SMALL",
+        "enemies": [
+            4,
+            3,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            6,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            5,
+            5
+        ],
+        "surpriseFactor": 33,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 18,
+        "type": "SMALL",
+        "enemies": [
+            71,
+            74,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            0,
+            4,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            5,
+            5
+        ],
+        "surpriseFactor": 55,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 19,
+        "type": "BIG",
+        "enemies": [
+            28,
+            27,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            2,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 20,
+        "type": "SMALL",
+        "enemies": [
+            74,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            4,
+            0
+        ],
+        "enemyMaxCountB": [
+            8,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 21,
+        "type": "SMALL",
+        "enemies": [
+            31,
+            33,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            6,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            4
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 22,
+        "type": "SMALL",
+        "enemies": [
+            81,
+            79,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            6,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            1
+        ],
+        "enemyMaxCountB": [
+            6,
+            5
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 23,
+        "type": "BIG",
+        "enemies": [
+            56,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 24,
+        "type": "SMALL",
+        "enemies": [
+            40,
+            41,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            6,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            4
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 25,
+        "type": "BIG",
+        "enemies": [
+            59,
+            58,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            0,
+            3,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            3,
+            2
+        ],
+        "surpriseFactor": 27,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 26,
+        "type": "MIX",
+        "enemies": [
+            33,
+            35,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            1
+        ],
+        "enemyMaxCountB": [
+            6,
+            2
+        ],
+        "surpriseFactor": 27,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 27,
+        "type": "BIG",
+        "enemies": [
+            37,
+            35,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            1,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            2,
+            2
+        ],
+        "surpriseFactor": 27,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 28,
+        "type": "SMALL",
+        "enemies": [
+            103,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            0
+        ],
+        "surpriseFactor": 33,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 29,
+        "type": "SMALL",
+        "enemies": [
+            79,
+            80,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            1
+        ],
+        "enemyMaxCountB": [
+            7,
+            1
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 30,
+        "type": "BIG",
+        "enemies": [
+            9,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 31,
+        "type": "BIG",
+        "enemies": [
+            9,
+            6,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            3,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            4,
+            1
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 32,
+        "type": "MIX",
+        "enemies": [
+            93,
+            89,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            3
+        ],
+        "surpriseFactor": 27,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 33,
+        "type": "BIG",
+        "enemies": [
+            64,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 34,
+        "type": "BIG",
+        "enemies": [
+            26,
+            29,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            2,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            3,
+            2
+        ],
+        "surpriseFactor": 55,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 35,
+        "type": "SMALL",
+        "enemies": [
+            82,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            4,
+            0
+        ],
+        "enemyMaxCountB": [
+            8,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 36,
+        "type": "BIG",
+        "enemies": [
+            94,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            4,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 37,
+        "type": "MIX",
+        "enemies": [
+            91,
+            87,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            1,
+            2
+        ],
+        "surpriseFactor": 33,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 38,
+        "type": "BIG",
+        "enemies": [
+            11,
+            7,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            1,
+            3
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 39,
+        "type": "BIG",
+        "enemies": [
+            65,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 40,
+        "type": "BIG",
+        "enemies": [
+            49,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 41,
+        "type": "BIG",
+        "enemies": [
+            7,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 42,
+        "type": "BIG",
+        "enemies": [
+            67,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 43,
+        "type": "SMALL",
+        "enemies": [
+            22,
+            21,
+            24,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            2,
+            1,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            4,
+            1,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 44,
+        "type": "SMALL",
+        "enemies": [
+            41,
+            40,
+            46,
+            45
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            3,
+            3,
+            3
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 45,
+        "type": "SMALL",
+        "enemies": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            7,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            4,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 46,
+        "type": "MIX",
+        "enemies": [
+            10,
+            5,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            2,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            2
+        ],
+        "enemyMaxCountB": [
+            2,
+            6
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 47,
+        "type": "SMALL",
+        "enemies": [
+            114,
+            115,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            1
+        ],
+        "enemyMaxCountB": [
+            3,
+            1
+        ],
+        "surpriseFactor": 75,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 48,
+        "type": "BIG",
+        "enemies": [
+            66,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 49,
+        "type": "BIG",
+        "enemies": [
+            57,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            2,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 50,
+        "type": "BIG",
+        "enemies": [
+            36,
+            37,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 51,
+        "type": "SMALL",
+        "enemies": [
+            55,
+            52,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            5
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 52,
+        "type": "MIX",
+        "enemies": [
+            52,
+            59,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            1
+        ],
+        "enemyMaxCountB": [
+            6,
+            2
+        ],
+        "surpriseFactor": 27,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 53,
+        "type": "MIX",
+        "enemies": [
+            104,
+            108,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            6,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 54,
+        "type": "BIG",
+        "enemies": [
+            75,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 55,
+        "type": "BIG",
+        "enemies": [
+            84,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            3,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 56,
+        "type": "BIG",
+        "enemies": [
+            77,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 57,
+        "type": "MIX",
+        "enemies": [
+            54,
+            59,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            1
+        ],
+        "enemyMaxCountB": [
+            6,
+            2
+        ],
+        "surpriseFactor": 27,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 58,
+        "type": "BIG",
+        "enemies": [
+            8,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 27,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 59,
+        "type": "BIG",
+        "enemies": [
+            101,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 60,
+        "type": "BIG",
+        "enemies": [
+            48,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            2,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 61,
+        "type": "BIG",
+        "enemies": [
+            85,
+            83,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            1,
+            1
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 62,
+        "type": "BIG",
+        "enemies": [
+            83,
+            84,
+            86,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            0,
+            1,
+            0
+        ],
+        "enemyMaxCountA": [
+            0,
+            0,
+            1,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            3,
+            5
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 63,
+        "type": "BIG",
+        "enemies": [
+            108,
+            109,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            4,
+            3
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 64,
+        "type": "SMALL",
+        "enemies": [
+            53,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            4,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 65,
+        "type": "BIG",
+        "enemies": [
+            92,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            2,
+            0
+        ],
+        "surpriseFactor": 33,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 66,
+        "type": "MIX",
+        "enemies": [
+            38,
+            34,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            3,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            2,
+            4
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 67,
+        "type": "SMALL",
+        "enemies": [
+            34,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            6,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 68,
+        "type": "MIX",
+        "enemies": [
+            34,
+            32,
+            38,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            2,
+            2,
+            0
+        ],
+        "enemyMaxCountA": [
+            6,
+            5,
+            2,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            5,
+            3
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 69,
+        "type": "MIX",
+        "enemies": [
+            14,
+            18,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            2,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            2
+        ],
+        "enemyMaxCountB": [
+            6,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 70,
+        "type": "MIX",
+        "enemies": [
+            42,
+            51,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            0,
+            1,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            5,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 71,
+        "type": "MIX",
+        "enemies": [
+            99,
+            97,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            1,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            3
+        ],
+        "enemyMaxCountB": [
+            2,
+            6
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 72,
+        "type": "BIG",
+        "enemies": [
+            18,
+            20,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            1,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            2,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 73,
+        "type": "SMALL",
+        "enemies": [
+            97,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 74,
+        "type": "SMALL",
+        "enemies": [
+            80,
+            79,
+            81,
+            82
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            8,
+            8,
+            8
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            2,
+            6
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 75,
+        "type": "BIG",
+        "enemies": [
+            68,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 76,
+        "type": "SMALL",
+        "enemies": [
+            95,
+            96,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            1
+        ],
+        "enemyMaxCountB": [
+            1,
+            1
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 77,
+        "type": "SMALL",
+        "enemies": [
+            111,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            5,
+            0
+        ],
+        "enemyMaxCountB": [
+            9,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 78,
+        "type": "BIG",
+        "enemies": [
+            107,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            3,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 79,
+        "type": "MIX",
+        "enemies": [
+            117,
+            111,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            2,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 80,
+        "type": "SMALL",
+        "enemies": [
+            72,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            6,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            4,
+            0
+        ],
+        "enemyMaxCountB": [
+            8,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 81,
+        "type": "SMALL",
+        "enemies": [
+            98,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 82,
+        "type": "MIX",
+        "enemies": [
+            100,
+            98,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            1,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            1
+        ],
+        "enemyMaxCountB": [
+            1,
+            3
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 83,
+        "type": "MIX",
+        "enemies": [
+            61,
+            68,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            3,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 84,
+        "type": "MIX",
+        "enemies": [
+            112,
+            117,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            2,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            2,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 85,
+        "type": "BIG",
+        "enemies": [
+            101,
+            102,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            2,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            1,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 86,
+        "type": "MIX",
+        "enemies": [
+            118,
+            115,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            1
+        ],
+        "enemyMaxCountB": [
+            0,
+            2
+        ],
+        "surpriseFactor": 75,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 87,
+        "type": "BIG",
+        "enemies": [
+            47,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 88,
+        "type": "BIG",
+        "enemies": [
+            109,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 89,
+        "type": "BIG",
+        "enemies": [
+            106,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 90,
+        "type": "BIG",
+        "enemies": [
+            18,
+            17,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            1,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            2,
+            1
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 91,
+        "type": "MIX",
+        "enemies": [
+            12,
+            13,
+            19,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            0,
+            1,
+            0
+        ],
+        "enemyMaxCountA": [
+            6,
+            0,
+            2,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 92,
+        "type": "MIX",
+        "enemies": [
+            16,
+            17,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            1
+        ],
+        "enemyMaxCountB": [
+            0,
+            1
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 93,
+        "type": "MIX",
+        "enemies": [
+            17,
+            12,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            2,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            4
+        ],
+        "enemyMaxCountB": [
+            0,
+            6
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 94,
+        "type": "MIX",
+        "enemies": [
+            17,
+            13,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            1,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            2,
+            3
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 95,
+        "type": "SMALL",
+        "enemies": [
+            87,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            6,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            8,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 96,
+        "type": "BIG",
+        "enemies": [
+            93,
+            91,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            2,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            1,
+            1
+        ],
+        "surpriseFactor": 33,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 97,
+        "type": "MIX",
+        "enemies": [
+            38,
+            32,
+            34,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            2,
+            2,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            1,
+            3
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 98,
+        "type": "SMALL",
+        "enemies": [
+            90,
+            88,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            3,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            1
+        ],
+        "enemyMaxCountB": [
+            1,
+            4
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 99,
+        "type": "BIG",
+        "enemies": [
+            37,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 100,
+        "type": "BIG",
+        "enemies": [
+            35,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 27,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 101,
+        "type": "MIX",
+        "enemies": [
+            87,
+            89,
+            91,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            0,
+            1,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            2,
+            1,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            2
+        ],
+        "surpriseFactor": 30,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 102,
+        "type": "SMALL",
+        "enemies": [
+            74,
+            73,
+            69,
+            70
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            2,
+            1,
+            1
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            2
+        ],
+        "surpriseFactor": 55,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 103,
+        "type": "MIX",
+        "enemies": [
+            54,
+            59,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            2,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            4,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            0
+        ],
+        "surpriseFactor": 27,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 104,
+        "type": "SMALL",
+        "enemies": [
+            61,
+            60,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            2,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            0,
+            5,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            3
+        ],
+        "enemyMaxCountB": [
+            1,
+            6
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 105,
+        "type": "BIG",
+        "enemies": [
+            50,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            2,
+            0
+        ],
+        "enemyMaxCountB": [
+            3,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 106,
+        "type": "SMALL",
+        "enemies": [
+            63,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            5,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 107,
+        "type": "SMALL",
+        "enemies": [
+            70,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            4,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 108,
+        "type": "SMALL",
+        "enemies": [
+            104,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            7,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 109,
+        "type": "BIG",
+        "enemies": [
+            26,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 55,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 110,
+        "type": "BIG",
+        "enemies": [
+            29,
+            28,
+            25,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            1,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            1,
+            7,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            3,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 111,
+        "type": "BIG",
+        "enemies": [
+            76,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 112,
+        "type": "BIG",
+        "enemies": [
+            83,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            3,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            4,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 113,
+        "type": "BIG",
+        "enemies": [
+            78,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            0
+        ],
+        "enemyMaxCountB": [
+            2,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 114,
+        "type": "SMALL",
+        "enemies": [
+            32,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            2,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            4,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            3,
+            0
+        ],
+        "enemyMaxCountB": [
+            6,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": false
+    },
+    {
+        "formationId": 115,
+        "type": "FIEND",
+        "enemies": [
+            120,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 116,
+        "type": "FIEND",
+        "enemies": [
+            122,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 117,
+        "type": "FIEND",
+        "enemies": [
+            124,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 118,
+        "type": "FIEND",
+        "enemies": [
+            126,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 119,
+        "type": "FIEND",
+        "enemies": [
+            125,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 120,
+        "type": "FIEND",
+        "enemies": [
+            123,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 121,
+        "type": "FIEND",
+        "enemies": [
+            121,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 122,
+        "type": "FIEND",
+        "enemies": [
+            119,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 123,
+        "type": "CHAOS",
+        "enemies": [
+            127,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 124,
+        "type": "MIX",
+        "enemies": [
+            60,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 125,
+        "type": "MIX",
+        "enemies": [
+            113,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            0
+        ],
+        "enemyMaxCountB": [
+            0,
+            0
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 126,
+        "type": "SMALL",
+        "enemies": [
+            14,
+            13,
+            15,
+            0
+        ],
+        "enemyMinCountA": [
+            0,
+            0,
+            9,
+            0
+        ],
+        "enemyMaxCountA": [
+            0,
+            0,
+            9,
+            0
+        ],
+        "enemyMinCountB": [
+            1,
+            8
+        ],
+        "enemyMaxCountB": [
+            2,
+            8
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    },
+    {
+        "formationId": 127,
+        "type": "MIX",
+        "enemies": [
+            105,
+            110,
+            0,
+            0
+        ],
+        "enemyMinCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMaxCountA": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "enemyMinCountB": [
+            0,
+            1
+        ],
+        "enemyMaxCountB": [
+            0,
+            2
+        ],
+        "surpriseFactor": 4,
+        "isUnrunnable": true
+    }
+]
