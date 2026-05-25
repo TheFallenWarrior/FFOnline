@@ -51,13 +51,13 @@ public class PlayerParty extends BattlerGroup<PlayerCharacter> {
         
         while(true){
             int choice = rng.nextInt(8);
-            List<Integer> weights = List.of(4, 2, 1, 1);
+            int[] weights = {4, 2, 1 ,1};
             PlayerCharacter chosen = get(0);
             
             int accumulator = 0;
             
             for(int i=0;i<4;i++){
-                accumulator += weights.get(i);
+                accumulator += weights[i];
                 if(choice < accumulator){
                     chosen = get(i);
                     break;
