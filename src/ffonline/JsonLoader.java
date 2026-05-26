@@ -52,7 +52,7 @@ public class JsonLoader {
     public static final ObjectMapper MAPPER = new ObjectMapper();
     private static final Logger LOGGER = Logger.getLogger(JsonLoader.class.getName());
 
-    // Thread-safe cache: key = logical name, value = loaded JsonNode
+    // Thread-safe cache: key = class name, value = loaded JsonNode
     private static final ConcurrentMap<String, JsonNode> JSON_CACHE = new ConcurrentHashMap<>();
     
     private JsonLoader(){}
@@ -198,7 +198,7 @@ public class JsonLoader {
 
     @Deprecated
     public static void init(){
-        // Triggers loading of all JSON roots without failing on missing IDs
+        // Triggers loading of all JSON roots
         getJsonRoot(Armor.class.getSimpleName(), Armor.JSON_PATH);
         getJsonRoot(Item.class.getSimpleName(), Item.JSON_PATH);
         getJsonRoot(Weapon.class.getSimpleName(), Weapon.JSON_PATH);
