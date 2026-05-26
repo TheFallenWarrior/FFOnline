@@ -31,7 +31,9 @@ import ffonline.model.PlayerCharacter;
 import ffonline.model.CharacterProgression;
 import ffonline.model.Weapon;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -90,6 +92,18 @@ public class JsonLoader {
             }
         }
         return result;
+    }
+    
+    public static int[] parseIntArray(JsonNode node, String label, String jsonPath) {
+        List<Integer> list = new ArrayList<>();
+        if (node.isArray()) {
+            for (JsonNode enemyIdNode : node) {
+                list.add(enemyIdNode.asInt(0));
+            }
+        } else {
+            LOGGER.log(Level.WARNING, "Entry '{0}' in {1} isn't an array", new Object[]{label, jsonPath});
+        }
+        return list.stream().mapToInt(Integer::intValue).toArray();
     }
 
     public static JsonNode getGrowth(){
