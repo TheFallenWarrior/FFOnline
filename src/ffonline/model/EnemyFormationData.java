@@ -23,10 +23,12 @@
  */
 package ffonline.model;
 
+import ffonline.JsonLoader;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import tools.jackson.databind.JsonNode;
 
 /**
  *
@@ -80,7 +82,7 @@ public class EnemyFormationData {
         }
         
         this.enemyMinCountB = new int[]{0, 0};
-        this.enemyMaxCountB = new int[]{0, 0};     
+        this.enemyMaxCountB = new int[]{0, 0};
         if(enemyMinCountB.length != 2 || enemyMaxCountB.length != 2){
             LOGGER.log(Level.WARNING, "Unexpected enemy formation size {0} in formation {1} B", new Object[]{enemies.length, formationId});       
         } else for(int i=0;i<2;i++){
@@ -91,6 +93,30 @@ public class EnemyFormationData {
                 this.enemyMinCountB[i] = enemyMaxCountB[i];
             } else this.enemyMinCountB[i] = enemyMinCountB[i];
         }
+    }
+    
+    
+    public static EnemyFormationData buildFromJson(JsonNode node){
+        int formationId = node.path("formationId").asInt(0);
+        int surpriseFactor = node.path("surpriseFactor").asInt(0);
+        boolean isUnrunnable = node.path("isUnrunnable").asBoolean(false);
+        
+        int[] enemies = JsonLoader.parseIntArray(node.path("enemies"), "enemies", JSON_PATH);
+        int[] enemyMinCountA = JsonLoader.parseIntArray(node.path("enemyMinCountA"), "enemyMinCountA", JSON_PATH);
+        int[] enemyMaxCountA = JsonLoader.parseIntArray(node.path("enemyMaxCountA"), "enemyMaxCountA", JSON_PATH);
+        int[] enemyMinCountB = JsonLoader.parseIntArray(node.path("enemyMinCountB"), "enemyMinCountB", JSON_PATH);
+        int[] enemyMaxCountB = JsonLoader.parseIntArray(node.path("enemyMaxCountB"), "enemyMaxCountB", JSON_PATH);
+
+        return new EnemyFormationData(
+            formationId,
+            enemies,
+            surpriseFactor,
+            isUnrunnable,
+            enemyMinCountA,
+            enemyMaxCountA,
+            enemyMinCountB,
+            enemyMaxCountB
+        );
     }
 
     public int getFormationId(){
