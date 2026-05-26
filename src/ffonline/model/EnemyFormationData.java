@@ -70,26 +70,30 @@ public class EnemyFormationData {
         
         this.enemyMinCountA = new int[]{0, 0, 0, 0};
         this.enemyMaxCountA = new int[]{0, 0, 0, 0};     
-        if(enemyMinCountA.length != 4 || enemyMaxCountA.length != 4){
-            LOGGER.log(Level.WARNING, "Unexpected enemy formation size {0} in formation {1} A", new Object[]{enemies.length, formationId});       
-        } else for(int i=0;i<4;i++){
+        if(enemyMinCountA.length != 4)
+            LOGGER.log(Level.WARNING, "Unexpected min enemy formation size {0} in formation {1} A", new Object[]{enemyMinCountA.length, formationId});
+        else if(enemyMaxCountA.length != 4)
+            LOGGER.log(Level.WARNING, "Unexpected max enemy formation size {0} in formation {1} A", new Object[]{enemyMaxCountA.length, formationId});
+        else for(int i=0;i<4;i++){
             this.enemyMaxCountA[i] = enemyMaxCountA[i];
             
             if(enemyMinCountA[i] > enemyMaxCountA[i]){
-                LOGGER.log(Level.WARNING, "Min enemy count is bigger than max enemy count in formation {0} A",  formationId);    
+                LOGGER.log(Level.WARNING, "Min enemy count is bigger than max enemy count in formation {0} A",  formationId);
                 this.enemyMinCountA[i] = enemyMaxCountA[i];
             } else this.enemyMinCountA[i] = enemyMinCountA[i];
         }
         
         this.enemyMinCountB = new int[]{0, 0};
         this.enemyMaxCountB = new int[]{0, 0};
-        if(enemyMinCountB.length != 2 || enemyMaxCountB.length != 2){
-            LOGGER.log(Level.WARNING, "Unexpected enemy formation size {0} in formation {1} B", new Object[]{enemies.length, formationId});       
-        } else for(int i=0;i<2;i++){
+        if(enemyMinCountB.length != 2)
+            LOGGER.log(Level.WARNING, "Unexpected min enemy formation size {0} in formation {1} B", new Object[]{enemyMinCountB.length, formationId});
+        else if(enemyMaxCountB.length != 2)
+            LOGGER.log(Level.WARNING, "Unexpected max enemy formation size {0} in formation {1} B", new Object[]{enemyMaxCountB.length, formationId});
+        else for(int i=0;i<2;i++){
             this.enemyMaxCountB[i] = enemyMaxCountB[i];
             
             if(enemyMinCountB[i] > enemyMaxCountB[i]){
-                LOGGER.log(Level.WARNING, "Min enemy count is bigger than max enemy count in formation {0} B",  formationId);    
+                LOGGER.log(Level.WARNING, "Min enemy count is bigger than max enemy count in formation {0} B",  formationId);
                 this.enemyMinCountB[i] = enemyMaxCountB[i];
             } else this.enemyMinCountB[i] = enemyMinCountB[i];
         }
