@@ -85,7 +85,8 @@ public class EncounterData {
             if(enemyMinCountA.get(i) > enemyMaxCountA.get(i)){
                 LOGGER.log(Level.WARNING, "Min enemy count is bigger than max enemy count in formation {0} A",  formationId);
                 this.enemyMinCountA.set(i, enemyMaxCountA.get(i));
-            } this.enemyMinCountA.set(i, enemyMinCountA.get(i));
+            } else
+                this.enemyMinCountA.set(i, enemyMinCountA.get(i));
         }
         
         this.enemyMinCountB = new ArrayList<>(Arrays.asList(0, 0));
@@ -100,7 +101,8 @@ public class EncounterData {
             if(enemyMinCountB.get(i) > enemyMaxCountB.get(i)){
                 LOGGER.log(Level.WARNING, "Min enemy count is bigger than max enemy count in formation {0} B",  formationId);
                 this.enemyMinCountB.set(i, enemyMaxCountB.get(i));
-            } this.enemyMinCountB.set(i, enemyMinCountB.get(i));
+            } else
+                this.enemyMinCountB.set(i, enemyMinCountB.get(i));
         }
     }
     
