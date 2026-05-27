@@ -95,7 +95,7 @@ public class JsonLoader {
         return result;
     }
     
-    public static int[] parseIntArray(JsonNode node, String label, String jsonPath) {
+    public static List<Integer> parseIntArray(JsonNode node, String label, String jsonPath) {
         List<Integer> list = new ArrayList<>();
         if (node.isArray()) {
             for (JsonNode enemyIdNode : node) {
@@ -104,7 +104,7 @@ public class JsonLoader {
         } else {
             LOGGER.log(Level.WARNING, "Entry '{0}' in {1} isn't an array", new Object[]{label, jsonPath});
         }
-        return list.stream().mapToInt(Integer::intValue).toArray();
+        return list;
     }
 
     public static JsonNode getGrowth(){

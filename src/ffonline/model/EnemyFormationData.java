@@ -24,7 +24,7 @@
 package ffonline.model;
 
 import ffonline.JsonLoader;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,63 +39,63 @@ public class EnemyFormationData {
     public static final String JSON_PATH = "json/formation.json";
     
     private final int formationId;
-    private final int[] enemies;
+    private final List<Integer> enemies;
     private final int surpriseFactor;
     private final boolean isUnrunnable;
     
-    private final int[] enemyMinCountA;
-    private final int[] enemyMaxCountA;
-    private final int[] enemyMinCountB;
-    private final int[] enemyMaxCountB;
+    private final List<Integer> enemyMinCountA;
+    private final List<Integer> enemyMaxCountA;
+    private final List<Integer> enemyMinCountB;
+    private final List<Integer> enemyMaxCountB;
     
     public EnemyFormationData(
         int formationId,
-        int[] enemies,
+        List<Integer> enemies,
         int surpriseFactor,
         boolean isUnrunnable,
-        int[] enemyMinCountA,
-        int[] enemyMaxCountA,
-        int[] enemyMinCountB,
-        int[] enemyMaxCountB
+        List<Integer> enemyMinCountA,
+        List<Integer> enemyMaxCountA,
+        List<Integer> enemyMinCountB,
+        List<Integer> enemyMaxCountB
     ){
         this.formationId = formationId;
         
-        if(enemies.length != 4){
-            LOGGER.log(Level.WARNING, "Unexpected enemy formation size {0} in formation {1}", new Object[]{enemies.length, formationId});
-            this.enemies = new int[]{1, 1, 1, 1};
+        if(enemies.size() != 4){
+            LOGGER.log(Level.WARNING, "Unexpected enemy formation size {0} in formation {1}", new Object[]{enemies.size(), formationId});
+            this.enemies = List.of(1, 1, 1, 1);
         } else this.enemies = enemies;
         
         this.surpriseFactor = surpriseFactor&0xff;
         this.isUnrunnable = isUnrunnable;
         
-        this.enemyMinCountA = new int[]{0, 0, 0, 0};
-        this.enemyMaxCountA = new int[]{0, 0, 0, 0};     
-        if(enemyMinCountA.length != 4)
-            LOGGER.log(Level.WARNING, "Unexpected min enemy formation size {0} in formation {1} A", new Object[]{enemyMinCountA.length, formationId});
-        else if(enemyMaxCountA.length != 4)
-            LOGGER.log(Level.WARNING, "Unexpected max enemy formation size {0} in formation {1} A", new Object[]{enemyMaxCountA.length, formationId});
+        this.enemyMinCountA = List.of(0, 0, 0, 0);
+        this.enemyMaxCountA = List.of(0, 0, 0, 0);     
+        if(enemyMinCountA.size() != 4)
+            LOGGER.log(Level.WARNING, "Unexpected min enemy formation size {0} in formation {1} A", new Object[]{enemyMinCountA.size(), formationId});
+        else if(enemyMaxCountA.size() != 4)
+            LOGGER.log(Level.WARNING, "Unexpected max enemy formation size {0} in formation {1} A", new Object[]{enemyMaxCountA.size(), formationId});
         else for(int i=0;i<4;i++){
-            this.enemyMaxCountA[i] = enemyMaxCountA[i];
+            this.enemyMaxCountA.set(i, enemyMaxCountA.get(i));
             
-            if(enemyMinCountA[i] > enemyMaxCountA[i]){
+            if(enemyMinCountA.get(i) > enemyMaxCountA.get(i)){
                 LOGGER.log(Level.WARNING, "Min enemy count is bigger than max enemy count in formation {0} A",  formationId);
-                this.enemyMinCountA[i] = enemyMaxCountA[i];
-            } else this.enemyMinCountA[i] = enemyMinCountA[i];
+                this.enemyMinCountA.set(i, enemyMaxCountA.get(i));
+            } this.enemyMinCountA.set(i, enemyMinCountA.get(i));
         }
         
-        this.enemyMinCountB = new int[]{0, 0};
-        this.enemyMaxCountB = new int[]{0, 0};
-        if(enemyMinCountB.length != 2)
-            LOGGER.log(Level.WARNING, "Unexpected min enemy formation size {0} in formation {1} B", new Object[]{enemyMinCountB.length, formationId});
-        else if(enemyMaxCountB.length != 2)
-            LOGGER.log(Level.WARNING, "Unexpected max enemy formation size {0} in formation {1} B", new Object[]{enemyMaxCountB.length, formationId});
+        this.enemyMinCountB = List.of(0, 0);
+        this.enemyMaxCountB = List.of(0, 0);
+        if(enemyMinCountB.size() != 2)
+            LOGGER.log(Level.WARNING, "Unexpected min enemy formation size {0} in formation {1} B", new Object[]{enemyMinCountB.size(), formationId});
+        else if(enemyMaxCountB.size() != 2)
+            LOGGER.log(Level.WARNING, "Unexpected max enemy formation size {0} in formation {1} B", new Object[]{enemyMaxCountB.size(), formationId});
         else for(int i=0;i<2;i++){
-            this.enemyMaxCountB[i] = enemyMaxCountB[i];
+            this.enemyMaxCountB.set(i, enemyMaxCountA.get(i));
             
-            if(enemyMinCountB[i] > enemyMaxCountB[i]){
+            if(enemyMinCountA.get(i) > enemyMaxCountB.get(i)){
                 LOGGER.log(Level.WARNING, "Min enemy count is bigger than max enemy count in formation {0} B",  formationId);
-                this.enemyMinCountB[i] = enemyMaxCountB[i];
-            } else this.enemyMinCountB[i] = enemyMinCountB[i];
+                this.enemyMinCountB.set(i, enemyMaxCountB.get(i));
+            } this.enemyMinCountB.set(i, enemyMinCountB.get(i));
         }
     }
     
@@ -105,11 +105,11 @@ public class EnemyFormationData {
         int surpriseFactor = node.path("surpriseFactor").asInt(0);
         boolean isUnrunnable = node.path("isUnrunnable").asBoolean(false);
         
-        int[] enemies = JsonLoader.parseIntArray(node.path("enemies"), "enemies", JSON_PATH);
-        int[] enemyMinCountA = JsonLoader.parseIntArray(node.path("enemyMinCountA"), "enemyMinCountA", JSON_PATH);
-        int[] enemyMaxCountA = JsonLoader.parseIntArray(node.path("enemyMaxCountA"), "enemyMaxCountA", JSON_PATH);
-        int[] enemyMinCountB = JsonLoader.parseIntArray(node.path("enemyMinCountB"), "enemyMinCountB", JSON_PATH);
-        int[] enemyMaxCountB = JsonLoader.parseIntArray(node.path("enemyMaxCountB"), "enemyMaxCountB", JSON_PATH);
+        List<Integer> enemies = JsonLoader.parseIntArray(node.path("enemies"), "enemies", JSON_PATH);
+        List<Integer> enemyMinCountA = JsonLoader.parseIntArray(node.path("enemyMinCountA"), "enemyMinCountA", JSON_PATH);
+        List<Integer> enemyMaxCountA = JsonLoader.parseIntArray(node.path("enemyMaxCountA"), "enemyMaxCountA", JSON_PATH);
+        List<Integer> enemyMinCountB = JsonLoader.parseIntArray(node.path("enemyMinCountB"), "enemyMinCountB", JSON_PATH);
+        List<Integer> enemyMaxCountB = JsonLoader.parseIntArray(node.path("enemyMaxCountB"), "enemyMaxCountB", JSON_PATH);
 
         return new EnemyFormationData(
             formationId,
@@ -128,7 +128,7 @@ public class EnemyFormationData {
     }
 
     public List<Integer> getEnemies(){
-        return Arrays.stream(enemies).boxed().toList();
+        return Collections.unmodifiableList(enemies);
     }
 
     public int getSurpriseFactor(){
@@ -140,18 +140,18 @@ public class EnemyFormationData {
     }
 
     public List<Integer> getEnemyMinCountA(){
-        return Arrays.stream(enemyMinCountA).boxed().toList();
+        return Collections.unmodifiableList(enemyMinCountA);
     }
 
     public List<Integer> getEnemyMaxCountA(){
-        return Arrays.stream(enemyMaxCountA).boxed().toList();
+        return Collections.unmodifiableList(enemyMaxCountA);
     }
 
     public List<Integer> getEnemyMinCountB(){
-        return Arrays.stream(enemyMinCountB).boxed().toList();
+        return Collections.unmodifiableList(enemyMinCountB);
     }
 
     public List<Integer> getEnemyMaxCountB(){
-        return Arrays.stream(enemyMaxCountB).boxed().toList();
+        return Collections.unmodifiableList(enemyMaxCountB);
     }
 }
