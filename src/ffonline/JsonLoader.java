@@ -29,7 +29,7 @@ import ffonline.model.Item;
 import ffonline.model.Magic;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.CharacterProgression;
-import ffonline.model.EnemyFormationData;
+import ffonline.model.EncounterData;
 import ffonline.model.Weapon;
 import java.io.File;
 import java.util.ArrayList;
@@ -187,12 +187,11 @@ public class JsonLoader {
         );
     }
     
-    public static Optional<EnemyFormationData> getEnemyFormationData(int jsonId){
-        return get(
-            jsonId,
-            EnemyFormationData.JSON_PATH,
-            EnemyFormationData::buildFromJson,
-            EnemyFormationData.class
+    public static Optional<EncounterData> getEncounterData(int jsonId){
+        return get(jsonId,
+            EncounterData.JSON_PATH,
+            EncounterData::buildFromJson,
+            EncounterData.class
         );
     }
 

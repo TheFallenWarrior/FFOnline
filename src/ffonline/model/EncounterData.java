@@ -34,9 +34,9 @@ import tools.jackson.databind.JsonNode;
  *
  * @author thefa
  */
-public class EnemyFormationData {
-    private static final Logger LOGGER = Logger.getLogger(EnemyFormationData.class.getName());
-    public static final String JSON_PATH = "json/formation.json";
+public class EncounterData {
+    private static final Logger LOGGER = Logger.getLogger(EncounterData.class.getName());
+    public static final String JSON_PATH = "json/encounter.json";
     
     private final int formationId;
     private final List<Integer> enemies;
@@ -48,7 +48,7 @@ public class EnemyFormationData {
     private final List<Integer> enemyMinCountB;
     private final List<Integer> enemyMaxCountB;
     
-    public EnemyFormationData(
+    public EncounterData(
         int formationId,
         List<Integer> enemies,
         int surpriseFactor,
@@ -100,7 +100,7 @@ public class EnemyFormationData {
     }
     
     
-    public static EnemyFormationData buildFromJson(JsonNode node){
+    public static EncounterData buildFromJson(JsonNode node){
         int formationId = node.path("formationId").asInt(0);
         int surpriseFactor = node.path("surpriseFactor").asInt(0);
         boolean isUnrunnable = node.path("isUnrunnable").asBoolean(false);
@@ -111,7 +111,7 @@ public class EnemyFormationData {
         List<Integer> enemyMinCountB = JsonLoader.parseIntArray(node.path("enemyMinCountB"), "enemyMinCountB", JSON_PATH);
         List<Integer> enemyMaxCountB = JsonLoader.parseIntArray(node.path("enemyMaxCountB"), "enemyMaxCountB", JSON_PATH);
 
-        return new EnemyFormationData(
+        return new EncounterData(
             formationId,
             enemies,
             surpriseFactor,
