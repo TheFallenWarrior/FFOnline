@@ -24,6 +24,8 @@
 package ffonline.model;
 
 import ffonline.JsonLoader;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
@@ -63,13 +65,13 @@ public class EncounterData {
         if(enemies.size() != 4){
             LOGGER.log(Level.WARNING, "Unexpected enemy formation size {0} in formation {1}", new Object[]{enemies.size(), formationId});
             this.enemies = List.of(1, 1, 1, 1);
-        } else this.enemies = enemies;
+        } else this.enemies = List.copyOf(enemies);
         
         this.surpriseFactor = surpriseFactor&0xff;
         this.isUnrunnable = isUnrunnable;
         
-        this.enemyMinCountA = List.of(0, 0, 0, 0);
-        this.enemyMaxCountA = List.of(0, 0, 0, 0);     
+        this.enemyMinCountA = new ArrayList<>(Arrays.asList(0, 0, 0, 0));
+        this.enemyMaxCountA = new ArrayList<>(Arrays.asList(0, 0, 0, 0));
         if(enemyMinCountA.size() != 4)
             LOGGER.log(Level.WARNING, "Unexpected min enemy formation size {0} in formation {1} A", new Object[]{enemyMinCountA.size(), formationId});
         else if(enemyMaxCountA.size() != 4)
@@ -83,16 +85,16 @@ public class EncounterData {
             } this.enemyMinCountA.set(i, enemyMinCountA.get(i));
         }
         
-        this.enemyMinCountB = List.of(0, 0);
-        this.enemyMaxCountB = List.of(0, 0);
+        this.enemyMinCountB = new ArrayList<>(Arrays.asList(0, 0));
+        this.enemyMaxCountB = new ArrayList<>(Arrays.asList(0, 0));
         if(enemyMinCountB.size() != 2)
             LOGGER.log(Level.WARNING, "Unexpected min enemy formation size {0} in formation {1} B", new Object[]{enemyMinCountB.size(), formationId});
         else if(enemyMaxCountB.size() != 2)
             LOGGER.log(Level.WARNING, "Unexpected max enemy formation size {0} in formation {1} B", new Object[]{enemyMaxCountB.size(), formationId});
         else for(int i=0;i<2;i++){
-            this.enemyMaxCountB.set(i, enemyMaxCountA.get(i));
+            this.enemyMaxCountB.set(i, enemyMaxCountB.get(i));
             
-            if(enemyMinCountA.get(i) > enemyMaxCountB.get(i)){
+            if(enemyMinCountB.get(i) > enemyMaxCountB.get(i)){
                 LOGGER.log(Level.WARNING, "Min enemy count is bigger than max enemy count in formation {0} B",  formationId);
                 this.enemyMinCountB.set(i, enemyMaxCountB.get(i));
             } this.enemyMinCountB.set(i, enemyMinCountB.get(i));
