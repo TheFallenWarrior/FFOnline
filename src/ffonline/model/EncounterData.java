@@ -37,6 +37,9 @@ import tools.jackson.databind.JsonNode;
  * @author thefa
  */
 public class EncounterData {
+    public static final int FORMATION_SIZE_A = 4;
+    public static final int FORMATION_SIZE_B = 2;
+    
     private static final Logger LOGGER = Logger.getLogger(EncounterData.class.getName());
     public static final String JSON_PATH = "json/encounter.json";
     
@@ -62,7 +65,7 @@ public class EncounterData {
     ){
         this.formationId = formationId;
         
-        if(enemies.size() != 4){
+        if(enemies.size() != FORMATION_SIZE_A){
             LOGGER.log(Level.WARNING, "Unexpected enemy formation size {0} in formation {1}", new Object[]{enemies.size(), formationId});
             this.enemies = List.of(1, 1, 1, 1);
         } else this.enemies = List.copyOf(enemies);
@@ -72,9 +75,9 @@ public class EncounterData {
         
         this.enemyMinCountA = new ArrayList<>(Arrays.asList(0, 0, 0, 0));
         this.enemyMaxCountA = new ArrayList<>(Arrays.asList(0, 0, 0, 0));
-        if(enemyMinCountA.size() != 4)
+        if(enemyMinCountA.size() != FORMATION_SIZE_A)
             LOGGER.log(Level.WARNING, "Unexpected min enemy formation size {0} in formation {1} A", new Object[]{enemyMinCountA.size(), formationId});
-        else if(enemyMaxCountA.size() != 4)
+        else if(enemyMaxCountA.size() != FORMATION_SIZE_A)
             LOGGER.log(Level.WARNING, "Unexpected max enemy formation size {0} in formation {1} A", new Object[]{enemyMaxCountA.size(), formationId});
         else for(int i=0;i<4;i++){
             this.enemyMaxCountA.set(i, enemyMaxCountA.get(i));
@@ -87,9 +90,9 @@ public class EncounterData {
         
         this.enemyMinCountB = new ArrayList<>(Arrays.asList(0, 0));
         this.enemyMaxCountB = new ArrayList<>(Arrays.asList(0, 0));
-        if(enemyMinCountB.size() != 2)
+        if(enemyMinCountB.size() != FORMATION_SIZE_B)
             LOGGER.log(Level.WARNING, "Unexpected min enemy formation size {0} in formation {1} B", new Object[]{enemyMinCountB.size(), formationId});
-        else if(enemyMaxCountB.size() != 2)
+        else if(enemyMaxCountB.size() != FORMATION_SIZE_B)
             LOGGER.log(Level.WARNING, "Unexpected max enemy formation size {0} in formation {1} B", new Object[]{enemyMaxCountB.size(), formationId});
         else for(int i=0;i<2;i++){
             this.enemyMaxCountB.set(i, enemyMaxCountB.get(i));
