@@ -63,7 +63,7 @@ public class JsonLoader {
      *  others will wait and receive the cached instance.
      */
     private static JsonNode getJsonRoot(String cacheKey, String jsonPath){
-        return JSON_CACHE.computeIfAbsent(cacheKey, k ->{
+        return JSON_CACHE.computeIfAbsent(cacheKey, k -> {
             try{
                 return MAPPER.readTree(new File(jsonPath));
             } catch(JacksonException e){
@@ -95,13 +95,13 @@ public class JsonLoader {
         return result;
     }
     
-    public static List<Integer> parseIntArray(JsonNode node, String label, String jsonPath) {
+    public static List<Integer> parseIntArray(JsonNode node, String label, String jsonPath){
         List<Integer> list = new ArrayList<>();
-        if (node.isArray()) {
-            for (JsonNode enemyIdNode : node) {
+        if(node.isArray()){
+            for(JsonNode enemyIdNode : node){
                 list.add(enemyIdNode.asInt(0));
             }
-        } else {
+        } else{
             LOGGER.log(Level.WARNING, "Entry '{0}' in {1} isn't an array", new Object[]{label, jsonPath});
         }
         return list;
@@ -113,10 +113,10 @@ public class JsonLoader {
     }
 
     private static <T> Optional<T> get(
-            int jsonId,
-            String jsonPath,
-            Function<JsonNode, T> constructor,
-            Class<T> type
+        int jsonId,
+        String jsonPath,
+        Function<JsonNode, T> constructor,
+        Class<T> type
     ){
         String typeName = type.getSimpleName();
         JsonNode root = getJsonRoot(typeName, jsonPath);
