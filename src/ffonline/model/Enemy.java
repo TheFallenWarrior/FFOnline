@@ -181,7 +181,7 @@ public class Enemy extends Battler {
      * No-op, enemies should be discarded when a battle ends
      */
     @Override
-    public void battleEnd(){}
+    public void onBattleEnd(){}
 
     public int getExp(){
         return exp;

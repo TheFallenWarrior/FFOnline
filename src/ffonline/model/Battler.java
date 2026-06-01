@@ -143,7 +143,7 @@ public abstract class Battler {
     /**
      * Removes temporary battle effects
      */
-    public abstract void battleEnd();
+    public abstract void onBattleEnd();
 
 
     public void increaseHitMultiplier(){

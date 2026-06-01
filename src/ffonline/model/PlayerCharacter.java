@@ -142,7 +142,7 @@ public class PlayerCharacter extends Battler {
     }
 
     @Override
-    public void battleEnd(){
+    public void onBattleEnd(){
         // Remove temporary status ailments
         removeStatus(StatusAilment.BLIND);
         removeStatus(StatusAilment.PARALYZED);
