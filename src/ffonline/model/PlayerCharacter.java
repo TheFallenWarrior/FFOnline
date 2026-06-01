@@ -39,7 +39,7 @@ import tools.jackson.databind.JsonNode;
  * @author thefa
  */
 public class PlayerCharacter extends Battler {
-    private static final int MAX_INVENTORY = 4;
+    private static final int EQUIP_MAX_INVENTORY = 4;
     private static final int MAGIC_MAX_INVENTORY = 3;
     private static final int STARTING_MP = 2;
     
@@ -60,10 +60,10 @@ public class PlayerCharacter extends Battler {
     
     private CharacterJob job;
     
-    private final Inventory<Armor> armorInventory = new Inventory<>(MAX_INVENTORY);
+    private final Inventory<Armor> armorInventory = new Inventory<>(EQUIP_MAX_INVENTORY);
     private final EnumMap<ArmorType, Armor> equippedArmors = new EnumMap<>(ArmorType.class);
 
-    private final Inventory<Weapon> weaponInventory = new Inventory<>(MAX_INVENTORY);
+    private final Inventory<Weapon> weaponInventory = new Inventory<>(EQUIP_MAX_INVENTORY);
     private Weapon equippedWeapon;
     
     private final List<MagicLevel> spellbook = new ArrayList<>();
