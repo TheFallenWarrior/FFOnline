@@ -38,7 +38,7 @@ public class Presentation {
     private Presentation(){}
     
     /**
-     * Returns the name of the most severe status afflicting a character
+     * Returns the name of the most severe status afflicting a character, assuming statuses are ordered by severity
      * @param battler the {@code Battler} to get the status ailment from
      * @return a string with the name of the first status ailment in {@code battler.statuses}, or "OK" if there are none
      */
