@@ -42,6 +42,8 @@ public class CharacterProgression{
     public static final String JSON_PATH = "json/growth.json";
     private static final Logger LOGGER = Logger.getLogger(CharacterProgression.class.getName());
     
+    private CharacterProgression(){}
+    
     public static Optional<CharacterJob> getPromotion(JsonNode jobRoot, CharacterJob job){
         // This catches promoted jobs not having promotions of their own
         Optional<String> promOpt = jobRoot.path("promotion").asStringOpt();
