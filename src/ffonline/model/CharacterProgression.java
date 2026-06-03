@@ -141,8 +141,8 @@ public class CharacterProgression{
                 // Starting at level 15, gain a charge for the 3 lower spell levels every
                 //  odd level.
                 // NOTE: Characters with limited MP growth should have their max MPs capped
-                //  at 4, but we ignore this, since we can't see the character's max MP
-                //  from this method.
+                //  at 4, but since we can't see the character's max MP from this method,
+                //  the caller must be responsible for handling it.
                 if(newLevel > 15 && newLevel%2 == 1){
                     int i = 0;
                     for(; i < 3; i++) mp.add(1);
