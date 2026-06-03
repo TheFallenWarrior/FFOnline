@@ -83,6 +83,10 @@ public class Inventory<T extends Item> implements Iterable<T> {
         return items.get(index);
     }
     
+    public boolean contains(T item){
+        return items.contains(item);
+    }
+    
     public int size(){
         return items.size();
     }
