@@ -169,6 +169,7 @@ public class PlayerCharacter extends Battler {
         return armorInventory.add(armor);
     }
     
+    @Deprecated
     public Optional<Armor> dropArmor(int inventoryIndex){
         if(
             inventoryIndex < 0 ||
@@ -185,6 +186,23 @@ public class PlayerCharacter extends Battler {
         return Optional.of(armorInventory.remove(inventoryIndex));
     }
     
+    /**
+     * Removes an armor from the character's inventory, unequipping it first if it is equipped
+     * @param toDrop armor to drop
+     * @return {@code true} if {@code toDrop} is not null and was successfully dropped, {@code  false} otherwise
+     */
+    public boolean dropArmor(Armor toDrop){
+        if(toDrop == null) return false;
+        
+        if(equippedArmors.get(toDrop.getType()) == toDrop){
+            equippedArmors.remove(toDrop.getType());
+            updateStats();
+        }
+        
+        return armorInventory.remove(toDrop);
+    }
+    
+    @Deprecated
     public boolean equipArmor(int inventoryIndex){
         if(
             inventoryIndex < 0 ||
@@ -201,6 +219,24 @@ public class PlayerCharacter extends Battler {
         return false;
     }
     
+    /**
+     * Equip an armor from the character's inventory
+     * @param toEquip 
+     * @return {@code false} if {@code toEquip} is {@code null}, not in inventory, or not equippable by
+     *  the character's job, {@code true} otherwise
+     */
+    public boolean equipArmor(Armor toEquip){
+        if(toEquip == null || !armorInventory.contains(toEquip)) return false;
+        
+        if(toEquip.isEquippable(job)){
+            equippedArmors.put(toEquip.getType(), toEquip);
+            updateStats();
+            return true;
+        }
+        return false;
+    }
+    
+    @Deprecated
     public boolean unequipArmor(int inventoryIndex){
         if(
             inventoryIndex < 0 ||
@@ -210,6 +246,22 @@ public class PlayerCharacter extends Battler {
         Armor toUnequip = armorInventory.get(inventoryIndex);
         
         if(equippedArmors.get(toUnequip.getType()) != toUnequip) return false;
+        equippedArmors.remove(toUnequip.getType());
+        updateStats();
+        return true;
+    }
+    
+    /**
+     * Remove an armor from the character's equipment, keeping it in the inventory
+     * @param toUnequip armor to be unequipped
+     * @return {@code false} if {@code toUnequip} is {@code null}, or not equipped, {@code true} otherwise
+     */
+    public boolean unequipArmor(Armor toUnequip){
+        if(
+            toUnequip == null ||
+            equippedArmors.get(toUnequip.getType()) != toUnequip
+        ) return false;
+        
         equippedArmors.remove(toUnequip.getType());
         updateStats();
         return true;
@@ -225,6 +277,7 @@ public class PlayerCharacter extends Battler {
         return weaponInventory.add(weapon);
     }
     
+    @Deprecated
     public Optional<Weapon> dropWeapon(int inventoryIndex){
         if(
             inventoryIndex < 0 ||
@@ -237,6 +290,21 @@ public class PlayerCharacter extends Battler {
         return Optional.of(weaponInventory.remove(inventoryIndex));
     }
     
+    /**
+     * Removes a weapon from the character's inventory, unequipping it first if it is equipped
+     * @param toDrop weapon to drop
+     * @return {@code true} if {@code toDrop} is not null and was successfully dropped, {@code  false} otherwise
+     */
+    public boolean dropWeapon(Weapon toDrop){
+        if(toDrop == null) return false;
+        
+        if(toDrop == equippedWeapon)
+            unequipWeapon();
+        
+        return weaponInventory.remove(toDrop);
+    }
+    
+    @Deprecated
     public boolean equipWeapon(int inventoryIndex){
         if(
             inventoryIndex < 0 ||
@@ -245,6 +313,23 @@ public class PlayerCharacter extends Battler {
         
         if(weaponInventory.get(inventoryIndex).isEquippable(job)){
             equippedWeapon = weaponInventory.get(inventoryIndex);
+            updateStats();
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Equip a weapon from the character's inventory
+     * @param toEquip weapon to be equipped
+     * @return {@code false} if {@code toEquip} is {@code null}, not in inventory, or not equippable by
+     *  the character's job, {@code true} otherwise
+     */
+    public boolean equipWeapon(Weapon toEquip){
+        if(toEquip == null || !weaponInventory.contains(toEquip)) return false;
+        
+        if(toEquip.isEquippable(job)){
+            equippedWeapon = toEquip;
             updateStats();
             return true;
         }
