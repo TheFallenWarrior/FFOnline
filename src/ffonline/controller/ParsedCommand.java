@@ -75,6 +75,11 @@ public class ParsedCommand {
     }
     
     public ParsedCommand reparse(int argsLength){
+        return new ParsedCommand(toString(), argsLength);
+    }
+    
+    @Override
+    public String toString(){
         StringBuilder command = new StringBuilder(verb);
         for(String arg : args){
             if(arg.contains(" ")) arg = "\""+arg+"\"";
@@ -82,7 +87,7 @@ public class ParsedCommand {
         }
         command.append(" ").append(rest);
         
-        return new ParsedCommand(command.toString(), argsLength);
+        return command.toString();
     }
 
     public String getVerb(){
