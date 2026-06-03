@@ -30,6 +30,9 @@ import ffonline.controller.ServerController;
  * @author thefa
  */
 public class Main {
+    
+    private Main(){}
+    
     /**
      * @param args the command line arguments
      */
