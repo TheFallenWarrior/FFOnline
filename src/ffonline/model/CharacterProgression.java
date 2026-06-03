@@ -203,78 +203,25 @@ public class CharacterProgression{
     
     /**
      * DTO for stat increases. With the exception of hpBonus, its fields are
-     * designed to be added (accumulated) to character stats upon level up.
+     * designed to be accumulated to character stats upon level up.
      */
-    public static class StatGrowth{
-        private final int hitChance;
-        private final int magicDefense;
-        private final int strength;
-        private final int agility;
-        private final int intelligence;
-        private final int vitality;
-        private final int luck;
-
-        private final List<Integer> mp;
-        
-        // Whether the character should have the extra 20-25 HP increase
-        private final boolean hpBonus;
-        
-        public StatGrowth(
-            int hitChance,
-            int magicDefense,
-            boolean hpBonus,
-            int strength,
-            int agility,
-            int intelligence,
-            int vitality,
-            int luck,
-            List<Integer> mp
-        ){
-            this.hitChance = hitChance;
-            this.magicDefense = magicDefense;
-            this.strength = strength;
-            this.agility = agility;
-            this.intelligence = intelligence;
-            this.vitality = vitality;
-            this.luck = luck;
-            this.hpBonus = hpBonus;
-            this.mp = Collections.unmodifiableList(mp);
-        }
-        
-        public int getHitChance(){
-            return hitChance;
-        }
-
-        public int getMagicDefense(){
-            return magicDefense;
-        }
-
-        public int getStrength(){
-            return strength;
-        }
-
-        public int getAgility(){
-            return agility;
-        }
-
-        public int getIntelligence(){
-            return intelligence;
-        }
-
-        public int getVitality(){
-            return vitality;
-        }
-
-        public int getLuck(){
-            return luck;
-        }
-
-        public boolean isHpBonus(){
-            return hpBonus;
-        }
-        
-        public List<Integer> getMp(){
-            return mp;
+    public record StatGrowth(
+        int hitChance,
+        int magicDefense,
+        boolean hpBonus,
+        int strength,
+        int agility,
+        int intelligence,
+        int vitality,
+        int luck,
+        List<Integer> mp
+    ){
+        /**
+         * Returns an unmodifiable view of the {@code mp} record component.
+         * @return an unmodifiable view of the {@code mp} record component
+         */
+        public List<Integer> mp(){
+            return Collections.unmodifiableList(mp);
         }
     }
 }

@@ -424,29 +424,29 @@ public class PlayerCharacter extends Battler {
         if(growthOpt.isEmpty()) return growthOpt;
         var growth = growthOpt.get();
         
-        setBaseHitChance(baseHitChance + growth.getHitChance());
-        offsetMagicDefense(growth.getMagicDefense());
+        setBaseHitChance(baseHitChance + growth.hitChance());
+        offsetMagicDefense(growth.magicDefense());
         
-        setStrength(strength + growth.getStrength());
-        setAgility(agility + growth.getAgility());
-        setIntelligence(intelligence + growth.getIntelligence());
-        setVitality(vitality + growth.getVitality());
-        setLuck(luck + growth.getLuck());
+        setStrength(strength + growth.strength());
+        setAgility(agility + growth.agility());
+        setIntelligence(intelligence + growth.intelligence());
+        setVitality(vitality + growth.vitality());
+        setLuck(luck + growth.luck());
         
         offsetMaxHp(vitality/4);
         // Optionally add 20..25 to max HP
-        if(growth.isHpBonus()) offsetMaxHp(20 + rng.nextInt(0, 6));
+        if(growth.hpBonus()) offsetMaxHp(20 + rng.nextInt(0, 6));
         
         // MP handling
-        if(growth.getMp().size() != spellbook.size()){
+        if(growth.mp().size() != spellbook.size()){
             LOGGER.log(
                 Level.WARNING,
                 "MP length mismatch: {0} vs {1}",
-                new Object[]{growth.getMp().size(), spellbook.size()}
+                new Object[]{growth.mp().size(), spellbook.size()}
             );
         } else{
             for(int i=0;i<spellbook.size();i++){
-                spellbook.get(i).maxMp += growth.getMp().get(i);
+                spellbook.get(i).maxMp += growth.mp().get(i);
                 
                 // Knights and Ninjas have an MP cap of 4
                 if(job == CharacterJob.KNIGHT || job == CharacterJob.NINJA){
