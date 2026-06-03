@@ -101,7 +101,7 @@ public class ServerController {
                 if(username == null || username.isBlank()) username = "Guest";
                 
                 out.println("Welcome, "+username+"!");
-                broadcast(Presentation.login(username));
+                broadcast(Presentation.loginMessage(username));
                 
                 game = new GameStateManager(out);
                 state = ClientState.IN_GAME;
@@ -124,7 +124,7 @@ public class ServerController {
             switch(parseComm.getVerb()){
                 case "ooc" -> {
                     if(parseComm.getRest().length() > 0)
-                        broadcast(Presentation.say(username, parseComm.getRest()));
+                        broadcast(Presentation.sayMessage(username, parseComm.getRest()));
                     else
                         out.println("Error: Expected message after command.");
                 }
@@ -176,7 +176,7 @@ public class ServerController {
                 );
             }
             
-            broadcast(Presentation.logout(username));
+            broadcast(Presentation.logoutMessage(username));
             LOGGER.log(Level.INFO, "Client disconnected: {0}.", clientSocket.getRemoteSocketAddress());
             state = ClientState.LOGGED_OUT;
         }

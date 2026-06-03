@@ -114,7 +114,7 @@ public class GameStateManager {
     private void helpCommand(ParsedCommand parseComm){
         switch(parseComm.getArgs().size()){
             case 0 -> {
-                out.println(Presentation.help(CommandHelp.getUsages()));
+                out.println(Presentation.helpMessage(CommandHelp.getUsages()));
             }
             
             case 1 -> {
@@ -122,7 +122,7 @@ public class GameStateManager {
                 if(helpOpt.isEmpty())
                     out.println("Unknown command: \""+parseComm.getArgs().getFirst()+"\"");
                 else
-                    out.println(Presentation.help(helpOpt.get()));
+                    out.println(Presentation.helpMessage(helpOpt.get()));
             }
         }
         out.flush();

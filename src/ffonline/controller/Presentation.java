@@ -50,19 +50,19 @@ public class Presentation {
         return "OK";
     }
     
-    public static String login(String username){
+    public static String loginMessage(String username){
         return "LIGHT WARRIOR "+username+"'s journey begins..";
     }
     
-    public static String logout(String username){
+    public static String logoutMessage(String username){
         return "LIGHT WARRIOR "+username+" disappeared into the void.";
     }
     
-    public static String say(String username, String message){
+    public static String sayMessage(String username, String message){
         return username+" says, \""+message+"\"";
     }
     
-    public static String help(List<String> commands){
+    public static String helpMessage(List<String> commands){
         StringBuilder str = new StringBuilder("Available commands listed below. Type 'help <command>' for more information.\n");
         for(String command : commands){
             str.append(String.format(" %s\n", command));
@@ -70,7 +70,7 @@ public class Presentation {
         return str.toString();
     }
     
-    public static String help(CommandHelp.HelpData helpData){
+    public static String helpMessage(CommandHelp.HelpData helpData){
         StringBuilder str = new StringBuilder(String.format(
             "%s command help:\n" +
             " Usage: %s \n" +
