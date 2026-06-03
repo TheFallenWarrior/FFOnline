@@ -433,9 +433,7 @@ public class PlayerCharacter extends Battler {
         setVitality(vitality + growth.vitality());
         setLuck(luck + growth.luck());
         
-        offsetMaxHp(vitality/4);
-        // Optionally add 20..25 to max HP
-        if(growth.hpBonus()) offsetMaxHp(20 + rng.nextInt(0, 6));
+        offsetMaxHp(vitality/4 + growth.hp());
         
         // MP handling
         if(growth.mp().size() != spellbook.size()){

@@ -117,6 +117,11 @@ public class CharacterProgression{
             if(saivl[i] != 0) continue;
             if(rng.nextInt(0, 4) == 0) saivl[i] = 1;
         }
+        
+        int hp = 0;
+        // HP increases by 20..25 if marked for growth
+        // NOTE: A base HP increase of Vit/4 should always be applied, the caller must be responsible for handling it.
+        if(saivl[0] == 1) hp = 20 + rng.nextInt(0, 6);
 
         // MP resolution; use the promoted-class mpMode override when present, else fall back to base class
         List<Integer> mp = new ArrayList<>();
@@ -169,7 +174,7 @@ public class CharacterProgression{
         return Optional.of(new StatGrowth(
                 hitChance,
                 magicDefense,
-                saivl[0] == 1,
+                hp,
                 saivl[1],
                 saivl[2],
                 saivl[3],
@@ -210,7 +215,7 @@ public class CharacterProgression{
     public record StatGrowth(
         int hitChance,
         int magicDefense,
-        boolean hpBonus,
+        int hp,
         int strength,
         int agility,
         int intelligence,
