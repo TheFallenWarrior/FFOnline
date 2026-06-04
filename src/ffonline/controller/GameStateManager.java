@@ -108,7 +108,6 @@ public class GameStateManager {
                 else out.println("Error: '"+parseComm.getArgs().getFirst()+"' isn't a valid character name or character index.");
             }
         }
-        out.flush();
     }
     
     private void helpCommand(ParsedCommand parseComm){
@@ -125,7 +124,6 @@ public class GameStateManager {
                     out.println(Presentation.helpMessage(helpOpt.get()));
             }
         }
-        out.flush();
     }
     
     @FunctionalInterface
