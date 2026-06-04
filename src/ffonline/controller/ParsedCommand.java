@@ -34,6 +34,8 @@ import java.util.regex.Pattern;
  * @author thefa
  */
 public class ParsedCommand {
+    private static final Pattern TOKEN_PATTERN = Pattern.compile("\"([^\"]*)\"|\\S+");
+    
     private final String verb;
     private final List<String> args = new ArrayList<>();
     private final String rest;
@@ -49,8 +51,7 @@ public class ParsedCommand {
         
         List<String> tokens = new ArrayList<>();
         
-        Pattern pattern = Pattern.compile("\"([^\"]*)\"|\\S+");
-        Matcher matcher = pattern.matcher(command);
+        Matcher matcher = TOKEN_PATTERN.matcher(command);
         
         while(matcher.find()){
             if(matcher.group(1) != null) tokens.add(matcher.group(1)); // Quoted token
