@@ -65,8 +65,13 @@ public class ParsedCommand {
         if(argsEnd < tokens.size()){
             StringBuilder restBuilder = new StringBuilder();
             for(int i=argsEnd;i<tokens.size();i++){
+                // Don't prepend whitespace if the first token in rest
                 if(i > argsEnd) restBuilder.append(" ");
-                restBuilder.append(tokens.get(i));
+                
+                // Keep quotes around tokens with whitespace
+                if(tokens.get(i).matches(".*\\s.*"))
+                    restBuilder.append("\"").append(tokens.get(i)).append("\"");
+                else restBuilder.append(tokens.get(i));
             }
             rest = restBuilder.toString();
         } else{
@@ -82,8 +87,8 @@ public class ParsedCommand {
     public String toString(){
         StringBuilder command = new StringBuilder(verb);
         for(String arg : args){
-            if(arg.contains(" ")) arg = "\""+arg+"\"";
-            command.append(" ").append(arg);
+            if(arg.matches(".*\\s.*")) command.append(" \"").append(arg).append("\"");
+            else command.append(" ").append(arg);
         }
         command.append(" ").append(rest);
         
