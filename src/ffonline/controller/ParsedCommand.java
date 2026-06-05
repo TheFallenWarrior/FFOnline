@@ -91,7 +91,7 @@ public class ParsedCommand {
             if(arg.matches(".*\\s.*")) command.append(" \"").append(arg).append("\"");
             else command.append(" ").append(arg);
         }
-        command.append(" ").append(rest);
+        if(!rest.isBlank()) command.append(" ").append(rest);
         
         return command.toString();
     }
