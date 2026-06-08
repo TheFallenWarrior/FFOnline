@@ -50,6 +50,57 @@ public class Presentation {
         return "OK";
     }
     
+    /**
+     * Converts an integer to a String using Final Fantasy's int to string algorithm
+     * @param value the number to be converted, treated as a 24-bit unsigned int
+     * @return a left-aligned, 6-digit wide string representation of {@code value}
+     */
+    private static String formatNumber6Digits(int value){
+        // INTENTIONAL: This method returns wrong values if input is bigger than 999999, replicating
+        //  observed behavior from FF1
+        
+        int tmp = value & 0xffffff;
+        char[] buf = new char[6];
+        
+        // Powers of 10
+        int[] p10 = {100000, 10000, 1000, 100};
+
+        // Calculate digits 0 through 3 (100000s to 1000s)
+        for(int d = 0; d < 4; d++){
+            // Discard upper 8 bits for digits 2 and 3
+            if(d >= 2) tmp &= 0xffff;
+
+            int digit = 0;
+            // Walk through multiples of p10[d] to find the correct digit
+            for(int x=8;x>=0;x--){
+                if(tmp >= (x+1) * p10[d]){
+                    tmp -= (x+1) * p10[d];
+                    digit = x + 1;
+                    break;
+                }
+            }
+            buf[d] = (char)('0' + digit);
+        }
+
+        // Calculate digits 4 and 5 (tens and ones)
+        tmp &= 0xff; // Discard middle 8 bits
+        int tens = tmp/10;
+        int ones = tmp%10;
+
+        // Since the tens digit can be bigger than 9 and display incorrectly, simulate Final Fantasy's string encoding
+        // May go up to P5 (255)
+        buf[4] = (char)(tens <= 9 ? '0' + tens : 'A' + tens-10);
+        buf[5] = (char)('0' + ones);
+
+        // Replace leading '0's with spaces, never trimming the ones digit
+        for(int i = 0; i < 5; i++){
+            if(buf[i] == '0') buf[i] = ' ';
+            else break;
+        }
+
+        return new String(buf);
+    }
+    
     public static String loginMessage(String username){
         return "LIGHT WARRIOR "+username+"'s journey begins..";
     }
@@ -95,13 +146,10 @@ public class Presentation {
     }
     
     public static String characterStats(PlayerCharacter character){
-        // INTENTIONAL: Experience displays wrong values for numbers smaller than
-        //  0 or bigger than 999999. However, in such cases, '%1000000' won't yield
-        //  the same results as FF's 24-bit int to decimal conversion.
         return String.format(
             "%s - %s - LEV %2d\n\n" +
-            " EXP. POINTS\t%6d\n" +
-            " FOR LEV UP\t%6d\n\n" +
+            " EXP. POINTS\t%s\n" +
+            " FOR LEV UP\t%s\n\n" +
             " STR.\t%2d\tDAMAGE\t%2d\n" +
             " AGL.\t%2d\tHIT%%\t%2d\n" +
             " INT.\t%2d\tABSORB\t%2d\n" +
@@ -110,8 +158,8 @@ public class Presentation {
             character.getName(),
             character.getJob().displayName(),
             character.getLevel(),
-            character.getExp()%1000000,
-            character.getExpForNextLevel()%1000000,
+            formatNumber6Digits(character.getExp()),
+            formatNumber6Digits(character.getExpForNextLevel()),
             character.getStrength(),
             character.getDamage(),
             character.getAgility(),
