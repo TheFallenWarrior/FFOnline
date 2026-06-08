@@ -52,7 +52,7 @@ public enum StatusAilment {
      * @param statuses EnumSet-encoded status set
      * @return bit-mask-encoded status set
      */
-    public static int bitmask(EnumSet<StatusAilment> statuses){
+    public static int toBitmask(EnumSet<StatusAilment> statuses){
         int accumulator = 0;
         for(StatusAilment status : statuses){
             accumulator |= (1 << status.ordinal());

@@ -78,7 +78,7 @@ public class RunCommand extends Command {
             // The first character uses the third character's status byte
             case 0 -> {
                 success = evaluateRun(
-                    StatusAilment.bitmask(allies.get(2).getStatuses()),
+                    StatusAilment.toBitmask(allies.get(2).getStatuses()),
                     charActor
                 );
             }
@@ -86,7 +86,7 @@ public class RunCommand extends Command {
             // The second character uses the fourth character's status byte
             case 1 -> {
                 success = evaluateRun(
-                    StatusAilment.bitmask(allies.get(3).getStatuses()),
+                    StatusAilment.toBitmask(allies.get(3).getStatuses()),
                     charActor
                 );
             }
