@@ -146,8 +146,18 @@ public class Presentation {
     }
     
     public static String characterStats(PlayerCharacter character){
+        StringBuilder mpBuilder = new StringBuilder();
+        List<Integer> mp = character.getMp();
+        
+        for(int i=0;i<mp.size();i++){
+            if(i == 0) mpBuilder.append(mp.get(i));
+            else mpBuilder.append("/").append(mp.get(i));
+        }
+        
         return String.format(
             "%s - %s - LEV %2d\n\n" +
+            " HP\t%3d/%3d\n" +
+            " MAGIC\t%s\n\n" +
             " EXP. POINTS\t%s\n" +
             " FOR LEV UP\t%s\n\n" +
             " STR.\t%2d\tDAMAGE\t%2d\n" +
@@ -158,6 +168,9 @@ public class Presentation {
             character.getName(),
             character.getJob().displayName(),
             character.getLevel(),
+            character.getHp(),
+            character.getMaxHp(),
+            mpBuilder,
             formatNumber6Digits(character.getExp()),
             formatNumber6Digits(character.getExpForNextLevel()),
             character.getStrength(),
