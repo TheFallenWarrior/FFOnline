@@ -55,7 +55,7 @@ public class Presentation {
      * @param value the number to be converted, treated as a 24-bit unsigned int
      * @return a left-aligned, 6-digit wide string representation of {@code value}
      */
-    private static String formatNumber6Digits(int value){
+    public static String formatNumber6Digits(int value){
         // INTENTIONAL: This method returns wrong values if input is bigger than 999999, replicating
         //  observed behavior from FF1
         
