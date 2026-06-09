@@ -30,15 +30,18 @@ import ffonline.model.StatusAilment;
 import java.util.List;
 
 /**
- *
+ * Presentation utility class for formatting and outputting game-related data into displayable strings.
  * @author thefa
  */
 public class Presentation {
     
+    /**
+     * Private constructor to prevent instantiation
+     */
     private Presentation(){}
     
     /**
-     * Returns the name of the most severe status afflicting a character, assuming statuses are ordered by severity
+     * Returns the name of the most severe status afflicting a character, assuming statuses are ordered by severity.
      * @param battler the {@code Battler} to get the status ailment from
      * @return a string with the name of the first status ailment in {@code battler.statuses}, or "OK" if there are none
      */
@@ -51,7 +54,7 @@ public class Presentation {
     }
     
     /**
-     * Converts an integer to a String using Final Fantasy's int to string algorithm
+     * Converts an integer to a String using Final Fantasy's int to string algorithm.
      * @param value the number to be converted, treated as a 24-bit unsigned int
      * @return a left-aligned, 6-digit wide string representation of {@code value}
      */
@@ -101,18 +104,39 @@ public class Presentation {
         return new String(buf);
     }
     
+    /**
+     * Generates a message indicating that the specified user has entered the game.
+     * @param username the name of the player logging in
+     * @return formatted login message string
+     */
     public static String loginMessage(String username){
         return "LIGHT WARRIOR "+username+"'s journey begins..";
     }
     
+    /**
+     * Generates a message indicating that the specified user has left the game.
+     * @param username the name of the player logging out
+     * @return formatted logout message string
+     */
     public static String logoutMessage(String username){
         return "LIGHT WARRIOR "+username+" disappeared into the void.";
     }
     
+    /**
+     * Generates a chat message format for when a character speaks.
+     * @param username the character of the player speaking
+     * @param message the content of the massage
+     * @return formatted chat message string
+     */
     public static String sayMessage(String username, String message){
         return username+" says, \""+message+"\"";
     }
     
+    /**
+     * Creates a simple list of available commands from a provided collection of command names.
+     * @param commands {@code List} of Strings containing valid game commands
+     * @return A formatted string listing each command on a new line.
+     */
     public static String helpMessage(List<String> commands){
         StringBuilder str = new StringBuilder("Available commands listed below. Type 'help <command>' for more information.\n");
         for(String command : commands){
@@ -121,6 +145,11 @@ public class Presentation {
         return str.toString();
     }
     
+    /**
+     * Provides detailed documentation for a specific command.
+     * @param helpData the {@code HelpData} object containing command details
+     * @return formatted String with usage, description and aliases
+     */
     public static String helpMessage(CommandHelp.HelpData helpData){
         StringBuilder str = new StringBuilder(String.format(
             "%s command help:\n" +
@@ -145,6 +174,13 @@ public class Presentation {
         return str.toString();
     }
     
+    /**
+     * Creates a detailed, column-aligned statistical summary for a single player character.
+     * <br>
+     * The output mimics the layout of the original FF1 stat screen.
+     * @param character the {@code PlayerCharacter} whose stats are to be shown
+     * @return formatted String with all gameplay-relevant character stats
+     */
     public static String characterStats(PlayerCharacter character){
         StringBuilder mpBuilder = new StringBuilder();
         List<Integer> mp = character.getMp();
@@ -185,6 +221,11 @@ public class Presentation {
         );
     }
     
+    /**
+     * Generates a roster view of the character stats in the given party.
+     * @param party the group whose members' stats are to be displayed
+     * @return formatted String with name, HP, status, and job of all characters in {@code party}
+     */
     public static String partyStats(PlayerParty party){
         StringBuilder str = new StringBuilder(" NAME\tHP\tSTATUS\tJOB\n");
         for(PlayerCharacter member : party){
