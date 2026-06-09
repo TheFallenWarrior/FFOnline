@@ -104,7 +104,7 @@ public class GameStateManager {
             
             case 1 -> {
                 Optional<PlayerCharacter> charOpt = resolveCharacter(parseComm.getArgs().getFirst());
-                if(charOpt.isPresent()) out.print(Presentation.characterStats(charOpt.get()));
+                if(charOpt.isPresent()) out.println(Presentation.characterStats(charOpt.get()));
                 else out.println("Error: '"+parseComm.getArgs().getFirst()+"' isn't a valid character name or character index.");
             }
         }
