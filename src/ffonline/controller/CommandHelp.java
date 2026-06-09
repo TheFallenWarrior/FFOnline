@@ -38,7 +38,7 @@ public class CommandHelp {
     
     static{
         SERVER_COMMANDS.addAll(List.of(
-            new HelpData("ooc", List.of(), "ooc <message>", "Send a global chat message (out-of-character)"),
+            new HelpData("ooc", List.of("say"), "ooc <message>", "Send a global chat message (out-of-character)"),
             new HelpData("who", List.of(), "who", "List currently logged-in users"),
             new HelpData("logout", List.of(), "logout", "Disconnect from the server"),
             new HelpData("status", List.of("score"), "status [<character name|index>]", "Show party or character stats"),

@@ -122,7 +122,7 @@ public class ServerController {
             
             // Commands that depend on shared server state are resolved here.
             switch(parseComm.getVerb()){
-                case "ooc" -> {
+                case "ooc", "say" -> {
                     if(parseComm.getRest().length() > 0)
                         broadcast(Presentation.sayMessage(username, parseComm.getRest()));
                     else
