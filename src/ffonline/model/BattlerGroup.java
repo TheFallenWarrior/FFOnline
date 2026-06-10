@@ -150,7 +150,7 @@ public class BattlerGroup<T extends Battler> implements Iterable<T> {
      * Calculates and returns the count of members who are currently alive.
      * @return The number of living battlers in the group
      */
-    public int getAliveSize(){
+    public int countAlive(){
         int alive = 0;
         for(var member : members){
             if(member.isAlive()) alive++;

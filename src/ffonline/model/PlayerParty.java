@@ -46,7 +46,7 @@ public class PlayerParty extends BattlerGroup<PlayerCharacter> {
     }
     
     public Optional<PlayerCharacter> getRandomWeighted(){
-        if(getAliveSize() == 0) return Optional.empty();
+        if(countAlive() == 0) return Optional.empty();
         if(size() != 4) return getRandomAlive();
         
         while(true){
