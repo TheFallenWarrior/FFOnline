@@ -55,6 +55,32 @@ public class Presentation {
     
     /**
      * Converts an integer to a String using Final Fantasy's int to string algorithm.
+     * @param value the number to be converted, treated as an 8-bit unsigned int
+     * @param stripEnable if {@code true}, replace the leading zero with a space
+     * @return a left-aligned, 2-digit wide string representation of {@code value}
+     */
+    private static String formatNumber2Digits(int value, boolean stripEnable){
+        // INTENTIONAL: This method returns wrong values if input is bigger than 99, replicating
+        //  observed behavior from FF1
+        
+        value &= 0xff;
+        int tens = value/10;
+        int ones = value%10;
+        
+        char[] buf = new char[2];
+
+        // Since the tens digit can be bigger than 9 and display incorrectly, simulate Final Fantasy's string encoding
+        // May go up to P5 (255)
+        buf[0] = (char)(tens <= 9 ? '0' + tens : 'A' + tens-10);
+        buf[1] = (char)('0' + ones);
+        
+        if(stripEnable && buf[0] == '0') buf[0] = ' ';
+        
+        return new String(buf);
+    }
+    
+    /**
+     * Converts an integer to a String using Final Fantasy's int to string algorithm.
      * @param value the number to be converted, treated as a 24-bit unsigned int
      * @return a left-aligned, 6-digit wide string representation of {@code value}
      */
@@ -84,16 +110,11 @@ public class Presentation {
             }
             buf[d] = (char)('0' + digit);
         }
-
+        
         // Calculate digits 4 and 5 (tens and ones)
-        tmp &= 0xff; // Discard middle 8 bits
-        int tens = tmp/10;
-        int ones = tmp%10;
-
-        // Since the tens digit can be bigger than 9 and display incorrectly, simulate Final Fantasy's string encoding
-        // May go up to P5 (255)
-        buf[4] = (char)(tens <= 9 ? '0' + tens : 'A' + tens-10);
-        buf[5] = (char)('0' + ones);
+        String tensOnes = formatNumber2Digits(tmp&0xff, false);
+        buf[4] = tensOnes.charAt(0);
+        buf[5] = tensOnes.charAt(1);
 
         // Replace leading '0's with spaces, never trimming the ones digit
         for(int i = 0; i < 5; i++){
@@ -191,33 +212,33 @@ public class Presentation {
         }
         
         return String.format(
-            "%s - %s - LEV %2d\n\n" +
+            "%s - %s - LEV %s\n\n" +
             " HP\t%3d/%3d\n" +
             " MAGIC\t%s\n\n" +
             " EXP. POINTS\t%s\n" +
             " FOR LEV UP\t%s\n\n" +
-            " STR.\t%2d\tDAMAGE\t%2d\n" +
-            " AGL.\t%2d\tHIT%%\t%2d\n" +
-            " INT.\t%2d\tABSORB\t%2d\n" +
-            " VIT.\t%2d\tEVADE%%\t%2d\n" +
-            " LUCK\t%2d\n",
+            " STR.\t%s\tDAMAGE\t%s\n" +
+            " AGL.\t%s\tHIT%%\t%s\n" +
+            " INT.\t%s\tABSORB\t%s\n" +
+            " VIT.\t%s\tEVADE%%\t%s\n" +
+            " LUCK\t%s\n",
             character.getName(),
             character.getJob().displayName(),
-            character.getLevel(),
+            formatNumber2Digits(character.getLevel(), true),
             character.getHp(),
             character.getMaxHp(),
             mpBuilder,
             formatNumber6Digits(character.getExp()),
             formatNumber6Digits(character.getExpForNextLevel()),
-            character.getStrength(),
-            character.getDamage(),
-            character.getAgility(),
-            character.getHitChance(),
-            character.getIntelligence(),
-            character.getAbsorb(),
-            character.getVitality(),
-            character.getEvadeChance(),
-            character.getLuck()
+            formatNumber2Digits(character.getStrength(), true),
+            formatNumber2Digits(character.getDamage(), true),
+            formatNumber2Digits(character.getAgility(), true),
+            formatNumber2Digits(character.getHitChance(), true),
+            formatNumber2Digits(character.getIntelligence(), true),
+            formatNumber2Digits(character.getAbsorb(), true),
+            formatNumber2Digits(character.getVitality(), true),
+            formatNumber2Digits(character.getEvadeChance(), true),
+            formatNumber2Digits(character.getLuck(), true)
         );
     }
     
