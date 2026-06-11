@@ -34,7 +34,7 @@ import tools.jackson.databind.JsonNode;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class Enemy extends Battler {
     private static final int MAGIC_MAX_INVENTORY = 8;

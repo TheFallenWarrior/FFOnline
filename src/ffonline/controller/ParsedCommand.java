@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class ParsedCommand {
     private static final Pattern TOKEN_PATTERN = Pattern.compile("\"([^\"]*)\"|\\S+");

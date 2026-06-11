@@ -32,7 +32,7 @@ import tools.jackson.databind.*;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class Armor extends Item {
     private static final Logger LOGGER = Logger.getLogger(Armor.class.getName());

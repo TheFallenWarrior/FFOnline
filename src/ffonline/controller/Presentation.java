@@ -31,7 +31,7 @@ import java.util.List;
 
 /**
  * Presentation utility class for formatting and outputting game-related data into displayable strings.
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class Presentation {
     

@@ -27,7 +27,7 @@ import tools.jackson.databind.JsonNode;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class Item{
     public static final String JSON_PATH = "json/item.json";

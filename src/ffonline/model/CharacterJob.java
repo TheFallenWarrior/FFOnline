@@ -25,7 +25,7 @@ package ffonline.model;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public enum CharacterJob {
     FIGHTER("FIGHTER"),

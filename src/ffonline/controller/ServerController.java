@@ -36,7 +36,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class ServerController {
     private static final Logger LOGGER = Logger.getLogger(ServerController.class.getName());

@@ -34,7 +34,7 @@ import java.util.stream.Stream;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  * @param <T> The type of item held in the inventory
  */
 public class Inventory<T extends Item> implements Iterable<T> {

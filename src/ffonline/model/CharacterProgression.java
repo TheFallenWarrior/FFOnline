@@ -36,7 +36,7 @@ import tools.jackson.databind.JsonNode;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class CharacterProgression{
     public static final String JSON_PATH = "json/growth.json";

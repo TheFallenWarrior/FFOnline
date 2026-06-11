@@ -35,7 +35,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class GameStateManager {
     private static final Logger LOGGER = Logger.getLogger(GameStateManager.class.getName());

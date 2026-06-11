@@ -30,7 +30,7 @@ import ffonline.model.StatusAilment;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class RunCommand extends Command {
     public RunCommand(BattlerGroup<? extends Battler> allies, Battler actor){

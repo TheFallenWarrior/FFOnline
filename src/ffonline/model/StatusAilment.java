@@ -27,7 +27,7 @@ import java.util.EnumSet;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public enum StatusAilment {
     DEAD("Dead"),

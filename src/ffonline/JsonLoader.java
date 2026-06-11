@@ -46,7 +46,7 @@ import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 
 /**
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class JsonLoader {
     public static final ObjectMapper MAPPER = new ObjectMapper();

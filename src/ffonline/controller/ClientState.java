@@ -25,7 +25,7 @@ package ffonline.controller;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public enum ClientState {
     IN_GAME,

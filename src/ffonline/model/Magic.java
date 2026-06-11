@@ -33,7 +33,7 @@ import tools.jackson.databind.JsonNode;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class Magic extends Item {
     private static final Logger LOGGER = Logger.getLogger(Magic.class.getName());

@@ -28,7 +28,7 @@ import ffonline.model.StatusAilment;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class FightCommand extends Command {
     public FightCommand(Battler actor, Battler target){

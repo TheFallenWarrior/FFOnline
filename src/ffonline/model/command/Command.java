@@ -29,7 +29,7 @@ import java.util.Random;
 
 /**
  * Base class for battle commands
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public abstract class Command {
     // NOTE: These fields should be references to the respective objects

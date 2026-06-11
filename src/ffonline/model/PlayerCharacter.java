@@ -36,7 +36,7 @@ import tools.jackson.databind.JsonNode;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class PlayerCharacter extends Battler {
     private static final int EQUIP_MAX_INVENTORY = 4;

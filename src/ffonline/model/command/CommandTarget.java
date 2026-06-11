@@ -25,7 +25,7 @@ package ffonline.model.command;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public enum CommandTarget {
     ALL_ENEMIES,

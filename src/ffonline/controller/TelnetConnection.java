@@ -52,7 +52,7 @@ import java.util.logging.Logger;
  * <li>RFC 858 — Telnet Suppress Go Ahead Option</li>
  * </ul>
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class TelnetConnection implements Closeable{
     private static final Logger LOGGER = Logger.getLogger(ServerController.class.getName());

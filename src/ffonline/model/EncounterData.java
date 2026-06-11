@@ -34,7 +34,7 @@ import tools.jackson.databind.JsonNode;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class EncounterData {
     public static final int FORMATION_SIZE_A = 4;

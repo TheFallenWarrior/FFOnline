@@ -28,7 +28,7 @@ import java.util.Optional;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class PlayerParty extends BattlerGroup<PlayerCharacter> {
     private final Inventory<Item> inventory = new Inventory<>();

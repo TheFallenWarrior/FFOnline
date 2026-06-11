@@ -35,7 +35,7 @@ import java.util.Random;
 /**
  * Represents a group of battlers, with utility methods for management
  *  and manipulation of the members within the group during gameplay.
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  * @param <T> The type of the battlers that make up the BattlerGroup
  */
 public class BattlerGroup<T extends Battler> implements Iterable<T> {

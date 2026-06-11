@@ -27,7 +27,7 @@ import ffonline.controller.ServerController;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class Main {
     

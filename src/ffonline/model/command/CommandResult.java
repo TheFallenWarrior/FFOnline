@@ -30,7 +30,7 @@ import java.util.List;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class CommandResult {
     private final List<IndividualCommandResult> resultList = new ArrayList<>();

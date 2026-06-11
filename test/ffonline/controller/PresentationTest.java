@@ -28,7 +28,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class PresentationTest {
     

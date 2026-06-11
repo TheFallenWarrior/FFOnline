@@ -29,7 +29,7 @@ import java.util.Optional;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class CommandHelp {
     private static final List<HelpData> SERVER_COMMANDS = new ArrayList<>();

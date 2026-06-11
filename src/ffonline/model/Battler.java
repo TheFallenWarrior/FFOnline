@@ -28,7 +28,7 @@ import java.util.Random;
 
 /**
  *
- * @author thefa
+ * @author Anna Jaqueline (TheFallenWarrior)
  */
 public abstract class Battler {
     private String name;
