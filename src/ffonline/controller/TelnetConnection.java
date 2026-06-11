@@ -56,54 +56,54 @@ import java.util.logging.Logger;
  */
 public class TelnetConnection implements Closeable{
     private static final Logger LOGGER = Logger.getLogger(ServerController.class.getName());
+    
     /**
-     * Interpret As Command — marks the start of a telnet control sequence.
+     * Telnet Interpret As Command code.
      */
     private static final int IAC = 255;
 
     /**
-     * Don't — refuse an offered option.
+     * Telnet Don't code.
      */
     private static final int DONT = 254;
 
     /**
-     * Do — request that the remote party enable an option.
+     * Telnet Do code.
      */
     private static final int DO = 253;
 
     /**
-     * Won't — refuse to enable an option.
+     * Telnet Won't code.
      */
     private static final int WONT = 252;
 
     /**
-     * Will — offer to enable an option.
+     * Telnet Will code.
      */
     private static final int WILL = 251;
 
-    // Two-byte commands (IAC <cmd>, no option byte follows)
     /**
-     * No Operation.
+     * Telnet No Operation.
      */
     private static final int NOP = 241;
 
     /**
-     * Are You There — client health-check; we respond with NOP.
+     * Telnet Are You There code.
      */
     private static final int AYT = 246;
 
     /**
-     * Erase Character — delete the last character from the line buffer.
+     * Telnet Erase Character code.
      */
     private static final int EC = 247;
 
     /**
-     * Erase Line — wipe the entire line buffer.
+     * Telnet Erase Line code.
      */
     private static final int EL = 248;
 
     /**
-     * Suppress Go-Ahead option code.
+     * Telnet Suppress Go-Ahead option code.
      */
     private static final int OPT_SGA = 3;
 
@@ -115,7 +115,6 @@ public class TelnetConnection implements Closeable{
     // current line.  We use a List<Byte> so that EC can remove the last element
     // cheaply without keeping a separate length counter.
     private final List<Byte> lineBuffer = new ArrayList<>();
-
 
     /**
      * Creates a {@code TelnetConnection} that takes ownership of {@code socket}.
@@ -365,7 +364,6 @@ public class TelnetConnection implements Closeable{
 
     /**
      * Writes {@code bytes} to the output stream and flushes.
-     *
      * @param bytes the raw bytes to send
      * @throws IOException if an I/O error occurs
      */
