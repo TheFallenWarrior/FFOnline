@@ -183,19 +183,46 @@ public class TelnetConnection implements Closeable{
     }
 
     /**
-     * Writes {@code text} to the socket and flushes immediately
+     * Writes {@code text} to the socket and flushes.
+     * <p>
+     * Any lone {@code '\n'} is expanded into {@code "\r\n"} before sending, so
+     * multi-line string built with bare LFs are transmitted correctly per RFC
+     * 854 §3.3.1.
      * @param text the string to send; encoded as UTF-8
      * @throws IOException if an I/O error occurs
      */
-    public void print(String text) throws IOException{
-        sendRaw(text.getBytes(StandardCharsets.UTF_8));
+    public void print(String text) throws IOException {
+        byte[] raw = text.getBytes(StandardCharsets.UTF_8);
+ 
+        // Count lone '\n's so we can allocate the expanded buffer in one pass.
+        int extra = 0;
+        for (int i = 0; i < raw.length; i++) {
+            if (raw[i] == '\n' && (i == 0 || raw[i - 1] != '\r')) extra++;
+        }
+ 
+        if (extra == 0) {
+            sendRaw(raw);
+            return;
+        }
+ 
+        byte[] expanded = new byte[raw.length + extra];
+        int dst = 0;
+        for (int i = 0; i < raw.length; i++) {
+            if (raw[i] == '\n' && (i == 0 || raw[i - 1] != '\r')) {
+                expanded[dst++] = '\r';
+            }
+            expanded[dst++] = raw[i];
+        }
+        sendRaw(expanded);
     }
+
 
     /**
      * Writes {@code text} followed by {@code "\r\n"} to the socket and flushes.
      * <p>
-     * Telnet lines must be terminated with CR LF (RFC 854 §3.3.1), so a bare
-     * {@code '\n'} is not used here.
+     * Any lone {@code '\n'} in {@code text} is expanded into {@code "\r\n"} before
+     * sending, so multi-line string built with bare LFs are transmitted correctly per RFC
+     * 854 §3.3.1.
      * @param text the string to send; encoded as UTF-8
      * @throws IOException if an I/O error occurs
      */
@@ -207,8 +234,9 @@ public class TelnetConnection implements Closeable{
      * Writes {@code text} followed by {@code "\r\n"} to the socket and flushes.
      * This method does not propagate IOExceptions, logging the error instead.
      * <p>
-     * Telnet lines must be terminated with CR LF (RFC 854 §3.3.1), so a bare
-     * {@code '\n'} is not used here.
+     * Any lone {@code '\n'} in {@code text} text is expanded into {@code "\r\n"} before
+     * sending, so multi-line string built with bare LFs are transmitted correctly per RFC
+     * 854 §3.3.1.
      * @param text the string to send; encoded as UTF-8
      */
     public void safePrintln(String text){
