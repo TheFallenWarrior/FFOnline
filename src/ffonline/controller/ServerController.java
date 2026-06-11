@@ -23,9 +23,7 @@
  */
 package ffonline.controller;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -73,45 +71,38 @@ public class ServerController {
     }
     
     private class ClientHandler implements Runnable {
-        private final Socket clientSocket;
-        private PrintWriter out;
+        private final Socket rawSocket;
+        private TelnetConnection tc;
         private ClientState state = ClientState.NAME_INPUT;
         private String username;
         private GameStateManager game;
 
         ClientHandler(Socket socket){
-            this.clientSocket = socket;
+            this.rawSocket = socket;
         }
 
         @Override
         public void run(){
-            try(
-                BufferedReader in = new BufferedReader(
-                    new InputStreamReader(clientSocket.getInputStream())
-                );
-            ){
-                out = new PrintWriter(
-                    clientSocket.getOutputStream(),
-                    true
-                );
+            try{
+                tc = new TelnetConnection(rawSocket);
                 
-                out.println("Enter your username:");
-                username = in.readLine();
+                tc.println("Enter your username:");
+                username = tc.readLine();
                 
                 if(username == null || username.isBlank()) username = "Guest";
                 
-                out.println("Welcome, "+username+"!");
+                tc.println("Welcome, "+username+"!");
                 broadcast(Presentation.loginMessage(username));
                 
-                game = new GameStateManager(out);
+                game = new GameStateManager(new PrintWriter(rawSocket.getOutputStream(), true));
                 state = ClientState.IN_GAME;
                 
                 String command;
-                while(!clientSocket.isClosed() && (command = in.readLine()) != null){
+                while(!rawSocket.isClosed() && (command = tc.readLine()) != null){
                     runCommand(command);
                 }
             } catch(IOException e){
-                LOGGER.log(Level.WARNING, "Connection error with {0}.", clientSocket.getRemoteSocketAddress());
+                LOGGER.log(Level.WARNING, "Connection error with {0}.", rawSocket.getRemoteSocketAddress());
             } finally{
                 cleanup();
             }
@@ -126,27 +117,28 @@ public class ServerController {
                     if(parseComm.getRest().length() > 0)
                         broadcast(Presentation.sayMessage(username, parseComm.getRest()));
                     else
-                        out.println("Error: Expected message after command.");
+                        tc.safePrintln("Error: Expected message after command.");
                 }
                 
                 case "who" -> {
-                    out.println("Logged in users:");
+                    tc.safePrintln("Logged in users:");
                     for(ClientHandler client : clients){
                         if(client.state != ClientState.IN_GAME) continue;
                         
-                        if(client == this) out.println(" "+client.username+" (you)");
-                        else out.println(" "+client.username);
+                        if(client == this)
+                            client.tc.safePrintln(" "+client.username+" (you)");
+                        else client.tc.safePrintln(" "+client.username);
                     }
                 }
                 
                 case "logout" -> {
                     try{
-                        clientSocket.close();
+                        rawSocket.close();
                     } catch(IOException e){
                         LOGGER.log(
                             Level.WARNING,
                             "IOException occurred when closing {0}'s socket.",
-                            clientSocket.getRemoteSocketAddress()
+                            rawSocket.getRemoteSocketAddress()
                         );
                     }
                 }
@@ -158,7 +150,7 @@ public class ServerController {
         private void broadcast(String message){
             for(ClientHandler client : clients){
                 if(client.state == ClientState.IN_GAME && client != this)
-                    client.out.println(message);
+                    client.tc.safePrintln(message);
             }
         }
         
@@ -167,17 +159,17 @@ public class ServerController {
             
             clients.remove(this);
             try{
-                clientSocket.close();
+                rawSocket.close();
             } catch(IOException e){
                 LOGGER.log(
                     Level.WARNING,
                     "IOException occurred when closing {0}'s socket.",
-                    clientSocket.getRemoteSocketAddress()
+                    rawSocket.getRemoteSocketAddress()
                 );
             }
             
             broadcast(Presentation.logoutMessage(username));
-            LOGGER.log(Level.INFO, "Client disconnected: {0}.", clientSocket.getRemoteSocketAddress());
+            LOGGER.log(Level.INFO, "Client disconnected: {0}.", rawSocket.getRemoteSocketAddress());
             state = ClientState.LOGGED_OUT;
         }
     }
