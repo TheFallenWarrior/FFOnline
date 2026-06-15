@@ -86,7 +86,7 @@ public class ServerController {
             try{
                 tc = new TelnetConnection(rawSocket);
                 
-                tc.println("Enter your username:");
+                tc.println(Presentation.TITLE_MESSAGE);
                 username = tc.readLine();
                 
                 if(username == null || username.isBlank()) username = "Guest";

@@ -34,7 +34,26 @@ import java.util.List;
  * @author Anna Jaqueline (TheFallenWarrior)
  */
 public class Presentation {
-    
+
+    /**
+     * Static String containing game title and name prompt.
+     */
+    public static final String TITLE_MESSAGE = 
+        """
+        Welcome to...
+        
+         ####### #######  #####          ##
+         ##      ##      ##   ##         ##  ##
+         ##   #  ##   #  ##   ##  ####   ##      ####    ###
+         ######  ######  ##   ##  ## ##  ##  ##  ## ##  ##  #
+         ##   #  ##   #  ##   ##  ## ##  ##  ##  ## ##  #####
+         ##      ##      ##   ##  ## ##  ##  ##  ## ##  ##
+         ##      ##       #####   ## ##  ##  ##  ## ##   ####
+        
+                      ...a text-based reimplementation of FF1.
+        
+        What is your name, LIGHT WARRIOR? """;
+
     /**
      * Private constructor to prevent instantiation
      */
