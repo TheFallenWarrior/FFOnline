@@ -2,7 +2,7 @@
 
 FFOnline is a Java reimplementation of the original NES release of Final Fantasy 1, inspired by Multi-User Dungeons (MUDs). It is a learning project for me to explore online game server programming.
 
-FFOnline is being designed to be reasonably true to FF1, but as a text-based game. Because of that, it plays quite different from a regular MUD, since each player controls a 4-character party and roleplaying and player-to-player interaction are very limited.
+FFOnline is being designed to be reasonably true to FF1 (several original bugs are replicated and labeled "`INTENTIONAL`"), but as a text-based game. Because of that, it plays quite different from a regular MUD, since each player controls a 4-character party and roleplaying and player-to-player interaction are very limited.
 
 The game is still in development and as of now, it's not yet functional.
 
@@ -25,7 +25,7 @@ The game is still in development and as of now, it's not yet functional.
   - ~~FIGHT command~~
   - Magic commands (MAGIC, DRINK, ITEM)
   - ~~RUN command~~
-- Enemy formations
+- ~~Enemy formations~~
 - Battle engine with turn/command orchestration
 - Using magic and items out of battle
 - Locations (overworld, towns, shops, dungeons)
@@ -35,7 +35,7 @@ The game is still in development and as of now, it's not yet functional.
 
 ## Limitations
 
-- Networking is plain text only; support for encryption, compression, or MUD-specific protocols (e.g. GMCP, MSSP, etc.) is not planned
+- Networking is plain text over TELNET; support for encryption, compression, or MUD-specific protocols (e.g. GMCP, MCCP, Pueblo, etc.) is not planned
 - No persistent data is stored, your session and game progress are lost as soon as you disconnect
 - Random numbers are generated using `java.util.Random`, as FFOnline does not implement the original RNG algorithm. If you are well-acquainted to FF1's behavior, you might notice some deviation
 
