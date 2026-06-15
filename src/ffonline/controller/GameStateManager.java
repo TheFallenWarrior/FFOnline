@@ -26,7 +26,6 @@ package ffonline.controller;
 import ffonline.JsonLoader;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.PlayerParty;
-import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -42,11 +41,11 @@ public class GameStateManager {
     
     private final PlayerParty party = new PlayerParty();
     
-    private final PrintWriter out;
+    private final TelnetConnection tc;
     private final Map<String, CommandHandler> commands = new HashMap<>();
     
-    public GameStateManager(PrintWriter out){
-        this.out = out;
+    public GameStateManager(TelnetConnection tc){
+        this.tc = tc;
         registerCommands();
         
         // Placeholder party of 4 fighters
@@ -83,7 +82,7 @@ public class GameStateManager {
             return;
         }
         
-        out.println("Unknown command: \""+parseComm.getVerb()+"\"");
+        tc.safePrintln("Unknown command: \""+parseComm.getVerb()+"\"");
     }
     
     private Optional<PlayerCharacter> resolveCharacter(String token){
@@ -100,12 +99,12 @@ public class GameStateManager {
     
     private void statusCommand(ParsedCommand parseComm){
         switch(parseComm.getArgs().size()){
-            case 0 -> out.println(Presentation.partyStats(party));
+            case 0 -> tc.safePrintln(Presentation.partyStats(party));
             
             case 1 -> {
                 Optional<PlayerCharacter> charOpt = resolveCharacter(parseComm.getArgs().getFirst());
-                if(charOpt.isPresent()) out.println(Presentation.characterStats(charOpt.get()));
-                else out.println("Error: '"+parseComm.getArgs().getFirst()+"' isn't a valid character name or character index.");
+                if(charOpt.isPresent()) tc.safePrintln(Presentation.characterStats(charOpt.get()));
+                else tc.safePrintln("Error: '"+parseComm.getArgs().getFirst()+"' isn't a valid character name or character index.");
             }
         }
     }
@@ -113,15 +112,15 @@ public class GameStateManager {
     private void helpCommand(ParsedCommand parseComm){
         switch(parseComm.getArgs().size()){
             case 0 -> {
-                out.println(Presentation.helpMessage(CommandHelp.getUsages()));
+                tc.safePrintln(Presentation.helpMessage(CommandHelp.getUsages()));
             }
             
             case 1 -> {
                 Optional<CommandHelp.HelpData> helpOpt = CommandHelp.findHelp(parseComm.getArgs().getFirst());
                 if(helpOpt.isEmpty())
-                    out.println("Unknown command: \""+parseComm.getArgs().getFirst()+"\"");
+                    tc.safePrintln("Unknown command: \""+parseComm.getArgs().getFirst()+"\"");
                 else
-                    out.println(Presentation.helpMessage(helpOpt.get()));
+                    tc.safePrintln(Presentation.helpMessage(helpOpt.get()));
             }
         }
     }

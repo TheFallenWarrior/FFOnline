@@ -24,7 +24,6 @@
 package ffonline.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Set;
@@ -94,7 +93,7 @@ public class ServerController {
                 tc.println("Welcome, "+username+"!");
                 broadcast(Presentation.loginMessage(username));
                 
-                game = new GameStateManager(new PrintWriter(rawSocket.getOutputStream(), true));
+                game = new GameStateManager(tc);
                 state = ClientState.IN_GAME;
                 
                 String command;
