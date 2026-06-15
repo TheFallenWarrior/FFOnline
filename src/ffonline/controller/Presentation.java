@@ -120,10 +120,10 @@ public class Presentation {
 
             int digit = 0;
             // Walk through multiples of p10[d] to find the correct digit
-            for(int x=8;x>=0;x--){
-                if(tmp >= (x+1) * p10[d]){
-                    tmp -= (x+1) * p10[d];
-                    digit = x + 1;
+            for(int x=9;x>0;x--){
+                if(tmp >= x * p10[d]){
+                    tmp -= x * p10[d];
+                    digit = x;
                     break;
                 }
             }
