@@ -160,7 +160,7 @@ public class TelnetConnection implements Closeable{
                 if(lineBuffer.isEmpty()){
                     return null;
                 }
-                return drainBuffer();
+                return readRawLine();
             }
 
             if(b == IAC){
@@ -174,7 +174,7 @@ public class TelnetConnection implements Closeable{
                 if(!lineBuffer.isEmpty() && lineBuffer.getLast() == '\r'){
                     lineBuffer.removeLast();
                 }
-                return drainBuffer();
+                return readRawLine();
             }
 
             lineBuffer.add((byte)b);
@@ -353,7 +353,7 @@ public class TelnetConnection implements Closeable{
      * Converts the line buffer contents to a UTF-8 string, clears the buffer,
      * and returns the string.
      */
-    private String drainBuffer(){
+    private String readRawLine(){
         byte[] bytes = new byte[lineBuffer.size()];
         for(int i = 0; i < bytes.length; i++){
             bytes[i] = lineBuffer.get(i);
