@@ -126,8 +126,8 @@ public class ServerController {
                         if(client.state != ClientState.IN_GAME) continue;
                         
                         if(client == this)
-                            client.tc.safePrintln(" "+client.username+" (you)");
-                        else client.tc.safePrintln(" "+client.username);
+                            tc.safePrintln(" "+client.username+" (you)");
+                        else tc.safePrintln(" "+client.username);
                     }
                 }
                 
