@@ -97,7 +97,7 @@ public class ServerController {
                 state = ClientState.IN_GAME;
                 
                 String command;
-                while(!rawSocket.isClosed() && (command = tc.readLine()) != null){
+                while(!tc.isClosed() && (command = tc.readLine()) != null){
                     runCommand(command);
                 }
             } catch(IOException e){
