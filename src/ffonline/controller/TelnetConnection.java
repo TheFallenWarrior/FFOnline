@@ -147,7 +147,7 @@ public class TelnetConnection implements Closeable{
      * sequences) are accumulated in the line buffer; the line is complete when
      * {@code '\n'} is encountered (handles both bare {@code LF} and the
      * telnet-standard {@code CR LF} pair).
-     * @return the decoded line, or {@code null} if the connection was closed by
+     * @return the decoded line, or an empty string if the connection was closed by
      * the remote end before a line terminator was seen
      * @throws IOException if an I/O error occurs
      */
@@ -156,9 +156,9 @@ public class TelnetConnection implements Closeable{
             int b = in.read();
 
             if(b == -1){
-                // Connection closed — return whatever is buffered, or null.
+                // Connection closed — return whatever is buffered
                 if(lineBuffer.isEmpty()){
-                    return null;
+                    return "";
                 }
                 return readRawLine();
             }
