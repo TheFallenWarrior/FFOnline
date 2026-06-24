@@ -78,7 +78,7 @@ public class CommandResult {
         }
         
         public Builder ineffective(Battler target){
-            results.add(new IndividualCommandResult(target, CommandResult.Type.INEFFECTIVE, 0));
+            results.add(new IndividualCommandResult(target, CommandResult.Type.INEFFECTIVE, 0, 0));
             return this;
         }
         
@@ -117,13 +117,6 @@ public class CommandResult {
             this.target = target;
             this.type = type;
             this.numHits = numHits;
-            this.totalDamage = totalDamage;
-        }
-        
-        public IndividualCommandResult(Battler target, Type type, int totalDamage){
-            this.target = target;
-            this.type = type;
-            this.numHits = 1;
             this.totalDamage = totalDamage;
         }
         
