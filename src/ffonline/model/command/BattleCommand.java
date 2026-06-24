@@ -28,7 +28,8 @@ import ffonline.model.BattlerGroup;
 import java.util.Random;
 
 /**
- * Base class for battle commands
+ * Abstract base class for all battle commands, it encapsulates all necessary context
+ *  and execution mechanism to perform the action.
  * @author Anna Jaqueline (TheFallenWarrior)
  */
 public abstract class BattleCommand {
@@ -41,6 +42,15 @@ public abstract class BattleCommand {
     protected final CommandTarget targeting;
     protected final Random rng;
     
+    /**
+     * Constructs a {@code BattleCommand} object.
+     * @param allies The {@code BattlerGroup} that contains {@code actor}
+     * @param enemies The {@code BattlerGroup} {@code actor} is fighting against
+     * @param actor The {@code Battler} performing the battle command
+     * @param allyTarget An optional target within the allied group; can be null
+     * @param enemyTarget An optional target within the enemy group; can be null
+     * @param targeting The targeting mode of the command
+     */
     public BattleCommand(
         BattlerGroup<? extends Battler> allies,
         BattlerGroup<? extends Battler> enemies,
@@ -58,28 +68,50 @@ public abstract class BattleCommand {
         rng = new Random();
     }
     
+    /**
+     * Executes the battle command and applies the effects on the target(s).
+     * @return A {@link CommandResult} with the outcomes of this command
+     */
     public abstract CommandResult execute();
     
+    /**
+     * @return The {@code BattlerGroup} that contains the command's actor
+     */
     public BattlerGroup<? extends Battler> getAllies(){
         return allies;
     }
 
+    /**
+     * @return The {@code BattlerGroup} command's actor is fighting against
+     */
     public BattlerGroup<? extends Battler> getEnemies(){
         return enemies;
     }
 
+    /**
+     * @return The {@code Battler} performing the battle command
+     */
     public Battler getActor(){
         return actor;
     }
 
+    /**
+     * @return The allied {@code Battler} targeted by this command
+     */
     public Battler getAllyTarget(){
         return allyTarget;
     }
 
+    /**
+     * @return The enemy {@code Battler} targeted by this command
+     */
     public Battler getEnemyTarget(){
         return enemyTarget;
     }
     
+    /**
+     * @return The targeting mode of the command
+     */
     public CommandTarget getTargeting(){
         return targeting;
     }
