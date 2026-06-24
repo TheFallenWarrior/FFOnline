@@ -33,7 +33,7 @@ public class Item {
     public static final String JSON_PATH = "json/item.json";
     
     private final String name;
-    private final int itemId; // Number that indentifies the item in shops
+    private final int itemId; // Number that identifies the item in shops
     private final int price;
 
     public Item(String name, int itemId, int price){
