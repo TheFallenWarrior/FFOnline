@@ -45,7 +45,7 @@ public class Magic extends Item {
     final private int spellId;
     final private int effectivity;
     final private CommandTarget targeting;
-    final private MagicEffect effect;
+    final private Effect effect;
     final private EnumSet<Element> elements;
     final private EnumSet<Element> effectElements;
     final private EnumSet<StatusAilment> effectStatuses;
@@ -59,7 +59,7 @@ public class Magic extends Item {
         int spellId,
         int effectivity,
         CommandTarget targeting,
-        MagicEffect effect,
+        Effect effect,
         EnumSet<Element> elements,
         EnumSet<Element> effectElements,
         EnumSet<StatusAilment> effectStatuses,
@@ -95,9 +95,9 @@ public class Magic extends Item {
         }
         
         Optional<String> optEffect = node.path("effect").asStringOpt();
-        MagicEffect resolvedEffect = MagicEffect.DAMAGE;
+        Effect resolvedEffect = Effect.DAMAGE;
         try{
-            resolvedEffect = MagicEffect.valueOf(optEffect.orElse("Non-coercible value"));
+            resolvedEffect = Effect.valueOf(optEffect.orElse("Non-coercible value"));
         } catch(IllegalArgumentException e){
             LOGGER.log(Level.WARNING, "Unknown magic effect found in JSON: {0}", optEffect.orElse("Non-coercible value"));
         }
@@ -154,7 +154,7 @@ public class Magic extends Item {
         return targeting;
     }
 
-    public MagicEffect getEffect(){
+    public Effect getEffect(){
         return effect;
     }
 
@@ -168,5 +168,27 @@ public class Magic extends Item {
 
     public EnumSet<CharacterJob> getEquippable(){
         return EnumSet.copyOf(equippable);
+    }
+    
+    public static enum Effect {
+        NOTHING,                // 0x00
+        DAMAGE,                 // 0x01
+        HARM,                   // 0x02
+        STATUS,                 // 0x03
+        HIT_MULTIPLIER_DOWN,    // 0x04
+        MORALE_DOWN,            // 0x05
+        UNUSED,                 // 0x06
+        HP_RECOVERY,            // 0x07
+        STATUS_RECOVERY,        // 0x08
+        DEFENSE_UP,             // 0x09
+        RESIST_ELEMENT,         // 0x0A
+        ATTACK_UP,              // 0x0B
+        HIT_MULTIPLIER_UP,      // 0x0C
+        ATTACK_ACCURACY_UP,     // 0x0D
+        EVASION_DOWN,           // 0x0E
+        FULL_RECOVERY,          // 0x0F
+        EVASION_UP,             // 0x10
+        UNRESIST_ELEMENT,       // 0x11
+        HP300_STATUS            // 0x12
     }
 }
