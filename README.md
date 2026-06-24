@@ -27,6 +27,9 @@ The game is still in development and as of now, it's not yet functional.
   - ~~RUN command~~
 - ~~Enemy formations~~
 - Battle engine with turn/command orchestration
+- Out of battle item management (ITEM, WEAPON, ARMOR commands)
+  - ITEM command
+  - WEAPON and ARMOR commands
 - Using magic and items out of battle
 - Locations (overworld, towns, shops, dungeons)
 - Transportation (SHIP, AIRSHIP, CANOE)
