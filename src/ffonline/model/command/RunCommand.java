@@ -56,7 +56,7 @@ public class RunCommand extends BattleCommand {
         if(actor instanceof PlayerCharacter character)
             charActor = character;
         else // Enemies always succeed at running
-            return new CommandResult(actor, true);
+            return CommandResult.builder(this).succeed(actor).build();
         
         for(int i=0;i<allies.size();i++){
             if(allies.get(i) == actor){
@@ -71,7 +71,7 @@ public class RunCommand extends BattleCommand {
         // Default to the correct behavior if unexpected party size
         if(allies.size() != 4){
             success = evaluateRun(charActor.getLevel(), charActor);
-            return new CommandResult(actor, success);
+            return CommandResult.builder(this).bool(actor, success).build();
         }
         
         switch(charIndex){
@@ -105,6 +105,6 @@ public class RunCommand extends BattleCommand {
             default -> { success = evaluateRun(charActor.getLevel(), charActor); }
         }
         
-        return new CommandResult(actor, success);
+        return CommandResult.builder(this).bool(actor, success).build();
     }
 }

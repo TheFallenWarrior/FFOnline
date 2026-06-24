@@ -34,30 +34,72 @@ import java.util.List;
  */
 public class CommandResult {
     private final List<IndividualCommandResult> resultList = new ArrayList<>();
+    private final BattleCommand command;
     
-    public CommandResult(List<IndividualCommandResult> resultList){
+    public CommandResult(BattleCommand command, List<IndividualCommandResult> resultList){
         this.resultList.addAll(resultList);
+        this.command = command;
     }
     
-    public CommandResult(Battler target, int totalDamage, int successfulHits, boolean isCritical){
-        IndividualCommandResult result = new IndividualCommandResult(
-                target,
-                (isCritical ? Type.CRITICAL : Type.HIT),
-                successfulHits,
-                totalDamage
-        );
-        
-        this.resultList.add(result);
-    }
-    
-    public CommandResult(Battler target, boolean isHit){
-        IndividualCommandResult result = new IndividualCommandResult(target, isHit);
-        
-        this.resultList.add(result);
+    public static Builder builder(BattleCommand command){
+        return new Builder(command);
     }
     
     public List<IndividualCommandResult> getResultList(){
         return Collections.unmodifiableList(resultList);
+    }
+    
+    public BattleCommand getCommand(){
+        return command;
+    }
+    
+    public static final class Builder {
+        private final BattleCommand command;
+        private final List<IndividualCommandResult> results = new ArrayList<>();
+        
+        private Builder(BattleCommand command){
+            this.command = command;
+        }
+        
+        public Builder hit(Battler target, int damage){
+            return multiHit(target, damage, 1);
+        }
+        
+        public Builder multiHit(Battler target, int totalDamage, int numHits){
+            Type type = (numHits > 0 ? Type.HIT : Type.MISS);
+            results.add(new IndividualCommandResult(target, type, numHits, totalDamage));
+            return this;
+        }
+        
+        public Builder critical(Battler target, int totalDamage, int numHits){
+            Type type = (numHits > 0 ? Type.CRITICAL : Type.MISS);
+            results.add(new IndividualCommandResult(target, type, numHits, totalDamage));
+            return this;
+        }
+        
+        public Builder ineffective(Battler target){
+            results.add(new IndividualCommandResult(target, CommandResult.Type.INEFFECTIVE, 0));
+            return this;
+        }
+        
+        public Builder succeed(Battler target){
+            results.add(new IndividualCommandResult(target, true));
+            return this;
+        }
+        
+        public Builder fail(Battler target){
+            results.add(new IndividualCommandResult(target, false));
+            return this;
+        }
+        
+        public Builder bool(Battler target, boolean success){
+            results.add(new IndividualCommandResult(target, success));
+            return this;
+        }
+        
+        public CommandResult build(){
+            return new CommandResult(command, results);
+        }
     }
 
     public static class IndividualCommandResult {
@@ -73,19 +115,15 @@ public class CommandResult {
             int totalDamage
         ){
             this.target = target;
-            this.type = (numHits == 0 ? Type.MISS : type);
+            this.type = type;
             this.numHits = numHits;
             this.totalDamage = totalDamage;
         }
         
-        public IndividualCommandResult(
-            Battler target,
-            Type type,
-            int totalDamage
-        ){
+        public IndividualCommandResult(Battler target, Type type, int totalDamage){
             this.target = target;
             this.type = type;
-            this.numHits = 0;
+            this.numHits = 1;
             this.totalDamage = totalDamage;
         }
         

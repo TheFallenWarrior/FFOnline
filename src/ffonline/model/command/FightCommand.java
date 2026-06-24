@@ -75,6 +75,13 @@ public class FightCommand extends BattleCommand {
             enemyTarget.offsetHp(-attackDamage);
         }
         
-        return new CommandResult(enemyTarget, totalDamage, successfulHits, isCritical);
+        CommandResult.Builder resultBuilder = CommandResult.builder(this);
+        
+        if(isCritical)
+            resultBuilder.critical(enemyTarget, totalDamage, successfulHits);
+        else
+            resultBuilder.multiHit(enemyTarget, totalDamage, successfulHits);
+        
+        return resultBuilder.build();
     }
 }
