@@ -42,7 +42,7 @@ public class CommandResult {
     public CommandResult(Battler target, int totalDamage, int successfulHits, boolean isCritical){
         IndividualCommandResult result = new IndividualCommandResult(
                 target,
-                (isCritical ? CommandResultType.CRITICAL : CommandResultType.HIT),
+                (isCritical ? Type.CRITICAL : Type.HIT),
                 successfulHits,
                 totalDamage
         );
@@ -62,25 +62,25 @@ public class CommandResult {
 
     public static class IndividualCommandResult {
         private final Battler target;
-        private final CommandResultType type;
+        private final Type type;
         private final int numHits;
         private final int totalDamage;
         
         public IndividualCommandResult(
             Battler target,
-            CommandResultType type,
+            Type type,
             int numHits,
             int totalDamage
         ){
             this.target = target;
-            this.type = (numHits == 0 ? CommandResultType.MISS : type);
+            this.type = (numHits == 0 ? Type.MISS : type);
             this.numHits = numHits;
             this.totalDamage = totalDamage;
         }
         
         public IndividualCommandResult(
             Battler target,
-            CommandResultType type,
+            Type type,
             int totalDamage
         ){
             this.target = target;
@@ -91,7 +91,7 @@ public class CommandResult {
         
         public IndividualCommandResult(Battler target, boolean isHit){
             this.target = target;
-            this.type = (isHit ? CommandResultType.HIT : CommandResultType.MISS);
+            this.type = (isHit ? Type.HIT : Type.MISS);
             this.numHits = 0;
             this.totalDamage = 0;
         }
@@ -100,7 +100,7 @@ public class CommandResult {
             return target;
         }
 
-        public CommandResultType getType(){
+        public Type getType(){
             return type;
         }
 
@@ -111,5 +111,12 @@ public class CommandResult {
         public int getTotalDamage(){
             return totalDamage;
         }
+    }
+    
+    public enum Type{ 
+        HIT,
+        MISS,
+        INEFFECTIVE,
+        CRITICAL
     }
 }
