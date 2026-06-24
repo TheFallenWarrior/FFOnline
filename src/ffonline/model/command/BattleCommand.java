@@ -31,7 +31,7 @@ import java.util.Random;
  * Base class for battle commands
  * @author Anna Jaqueline (TheFallenWarrior)
  */
-public abstract class Command {
+public abstract class BattleCommand {
     // NOTE: These fields should be references to the respective objects
     protected final BattlerGroup<? extends Battler> allies;
     protected final BattlerGroup<? extends Battler> enemies;
@@ -41,7 +41,7 @@ public abstract class Command {
     protected final CommandTarget targeting;
     protected final Random rng;
     
-    public Command(
+    public BattleCommand(
         BattlerGroup<? extends Battler> allies,
         BattlerGroup<? extends Battler> enemies,
         Battler actor,

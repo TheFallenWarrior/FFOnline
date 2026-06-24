@@ -32,7 +32,7 @@ import ffonline.model.StatusAilment;
  *
  * @author Anna Jaqueline (TheFallenWarrior)
  */
-public class RunCommand extends Command {
+public class RunCommand extends BattleCommand {
     public RunCommand(BattlerGroup<? extends Battler> allies, Battler actor){
         super(allies, null, actor, null, null, CommandTarget.ACTOR);
 }

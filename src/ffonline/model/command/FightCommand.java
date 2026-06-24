@@ -30,7 +30,7 @@ import ffonline.model.StatusAilment;
  *
  * @author Anna Jaqueline (TheFallenWarrior)
  */
-public class FightCommand extends Command {
+public class FightCommand extends BattleCommand {
     public FightCommand(Battler actor, Battler target){
         super(null, null, actor, null, target, CommandTarget.SINGLE_ENEMY);
     }
