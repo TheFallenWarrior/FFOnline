@@ -23,6 +23,7 @@
  */
 package ffonline.model;
 
+import java.util.Collection;
 import java.util.EnumSet;
 import java.util.Random;
 
@@ -134,11 +135,21 @@ public abstract class Battler {
         if(status == StatusAilment.DEAD) hp = 0;
         statuses.add(status);
     }
+    
+    public void addAllStatuses(Collection<StatusAilment> statuses){
+        for(var i : statuses)
+            addStatus(i);
+    }
 
     public void removeStatus(StatusAilment status){
         if(status == StatusAilment.DEAD) hp = 1;
         statuses.remove(status);
     } 
+    
+    public void removeAllStatuses(Collection<StatusAilment> statuses){
+        for(var i : statuses)
+            removeStatus(i);
+    }
     
     /**
      * Removes temporary battle effects
