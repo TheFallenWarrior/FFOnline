@@ -17,7 +17,8 @@
             "KNIGHT",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "HARM",
@@ -34,7 +35,8 @@
         "equippable": [
             "WHITE_MAGE",
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "FOG ",
@@ -54,7 +56,8 @@
             "KNIGHT",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "RUSE",
@@ -72,8 +75,9 @@
             "WHITE_MAGE",
             "KNIGHT",
             "WHITE_WIZARD",
-            "RED_WIZARD"           
-        ]
+            "RED_WIZARD"
+        ],
+        "accuracy": 0
     },
     {
         "name": "FIRE",
@@ -95,7 +99,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "SLEP",
@@ -119,7 +124,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "LOCK",
@@ -139,7 +145,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 64
     },
     {
         "name": "LIT ",
@@ -161,7 +168,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "LAMP",
@@ -183,7 +191,8 @@
             "KNIGHT",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "MUTE",
@@ -207,7 +216,8 @@
             "KNIGHT",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 64
     },
     {
         "name": "ALIT",
@@ -229,7 +239,8 @@
             "KNIGHT",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "INVS",
@@ -249,7 +260,8 @@
             "KNIGHT",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "ICE",
@@ -271,7 +283,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "DARK",
@@ -295,7 +308,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "TMPR",
@@ -315,7 +329,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "SLOW",
@@ -337,7 +352,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 64
     },
     {
         "name": "CUR2",
@@ -357,7 +373,8 @@
             "KNIGHT",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "HRM2",
@@ -374,7 +391,8 @@
         "equippable": [
             "WHITE_MAGE",
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "AFIR",
@@ -396,7 +414,8 @@
             "KNIGHT",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "HEAL",
@@ -413,7 +432,8 @@
         "equippable": [
             "WHITE_MAGE",
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "FIR2",
@@ -435,7 +455,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "HOLD",
@@ -459,7 +480,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 64
     },
     {
         "name": "LIT2",
@@ -481,7 +503,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "LOK2",
@@ -501,7 +524,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 64
     },
     {
         "name": "PURE",
@@ -522,7 +546,8 @@
             "RED_MAGE",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "FEAR",
@@ -541,7 +566,8 @@
         "equippable": [
             "WHITE_MAGE",
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "AICE",
@@ -562,7 +588,8 @@
             "RED_MAGE",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "AMUT",
@@ -582,7 +609,8 @@
             "WHITE_MAGE",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "SLP2",
@@ -604,7 +632,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 64
     },
     {
         "name": "FAST",
@@ -624,7 +653,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "CONF",
@@ -648,7 +678,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 64
     },
     {
         "name": "ICE2",
@@ -670,7 +701,8 @@
             "NINJA",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "CUR3",
@@ -689,7 +721,8 @@
             "RED_MAGE",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "LIFE",
@@ -707,7 +740,8 @@
             "WHITE_MAGE",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 255
     },
     {
         "name": "HRM3",
@@ -724,7 +758,8 @@
         "equippable": [
             "WHITE_MAGE",
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "HEL2",
@@ -741,7 +776,8 @@
         "equippable": [
             "WHITE_MAGE",
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "FIR3",
@@ -762,7 +798,8 @@
             "RED_MAGE",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "BANE",
@@ -784,7 +821,8 @@
             "BLACK_MAGE",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 40
     },
     {
         "name": "WARP",
@@ -801,7 +839,8 @@
         "equippable": [
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 255
     },
     {
         "name": "SLO2",
@@ -820,7 +859,8 @@
             "RED_MAGE",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 64
     },
     {
         "name": "SOFT",
@@ -837,7 +877,8 @@
         "equippable": [
             "WHITE_MAGE",
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 255
     },
     {
         "name": "EXIT",
@@ -854,7 +895,8 @@
         "equippable": [
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 255
     },
     {
         "name": "FOG2",
@@ -872,7 +914,8 @@
             "WHITE_MAGE",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "INV2",
@@ -890,7 +933,8 @@
             "WHITE_MAGE",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "LIT3",
@@ -910,7 +954,8 @@
             "BLACK_MAGE",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "RUB ",
@@ -931,7 +976,8 @@
         "equippable": [
             "BLACK_MAGE",
             "BLACK_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "QAKE",
@@ -952,7 +998,8 @@
         "equippable": [
             "BLACK_MAGE",
             "BLACK_WIZARD"
-        ]
+        ],
+        "accuracy": 40
     },
     {
         "name": "STUN",
@@ -973,7 +1020,8 @@
         "equippable": [
             "BLACK_MAGE",
             "BLACK_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "CUR4",
@@ -989,7 +1037,8 @@
         "level": 7,
         "equippable": [
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "HRM4",
@@ -1005,7 +1054,8 @@
         "level": 7,
         "equippable": [
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 48
     },
     {
         "name": "ARUB",
@@ -1027,7 +1077,8 @@
             "WHITE_MAGE",
             "WHITE_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "HEL3",
@@ -1044,7 +1095,8 @@
         "equippable": [
             "WHITE_MAGE",
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 48
     },
     {
         "name": "ICE3",
@@ -1064,7 +1116,8 @@
             "BLACK_MAGE",
             "BLACK_WIZARD",
             "RED_WIZARD"
-        ]
+        ],
+        "accuracy": 24
     },
     {
         "name": "BRAK",
@@ -1084,7 +1137,8 @@
         "level": 7,
         "equippable": [
             "BLACK_WIZARD"
-        ]
+        ],
+        "accuracy": 64
     },
     {
         "name": "SABR",
@@ -1100,7 +1154,8 @@
         "level": 7,
         "equippable": [
             "BLACK_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "BLND",
@@ -1121,7 +1176,8 @@
         "equippable": [
             "BLACK_MAGE",
             "BLACK_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "LIF2",
@@ -1137,7 +1193,8 @@
         "level": 8,
         "equippable": [
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 255
     },
     {
         "name": "FADE",
@@ -1153,7 +1210,8 @@
         "level": 8,
         "equippable": [
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 107
     },
     {
         "name": "WALL",
@@ -1178,7 +1236,8 @@
         "level": 8,
         "equippable": [
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "XFER",
@@ -1194,7 +1253,8 @@
         "level": 8,
         "equippable": [
             "WHITE_WIZARD"
-        ]
+        ],
+        "accuracy": 107
     },
     {
         "name": "NUKE",
@@ -1210,7 +1270,8 @@
         "level": 8,
         "equippable": [
             "BLACK_WIZARD"
-        ]
+        ],
+        "accuracy": 107
     },
     {
         "name": "STOP",
@@ -1230,7 +1291,8 @@
         "level": 8,
         "equippable": [
             "BLACK_WIZARD"
-        ]
+        ],
+        "accuracy": 48
     },
     {
         "name": "ZAP!",
@@ -1250,7 +1312,8 @@
         "level": 8,
         "equippable": [
             "BLACK_WIZARD"
-        ]
+        ],
+        "accuracy": 32
     },
     {
         "name": "XXXX",
@@ -1270,7 +1333,8 @@
         "level": 8,
         "equippable": [
             "BLACK_WIZARD"
-        ]
+        ],
+        "accuracy": 0
     },
     {
         "name": "HEAL",
@@ -1284,7 +1348,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 0
     },
     {
         "name": "PURE",
@@ -1300,7 +1365,8 @@
             "POISON"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 0
     },
     {
         "name": "FROST",
@@ -1316,7 +1382,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "HEAT",
@@ -1332,7 +1399,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "GLANCE",
@@ -1350,7 +1418,8 @@
             "PETRIFIED"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 5
     },
     {
         "name": "GAZE",
@@ -1368,7 +1437,8 @@
             "PARALYZED"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 0
     },
     {
         "name": "FLASH",
@@ -1386,7 +1456,8 @@
             "BLIND"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 24
     },
     {
         "name": "SCORCH",
@@ -1402,7 +1473,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "CRACK",
@@ -1420,7 +1492,8 @@
             "DEAD"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 16
     },
     {
         "name": "SQUINT",
@@ -1438,7 +1511,8 @@
             "DEAD"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 0
     },
     {
         "name": "STARE",
@@ -1452,7 +1526,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 24
     },
     {
         "name": "GLARE",
@@ -1470,7 +1545,8 @@
             "DEAD"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 16
     },
     {
         "name": "BLIZZARD",
@@ -1486,7 +1562,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "BLAZE",
@@ -1502,7 +1579,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "INFERNO",
@@ -1518,7 +1596,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "CREMATE",
@@ -1534,7 +1613,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "POISON",
@@ -1552,7 +1632,8 @@
             "PETRIFIED"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 5
     },
     {
         "name": "TRANCE",
@@ -1568,7 +1649,8 @@
             "PARALYZED"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 0
     },
     {
         "name": "POISON",
@@ -1584,7 +1666,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "THUNDER",
@@ -1600,7 +1683,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "TOXIC",
@@ -1618,7 +1702,8 @@
             "DEAD"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 0
     },
     {
         "name": "SNORTING",
@@ -1636,7 +1721,8 @@
             "BLIND"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 24
     },
     {
         "name": "NUCLEAR",
@@ -1650,7 +1736,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 48
     },
     {
         "name": "INK",
@@ -1668,7 +1755,8 @@
             "BLIND"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 24
     },
     {
         "name": "STINGER",
@@ -1686,7 +1774,8 @@
             "POISON"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 0
     },
     {
         "name": "DAZZLE",
@@ -1704,7 +1793,8 @@
             "PARALYZED"
         ],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "SWIRL",
@@ -1718,7 +1808,8 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     },
     {
         "name": "TORNADO",
@@ -1732,6 +1823,7 @@
         "effectElements": [],
         "effectStatuses": [],
         "level": 0,
-        "equippable": []
+        "equippable": [],
+        "accuracy": 32
     }
 ]
