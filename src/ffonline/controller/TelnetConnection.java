@@ -54,7 +54,7 @@ import java.util.logging.Logger;
  *
  * @author Anna Jaqueline (TheFallenWarrior)
  */
-public class TelnetConnection implements Closeable{
+public class TelnetConnection implements Closeable {
     private static final Logger LOGGER = Logger.getLogger(ServerController.class.getName());
     
     /**
@@ -126,7 +126,7 @@ public class TelnetConnection implements Closeable{
      * @throws IOException if obtaining the socket streams or sending the
      * initial negotiation bytes fails
      */
-    public TelnetConnection(Socket socket) throws IOException{
+    public TelnetConnection(Socket socket) throws IOException {
         this.socket = socket;
         this.in = socket.getInputStream();
         this.out = socket.getOutputStream();
@@ -151,7 +151,7 @@ public class TelnetConnection implements Closeable{
      * the remote end and no input was buffered
      * @throws IOException if an I/O error occurs
      */
-    public String readLine() throws IOException{
+    public String readLine() throws IOException {
         while(true){
             int b = in.read();
 
@@ -225,7 +225,7 @@ public class TelnetConnection implements Closeable{
      * @param text the string to send; encoded as UTF-8
      * @throws IOException if an I/O error occurs
      */
-    public void println(String text) throws IOException{
+    public void println(String text) throws IOException {
         print(text + "\r\n");
     }
     
@@ -367,7 +367,7 @@ public class TelnetConnection implements Closeable{
      * @param bytes the raw bytes to send
      * @throws IOException if an I/O error occurs
      */
-    private void sendRaw(byte[] bytes) throws IOException{
+    private void sendRaw(byte[] bytes) throws IOException {
         out.write(bytes);
         out.flush();
     }

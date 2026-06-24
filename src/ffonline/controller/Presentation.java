@@ -114,7 +114,7 @@ public class Presentation {
         int[] p10 = {100000, 10000, 1000, 100};
 
         // Calculate digits 0 through 3 (100000s to 1000s)
-        for(int d = 0; d < 4; d++){
+        for(int d=0;d<4;d++){
             // Discard upper 8 bits for digits 2 and 3
             if(d >= 2) tmp &= 0xffff;
 
@@ -136,7 +136,7 @@ public class Presentation {
         buf[5] = tensOnes.charAt(1);
 
         // Replace leading '0's with spaces, never trimming the ones digit
-        for(int i = 0; i < 5; i++){
+        for(int i=0;i<5;i++){
             if(buf[i] == '0') buf[i] = ' ';
             else break;
         }

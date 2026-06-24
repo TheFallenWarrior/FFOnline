@@ -38,7 +38,7 @@ import tools.jackson.databind.JsonNode;
  *
  * @author Anna Jaqueline (TheFallenWarrior)
  */
-public class CharacterProgression{
+public class CharacterProgression {
     public static final String JSON_PATH = "json/growth.json";
     private static final Logger LOGGER = Logger.getLogger(CharacterProgression.class.getName());
     

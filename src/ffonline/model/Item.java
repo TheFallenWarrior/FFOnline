@@ -29,7 +29,7 @@ import tools.jackson.databind.JsonNode;
  *
  * @author Anna Jaqueline (TheFallenWarrior)
  */
-public class Item{
+public class Item {
     public static final String JSON_PATH = "json/item.json";
     
     private final String name;
