@@ -44,6 +44,7 @@ public class Magic extends Item {
     final private int level;
     final private int spellId;
     final private int effectivity;
+    final private int accuracy;
     final private CommandTarget targeting;
     final private Effect effect;
     final private EnumSet<Element> elements;
@@ -58,6 +59,7 @@ public class Magic extends Item {
         int level,
         int spellId,
         int effectivity,
+        int accuracy,
         CommandTarget targeting,
         Effect effect,
         EnumSet<Element> elements,
@@ -69,6 +71,7 @@ public class Magic extends Item {
         this.level = level&0xff;
         this.spellId = spellId&0xff;
         this.effectivity = effectivity&0xff;
+        this.accuracy = accuracy&0xff;
         this.targeting = targeting;
         this.effect = effect;
         this.elements = EnumSet.copyOf(elements);
@@ -84,6 +87,7 @@ public class Magic extends Item {
         int level = node.path("level").asInt(0);
         int spellId = node.path("spellId").asInt(0);
         int effectivity = node.path("effectivity").asInt(0);
+        int accuracy = node.path("accuracy").asInt(0);
 
         
         Optional<String> optTarget = node.path("targeting").asStringOpt();
@@ -114,6 +118,7 @@ public class Magic extends Item {
             level,
             spellId,
             effectivity,
+            accuracy,
             resolvedTarget,
             resolvedEffect,
             elements,
@@ -144,6 +149,10 @@ public class Magic extends Item {
 
     public int getEffectivity(){
         return effectivity;
+    }
+    
+    public int getAccuracy(){
+        return accuracy;
     }
 
     public EnumSet<Element> getElements(){
