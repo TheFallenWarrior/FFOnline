@@ -20,14 +20,14 @@ The game is still in development and as of now, it's not yet functional.
 - Player party and player-facing character creation
 - ~~Game state manager with command dispatching~~
 - ~~Encode enemy data and AI~~
-- Battle commands
+- ~~Battle commands~~
   - ~~Base Command class~~
   - ~~FIGHT command~~
-  - Magic commands (MAGIC, DRINK, ITEM)
+  - ~~Magic commands (MAGIC, DRINK, ITEM)~~
   - ~~RUN command~~
 - ~~Enemy formations~~
 - Battle engine with turn/command orchestration
-- Out of battle item management (ITEM, WEAPON, ARMOR commands)
+- Out of battle item management
   - ITEM command
   - WEAPON and ARMOR commands
 - Using magic and items out of battle
