@@ -46,7 +46,6 @@ public class Enemy extends Battler {
     private final int exp;
     private final int gil;
     
-    private final int morale;
     private final int baseHitsPerTurn;
     private final EnumSet<EnemyType> enemyTypes;
     private final EnumSet<StatusAilment> attackStatuses; // Status that can be inflicted by normal attacks
@@ -56,6 +55,8 @@ public class Enemy extends Battler {
     
     private final Inventory<Magic> skillInventory = new Inventory<>(SKILL_MAX_INVENTORY);
     private final int skillChance;
+
+    private int morale;
     
     public Enemy(
         String name,
@@ -222,5 +223,9 @@ public class Enemy extends Battler {
     @Override
     public int getBaseHitsPerTurn(){
         return baseHitsPerTurn;
+    }
+    
+    public void offsetMorale(int offset){
+        morale = Math.clamp(morale+offset, 0, 255);
     }
 }
