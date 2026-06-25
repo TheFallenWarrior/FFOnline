@@ -129,8 +129,8 @@ public class MagicCommand extends BattleCommand {
             }
             
             case MORALE_DOWN -> {
-                if(target instanceof Enemy _){
-                    // TODO
+                if(target instanceof Enemy enemy){
+                    enemy.offsetMorale(-spell.getEffectivity());
                 } else
                     builder.ineffective(target);
             }
@@ -154,7 +154,8 @@ public class MagicCommand extends BattleCommand {
             }
             
             case DEFENSE_UP -> {
-                // TODO
+                int absorb = target.getAbsorb() + spell.getEffectivity();
+                target.setAbsorb(absorb);
             }
             
             case RESIST_ELEMENT -> {
@@ -166,7 +167,15 @@ public class MagicCommand extends BattleCommand {
             }
             
             case ATTACK_UP -> {
-                // TODO
+                // INTENTIONAL: "Attack up" spells do work on player characters
+                if(target instanceof PlayerCharacter pc){
+                    builder.ineffective(pc);
+                    break;
+                }
+                @SuppressWarnings("null")
+                int damage = target.getDamage() + spell.getEffectivity();
+                target.setDamage(damage);
+                builder.succeed(target);
             }
             
             case HIT_MULTIPLIER_UP -> {
@@ -175,11 +184,23 @@ public class MagicCommand extends BattleCommand {
             }
             
             case ATTACK_ACCURACY_UP -> {
-                // TODO
+                // INTENTIONAL: "Attack/accuracy up" spells do not work on player characters
+                if(target instanceof PlayerCharacter pc){
+                    builder.ineffective(pc);
+                    break;
+                }
+                @SuppressWarnings("null")
+                int damage = target.getDamage() + spell.getEffectivity();
+                target.setDamage(damage);
+                // INTENTIONAL: The spell's accuracy stat is added to the target's accuracy
+                int hitChance = target.getHitChance() + spell.getAccuracy();
+                target.setHitChance(hitChance);
+                builder.succeed(target);
             }
             
             case EVASION_DOWN -> {
-                // TODO
+                // INTENTIONAL: Evasion down always misses
+                builder.fail(target);
             }
             
             case FULL_RECOVERY -> {
@@ -194,7 +215,9 @@ public class MagicCommand extends BattleCommand {
             }
             
             case EVASION_UP -> {
-                // TODO
+                int evadeChance = target.getEvadeChance() + spell.getEffectivity();
+                target.setEvadeChance(evadeChance);
+                builder.succeed(target);
             }
             
             case UNRESIST_ELEMENT -> {
