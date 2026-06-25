@@ -72,9 +72,7 @@ public class MagicCommand extends BattleCommand {
      * Registers effect handlers into the {@code effectHandlers} map.
      */
     private void registerEffectHandlers(){
-        effectHandlers.put(Magic.Effect.NOTHING, ((t) -> {
-            builder.ineffective(t);
-        }));
+        effectHandlers.put(Magic.Effect.NOTHING, builder::ineffective);
         effectHandlers.put(Magic.Effect.DAMAGE, this::applyDamage);
         effectHandlers.put(Magic.Effect.HARM, this::applyHarm);
         effectHandlers.put(Magic.Effect.HIT_MULTIPLIER_DOWN, this::applyHitMultiplierDown);
@@ -87,10 +85,7 @@ public class MagicCommand extends BattleCommand {
         effectHandlers.put(Magic.Effect.ATTACK_UP, this::applyAttackUp);
         effectHandlers.put(Magic.Effect.HIT_MULTIPLIER_UP, this::applyHitMultiplierUp);
         effectHandlers.put(Magic.Effect.ATTACK_ACCURACY_UP, this::applyAttackAccuracyUp);
-        effectHandlers.put(Magic.Effect.EVASION_DOWN, ((t) -> {
-            // INTENTIONAL: Evasion down always misses
-            builder.fail(t);
-        }));
+        effectHandlers.put(Magic.Effect.EVASION_DOWN, builder::fail); // INTENTIONAL: Evasion down always misses
         effectHandlers.put(Magic.Effect.FULL_RECOVERY, this::applyFullRecovery);
         effectHandlers.put(Magic.Effect.EVASION_UP, this::applyEvasionUp);
         effectHandlers.put(Magic.Effect.UNRESIST_ELEMENT, this::applyUnresistElement);
