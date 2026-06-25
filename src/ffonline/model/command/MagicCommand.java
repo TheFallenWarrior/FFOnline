@@ -129,7 +129,7 @@ public class MagicCommand extends BattleCommand {
      * @param target The {@code Battler} the spell is being cast on
      * @return {@code true} if the spell should hit, {@code false} otherwise
      */
-    private boolean calculateHit(Battler target){
+    private boolean evaluateHit(Battler target){
         int baseHitChance = 148;
         
         // INTENTIONAL: It is possible for a battler to be weak and resistant to the same element
@@ -201,7 +201,7 @@ public class MagicCommand extends BattleCommand {
             effectivity += effectivity/2;
 
         int damage = calculateDamage(effectivity);
-        if(calculateHit(target)) damage *= 2;
+        if(evaluateHit(target)) damage *= 2;
 
         target.offsetHp(-damage);
         builder.hit(target, damage);
@@ -218,7 +218,7 @@ public class MagicCommand extends BattleCommand {
         }
 
         int damage = calculateDamage();
-        if(calculateHit(target)) damage *= 2;
+        if(evaluateHit(target)) damage *= 2;
 
         target.offsetHp(-damage);
         builder.hit(target, damage);
@@ -229,7 +229,7 @@ public class MagicCommand extends BattleCommand {
      * @param target The {@code Battler} the spell is being cast on
      */
     private void applyHitMultiplierDown(Battler target){
-        if(calculateHit(target)){
+        if(evaluateHit(target)){
             target.increaseHitMultiplier();
             builder.succeed(target);
         } else
@@ -369,7 +369,7 @@ public class MagicCommand extends BattleCommand {
      */
     private void applyUnresistElement(Battler target){
         // INTENTIONAL: "Remove resistance" spell effect does not work on enemies
-        if(target instanceof PlayerCharacter character && calculateHit(character)){
+        if(target instanceof PlayerCharacter character && evaluateHit(character)){
             character.setElementalResistances(EnumSet.noneOf(Element.class));
             builder.succeed(target);
         } else
