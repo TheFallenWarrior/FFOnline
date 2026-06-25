@@ -46,6 +46,15 @@ public class MagicCommand extends BattleCommand {
     private final CommandResult.Builder builder = CommandResult.builder(this);
     private final Map<Magic.Effect, Consumer<Battler>> effectHandlers = new EnumMap(Magic.Effect.class);
     
+    /**
+     * Constructs a {@code MagicCommand} object.
+     * @param allies The {@code BattlerGroup} that contains {@code actor}
+     * @param enemies The {@code BattlerGroup} {@code actor} is fighting against
+     * @param actor The {@code Battler} performing the battle command
+     * @param allyTarget An optional target within the allied group; can be null
+     * @param enemyTarget An optional target within the enemy group; can be null
+     * @param spell The {@code Magic} to the cast
+     */
     public MagicCommand(
         BattlerGroup<? extends Battler> allies,
         BattlerGroup<? extends Battler> enemies,
@@ -59,6 +68,9 @@ public class MagicCommand extends BattleCommand {
         registerEffectHandlers();
     }
     
+    /**
+     * Registers effect handlers into the {@code effectHandlers} map.
+     */
     private void registerEffectHandlers(){
         effectHandlers.put(Magic.Effect.NOTHING, ((t) -> {
             builder.ineffective(t);
@@ -95,14 +107,28 @@ public class MagicCommand extends BattleCommand {
         return false;
     }
     
+    /**
+     * Calculates damage using FF1's spell damage formula.
+     * @return A random number 0..{@code spell.effectivity}
+     */
     private int calculateDamage(){
         return calculateDamage(spell.getEffectivity());
     }
     
+    /**
+     * Calculates damage using FF1's spell damage formula.
+     * @param effectivity The value to use as the spell's effectivity
+     * @return A random number 0..{@code effectivity}
+     */
     private int calculateDamage(int effectivity){
         return effectivity + rng.nextInt(0, 1+effectivity);
     }
     
+    /**
+     * Original FF1 formula for checking if a spell hits or misses
+     * @param target The {@code Battler} the spell is being cast on
+     * @return {@code true} if the spell should hit, {@code false} otherwise
+     */
     private boolean calculateHit(Battler target){
         int baseHitChance = 148;
         
@@ -119,6 +145,10 @@ public class MagicCommand extends BattleCommand {
         return !((hitRoll > finalHitChance && hitRoll != 0) || hitRoll == 200);
     }
     
+    /**
+     * Applies the spell to the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void apply(Battler target){
         Consumer<Battler> handler = effectHandlers.get(spell.getEffect());
         handler.accept(target);    
@@ -158,6 +188,10 @@ public class MagicCommand extends BattleCommand {
         return builder.build();
     }
     
+    /**
+     * Applies the DAMAGE spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyDamage(Battler target){
         int effectivity = spell.getEffectivity();
                 
@@ -173,6 +207,10 @@ public class MagicCommand extends BattleCommand {
         builder.hit(target, damage);
     }
     
+    /**
+     * Applies the HARM spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyHarm(Battler target){
         if(!(target instanceof Enemy enemy) || !enemy.getEnemyTypes().contains(EnemyType.UNDEAD)){
             builder.ineffective(target);
@@ -186,6 +224,10 @@ public class MagicCommand extends BattleCommand {
         builder.hit(target, damage);
     }
     
+    /**
+     * Applies the HIT_MULTIPLIER_DOWN spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyHitMultiplierDown(Battler target){
         if(calculateHit(target)){
             target.increaseHitMultiplier();
@@ -194,6 +236,10 @@ public class MagicCommand extends BattleCommand {
             builder.fail(target);
     }
     
+    /**
+     * Applies the MORALE_DOWN spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyMoraleDown(Battler target){
         if(target instanceof Enemy enemy){
             enemy.offsetMorale(-spell.getEffectivity());
@@ -201,12 +247,20 @@ public class MagicCommand extends BattleCommand {
             builder.ineffective(target);
     }
     
+    /**
+     * Applies the HP_RECOVERY spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyHpRecovery(Battler target){
         int recovery = calculateDamage();
         target.offsetHp(recovery);
         builder.hit(target, recovery);
     }
     
+    /**
+     * Applies the STATUS_RECOVERY spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyStatusRecovery(Battler target){
         EnumSet<StatusAilment> toRemove = spell.getEffectStatuses();
         toRemove.removeAll(EnumSet.of(StatusAilment.DEAD, StatusAilment.PETRIFIED));
@@ -218,12 +272,20 @@ public class MagicCommand extends BattleCommand {
             builder.ineffective(target);
     }
     
+    /**
+     * Applies the DEFENSE_UP spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyDefenseUp(Battler target){
         int absorb = target.getAbsorb() + spell.getEffectivity();
         target.setAbsorb(absorb);
         builder.succeed(target);
     }
     
+    /**
+     * Applies the RESIST_ELEMENT spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyResistElement(Battler target){
         EnumSet<Element> resistances = target.getElementalResistances();
         resistances.addAll(spell.getEffectElements());
@@ -232,6 +294,10 @@ public class MagicCommand extends BattleCommand {
         builder.succeed(target);
     }
     
+    /**
+     * Applies the ATTACK_UP spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyAttackUp(Battler target){
         // INTENTIONAL: "Attack up" spells do work on player characters
         if(target instanceof PlayerCharacter pc){
@@ -244,11 +310,19 @@ public class MagicCommand extends BattleCommand {
         builder.succeed(target);
     }
     
+    /**
+     * Applies the HIT_MULTIPLIER_UP spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyHitMultiplierUp(Battler target){
         target.increaseHitMultiplier();
         builder.succeed(target);
     }
     
+    /**
+     * Applies the ATTACK_ACCURACY_UP spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyAttackAccuracyUp(Battler target){
         // INTENTIONAL: "Attack/accuracy up" spells do not work on player characters
         if(target instanceof PlayerCharacter pc){
@@ -264,6 +338,10 @@ public class MagicCommand extends BattleCommand {
         builder.succeed(target);
     }
     
+    /**
+     * Applies the FULL_RECOVERY spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyFullRecovery(Battler target){
         target.setHp(target.getMaxHp());
                 
@@ -275,12 +353,20 @@ public class MagicCommand extends BattleCommand {
         builder.succeed(target);
     }
     
+    /**
+     * Applies the EVASION_UP spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyEvasionUp(Battler target){
         int evadeChance = target.getEvadeChance() + spell.getEffectivity();
         target.setEvadeChance(evadeChance);
         builder.succeed(target);
     }
     
+    /**
+     * Applies the UNRESIST_ELEMENT spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyUnresistElement(Battler target){
         // INTENTIONAL: "Remove resistance" spell effect does not work on enemies
         if(target instanceof PlayerCharacter character && calculateHit(character)){
@@ -290,6 +376,10 @@ public class MagicCommand extends BattleCommand {
             builder.fail(target);
     }
     
+    /**
+     * Applies the HP300_STATUS spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
     private void applyHp300Status(Battler target){
         if(
             target.getHp() < 300 &&
