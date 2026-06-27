@@ -104,7 +104,7 @@ public class MagicCommand extends BattleCommand {
     
     /**
      * Calculates damage using FF1's spell damage formula.
-     * @return A random number 0..{@code spell.effectivity}
+     * @return A random number {@code effectivity}..(2 * {@code effectivity})
      */
     private int calculateDamage(){
         return calculateDamage(spell.getEffectivity());
@@ -113,7 +113,7 @@ public class MagicCommand extends BattleCommand {
     /**
      * Calculates damage using FF1's spell damage formula.
      * @param effectivity The value to use as the spell's effectivity
-     * @return A random number 0..{@code effectivity}
+     * @return A random number {@code effectivity}..(2 * {@code effectivity})
      */
     private int calculateDamage(int effectivity){
         return effectivity + rng.nextInt(0, 1+effectivity);
