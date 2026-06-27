@@ -294,7 +294,7 @@ public class MagicCommand extends BattleCommand {
      * @param target The {@code Battler} the spell is being cast on
      */
     private void applyAttackUp(Battler target){
-        // INTENTIONAL: "Attack up" spells do work on player characters
+        // INTENTIONAL: "Attack up" spells do not work on player characters
         if(target instanceof PlayerCharacter pc){
             builder.ineffective(pc);
             return;
