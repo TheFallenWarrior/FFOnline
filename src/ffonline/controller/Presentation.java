@@ -76,7 +76,7 @@ public class Presentation {
      * Converts an integer to a String using Final Fantasy's int to string algorithm.
      * @param value the number to be converted, treated as an 8-bit unsigned int
      * @param stripEnable if {@code true}, replace the leading zero with a space
-     * @return a left-aligned, 2-digit wide string representation of {@code value}
+     * @return a right-aligned, 2-digit wide string representation of {@code value}
      */
     private static String formatNumber2Digits(int value, boolean stripEnable){
         // INTENTIONAL: This method returns wrong values if input is bigger than 99, replicating
@@ -101,7 +101,7 @@ public class Presentation {
     /**
      * Converts an integer to a String using Final Fantasy's int to string algorithm.
      * @param value the number to be converted, treated as a 24-bit unsigned int
-     * @return a left-aligned, 6-digit wide string representation of {@code value}
+     * @return a right-aligned, 6-digit wide string representation of {@code value}
      */
     public static String formatNumber6Digits(int value){
         // INTENTIONAL: This method returns wrong values if input is bigger than 999999, replicating
@@ -113,7 +113,7 @@ public class Presentation {
         // Powers of 10
         int[] p10 = {100000, 10000, 1000, 100};
 
-        // Calculate digits 0 through 3 (100000s to 1000s)
+        // Calculate digits 0 through 3 (100000s to 100s)
         for(int d=0;d<4;d++){
             // Discard upper 8 bits for digits 2 and 3
             if(d >= 2) tmp &= 0xffff;

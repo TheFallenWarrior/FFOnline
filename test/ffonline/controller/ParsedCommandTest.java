@@ -91,8 +91,9 @@ public class ParsedCommandTest {
     public void testToString(){
         System.out.println("Testing ParsedCommand::toString");
         
-        // NOTE: Current implementation of toString doesn't guarantee the returned string will
-        //  be the equal as the original one passed to the constructor
+        // NOTE: Current implementation of toString normalizes unquoted whitespaces,
+        //  so the returned string may be different to the one passed to the
+        //  constructor.
         assertEquals("", empty.toString().strip());
         assertEquals("a \"1 2\" 3", new ParsedCommand("a \"1 2\" 3", 0).toString());
         assertEquals("a \"1 2\" 3", new ParsedCommand("a \"1 2\" 3", 1).toString());
