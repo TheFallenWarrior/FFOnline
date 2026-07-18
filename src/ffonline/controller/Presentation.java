@@ -85,7 +85,7 @@ public class Presentation {
         value &= 0xff;
         int tens = 0;     // = value/10;
         int ones = value; // = value%10;
-        while(value >= 10){
+        while(ones >= 10){
             tens++;
             ones -= 10;
         }
