@@ -75,6 +75,7 @@ public class MagicCommand extends BattleCommand {
         effectHandlers.put(Magic.Effect.NOTHING, builder::ineffective);
         effectHandlers.put(Magic.Effect.DAMAGE, this::applyDamage);
         effectHandlers.put(Magic.Effect.HARM, this::applyHarm);
+        effectHandlers.put(Magic.Effect.STATUS, this::applyStatus);
         effectHandlers.put(Magic.Effect.HIT_MULTIPLIER_DOWN, this::applyHitMultiplierDown);
         effectHandlers.put(Magic.Effect.MORALE_DOWN, this::applyMoraleDown);
         effectHandlers.put(Magic.Effect.UNUSED, this::applyHpRecovery);
@@ -217,6 +218,18 @@ public class MagicCommand extends BattleCommand {
 
         target.offsetHp(-damage);
         builder.hit(target, damage);
+    }
+    
+    /**
+     * Applies the STATUS spell effect on the given target.
+     * @param target The {@code Battler} the spell is being cast on
+     */
+    private void applyStatus(Battler target){
+        if(evaluateHit(target)){
+            target.addAllStatuses(spell.getEffectStatuses());
+            builder.succeed(target);
+        } else
+            builder.fail(target);
     }
     
     /**
