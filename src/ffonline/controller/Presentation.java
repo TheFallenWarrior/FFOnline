@@ -83,8 +83,12 @@ public class Presentation {
         //  observed behavior from FF1
         
         value &= 0xff;
-        int tens = value/10;
-        int ones = value%10;
+        int tens = 0;     // = value/10;
+        int ones = value; // = value%10;
+        while(value >= 10){
+            tens++;
+            ones -= 10;
+        }
         
         char[] buf = new char[2];
 
