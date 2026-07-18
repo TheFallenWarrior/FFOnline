@@ -48,10 +48,14 @@ public class PresentationTest {
         assertEquals("    10", Presentation.formatNumber6Digits(10));
         assertEquals("    99", Presentation.formatNumber6Digits(99));
         assertEquals("   100", Presentation.formatNumber6Digits(100));
+        assertEquals("   255", Presentation.formatNumber6Digits(255));
         assertEquals("   256", Presentation.formatNumber6Digits(256));
         assertEquals("  1000", Presentation.formatNumber6Digits(1000));
+        assertEquals("  9999", Presentation.formatNumber6Digits(9999));
         assertEquals(" 10000", Presentation.formatNumber6Digits(10000));
+        assertEquals(" 65535", Presentation.formatNumber6Digits(65535));
         assertEquals(" 65536", Presentation.formatNumber6Digits(65536));
+        assertEquals(" 99999", Presentation.formatNumber6Digits(99999));
         assertEquals("100000", Presentation.formatNumber6Digits(100000));
         assertEquals("999998", Presentation.formatNumber6Digits(999998));
         assertEquals("999999", Presentation.formatNumber6Digits(999999));
@@ -62,6 +66,9 @@ public class PresentationTest {
         assertEquals("9999P5", Presentation.formatNumber6Digits(1000155));
         assertEquals("999900", Presentation.formatNumber6Digits(1000156));
         assertEquals("999935", Presentation.formatNumber6Digits(1000191));
+        assertEquals("999983", Presentation.formatNumber6Digits(1055535));
+        assertEquals("990000", Presentation.formatNumber6Digits(1055536));
+        assertEquals("990001", Presentation.formatNumber6Digits(1055537));
         assertEquals("996438", Presentation.formatNumber6Digits(0x123456));
         assertEquals("999936", Presentation.formatNumber6Digits(0x496200));
         assertEquals("999934", Presentation.formatNumber6Digits(0xfffffe));
