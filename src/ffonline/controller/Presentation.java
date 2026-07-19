@@ -205,15 +205,9 @@ public class Presentation {
         ));
         
         if(!helpData.aliases().isEmpty()){
-            str.append(" Aliases: ");
-            for(String alias : helpData.aliases()){
-                str.append(String.format(
-                    "%s%s",
-                    alias,
-                    (alias.equals(helpData.aliases().getLast()) ? "" : ", ")
-                ));
-            }
-            str.append("\n");
+            str.append(" Aliases: ")
+                .append(String.join(", ", helpData.aliases()))
+                .append("\n");
         }
         return str.toString();
     }
