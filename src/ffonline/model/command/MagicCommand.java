@@ -28,7 +28,6 @@ import ffonline.model.Battler;
 import ffonline.model.BattlerGroup;
 import ffonline.model.Element;
 import ffonline.model.Enemy;
-import ffonline.model.EnemyType;
 import ffonline.model.Magic;
 import ffonline.model.PlayerCharacter;
 import ffonline.model.StatusAilment;
@@ -208,7 +207,7 @@ public class MagicCommand extends BattleCommand {
      * @param target The {@code Battler} the spell is being cast on
      */
     private void applyHarm(Battler target){
-        if(!(target instanceof Enemy enemy) || !enemy.getEnemyTypes().contains(EnemyType.UNDEAD)){
+        if(!(target instanceof Enemy enemy) || !enemy.getEnemyTypes().contains(Enemy.Type.UNDEAD)){
             builder.ineffective(target);
             return;
         }

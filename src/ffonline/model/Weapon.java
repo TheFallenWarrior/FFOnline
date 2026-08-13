@@ -39,7 +39,7 @@ public class Weapon extends Item {
     private final int damage;
     private final int spellId;
     private final EnumSet<Element> elementalOffense;
-    private final EnumSet<EnemyType> enemyTypes; // The enemy types the weapon is strong against
+    private final EnumSet<Enemy.Type> enemyTypes; // The enemy types the weapon is strong against
     private final EnumSet<CharacterJob> equippable;
     
     public Weapon(
@@ -51,7 +51,7 @@ public class Weapon extends Item {
         int damage,
         int spellId,
         EnumSet<Element> elementalOffense,
-        EnumSet<EnemyType> enemyTypes,
+        EnumSet<Enemy.Type> enemyTypes,
         EnumSet<CharacterJob> equippable
     ){
         super(name, itemId, price);
@@ -75,7 +75,7 @@ public class Weapon extends Item {
         int spellId = node.path("spellId").asInt(0);
         
         EnumSet<Element> elementalOffense = JsonLoader.parseEnumSet(node.path("elementalOffense"), Element.class, "element");
-        EnumSet<EnemyType> enemyTypes = JsonLoader.parseEnumSet(node.path("enemyTypes"), EnemyType.class, "enemy type");
+        EnumSet<Enemy.Type> enemyTypes = JsonLoader.parseEnumSet(node.path("enemyTypes"), Enemy.Type.class, "enemy type");
         EnumSet<CharacterJob> equippable = JsonLoader.parseEnumSet(node.path("equippable"), CharacterJob.class, "job");
         
         return new Weapon(
@@ -116,7 +116,7 @@ public class Weapon extends Item {
         return EnumSet.copyOf(elementalOffense);
     }
 
-    public EnumSet<EnemyType> getEnemyTypes(){
+    public EnumSet<Enemy.Type> getEnemyTypes(){
         return EnumSet.copyOf(enemyTypes);
     }
     

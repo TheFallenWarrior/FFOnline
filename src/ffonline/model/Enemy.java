@@ -47,7 +47,7 @@ public class Enemy extends Battler {
     private final int gil;
     
     private final int baseHitsPerTurn;
-    private final EnumSet<EnemyType> enemyTypes;
+    private final EnumSet<Type> enemyTypes;
     private final EnumSet<StatusAilment> attackStatuses; // Status that can be inflicted by normal attacks
     
     private final Inventory<Magic> magicInventory = new Inventory<>(MAGIC_MAX_INVENTORY);
@@ -76,7 +76,7 @@ public class Enemy extends Battler {
         int critChance,
         EnumSet<Element> elementalOffense,
         EnumSet<StatusAilment> attackStatuses,
-        EnumSet<EnemyType> enemyTypes,
+        EnumSet<Type> enemyTypes,
         int magicDefense,
         EnumSet<Element> elementalWeaknesses,
         EnumSet<Element> elementalResistances
@@ -144,7 +144,7 @@ public class Enemy extends Battler {
         // INTENTIONAL: Status-inflicting attacks use the enemy's elemental weakness as its elements
         EnumSet<Element> elementalOffense = JsonLoader.parseEnumSet(node.path("elementalWeaknesses"), Element.class, "element");
         EnumSet<StatusAilment> attackStatuses = JsonLoader.parseEnumSet(node.path("attackStatuses"), StatusAilment.class, "status ailment");
-        EnumSet<EnemyType> enemyTypes = JsonLoader.parseEnumSet(node.path("enemyTypes"), EnemyType.class, "enemy type");
+        EnumSet<Type> enemyTypes = JsonLoader.parseEnumSet(node.path("enemyTypes"), Type.class, "enemy type");
         EnumSet<Element> elementalWeaknesses = JsonLoader.parseEnumSet(node.path("elementalWeaknesses"), Element.class, "element");
         EnumSet<Element> elementalResistances = JsonLoader.parseEnumSet(node.path("elementalResistances"), Element.class, "element");
         
@@ -196,7 +196,7 @@ public class Enemy extends Battler {
         return morale;
     }
 
-    public EnumSet<EnemyType> getEnemyTypes(){
+    public EnumSet<Type> getEnemyTypes(){
         return enemyTypes;
     }
 
@@ -228,4 +228,15 @@ public class Enemy extends Battler {
     public void offsetMorale(int offset){
         morale = Math.clamp(morale+offset, 0, 255);
     }
+    
+    public static enum Type {
+        MAGICAL,
+        DRAGON,
+        GIANT,
+        UNDEAD,
+        WERE,
+        AQUATIC,
+        MAGE,
+        REGENERATIVE
+    };
 }
