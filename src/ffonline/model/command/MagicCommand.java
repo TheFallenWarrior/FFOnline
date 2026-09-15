@@ -43,7 +43,7 @@ import java.util.function.Consumer;
 public class MagicCommand extends BattleCommand {
     private final Magic spell;
     private final CommandResult.Builder builder = CommandResult.builder(this);
-    private final Map<Magic.Effect, Consumer<Battler>> effectHandlers = new EnumMap(Magic.Effect.class);
+    private final Map<Magic.Effect, Consumer<Battler>> effectHandlers = new EnumMap<>(Magic.Effect.class);
     
     /**
      * Constructs a {@code MagicCommand} object.
