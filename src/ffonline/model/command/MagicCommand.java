@@ -237,7 +237,7 @@ public class MagicCommand extends BattleCommand {
      */
     private void applyHitMultiplierDown(Battler target){
         if(evaluateHit(target)){
-            target.increaseHitMultiplier();
+            target.decreaseHitMultiplier();
             builder.succeed(target);
         } else
             builder.fail(target);
