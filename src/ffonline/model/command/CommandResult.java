@@ -137,7 +137,7 @@ public class CommandResult {
          * @param target The {@code Battler} involved in the outcome
          * @return The current {@code Builder} instance for chaining calls
          */
-        public Builder succeed(Battler target){
+        public Builder hit(Battler target){
             results.add(new IndividualCommandResult(target, true));
             return this;
         }
@@ -147,7 +147,7 @@ public class CommandResult {
          * @param target The {@code Battler} involved in the outcome
          * @return The current {@code Builder} instance for chaining calls
          */
-        public Builder fail(Battler target){
+        public Builder miss(Battler target){
             results.add(new IndividualCommandResult(target, false));
             return this;
         }

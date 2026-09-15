@@ -86,7 +86,7 @@ public class MagicCommand extends BattleCommand {
         effectHandlers.put(Magic.Effect.ATTACK_UP, this::applyAttackUp);
         effectHandlers.put(Magic.Effect.HIT_MULTIPLIER_UP, this::applyHitMultiplierUp);
         effectHandlers.put(Magic.Effect.ATTACK_ACCURACY_UP, this::applyAttackAccuracyUp);
-        effectHandlers.put(Magic.Effect.EVASION_DOWN, builder::fail); // INTENTIONAL: Evasion down always misses
+        effectHandlers.put(Magic.Effect.EVASION_DOWN, builder::miss); // INTENTIONAL: Evasion down always misses
         effectHandlers.put(Magic.Effect.FULL_RECOVERY, this::applyFullRecovery);
         effectHandlers.put(Magic.Effect.EVASION_UP, this::applyEvasionUp);
         effectHandlers.put(Magic.Effect.UNRESIST_ELEMENT, this::applyUnresistElement);
@@ -171,7 +171,7 @@ public class MagicCommand extends BattleCommand {
                 for(Battler ally : allies){
                     // INTENTIONAL: Enemies' all-allies spells always miss the caster
                     if(actor instanceof Enemy && actor == ally)
-                        builder.fail(ally);
+                        builder.miss(ally);
                     else apply(ally);
                 }
             }
@@ -227,9 +227,9 @@ public class MagicCommand extends BattleCommand {
     private void applyStatus(Battler target){
         if(evaluateHit(target)){
             target.addAllStatuses(spell.getEffectStatuses());
-            builder.succeed(target);
+            builder.hit(target);
         } else
-            builder.fail(target);
+            builder.miss(target);
     }
     
     /**
@@ -239,9 +239,9 @@ public class MagicCommand extends BattleCommand {
     private void applyHitMultiplierDown(Battler target){
         if(evaluateHit(target)){
             target.decreaseHitMultiplier();
-            builder.succeed(target);
+            builder.hit(target);
         } else
-            builder.fail(target);
+            builder.miss(target);
     }
     
     /**
@@ -275,7 +275,7 @@ public class MagicCommand extends BattleCommand {
         target.removeAllStatuses(toRemove);
 
         if(target.isAlive())
-            builder.succeed(target);
+            builder.hit(target);
         else
             builder.ineffective(target);
     }
@@ -287,7 +287,7 @@ public class MagicCommand extends BattleCommand {
     private void applyDefenseUp(Battler target){
         int absorb = target.getAbsorb() + spell.getEffectivity();
         target.setAbsorb(absorb);
-        builder.succeed(target);
+        builder.hit(target);
     }
     
     /**
@@ -299,7 +299,7 @@ public class MagicCommand extends BattleCommand {
         resistances.addAll(spell.getEffectElements());
         target.setElementalResistances(resistances);
 
-        builder.succeed(target);
+        builder.hit(target);
     }
     
     /**
@@ -314,7 +314,7 @@ public class MagicCommand extends BattleCommand {
         }
         int damage = target.getDamage() + spell.getEffectivity();
         target.setDamage(damage);
-        builder.succeed(target);
+        builder.hit(target);
     }
     
     /**
@@ -323,7 +323,7 @@ public class MagicCommand extends BattleCommand {
      */
     private void applyHitMultiplierUp(Battler target){
         target.increaseHitMultiplier();
-        builder.succeed(target);
+        builder.hit(target);
     }
     
     /**
@@ -341,7 +341,7 @@ public class MagicCommand extends BattleCommand {
         // INTENTIONAL: The spell's accuracy stat is added to the target's accuracy
         int hitChance = target.getHitChance() + spell.getAccuracy();
         target.setHitChance(hitChance);
-        builder.succeed(target);
+        builder.hit(target);
     }
     
     /**
@@ -356,7 +356,7 @@ public class MagicCommand extends BattleCommand {
         toRemove.removeAll(EnumSet.of(StatusAilment.DEAD, StatusAilment.PETRIFIED));
         target.removeAllStatuses(toRemove);
 
-        builder.succeed(target);
+        builder.hit(target);
     }
     
     /**
@@ -366,7 +366,7 @@ public class MagicCommand extends BattleCommand {
     private void applyEvasionUp(Battler target){
         int evadeChance = target.getEvadeChance() + spell.getEffectivity();
         target.setEvadeChance(evadeChance);
-        builder.succeed(target);
+        builder.hit(target);
     }
     
     /**
@@ -377,9 +377,9 @@ public class MagicCommand extends BattleCommand {
         // INTENTIONAL: "Remove resistance" spell effect does not work on enemies
         if(target instanceof PlayerCharacter character && evaluateHit(character)){
             character.setElementalResistances(EnumSet.noneOf(Element.class));
-            builder.succeed(target);
+            builder.hit(target);
         } else
-            builder.fail(target);
+            builder.miss(target);
     }
     
     /**
@@ -392,8 +392,8 @@ public class MagicCommand extends BattleCommand {
             !enumSetContainsAny(target.getElementalResistances(), spell.getEffectElements())
         ){
             target.addAllStatuses(spell.getEffectStatuses());
-            builder.succeed(target);
+            builder.hit(target);
         } else
-            builder.fail(target);
+            builder.miss(target);
     }
 }

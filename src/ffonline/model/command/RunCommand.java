@@ -56,7 +56,7 @@ public class RunCommand extends BattleCommand {
         if(actor instanceof PlayerCharacter character)
             charActor = character;
         else // Enemies always succeed at running
-            return CommandResult.builder(this).succeed(actor).build();
+            return CommandResult.builder(this).hit(actor).build();
         
         for(int i=0;i<allies.size();i++){
             if(allies.get(i) == actor){
