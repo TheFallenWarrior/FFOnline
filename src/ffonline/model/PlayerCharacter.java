@@ -61,7 +61,7 @@ public class PlayerCharacter extends Battler {
     private CharacterJob job;
     
     private final Inventory<Armor> armorInventory = new Inventory<>(EQUIP_MAX_INVENTORY);
-    private final EnumMap<ArmorType, Armor> equippedArmors = new EnumMap<>(ArmorType.class);
+    private final EnumMap<Armor.Type, Armor> equippedArmors = new EnumMap<>(Armor.Type.class);
 
     private final Inventory<Weapon> weaponInventory = new Inventory<>(EQUIP_MAX_INVENTORY);
     private Weapon equippedWeapon;
