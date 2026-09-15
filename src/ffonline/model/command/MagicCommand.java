@@ -34,6 +34,7 @@ import ffonline.model.StatusAilment;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
@@ -307,11 +308,10 @@ public class MagicCommand extends BattleCommand {
      */
     private void applyAttackUp(Battler target){
         // INTENTIONAL: "Attack up" spells do not work on player characters
-        if(target instanceof PlayerCharacter pc){
+        if((Objects.requireNonNull(target)) instanceof PlayerCharacter pc){
             builder.ineffective(pc);
             return;
         }
-        @SuppressWarnings("null")
         int damage = target.getDamage() + spell.getEffectivity();
         target.setDamage(damage);
         builder.succeed(target);
@@ -332,11 +332,10 @@ public class MagicCommand extends BattleCommand {
      */
     private void applyAttackAccuracyUp(Battler target){
         // INTENTIONAL: "Attack/accuracy up" spells do not work on player characters
-        if(target instanceof PlayerCharacter pc){
+        if((Objects.requireNonNull(target)) instanceof PlayerCharacter pc){
             builder.ineffective(pc);
             return;
         }
-        @SuppressWarnings("null")
         int damage = target.getDamage() + spell.getEffectivity();
         target.setDamage(damage);
         // INTENTIONAL: The spell's accuracy stat is added to the target's accuracy
