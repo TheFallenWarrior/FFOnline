@@ -251,6 +251,7 @@ public class MagicCommand extends BattleCommand {
     private void applyMoraleDown(Battler target){
         if(target instanceof Enemy enemy){
             enemy.offsetMorale(-spell.getEffectivity());
+            builder.hit(target);
         } else
             builder.ineffective(target);
     }
