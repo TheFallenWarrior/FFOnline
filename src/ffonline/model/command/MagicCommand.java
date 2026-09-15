@@ -77,7 +77,7 @@ public class MagicCommand extends BattleCommand {
         effectHandlers.put(Magic.Effect.STATUS, this::applyStatus);
         effectHandlers.put(Magic.Effect.HIT_MULTIPLIER_DOWN, this::applyHitMultiplierDown);
         effectHandlers.put(Magic.Effect.MORALE_DOWN, this::applyMoraleDown);
-        effectHandlers.put(Magic.Effect.UNUSED, this::applyHpRecovery);
+        effectHandlers.put(Magic.Effect.UNUSED, this::applyHpRecovery); // INTENTIONAL: The unused effect behaves like HP recovery
         effectHandlers.put(Magic.Effect.HP_RECOVERY, this::applyHpRecovery);
         effectHandlers.put(Magic.Effect.STATUS_RECOVERY, this::applyStatusRecovery);
         effectHandlers.put(Magic.Effect.DEFENSE_UP, this::applyDefenseUp);
