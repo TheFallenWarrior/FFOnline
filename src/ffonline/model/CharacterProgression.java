@@ -157,7 +157,8 @@ public class CharacterProgression {
             }
             
             case MpMode.FULL -> {
-                JsonNode mpNode = jobRoot.path("mp");
+                // MP always comes from the base class
+                JsonNode mpNode = baseRoot.path("mp");
                 
                 String[] mpStr = mpNode.path(newLevel).asString("0/0/0/0/0/0/0/0").split("/");
                 for(String str : mpStr){
