@@ -160,7 +160,7 @@ public class CharacterProgression {
                 // MP always comes from the base class
                 JsonNode mpNode = baseRoot.path("mp");
                 
-                String[] mpStr = mpNode.path(newLevel).asString("0/0/0/0/0/0/0/0").split("/");
+                String[] mpStr = mpNode.path(newLevel-1).asString("0/0/0/0/0/0/0/0").split("/");
                 for(String str : mpStr){
                     try{
                         mp.add(Integer.valueOf(str));
