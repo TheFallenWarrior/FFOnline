@@ -28,8 +28,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import tools.jackson.databind.JsonNode;
 
 /**
@@ -42,6 +46,8 @@ public class EncounterData {
     
     private static final Logger LOGGER = Logger.getLogger(EncounterData.class.getName());
     public static final String JSON_PATH = "json/encounter.json";
+    
+    private static final Pattern ID_PATTERN = Pattern.compile("^[0-7][0-9A-Fa-f][ABab]$");
     
     private final int formationId;
     private final List<Integer> enemies;
@@ -128,6 +134,37 @@ public class EncounterData {
             enemyMinCountB,
             enemyMaxCountB
         );
+    }
+    
+    public BattlerGroup<Enemy> toBattlerGroup(boolean isFormationB, Random rng){
+        BattlerGroup<Enemy> bg = new BattlerGroup<>();
+        for(int i=0; i < (isFormationB ? 2 : 4); i++){
+            int enemyCount;
+            if(!isFormationB) enemyCount = rng.nextInt(enemyMinCountA.get(i), 1+enemyMaxCountA.get(i));
+            else              enemyCount = rng.nextInt(enemyMinCountB.get(i), 1+enemyMaxCountB.get(i));
+            
+            for(int j=0;j<enemyCount;j++) bg.add(JsonLoader.getEnemy(enemies.get(i)).get());
+        }
+        return bg;
+    }
+    
+    public static Optional<BattlerGroup<Enemy>> getBattlerGroup(String encounterId, Random rng){
+        Matcher matcher = ID_PATTERN.matcher(encounterId);
+        
+        if(!matcher.hasMatch()) return Optional.empty();
+        
+        int id = Integer.parseInt(encounterId.substring(0, 2), 16);
+        Optional<EncounterData> edOpt = JsonLoader.getEncounterData(id);
+        if(edOpt.isEmpty()) return Optional.empty();
+        
+        return Optional.of(
+            edOpt.get()
+                .toBattlerGroup(encounterId.endsWith("B") || encounterId.endsWith("b"), rng)
+        );
+    }
+    
+    public static Optional<BattlerGroup<Enemy>> getBattlerGroup(String encounterId){
+        return getBattlerGroup(encounterId, new Random());
     }
 
     public int getFormationId(){
